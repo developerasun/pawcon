@@ -2,8 +2,16 @@
 <img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a>
 
 # Welcome to Meow-Canvas! 
-Meow canvas project has been developing by designerasun solely for the purpose of funness and maybe a little bit of catness. 
-The expected project schedule to launch is 6 month, which is from earlly August of 2021 to at the end of January 2022. 
+Meow canvas project has been developing by developerasun solely for the purpose of funness and maybe a little bit of cat-ness.
+This is a open project that everyone interested can join in. Simply email me like below and then we will work it together. 
+
+``` 
+To designerasun@gmail.com (note that it is not 'developerasun@gmail.com')
+I like cat. So count me in.
+From cuteLoaf@meow.com
+```
+
+The expected project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year). 
 
 [See Demo](https://meowcanvas.netlify.app/)
 
@@ -55,13 +63,13 @@ if (canvas) {
 
 ## Author 
 Jake Sung
-Github: [@designerasun](https://github.com/designerasun)
-Youtube: [@jakesung](https://www.youtube.com/channel/UC6p9E2JINhaAB7cTd8T2gig)
+- Github: [@developerasun](https://github.com/developerasun)
+- Youtube: [@jakesung](https://www.youtube.com/channel/UC6p9E2JINhaAB7cTd8T2gig)
   
 ## Contributor
 - detail will be added
 
 ## License 
-Copyright © 2021 [Jake Sung](https://github.com/designerasun)
+Copyright © 2021 [Jake Sung](https://github.com/developerasun)
 This project is MIT-licensed.
 
