@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     
     <title>Meow Canvas</title>
 </head>
@@ -12,34 +12,82 @@
 <body>
     <!-- Header: navigation bar -->
     <header class="header" id="header">
-        <nav class="navbar">
-            <div class="navbar-item">
-                <a href="./assets/paintbrush.html">
-                    <span>PaintBrush</span>
-                </a>
+        <nav class="navigation">
+            <div class="logo">
+                <span>Meow Canvas</span>
+                <!-- <img src="" alt=""/> -->
             </div>
-            <div class="navbar-item">
-                <a href="./assets/nft.html">
-                <span>Issue NFT</span>
-                </a>
+            <div class="navbar">
+                <div class="navbar-item">
+                    <a href="./assets/paintbrush.html">
+                        <span>PaintBrush</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <a href="./assets/nft.html">
+                    <span>Issue NFT</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <a href="./assets/ranking.html">
+                    <span>Ranking</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <a href="./assets/about.html">
+                    <span>About</span>
+                    </a>    
+                </div>
+                <div class="navbar-item">
+                    <a href="./assets/contact.html">
+                    <span>Contact</span>
+                    </a>
+                </div>
             </div>
-            <div class="navbar-item">
-                <a href="./assets/ranking.html">
-                <span>Ranking</span>
-                </a>
-            </div>
-            <div class="navbar-item">
-                <a href="./assets/about.html">
-                <span>About</span>
-                </a>    
-            </div>
-            <div class="navbar-item">
-                <a href="./assets/contact.html">
-                <span>Contact</span>
-                </a>
+            <div class="login-menu">
+                <button class="login">Login</button>
+                <button class="sign-up">Sign up</button>
             </div>
         </nav>
+        
     </header>
+
+    <!-- Logined-user artwork -->
+    <div class="user-artwork">
+        <div class="title"><h1>Your cat drawings</h1></div>
+        <div class="user-items">
+            <div class="artwork-item">happy cat</div>
+            <div class="artwork-item">gloomy cat</div>
+            <div class="artwork-item">smiling cat</div>
+            <div class="artwork-item">angry cat</div> <br/>
+        </div>
+    </div>
+
+    <!-- Weekly top artwork -->
+    <div class="weekly-top">
+        <div class="title"><h1>Weekly top cat drawings</h1></div>
+        <div class="top-items">
+            <div class="top-artwork">top 1</div>
+            <div class="top-artwork">top 2</div>
+            <div class="top-artwork">top 3</div>
+            <div class="top-artwork">top 4</div> <br/>
+        </div>
+    </div>
+
+    <!-- Recommended canvas templates to trace -->
+    <div class="canvas-template">
+        <div class="title"><h1>Templates to trace and practice</h1></div>
+        <div class="template-items">
+            <div class="template-item">template 1</div>
+            <div class="template-item">template 2</div>
+            <div class="template-item">template 3</div>
+            <div class="template-item">template 4</div> <br/>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">©DeveloperAsun, all rights reserved</div>
+    </footer>
     <script src="./assets/js/background.js"></script>
     
 </body>
