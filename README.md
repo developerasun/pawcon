@@ -21,10 +21,10 @@ Main service feature is like below
 
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
 <ol>
-<li> (2021.10.01 ~ 2022.12.31) : Web front end development, payment -> linking to backend database </li>
-<li> (2022.01.01 ~ 2022.03.31) : NFT smart contract, blockchain selection -> linking to the web </li>
-<li> (2022.04.01 ~ 2022.07.31) : Machine learning image similarity,  -> linking to the web </li>
-<li> (2022.08.01 ~ 2022.12.31) : Web service launch and maintenance </li>
+<li> Section 1 - (2021.10.01 ~ 2022.12.31, 3 month) : Web front end development, payment -> linking to backend database </li>
+<li> Section 2 - (2022.01.01 ~ 2022.03.31, 3 month) : NFT smart contract, blockchain selection -> linking to the web </li>
+<li> Section 3 - (2022.04.01 ~ 2022.07.31, 4 month) : Machine learning image similarity, database & cloud server selection -> linking to the web </li>
+<li> Section 4 - (2022.08.01 ~ 2022.12.31, 5 month) : Web service launch and monetization -> maintenance </li>
 </ol>
 <br/>
 
@@ -69,6 +69,7 @@ To designerasun@gmail.com
 I like cat. So count me in.
 From cuteLoaf@meow.com
 ```
+<br/>
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
 [KakaoTalk Open Chat](https://open.kakao.com/o/giViVoCd)
