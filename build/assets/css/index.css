@@ -1,0 +1,119 @@
+@import "./reset.css";
+
+
+/* mobile size environment first */
+html { 
+    background: url('../img/1.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blanchedalmond;
+}
+
+.navigation { 
+    width: 100%;
+    height: auto;
+    background-color: lightpink;
+}
+
+.navigation,
+.logo, 
+.login-menu,
+.footer  { 
+    display: none;
+    height: auto;
+}
+
+.navbar-item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #222;
+} 
+
+.navigation span { 
+    line-height: 40px;
+}
+
+.navigation #trigger {
+    display: block;
+    background-color: #eee;
+    color: black;
+    width: 100%;
+    text-align: right;
+}
+
+.hidden { 
+    display: none;
+    transition: linear .5s;
+}
+
+/* media query : PC size */
+@media screen and (min-width:721px) {
+
+    .navigation {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        background-color:lightpink;
+        border-bottom: 2px solid #222;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-item {
+        padding: 0 20px 0 20px;
+        font-size: 20px;
+        line-height: 40px;
+        border-right: 1px solid #222;
+    }
+    
+    .navbar-item:last-child {
+        border-right: 0;
+    }
+
+    .navbar-item span { 
+        display: block;
+        width: 720px;
+        height: 60px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .navigation #trigger { 
+        display: block;
+        height: 60px;
+    }
+
+    .navbar-item:last-child {
+        border-right: 0;
+    }
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background-color:lightcoral;
+    }
+
+}
