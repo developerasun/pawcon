@@ -10,7 +10,7 @@ html {
     background-size: cover;
   } 
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -25,23 +25,20 @@ a:hover {
     background-color: lightpink;
 }
 
-.navigation,
 .logo, 
-.login-menu,
-.footer  { 
+.navbar,
+.login-menu  { 
     display: none;
     height: auto;
 }
 
-.navbar-item {
-    display: block;
-    width: 100%;
+.navbar-item { 
     text-align: center;
     border-bottom: 1px solid #222;
-} 
+}
 
-.navigation span { 
-    line-height: 40px;
+.navbar-item a { 
+    font-size: 20px;
 }
 
 .navigation #trigger {
@@ -49,12 +46,20 @@ a:hover {
     background-color: #eee;
     color: black;
     width: 100%;
-    text-align: right;
+    height: 40px;
+    text-align: left;
 }
 
 .hidden { 
     display: none;
-    transition: linear .5s;
+    /* transition: linear .5s; */
+}
+
+.active { 
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 40px;
 }
 
 /* media query : PC size */
@@ -62,47 +67,43 @@ a:hover {
 
     .navigation {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
         height: 60px;
         background-color:lightpink;
-        border-bottom: 2px solid #222;
     }
-    
-    .navbar {
+
+    .logo, 
+    .login-menu { 
+        display: block;
+        width: 200px;
+    }
+
+    #navbar {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
+        flex-flow: row nowrap;
+        width: 720px;
+        height: 60px;
     }
     
     .navbar-item {
         padding: 0 20px 0 20px;
+        width: 144px;
         font-size: 20px;
-        line-height: 40px;
+        line-height: 60px;
         border-right: 1px solid #222;
+        border-bottom: 0;
+        font-size: 1em;
+        margin-right: -6px;
     }
     
     .navbar-item:last-child {
         border-right: 0;
     }
 
-    .navbar-item span { 
-        display: block;
-        width: 720px;
-        height: 60px;
-        padding: 0;
-        margin: 0 auto;
-    }
-
     .navigation #trigger { 
-        display: block;
-        height: 60px;
-    }
-
-    .navbar-item:last-child {
-        border-right: 0;
+        display: none;
     }
 
     .footer{
