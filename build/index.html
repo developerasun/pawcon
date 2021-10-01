@@ -17,29 +17,29 @@
                 <span>Meow Canvas</span>
                 <!-- <img src="" alt=""/> -->
             </div>
-            <div class="navbar">
+            <div class="navbar" id="navbar">
                 <div class="navbar-item">
-                    <a href="./assets/paintbrush.html">
+                    <a href="assets/pages/paintbrush.html">
                         <span>PaintBrush</span>
                     </a>
                 </div>
                 <div class="navbar-item">
-                    <a href="./assets/nft.html">
+                    <a href="assets/pages/nft.html">
                     <span>Issue NFT</span>
                     </a>
                 </div>
                 <div class="navbar-item">
-                    <a href="./assets/ranking.html">
+                    <a href="assets/pages/ranking.html">
                     <span>Ranking</span>
                     </a>
                 </div>
                 <div class="navbar-item">
-                    <a href="./assets/about.html">
+                    <a href="assets/pages/about.html">
                     <span>About</span>
                     </a>    
                 </div>
                 <div class="navbar-item">
-                    <a href="./assets/contact.html">
+                    <a href="assets/pages/contact.html">
                     <span>Contact</span>
                     </a>
                 </div>
@@ -48,6 +48,11 @@
                 <button class="login">Login</button>
                 <button class="sign-up">Sign up</button>
             </div>
+
+            <!-- trigger: when triggered, elements in mobile environment either 
+            pops up or gone  -->
+            <a href="#" id="trigger">MENU</a>
+
         </nav>
         
     </header>
@@ -86,10 +91,15 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-content">©DeveloperAsun, all rights reserved</div>
+        <div class="footer-content">Copyright© 2021. DeveloperAsun. All rights reserved.</div>
     </footer>
-    <script src="./assets/js/background.js"></script>
-    
+
+    <!-- Jquery should be declared first - otherwise it will cause an uncaught 
+    reference error. -->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/slideToggle.js"></script>
+
 </body>
 </html>
 
