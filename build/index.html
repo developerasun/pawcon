@@ -57,18 +57,24 @@
         
     </header>
 
-    <!-- Logined-user artwork -->
-    <div class="user-artwork">
+    <!-- Logined-user artwork : image slider -->
+    <div class="user-artwork carousel">
         <div class="title"><h1>Your cat drawings</h1></div>
         <div class="user-items">
-            <div class="artwork-item">happy cat</div>
-            <div class="artwork-item">gloomy cat</div>
-            <div class="artwork-item">smiling cat</div>
-            <div class="artwork-item">angry cat</div> <br/>
+            <div class="artwork-item">happy cat<img src="assets/img/2.jpg" alt="cat"/></div>
+            <div class="artwork-item">gloomy cat<img src="assets/img/3.jpg" alt="cat"/></div>
+            <div class="artwork-item">smiling cat<img src="assets/img/4.jpg" alt="cat"/></div>
+            <div class="artwork-item">angry cat<img src="assets/img/5.jpg" alt="cat"/></div> <br/>
+        </div>
+        <div class="buttons">
+            <button class="btn-first">1</button>
+            <button class="btn-second">2</button>
+            <button class="btn-third">3</button>
+            <button class="btn-fourth">4</button>
         </div>
     </div>
 
-    <!-- Weekly top artwork -->
+    <!-- Weekly top artwork : CSS grid layout model - wrapper and items -->
     <div class="weekly-top">
         <div class="title"><h1>Weekly top cat drawings</h1></div>
         <div class="top-items">
@@ -99,6 +105,7 @@
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <script src="assets/js/background.js"></script>
     <script src="assets/js/slideToggle.js"></script>
+    <script src="assets/js/carousel.js"></script>
 
 </body>
 </html>
