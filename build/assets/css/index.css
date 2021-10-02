@@ -8,6 +8,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /* height: 100vh; */
   } 
 
 a {
@@ -43,6 +44,7 @@ a:hover {
 
 .navigation #trigger {
     display: block;
+    /* position: fixed; */
     background-color: #eee;
     color: black;
     width: 100%;
@@ -67,6 +69,7 @@ a:hover {
 
     .navigation {
         display: flex;
+        /* position: fixed; */
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
@@ -115,6 +118,28 @@ a:hover {
         width: 100%;
         height: 40px;
         background-color:lightcoral;
+    }
+
+    .user-items {
+        width: 400vw;
+        transition: transform 1s;
+    }
+
+    .artwork-item { 
+        width: 100vw; 
+        height: 50vh;
+        float: left;
+    }
+
+    .artwork-item img { 
+        width: 100%;
+        height: 100%;
+    }
+
+    .buttons {
+        position: relative;
+        top: 1.5em;
+        transform: translate(50%);
     }
 
 }
