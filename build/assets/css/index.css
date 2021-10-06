@@ -1,5 +1,8 @@
 @import "./reset.css";
 
+* { 
+    box-sizing: border-box;
+}
 
 /* mobile size environment first */
 html { 
@@ -109,6 +112,52 @@ a:hover {
         display: none;
     }
 
+    .bar { 
+        cursor: pointer;
+        display: inline-block;
+        height: 10px;
+        width: 30px;
+        background-color: azure;
+        transition: background-color 0.5s ease-in-out;
+        border: 0;
+        box-shadow: 1px 1px #222;
+    }
+
+    .bar:hover { 
+        background-color: bisque;
+    }
+
+    .carousel { 
+        max-width: 1000px;
+    }
+
+    .artwork-item { 
+        display: none;
+    }
+
+    .prev, .next { 
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+
+        /* setting one unit for padding/margin means -> set the same 
+        unit in top, right, bottom, left. */
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: #222;
+        transition: 0.5s ease;
+    }
+
+    .next { 
+        right: 0;
+    }
+
     .footer{
         display: flex;
         justify-content: center;
@@ -118,28 +167,6 @@ a:hover {
         width: 100%;
         height: 40px;
         background-color:lightcoral;
-    }
-
-    .user-items {
-        width: 400vw;
-        transition: transform 1s;
-    }
-
-    .artwork-item { 
-        width: 100vw; 
-        height: 50vh;
-        float: left;
-    }
-
-    .artwork-item img { 
-        width: 100%;
-        height: 100%;
-    }
-
-    .buttons {
-        position: relative;
-        top: 1.5em;
-        transform: translate(50%);
     }
 
 }
