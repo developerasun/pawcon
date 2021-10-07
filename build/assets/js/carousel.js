@@ -9,20 +9,33 @@ showSlides(slideIndex);
 
 function showSlides(n){    
     let i; 
+
+    // document.getElementById : returns HTML collection(items can be referred with name, id, index)
+    // document.querySelectorAll : returns NodeList(items only can be referred with index)
     const slides = document.querySelectorAll(".artwork-item");
     const bars = document.querySelectorAll(".bar"); 
 
     if (n > slides.length) { slideIndex = 1; }
-    if (n < slides.length) { }
+    if (n < 1) { slideIndex = slides.length; }
 
+    for (i = 0; i < slides.length; i++ ) { 
+        slides[i].style.display = 'none';
+    }
+
+    // for ( i = 0; i < bars.length; i++ ) { 
+    //     bars[i].className = bars[i].className.replace(" active", ""); 
+    // }
+
+    slides[slideIndex-1].style.display = "block"; 
 }
 
 function plusSlide(number){
-    console.log(`${first_bar} + ${number}`);
+    showSlides( slideIndex += number );
 }
 
 function currentSlide(number){
-
+    slideIndex = number; 
+    showSlides(slideIndex); 
 }
 
 // const userItems = document.querySelector(".user-items"); 
