@@ -12,7 +12,7 @@ function showSlides(n){
 
     // document.getElementById : returns HTML collection(items can be referred with name, id, index)
     // document.querySelectorAll : returns NodeList(items only can be referred with index)
-    const slides = document.querySelectorAll(".artwork-item");
+    const slides = document.querySelectorAll(".artwork");
     const bars = document.querySelectorAll(".bar"); 
 
     if (n > slides.length) { slideIndex = 1; }
@@ -22,11 +22,13 @@ function showSlides(n){
         slides[i].style.display = 'none';
     }
 
-    // for ( i = 0; i < bars.length; i++ ) { 
-    //     bars[i].className = bars[i].className.replace(" active", ""); 
-    // }
+    for ( i = 0; i < bars.length; i++ ) { 
+        bars[i].className = bars[i].className.replace(" clicked", ""); 
+        console.log(bars[i].className)
+    }
 
-    slides[slideIndex-1].style.display = "block"; 
+    slides[slideIndex-1].style.display = "block";
+    bars[slideIndex-1].className += " clicked";
 }
 
 function plusSlide(number){
