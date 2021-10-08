@@ -113,8 +113,8 @@ a:hover {
     }
 
     .bars { 
-        display: block;
-        margin-top: 10px;
+        position: absolute;
+        left: 42%;
     }
 
     .bar { 
@@ -123,34 +123,35 @@ a:hover {
         height: 10px;
         width: 30px;
         background-color: azure;
-        transition: background-color 0.5s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
         border: 0;
-        margin: 0px 1px;
+        margin: 0px 0.5em;
         /* box-shadow: 1px 1px #222; */
     }
 
-    .bar:hover { 
-        background-color: bisque;
+    .clicked, .bar:hover { 
+        background-color: #FFB6C1;
     }
 
-    .carousel { 
+    .artworks { 
         /* max-width: 1000px; */
         position: relative;
         margin: auto; /* margin will be calculated based on parent element */
+        height: 30vh;
     }
 
-    .artwork-item { 
+    .artwork { 
         display: none;
         width: 100%;
-        height: 25vh;
+        /* height: 30vh; */
     }
 
-    .artwork-item img { 
+    .artwork img { 
         /* Use percentage unit to make layout flexible. Setting width 100% makes child width size 
         parent width one. In box model, setting width/height 100% means that they are relatively 
         resized compared to parent element. */
         width: 100%;
-        height: 500px;
+        height: 300px;
 
         /* Adjusting image size in container using object-fit property : setting width/height
         and set object-fit to 'cover' to keep the width/height's ratio 
@@ -164,10 +165,10 @@ a:hover {
         position: absolute;
         top: 50%;
         width: auto;
-
         /* setting one unit for padding/margin means -> set the same 
         unit in top, right, bottom, left. */
         padding: 10px;
+        margin-top: 35px;
         color: white;
         font-weight: bold;
         border-radius: 50%;
