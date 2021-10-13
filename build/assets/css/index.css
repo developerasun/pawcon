@@ -137,7 +137,7 @@ a:hover {
         /* max-width: 1000px; */
         position: relative;
         margin: auto; /* margin will be calculated based on parent element */
-        height: 30vh;
+        height: minmax(200px auto);
     }
 
     .artwork { 
@@ -151,13 +151,13 @@ a:hover {
         parent width one. In box model, setting width/height 100% means that they are relatively 
         resized compared to parent element. */
         width: 100%;
-        height: 300px;
+        height: 50vh;
 
         /* Adjusting image size in container using object-fit property : setting width/height
         and set object-fit to 'cover' to keep the width/height's ratio 
         object-fit: fill/contain/cover/none/scale-down
         */
-        object-fit: cover; /* similar to background-image: cover; */ 
+        /*object-fit: cover;  similar to background-image: cover; */ 
     }
 
     .prev, .next { 
@@ -208,11 +208,51 @@ a:hover {
         }
     }
 
-    .footer{
+    .user-canvas { 
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: minmax(200px auto);
+        margin: 5em 5em;
+    }
+
+    .user-image-container { 
+        grid-column: 1/6;
+        grid-row: auto;
+        max-width: minmax(500px auto);
+    }
+
+    .user-image-container img { 
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .user-image-description {
+        grid-column: 7/13;
+        grid-row: auto;
+        align-self: center;
+    }
+
+    .weekly-tops { 
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
+        justify-content: space-between;
+    }
+
+    .item { 
+        text-align: center;
+    }
+
+    .item img { 
+        max-width: 500px;
+        height: auto;
+    }
+
+    .footer{
+        display: fixed;
+        /* justify-content: center;
+        align-items: center; */
+        text-align: center;
+        position: relative;
         bottom: 0;
         width: 100%;
         height: 40px;
