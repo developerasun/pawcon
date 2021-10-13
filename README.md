@@ -30,12 +30,33 @@ Main service feature of Meow Canvas is like below
 
 # Project schedule
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
-<ol>
-<li> Section 1 - (2021.10.01 ~ 2022.12.31, 3 month) : Web front end development, payment -> linking to backend database </li>
-<li> Section 2 - (2022.01.01 ~ 2022.03.31, 3 month) : NFT smart contract, blockchain selection -> linking to the web </li>
-<li> Section 3 - (2022.04.01 ~ 2022.07.31, 4 month) : Machine learning image similarity, database & cloud server selection -> linking to the web </li>
-<li> Section 4 - (2022.08.01 ~ 2022.12.31, 5 month) : Launch and maintenance -> monetization </li>
-</ol>
+Business proposal will be updeated on a regualr basis depending on the project's progress.
+
+### Section 1 - Front End
+<li> Goal : developing responsive web application screen </li> 
+<li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) </li>
+<li> What : HTML, CSS, Javascript </li>
+
+### Section 2 - Backend
+<li> Goal : (will be added) </li>
+<li> Timeline :3 month (2022.01.01 ~ 2022.03.31)  </li>
+<li> What : MongoDB/MariaDB, Web server, AWS/Firebase </li>
+
+### Section 3 - Blockchain
+<li> Goal : developing and deploying smart contract </li>
+<li> Timeline : 2022.04.01 ~ 2022.07.31, 4 month </li>
+<li> What : Smart contract, Polygon network </li>
+
+### Section 4 - Artificial Intelligence
+<li> Goal : (will be added) </li>
+<li> Timeline : 5 month (2022.08.01 ~ 2022.12.31) </li>
+<li> What : Image similiarity, random image generation </li>
+
+### Section 5 - Launch And Maintenance 
+<li> Goal : (will be added) </li>
+<li> Timeline : ? (2023.01.01 ~ ) </li>
+<li> What :  (will be added) </li>
+
 <br/>
 
 ## Tech details
