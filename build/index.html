@@ -10,54 +10,55 @@
 </head>
 
 <body>
-    <!-- Header: navigation bar -->
-    <header class="header" id="header">
-        <nav class="navigation">
-            <div class="logo">
-                <span>Meow Canvas</span>
-                <!-- <img src="" alt=""/> -->
-            </div>
-            <div class="navbar" id="navbar">
-                <div class="navbar-item">
-                    <a href="assets/pages/paintbrush.html">
-                        <span>PaintBrush</span>
-                    </a>
-                </div>
-                <div class="navbar-item">
-                    <a href="assets/pages/nft.html">
-                    <span>Issue NFT</span>
-                    </a>
-                </div>
-                <div class="navbar-item">
-                    <a href="assets/pages/ranking.html">
-                    <span>Ranking</span>
-                    </a>
-                </div>
-                <div class="navbar-item">
-                    <a href="assets/pages/about.html">
-                    <span>About</span>
-                    </a>    
-                </div>
-                <div class="navbar-item">
-                    <a href="assets/pages/contact.html">
-                    <span>Contact</span>
-                    </a>
-                </div>
-            </div>
-            <div class="login-menu">
-                <button class="login">Login</button>
-                <button class="sign-up">Sign up</button>
-            </div>
 
-            <!-- trigger: when triggered, elements in mobile environment either 
-            pops up or gone  -->
-            <a href="#" id="trigger">MENU</a>
+        <!-- Header: navigation bar -->
+        <header class="header" id="header">
+            <nav class="navigation">
+                <div class="logo">
+                    <span>Meow Canvas</span>
+                    <!-- <img src="" alt=""/> -->
+                </div>
+                <div class="navbar" id="navbar">
+                    <div class="navbar-item">
+                        <a href="assets/pages/paintbrush.html">
+                            <span>PaintBrush</span>
+                        </a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="assets/pages/nft.html">
+                        <span>Issue NFT</span>
+                        </a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="assets/pages/ranking.html">
+                        <span>Ranking</span>
+                        </a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="assets/pages/about.html">
+                        <span>About</span>
+                        </a>    
+                    </div>
+                    <div class="navbar-item">
+                        <a href="assets/pages/contact.html">
+                        <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="login-menu">
+                    <button class="login">Login</button>
+                    <button class="sign-up">Sign up</button>
+                </div>
 
-        </nav>
-        
-    </header>
+                <!-- trigger: when triggered, elements in mobile environment either 
+                pops up or gone  -->
+                <a href="#" id="trigger">MENU</a>
 
-    <!-- Logined-user artwork : image slider -->
+            </nav>
+            
+        </header>
+
+        <!-- promotion img : image slider -->
         <div class="artworks carousel">
             <div class="artwork fade"><img src="assets/img/2.jpg" alt="cat"/></div>
             <div class="artwork fade"><img src="assets/img/3.jpg" alt="cat"/></div>
@@ -69,6 +70,7 @@
             <a class="prev" onclick="plusSlide(-1)"><p>&#9664;</p></a>
             <a class="next" onclick="plusSlide(1)"><p>&#9654;</p></a>
 
+            <!-- the bars : image slider bottom -->
             <div class="bars">
                 <button class="bar" onclick="currentSlide(1)"></button>
                 <button class="bar" onclick="currentSlide(2)"></button>
@@ -77,34 +79,57 @@
             </div>
         </div>
 
-        <!-- the bars : image slider bottom -->
-        
-
-        
-
-    <!-- Weekly top artwork : CSS grid layout model - wrapper and items -->
-    <div class="weekly-top">
-        <div class="top-items">
-            <h2>Weekly top cat drawings</h2>
-            <div class="top-artwork">top 1</div>
-            <div class="top-artwork">top 2</div>
-            <div class="top-artwork">top 3</div>
+        <!-- User canvas : CSS grid layout model - wrapper and items -->
+        <div class="user-canvas">
+            <div class="user-image-container">
+                <img src="assets/img/2.jpg" alt="artwork">
+            </div>
+            <div class="user-image-description">
+                <h2>Your Canvas</h2>
+                <li>
+                    <span>Description</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, molestiae!</p>
+                </li>
+                <li>
+                    <span>Author</span>
+                    <p>Impedit aliquid reprehenderit culpa vel ullam ad fugiat magni id.</p>
+                </li>
+                <li>
+                    <span>Bidding</span>
+                    <p>Eos commodi similique laudantium placeat maiores recusandae labore nam libero!</p>
+                </li>
+            </div>
         </div>
-    </div>
 
-    <!-- Recommended canvas templates to trace -->
-    <div class="canvas-template">
-        <div class="template-items">
-            <h2>Templates to trace and practice</h2>
-            <div class="template-item">template 1</div>
-            <div class="template-item">template 2</div>
-            <div class="template-item">template 3</div>
+        <!-- Recommended canvas templates to trace -->
+        <h2>Weekly Top</h2>
+        <div class="weekly-tops">
+                <div class="item">
+                    <img src="assets/img/2.jpg" alt="">
+                    <h3>Main</h3>
+                        <li>1 of 3</li>
+                        <li>2 of 3</li>
+                        <li>3 of 3</li>
+                </div>
+                <div class="item">
+                    <img src="assets/img/2.jpg" alt="">
+                    <h3>Main</h3>
+                        <li>1 of 3</li>
+                        <li>2 of 3</li>
+                        <li>3 of 3</li>
+                </div>
+                <div class="item">
+                    <img src="assets/img/2.jpg" alt="">
+                    <h3>Main</h3>
+                        <li>1 of 3</li>
+                        <li>2 of 3</li>
+                        <li>3 of 3</li>
+                </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="footer-content">Copyright© 2021. DeveloperAsun. All rights reserved.</div>
-    </footer>
+        <footer class="footer">
+            <div class="footer-content">Copyright© 2021. DeveloperAsun. All rights reserved.</div>
+        </footer>
 
     <!-- Jquery should be declared first - otherwise it will cause an uncaught 
     reference error. -->
