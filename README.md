@@ -1,7 +1,8 @@
 <img src = https://img.shields.io/badge/NFT-Blockchain-blue></a>
-<img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a>
+<img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a><br/>
 
 # What is Meow Canvas?
+### *This is a ongoing project that is actively being updated*
 [See Demo](https://meowcanvas.netlify.app/) <br/> 
 [See Business Proposal](https://docs.google.com/presentation/d/1IHb0xbrq-HqN_qfFg0-nPBrZMRjabtDE4lY-neMKXoI/edit?usp=sharing) <br/>
 ![logo](https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png)
