@@ -1,22 +1,17 @@
 <img src = https://img.shields.io/badge/NFT-Blockchain-blue></a>
-<img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a>
+<img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a><br/>
 
-# Brainstorming for web service
-- Changing subject to more wider range that provides a few different sections for cat owners. For example, 
-<ul>
-    <li> NFT marketplace - meowCanvas </li>
-    <li> Weight tracker for feline obesity - noTummy </li>
-    <li> Cat supply recommendation (affiliate) -forMeows </li>
-</ul>
-<br/>
+# What is Meow Canvas?
+### *This is a ongoing project that is actively being updated*
+[See Demo](https://meowcanvas.netlify.app/) <br/> 
+[See Business Proposal](https://docs.google.com/presentation/d/1IHb0xbrq-HqN_qfFg0-nPBrZMRjabtDE4lY-neMKXoI/edit?usp=sharing) <br/>
+![logo](https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png)
 
-# What is Meow Canvas?  
-[See Demo](https://meowcanvas.netlify.app/) <br/>
-[See Business Proposal](https://docs.google.com/presentation/d/1IHb0xbrq-HqN_qfFg0-nPBrZMRjabtDE4lY-neMKXoI/edit?usp=sharing)
-
+<p>
 Meow canvas is a web service project that is <b>dedicated to all the cat lovers in github.</b> It targets to provide a virtual playground for cat owners so that they can share and show off their lovely cats by exploiting technologies like <b>NFT, machine learning.</b>    
-<br/>
+</p>
 
+<p>
 Main service feature of Meow Canvas is like below
 <ul>
     <li> Upload your cat photo and draw your cat as you wish(2D, 3D) </li>
@@ -26,7 +21,7 @@ Main service feature of Meow Canvas is like below
     <li> Compare image similiarity between your photo and drawing </li>
     <li> Find out your ranking and increase it by resubmitting! </li>
 </ul>
-<br/>
+</p>
 
 # Project schedule
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
@@ -57,16 +52,13 @@ Business proposal will be updeated on a regualr basis depending on the project's
 <li> Timeline : ? (2023.01.01 ~ ) </li>
 <li> What :  (will be added) </li>
 
-<br/>
-
 ## Tech details
 - Language : HTML, CSS, Javascript, Python, Solidity, Go
 - Framework : (will be added)
 - Library : (will be added)
-<br/>
 
-## Code example 1 : Javascript 
-if you are an adventurous soul, please do refer to below codes
+# Code example 1 : Javascript 
+simple slideToggle function in Javascript
 
 ``` Javascript:slideToggle.js
 const trigger = document.querySelector("#trigger");
@@ -96,7 +88,8 @@ trigger.addEventListener("click", triggerOn);
 
 ```
 
-## Code example 2 : CSS
+# Code example 2 : CSS
+CSS for responsive web 
 ``` CSS: index.css
 .navigation #trigger {
     display: block;
@@ -134,7 +127,15 @@ trigger.addEventListener("click", triggerOn);
     }
 ```
 
-<br/>
+# Brainstorming for web service
+<p>
+- Changing subject to more wider range that provides a few different sections for cat owners. For example, 
+<ul>
+    <li> NFT marketplace - meowCanvas </li>
+    <li> Weight tracker for feline obesity - noTummy </li>
+    <li> Cat supply recommendation (affiliate) -forMeows </li>
+</ul>
+</p>
 
 ## Creator 
 Jake Sung
@@ -143,25 +144,26 @@ Jake Sung
 <br/>
 
 ## Contact
+[![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
+[KakaoTalk Open Chat](https://open.kakao.com/o/giViVoCd)
+<p>
 This is a open project that everyone interested can join in. Simply email me like below and then we will work it together. 
 Note that it is not 'developerasun@gmail.com', but 'designerasun@gmail.com'. 
+</p>
 
 ``` 
 To designerasun@gmail.com 
 I like cat. So count me in.
 From cuteLoaf@meow.com
 ```
-<br/>
-
-[![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
-[KakaoTalk Open Chat](https://open.kakao.com/o/giViVoCd)
-<br/>
 
 ## Contributor
+<p>
 - detail will be added
-<br/>
-
+</p>
+    
 ## License 
-Copyright © 2021 [Jake Sung](https://github.com/developerasun) <br/>
-This project is MIT-licensed.
+This project is MIT-licensed. <br/>
+Copyright © 2021 [Jake Sung](https://github.com/developerasun) 
+
 
