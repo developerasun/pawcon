@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- for SEO -->
+    <meta name="description"
+          content="NFT marketplace for cat drawings">
+    <meta name="keywords"
+          content="nft, digital art, drawing, painting, cat art, cat lover">
+
     <link rel="stylesheet" href="./assets/css/index.css">
     
     <title>Meow Canvas</title>
@@ -15,8 +22,7 @@
         <header class="header" id="header">
             <nav class="navigation">
                 <div class="logo">
-                    <span>Meow Canvas</span>
-                    <!-- <img src="" alt=""/> -->
+                    <a href="https://meowcanvas.netlify.app/"><img src="assets/img/logo/logo.png" alt="logo"/></a>
                 </div>
                 <div class="navbar" id="navbar">
                     <div class="navbar-item">
@@ -46,16 +52,15 @@
                     </div>
                 </div>
                 <div class="login-menu">
-                    <button class="login">Login</button>
-                    <button class="sign-up">Sign up</button>
+                    <button class="login"><a href="assets/pages/login.html">Login</a></button>
+                    <button class="sign-up"><a href="assets/pages/login.html">Sign up</a></button>
                 </div>
 
                 <!-- trigger: when triggered, elements in mobile environment either 
                 pops up or gone  -->
                 <a href="#" id="trigger">MENU</a>
 
-            </nav>
-            
+            </nav> 
         </header>
 
         <!-- promotion img : image slider -->
@@ -128,7 +133,23 @@
         </div>
 
         <footer class="footer">
-            <div class="footer-content">Copyright© 2021. DeveloperAsun. All rights reserved.</div>
+            <div class="footer-info">
+                <ul>
+                    <li class="creator">
+                        <span>Project leader: Jake Sung</span>
+                        <span>Location: Daegu, South Korea</span>
+                        <span>Contact: designerasun@gmail.com</span>
+                    </li>
+                    <li class="copyright"><span>Copyright© 2021 DEVELOPERASUN All rights reserved</span></li>
+                </ul>
+                </div>
+            <div class="footer-social">
+                <ul>
+                    <li>Github</li>
+                    <li>Instagram</li>
+                    <li>Pinterest</li>
+                </ul>
+            </div>
         </footer>
 
     <!-- Jquery should be declared first - otherwise it will cause an uncaught 
