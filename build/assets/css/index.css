@@ -31,9 +31,11 @@ a:hover {
 
 .logo, 
 .navbar,
-.login-menu  { 
+.login-menu,
+.carousel,
+.footer { 
     display: none;
-    height: auto;
+    /* height: auto; */
 }
 
 .navbar-item { 
@@ -46,15 +48,47 @@ a:hover {
 }
 
 .navigation #trigger {
-    display: block;
-    /* position: fixed; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
     background-color: #eee;
     color: black;
+    font-weight:bold;
+    padding-left: 10px;
     width: 100%;
     height: 40px;
-    text-align: left;
 }
 
+/* mobile layout section 1 : Your Canvas */
+.user-image-container { 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(200px, auto);
+    max-width: minmax(600px auto);
+    margin: 2em;
+}
+
+.user-img-first { 
+    grid-column: 1/7;
+    grid-row: auto;
+}
+
+.user-img-second { 
+    grid-column: 7/13;
+    grid-row: auto;
+}
+
+.user-image-container img { 
+    width: 100%;
+    height:200px;
+    object-fit: cover;
+}
+
+
+/* mobile layout section 2 : Weekly Tops */
+
+
+/* Javascript-linked CSSs */
 .hidden { 
     display: none;
     /* transition: linear .5s; */
@@ -67,7 +101,7 @@ a:hover {
     line-height: 40px;
 }
 
-/* media query : PC size */
+/* PC layout sections using media query*/
 @media screen and (min-width:721px) {
 
     .navigation {
@@ -80,10 +114,18 @@ a:hover {
         background-color:lightpink;
     }
 
-    .logo, 
+    .logo,
     .login-menu { 
         display: block;
         width: 200px;
+    }
+
+    .logo img { 
+        position: relative;
+        left: 0;
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
     }
 
     #navbar {
@@ -108,6 +150,7 @@ a:hover {
         border-right: 0;
     }
 
+    .img-m,
     .navigation #trigger { 
         display: none;
     }
@@ -248,15 +291,29 @@ a:hover {
     }
 
     .footer{
-        display: fixed;
+        display: grid;
+        grid-template-columns:repeat(12, 1fr);
+        grid-template-rows: minmax(60px, auto);
         /* justify-content: center;
         align-items: center; */
         text-align: center;
         position: relative;
         bottom: 0;
         width: 100%;
-        height: 40px;
-        background-color:lightcoral;
+        height: auto;
+        background-color:lightpink;
+    }
+
+    .footer-info { 
+        grid-column: 1/8;
+        text-align: left;
+        margin-left: 50px;
+    }
+    
+    .footer-social { 
+        grid-column: 8/13;
+        text-align: right;
+        margin-right: 50px;
     }
 
 }
