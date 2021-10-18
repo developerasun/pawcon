@@ -58,7 +58,10 @@
 
                 <!-- trigger: when triggered, elements in mobile environment either 
                 pops up or gone  -->
-                <a href="#" id="trigger"><span>MENU</span></a>
+                <a href="#" id="trigger">
+                    <span>MENU</span>
+                    <img src="assets/icon/flaticon/burger-menu.png" alt="menu icon" id="menu-icon"/>
+                </a>
 
             </nav> 
         </header>
@@ -86,9 +89,11 @@
 
         <!-- User canvas : CSS grid layout model - wrapper and items -->
         <div class="user-canvas">
-            <div class="user-image-container">
+            <div class="user-image-container scroller-m">
                 <img src="assets/img/2.jpg" class="user-img-first" alt="artwork-first"/>
                 <img src="assets/img/3.jpg" class="user-img-second img-m" alt="artwork-second"/>
+                <img src="assets/img/3.jpg" class="user-img-third img-m" alt="artwork-third"/>
+                <img src="assets/img/3.jpg" class="user-img-fourth img-m" alt="artwork-fourth"/>
             </div>
             <div class="user-image-description">
                 <h2>Your Canvas</h2>
@@ -109,7 +114,7 @@
 
         <!-- Recommended canvas templates to trace -->
         <h2>Weekly Top</h2>
-        <div class="weekly-tops">
+        <div class="weekly-tops weekly-img-container scroller-m">
                 <div class="item">
                     <img src="assets/img/2.jpg" alt="">
                     <h3>Main</h3>
