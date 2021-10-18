@@ -49,44 +49,60 @@ a:hover {
 
 .navigation #trigger {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     background-color: #eee;
     color: black;
     font-weight:bold;
-    padding-left: 10px;
+    padding: 0 10px;
     width: 100%;
     height: 40px;
 }
 
-/* mobile layout section 1 : Your Canvas */
-.user-image-container { 
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(200px, auto);
-    max-width: minmax(600px auto);
-    margin: 2em;
-}
-
-.user-img-first { 
-    grid-column: 1/7;
-    grid-row: auto;
-}
-
-.user-img-second { 
-    grid-column: 7/13;
-    grid-row: auto;
-}
-
-.user-image-container img { 
-    width: 100%;
-    height:200px;
+#trigger img { 
+    width: auto;
+    height: 50%;
     object-fit: cover;
 }
 
+/* mobile layout section 1 : Your Canvas */
+.user-canvas { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-image-container { 
+    max-width: minmax(600px auto);
+    margin: 2rem;
+}
+
+.user-image-container img { 
+    width: 50%;
+    height:200px;
+    padding-right: 0.5rem;
+    object-fit: cover;
+}
+
+.scroller-m {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
 
 /* mobile layout section 2 : Weekly Tops */
+.weekly-img-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: minmax(600px auto);
+}
 
+.weekly-img-container .item img {
+    width: 80%;
+    margin: 1rem;
+}
 
 /* Javascript-linked CSSs */
 .hidden { 
@@ -274,20 +290,6 @@ a:hover {
         grid-column: 7/13;
         grid-row: auto;
         align-self: center;
-    }
-
-    .weekly-tops { 
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .item { 
-        text-align: center;
-    }
-
-    .item img { 
-        max-width: 500px;
-        height: auto;
     }
 
     .footer{
