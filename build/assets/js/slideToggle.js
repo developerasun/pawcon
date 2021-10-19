@@ -1,6 +1,7 @@
-
 const trigger = document.querySelector("#trigger");
 const navbar = document.querySelector(".navbar"); 
+const menu_icon = document.querySelector("#trigger .menu-icon");
+const menuText = document.createElement("span");
 
 const TRIGGER_MENU = "MENU";
 const TRIGGER_HIDE = "HIDE"; 
@@ -10,20 +11,22 @@ const CLASS_INACTIVE = "hidden";
 function triggerOn(event) { 
     event.preventDefault();
 
-    if (trigger.innerHTML === TRIGGER_MENU) {
-        console.log("tirgger clicked")
-        trigger.innerHTML = TRIGGER_HIDE;
+    if (menuText.innerHTML  === TRIGGER_MENU) {
+        console.log("tirgger clicked"); 
+        menuText.innerHTML = TRIGGER_HIDE;
         
         navbar.classList.add(CLASS_ACITVE); 
 
     } else { 
         console.log("trigger clicked again");
-        trigger.innerHTML = TRIGGER_MENU;
+        menuText.innerHTML = TRIGGER_MENU;
         navbar.classList.remove(CLASS_ACITVE);
         navbar.classList.add(CLASS_INACTIVE);
     }
 }
 
+menuText.innerHTML = TRIGGER_MENU;
+trigger.prepend(menuText);
 trigger.addEventListener("click", triggerOn);
 
 
