@@ -5,7 +5,7 @@
 ### *This is a ongoing project that is actively being updated*
 [See Demo](https://meowcanvas.netlify.app/) <br/> 
 [See Business Proposal](https://docs.google.com/presentation/d/1IHb0xbrq-HqN_qfFg0-nPBrZMRjabtDE4lY-neMKXoI/edit?usp=sharing) <br/>
-![logo](https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png)
+<img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
 Meow canvas is a web service project that is <b>dedicated to all the cat lovers in github.</b> It targets to provide a virtual playground for cat owners so that they can share and show off their lovely cats by exploiting technologies like <b>NFT, machine learning.</b>    
@@ -122,16 +122,6 @@ CSS for responsive web
     }
 ```
 
-# Brainstorming for web service
-<p>
-- Changing subject to more wider range that provides a few different sections for cat owners. For example, 
-<ul>
-    <li> NFT marketplace - meowCanvas : selling NFTs </li>
-    <li> Weight tracker for feline obesity - noTummy : SaaS subscription added </li>
-    <li> Cat supply recommendation -forMeows : affiliate marketing </li>
-</ul>
-</p>
-
 ## Creator 
 Jake Sung
 - Github: [@developerasun](https://github.com/developerasun)
@@ -150,6 +140,11 @@ Note that it is not 'developerasun@gmail.com', but 'designerasun@gmail.com'.
 To designerasun@gmail.com 
 I like cat. So count me in.
 From cuteLoaf@meow.com
+
+Topics for brainstroming - for example,  
+ - NFT marketplace - meowCanvas : selling NFTs 
+ - Weight tracker for feline obesity - noTummy : SaaS subscription added 
+ - Cat supply recommendation -forMeows : affiliate marketing 
 ```
 
 ## Contributor
