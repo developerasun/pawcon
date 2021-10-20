@@ -27,37 +27,47 @@ Main service feature of Meow Canvas is like below
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
 Business proposal will be updeated on a regualr basis depending on the project's progress.
 
-### Section 1 - Front End
+### Section 1 - Front End : Meow Canvas Ver 1.0.2
 <li> Goal : developing responsive web/mobile screen </li> 
 <li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) </li>
 <li> What : HTML & CSS : 2 month, Javascript : 2 month </li>
 
-### Section 2 - Backend
+### Section 2 - Backend : Meow Canvas Ver 1.1.0
 <li> Goal : developing web server, creating database tables, connecting the database with front end </li>
 <li> Timeline :3 month (2022.01.01 ~ 2022.03.31)  </li>
 <li> What : Node.js : 3 month, MongoDB/MariaDB : 1 month </li>
 
-### Section 3 - Blockchain
+### Section 3 - Blockchain : Meow Canvas Ver 1.2.0
 <li> Goal : developing smart contract, linking to Ethereum blockchain  </li>
 <li> Timeline : 4 month (2022.04.01 ~ 2022.07.31) </li>
 <li> What : Go/Solidity : 2 month, Wallet, Smart contract, Truffle, Ganache/Geth, Docker </li>
 
-### Section 4 - Artificial Intelligence
+### Section 4 - Artificial Intelligence : Meow Canvas Ver 1.3.0
 <li> Goal : comparing image similiarity, generating random images for NFT with machine learning </li>
 <li> Timeline : 5 month (2022.08.01 ~ 2022.12.31) </li>
 <li> What : Python : 3 month, Tensorflow, Keras, Docker, AWS/Firebase </li>
 
-### Section 5 - Launch And Maintenance 
+### Section 5 - Launch And Maintenance : Meow Canvas Ver ?.?.?
 <li> Goal : subscription business that makes $1K per month </li>
 <li> Timeline : 2 years (2023.01.01 ~ 2025.12.31) </li>
 <li> What :  web : deployment, server, domain </li>
 
-# Code example 1 : Javascript 
+## Target Output lists
+### Front end
+[Toonize](https://www.toonize.me/) <br/>
+[CDG's portfolio](https://cdg-portfolio.com/) <br/>
+[Jeky22](https://www.jeky22.com/) <br/>
+[Kije Park](https://kijepark.com/#Home) <br/>
+
+
+# Code example - Javascript 
 simple slideToggle function in Javascript
 
 ``` Javascript:slideToggle.js
 const trigger = document.querySelector("#trigger");
 const navbar = document.querySelector(".navbar"); 
+const menu_icon = document.querySelector("#trigger .menu-icon");
+const menuText = document.createElement("span");
 
 const TRIGGER_MENU = "MENU";
 const TRIGGER_HIDE = "HIDE"; 
@@ -67,60 +77,25 @@ const CLASS_INACTIVE = "hidden";
 function triggerOn(event) { 
     event.preventDefault();
 
-    if (trigger.innerHTML === TRIGGER_MENU) {
-        console.log("tirgger clicked")
-        trigger.innerHTML = TRIGGER_HIDE;
+    if (menuText.innerHTML  === TRIGGER_MENU) { 
+        menuText.innerHTML = TRIGGER_HIDE;
+        debugger;
         navbar.classList.add(CLASS_ACITVE); 
+
     } else { 
-        console.log("trigger clicked again");
-        trigger.innerHTML = TRIGGER_MENU;
+        menuText.innerHTML = TRIGGER_MENU;
         navbar.classList.remove(CLASS_ACITVE);
+        debugger;
         navbar.classList.add(CLASS_INACTIVE);
     }
 }
 
+menuText.innerHTML = TRIGGER_MENU;
+trigger.prepend(menuText);
 trigger.addEventListener("click", triggerOn);
 
 ```
 
-# Code example 2 : CSS
-CSS for responsive web 
-``` CSS: index.css
-.navigation #trigger {
-    display: block;
-    /* position: fixed; */
-    background-color: #eee;
-    color: black;
-    width: 100%;
-    height: 40px;
-    text-align: left;
-}
-
-.hidden { 
-    display: none;
-    /* transition: linear .5s; */
-}
-
-.active { 
-    display: block;
-    width: 100%;
-    height: auto;
-    line-height: 40px;
-}
-
-/* media query : PC size */
-@media screen and (min-width:721px) {
-
-    .navigation {
-        display: flex;
-        /* position: fixed; */
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        height: 60px;
-        background-color:lightpink;
-    }
-```
 
 ## Creator 
 Jake Sung
