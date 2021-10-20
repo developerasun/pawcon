@@ -11,16 +11,15 @@ const CLASS_INACTIVE = "hidden";
 function triggerOn(event) { 
     event.preventDefault();
 
-    if (menuText.innerHTML  === TRIGGER_MENU) {
-        console.log("tirgger clicked"); 
+    if (menuText.innerHTML  === TRIGGER_MENU) { 
         menuText.innerHTML = TRIGGER_HIDE;
-        
+        debugger;
         navbar.classList.add(CLASS_ACITVE); 
 
     } else { 
-        console.log("trigger clicked again");
         menuText.innerHTML = TRIGGER_MENU;
         navbar.classList.remove(CLASS_ACITVE);
+        debugger;
         navbar.classList.add(CLASS_INACTIVE);
     }
 }
