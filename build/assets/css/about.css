@@ -1,0 +1,26 @@
+
+#profile { 
+    width: 500px;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    margin: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem black;
+    
+}
+
+#profile:hover { 
+    transform: translateY(-0.5rem);
+    background-color: aqua;
+}
+
+#multi-column-p { 
+    column-count: 3;
+    column-width: 300px;
+}
+
+.column-slogan {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    column-span: all;
+}
