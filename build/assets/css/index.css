@@ -11,7 +11,6 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* height: 100vh; */
   } 
 
 a {
@@ -32,7 +31,7 @@ a:hover {
 .logo, 
 .navbar,
 .login-menu,
-.carousel,
+.artworks,
 .footer { 
     display: none;
     /* height: auto; */
@@ -201,9 +200,11 @@ a:hover {
     }
 
     .artworks { 
-        /* max-width: 1000px; */
+        max-width: 1000px;
+        display: block;
         position: relative;
-        margin: auto; /* margin will be calculated based on parent element */
+        /* margin auto:  will be calculated based on parent element */
+        margin: 1rem auto; 
         height: minmax(200px auto);
     }
 
@@ -306,13 +307,13 @@ a:hover {
         margin: 2rem auto;
     }
 
+    /* fix footer issue when screen size is around table-width */
     .footer{
         display: grid;
         grid-template-columns:repeat(12, 1fr);
         grid-template-rows: minmax(60px, auto);
-        /* justify-content: center;
-        align-items: center; */
-        text-align: center;
+        justify-content: center;
+        align-items: center;
         position: relative;
         bottom: 0;
         width: 100%;
