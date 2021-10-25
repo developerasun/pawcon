@@ -24,3 +24,51 @@
     font-weight: bolder;
     column-span: all;
 }
+
+.container-project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(200px, auto);
+    font-size: 3rem;
+    font-weight: bold;
+    list-style-type: none;
+    text-align: center;
+}
+
+.container-project li {
+    transition: all 0.5s;
+}
+
+.item-first { 
+    grid-column: 1/4;
+    background-color: antiquewhite;
+    filter: blur(0.2rem);
+}
+
+.item-first:hover {
+    filter: blur(0rem);
+}
+
+.item-second {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    background-color: aquamarine;
+}
+
+.item-third { 
+    grid-column: 2/4;
+    grid-row: 2/5;
+    background-color: lightcoral;
+}
+
+.item-fourth { 
+    grid-column: 1/3;
+    grid-row: 4/6;
+    background-color: lightgreen;
+}
+
+.item-fifth { 
+    grid-column: 3/4;
+    grid-row: 4/6;
+    background-color: lightgrey;
+}
