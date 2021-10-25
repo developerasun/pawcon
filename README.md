@@ -27,28 +27,39 @@ Main service feature of Meow Canvas is like below
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
 Business proposal will be updeated on a regualr basis depending on the project's progress.
 
-### Section 1 - Front End : Meow Canvas Ver 1.0.2
+## Workflow
+<ol>
+    <li>Market research and plannning</li>
+    <li>Service/product brainstorming</li>
+    <li>Marketing/Branding concept</li>
+    <li>Wireframe</li>
+    <li>Front end coding</li>
+    <li>Backend coding</li>
+    <li>Launch and maintenance</li>
+</ol>
+
+## Section 1 - Front End : Meow Canvas Ver 1.0.2
 <li> Goal : developing responsive web/mobile screen </li> 
 <li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) </li>
 <li> What : HTML & CSS : 2 month, Javascript : 2 month </li>
 
-### Section 2 - Backend : Meow Canvas Ver 1.1.0
+## Section 2 - Backend : Meow Canvas Ver 1.1.0
 <li> Goal : developing web server, creating database tables, connecting the database with front end </li>
 <li> Timeline :3 month (2022.01.01 ~ 2022.03.31)  </li>
 <li> What : Node.js : 3 month, MongoDB/MariaDB : 1 month </li>
 
-### Section 3 - Blockchain : Meow Canvas Ver 1.2.0
-<li> Goal : developing smart contract, linking to Ethereum blockchain  </li>
+## Section 3 - Blockchain : Meow Canvas Ver 1.2.0
+<li> Goal : developing smart contract, linking to (Klaytn/Ethereum/Polygon) blockchain  </li>
 <li> Timeline : 4 month (2022.04.01 ~ 2022.07.31) </li>
-<li> What : Go/Solidity : 2 month, Wallet, Smart contract, Truffle, Ganache/Geth, Docker </li>
+<li> What : Go/Solidity : 2 month, Wallet, Smart contract, testnet/Mainnet, Truffle, Ganache/Geth, Docker </li>
 
-### Section 4 - Artificial Intelligence : Meow Canvas Ver 1.3.0
+## Section 4 - Artificial Intelligence : Meow Canvas Ver 1.3.0
 <li> Goal : comparing image similiarity, generating random images for NFT with machine learning </li>
 <li> Timeline : 5 month (2022.08.01 ~ 2022.12.31) </li>
 <li> What : Python : 3 month, Tensorflow, Keras, Docker, AWS/Firebase </li>
 
-### Section 5 - Launch And Maintenance : Meow Canvas Ver ?.?.?
-<li> Goal : subscription business that makes $1K per month </li>
+## Section 5 - Launch And Maintenance : Meow Canvas Ver ?.?.?
+<li> Goal : subscription business that makes at least $1K per month </li>
 <li> Timeline : 2 years (2023.01.01 ~ 2025.12.31) </li>
 <li> What :  web : deployment, server, domain </li>
 
@@ -123,9 +134,9 @@ Topics for brainstroming - for example,
 ```
 
 ## Contributor
-<p>
-- detail will be added
-</p>
+<a href="https://github.com/developerasun">
+<img src="https://github.com/developerasun.png?size=50" alt="Jake Sung"/>
+</a>
     
 ## License 
 This project is MIT-licensed. <br/>
