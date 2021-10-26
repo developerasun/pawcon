@@ -10,52 +10,74 @@
 <body>
     
     <header>
-        <div id="logo"><img src="../img/logo/logo-fixed.png" alt="logo" style="width: 100px;"></div>
         <nav id="nav" style="background-color: blanchedalmond;">
-            this is navigation section
+            <div id="logo"><img src="../img/logo/logo-fixed.png" alt="logo" style="width: 100px;"></div>
+            <li>menu 1</li>
+            <li>menu 2</li>
+            <li>menu 3</li>
+            <li>menu 4</li>
+            <li>menu 5</li>
         </nav>
     </header>
 
-    <main>
-        <article>
-            <h1>Who am I</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit unde sunt illum iure iusto blanditiis? Consequatur maxime odit ab voluptatem sunt eaque, officiis similique accusamus soluta autem, iusto sit voluptatibus?</p>
-        </article>
-    </main>
-    
-    <section class="intro">
-        <img 
-        src="../img/photo/profile.jpg" 
-        alt="profile" 
-        id="profile" />
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ad odio voluptates voluptate corporis unde repudiandae quae incidunt tempora similique?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, blanditiis. Praesentium minima sapiente obcaecati unde cupiditate officia ducimus optio eius eum sequi hic omnis, maiores aliquid, incidunt porro! Non, eum sunt itaque fugit assumenda reprehenderit quos! Architecto ipsum adipisci laboriosam numquam eius aliquam incidunt molestias quidem quo. Tempora autem velit rerum numquam! Sed recusandae vel impedit cumque quaerat voluptatem, neque at sunt cupiditate earum pariatur aliquam, nihil corrupti ea sapiente similique itaque rem nisi distinctio dicta hic perferendis dolor molestiae? Id, veritatis. Veniam sequi a suscipit molestias minima culpa dignissimos in harum ut repellat quis, obcaecati quaerat possimus libero doloremque dolore, distinctio eligendi, consequuntur excepturi voluptatibus nisi vel. Pariatur voluptate suscipit doloribus dignissimos nam neque, esse iure rerum animi! Ratione sint, eius asperiores et quas odit consequatur, corrupti tenetur in numquam consequuntur. Fuga pariatur voluptatum, sed illo voluptatem beatae accusantium. Voluptatibus ab iste eveniet rem inventore, hic quaerat explicabo repudiandae quasi voluptates consequuntur exercitationem asperiores id, provident minima totam, recusandae ea vitae illum voluptatum at fugiat? Totam tempore praesentium soluta, illum repellendus facere! A eveniet rem magni laborum cumque sit modi eos? Velit molestiae illum ut, earum unde sed veritatis eveniet nobis nam. Itaque distinctio laudantium dolor quos commodi beatae.</p>
-    </section>
-
-    <section class="timeline">
-        <article>
-            <h2 id="multi-column-title">Timeline</h2>
-            <div id="multi-column-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo cum obcaecati dolorem ipsum nobis ex odio iusto sunt quis adipisci? Dolorem eaque quos cumque, iusto earum quod adipisci magni! Dolor dolores illum aliquam aut natus veniam, aliquid optio incidunt officia numquam ullam placeat dignissimos reprehenderit. At facere ipsa magni molestias quos dicta velit  
-                <div class="column-slogan"><span>Learn To Build, Make To Sell</span></div>
-                ratione libero consequuntur fugit odio molestiae aut earum deleniti, iusto fuga excepturi alias totam incidunt optio nulla delectus. Facilis et, quas quaerat non placeat nostrum reiciendis at, omnis, expedita temporibus necessitatibus hic dolor voluptates quod molestiae! Enim itaque molestiae tempore quam excepturi esse nostrum beatae debitis ratione.
+    <main>    
+        <section class="intro">
+            <div class="intro-paragraph">
+                <h1 style="text-align: center;">Who am I</h1>
+                <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni similique deleniti, dignissimos repellendus dolorem id possimus officia, nisi totam asperiores explicabo provident, eius in ducimus consequatur ipsa voluptatum nemo pariatur.
             </div>
-        </article>
-    </section>
+        </section>
 
-    <section>
-        <article>
-            <div class="container-project">
+        <section class="career">
+            <div class="career-paragraph">
+                <h1 style="text-align: center;">Career Development</h1>
+                <article class="career-designer">
+                    <h2 id="multi-column-title">Graphic Designer</h2>
+                        ratione libero consequuntur fugit odio molestiae aut earum deleniti, iusto fuga excepturi alias totam incidunt optio nulla delectus. Facilis et, quas quaerat non placeat nostrum reiciendis at, omnis, expedita temporibus necessitatibus hic dolor voluptates quod molestiae! Enim itaque molestiae tempore quam excepturi esse nostrum beatae debitis ratione.
+                
+                </article>
+
+                <article class="career-developer">
+                    <h2>Web Developer</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, illo libero maiores doloremque soluta aut architecto nihil assumenda quia culpa.</p>
+                    </div>
+                </article>
+
+                <article class="career-entrepreneur">
+                    <h2>E-commerce entrepreneur</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="project-paragraph container-project">
                     <li class="item-first">project 1 of 5 - Meow Canvas</li>
                     <li class="item-second">2 of 5</li>
                     <li class="item-third">3 of 5</li>
                     <li class="item-fourth">4 of 5</li>
                     <li class="item-fifth">5 of 5</li>
             </div>
-        </article>
-    </section>
+        </section>
+    </main>
+
 
     <footer> this is a footer section</footer>
 
 </body>
 
 </html>
+
+
+<!-- multi column testing codes -->
+<!-- /* #multi-column-p { 
+    column-count: 3;
+    column-width: 300px;
+    <div id="multi-column-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo cum obcaecati dolorem ipsum nobis ex odio iusto sunt quis adipisci? Dolorem eaque quos cumque, iusto earum quod adipisci magni! Dolor dolores illum aliquam aut natus veniam, aliquid optio incidunt officia numquam ullam placeat dignissimos reprehenderit. At facere ipsa magni molestias quos dicta velit  
+    <div class="column-slogan"><span>Learn To Build, Make To Sell</span></div>
+} */ -->
