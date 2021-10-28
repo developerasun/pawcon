@@ -22,9 +22,18 @@ a:hover {
     color: blanchedalmond;
 }
 
+/* Create a transparent scrollbar */
+/* ::-webkit-scrollbar {
+    width: 12px;
+} */
+
+/* ::-webkit-scrollbar-track {
+    display: none;
+} */
+
 .navigation { 
     width: 100%;
-    height: auto;
+    /* height: auto; */
     background-color: lightpink;
 }
 
@@ -38,12 +47,16 @@ a:hover {
 }
 
 .navbar-item { 
-    text-align: center;
-    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2rem;
 }
 
-.navbar-item a { 
-    font-size: 20px;
+.navbar-item-icon {
+    margin-right: 0.3rem;
 }
 
 .navigation #trigger {
@@ -70,17 +83,17 @@ a:hover {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .user-image-container { 
     max-width: minmax(600px auto);
-    margin: 2rem;
 }
 
 .user-image-container img { 
     width: 50%;
     height:200px;
+    margin-top: 1rem;
     padding-right: 0.5rem;
     object-fit: cover;
 }
@@ -154,21 +167,29 @@ a:hover {
     #navbar {
         display: flex;
         flex-flow: row nowrap;
+        justify-content: center;
         width: 720px;
         height: 60px;
     }
     
     .navbar-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0 20px 0 20px;
         width: 144px;
         font-size: 20px;
         line-height: 60px;
-        border-right: 1px solid #222;
+        border-right: 0.1rem solid #eee;
         border-bottom: 0;
         font-size: 1em;
         margin-right: -6px;
     }
     
+    .navbar-item>img {
+        padding-right: 0.5rem;
+    }
+
     .navbar-item:last-child {
         border-right: 0;
     }
@@ -200,11 +221,12 @@ a:hover {
     }
 
     .artworks { 
-        max-width: 1000px;
+        width: 100%;
+        /* max-width: 1000px; */
         display: block;
         position: relative;
         /* margin auto:  will be calculated based on parent element */
-        margin: 1rem auto; 
+        /* margin: auto;  */
         height: minmax(200px auto);
     }
 
