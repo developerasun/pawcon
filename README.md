@@ -23,6 +23,9 @@ Main service feature of Meow Canvas is like below
 </ul>
 </p>
 
+# Project Progress
+https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4
+
 # Project schedule
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
 Business proposal will be updeated on a regualr basis depending on the project's progress.
