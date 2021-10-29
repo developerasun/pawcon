@@ -9,94 +9,144 @@
 </head>
 <body>
     
-    <header>
-        <nav id="nav" style="background-color: blanchedalmond;">
-            <div id="logo"><img src="../img/logo/logo-fixed.png" alt="logo" style="width: 100px;"></div>
-            <li>menu 1</li>
-            <li>menu 2</li>
-            <li>menu 3</li>
-            <li>menu 4</li>
-            <li>menu 5</li>
-        </nav>
+    <!-- Header: navigation bar -->
+    <header class="header" id="header">
+        <nav class="navigation">
+            
+            <!-- trigger: when triggered, elements in mobile environment either 
+            pops up or gone  -->
+            <a href="#" id="trigger">
+                <!-- <img src="assets/img/logo/logo-fixed.png" alt="logo mobile" id="trigger-logo"/> -->
+                <img src="../icon/flaticon/burger-menu.png" alt="menu icon" class="menu-icon"/>
+            </a>
+            
+            <div class="logo">
+                <a href="https://meowcanvas.netlify.app/"><img src="../img/logo/logo-fixed.png" alt="logo"/></a>
+            </div>
+            <div class="navbar" id="navbar">
+                <div class="navbar-item">
+                    <img src="../icon/flaticon/brush.png" alt="paintbrush icon" class="navbar-item-icon" width="25px" height="25px"/>
+                    <a href="assets/pages/paintbrush.html">
+                        <span>PaintBrush</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <img src="../icon/flaticon/nft.png" alt="paintbrush icon" class="navbar-item-icon" width="25px" height="25px"/>
+                    <a href="assets/pages/nft.html">
+                    <span>NFT</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <img src="../icon/flaticon/ranking.png" alt="paintbrush icon" class="navbar-item-icon" width="25px" height="25px"/>
+                    <a href="assets/pages/ranking.html">
+                    <span>Ranking</span>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <img src="../icon/flaticon/about.png" alt="paintbrush icon" class="navbar-item-icon" width="25px" height="25px"/>
+                    <a href="assets/pages/about.html">
+                    <span>About</span>
+                    </a>    
+                </div>
+                <div class="navbar-item">
+                    <img src="../icon/flaticon/contact.png" alt="paintbrush icon" class="navbar-item-icon" width="25px" height="25px"/>
+                    <a href="assets/pages/contact.html">
+                    <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </nav> 
     </header>
 
+    <!-- Main : contents -->
     <main>    
-        <section class="intro">
-            <div class="intro-paragraph">
-                <h1 style="text-align: center;">Who am I</h1>
-                <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni similique deleniti, dignissimos repellendus dolorem id possimus officia, nisi totam asperiores explicabo provident, eius in ducimus consequatur ipsa voluptatum nemo pariatur.
-            </div>
-        </section>
+        <div class="intro-paragraph">
+            <h1 style="text-align: center;">Who am I</h1>
+            <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni similique deleniti, dignissimos repellendus dolorem id possimus officia, nisi totam asperiores explicabo provident, eius in ducimus consequatur ipsa voluptatum nemo pariatur.
+        </div>
 
-        <section class="career">
-            <div class="career-paragraph">
-                <h1 style="text-align: center;">Career Development</h1>
-                
-                    <h2 id="multi-column-title">Graphic Designer</h2>
-                        ratione libero consequuntur fugit odio molestiae aut earum deleniti, iusto fuga excepturi alias totam incidunt optio nulla delectus. Facilis et, quas quaerat non placeat nostrum reiciendis at, omnis, expedita temporibus necessitatibus hic dolor voluptates quod molestiae! Enim itaque molestiae tempore quam excepturi esse nostrum beatae debitis ratione.
-                
-                    <div class="card-container">
-                        <div class="card">
-                            <img src="../img/2.jpg" alt="second card thumnail" width="100%" height="300px"/>
-                            <div class="card-text">
-                                <li>2099.99.99</li>
-                                <li>project 1</li>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                            </div>
-                        </div>
-                        <div class="card testing">
-                            <div class="card-img">
-                                <img src="../img/3.jpg" alt="second card thumnail"/>
-                            </div>
-                            <div class="card-text">
-                                <li>2099.99.99</li>
-                                <li>project 2</li>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="../img/4.jpg" alt="second card thumnail" width="100%" height="300px"/>
-                            <div class="card-text">
-                                <li>2099.99.99</li>
-                                <li>project 3</li>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                            </div>
+        <div class="career-paragraph">
+            <h1 style="font-size: 4rem; text-align: center;">Career Development</h1>
+            <div id="graphic-designer flex-item">
+                <h2 id="multi-column-title" style="font-size: 2rem;">Graphic Designer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, vitae.</p>
+                <div class="project-paragraph container-project">
+                    <li class="item-first">logo 1 of 5 - netflix</li>
+                    <li class="item-second">logo 2 of 5 - hyundai</li>
+                    <li class="item-third">logo 3 of 5 - d.asun</li>
+                    <li class="item-fourth">logo 4 of 5 - 90 / 200</li>
+                    <li class="item-fifth">logo 5 of 5 - moment, art insight</li>
+                </div>          
+            </div>  
+
+            <div id="content-creator flex-item">
+                <h2 id="multi-column-title" style="font-size: 2rem;">Content Creator</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, illo libero maiores doloremque soluta aut architecto nihil assumenda quia culpa.</p>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="../img/2.jpg" alt="second card thumnail" width="100%" height="300px"/>
+                        <div class="card-text">
+                            <li>2099.99.99</li>
+                            <li>project 1</li>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
                         </div>
                     </div>
-                
-
-                <article class="career-developer">
-                    <h2>Web Developer</h2>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, illo libero maiores doloremque soluta aut architecto nihil assumenda quia culpa.</p>
+                    <div class="card testing">
+                        <div class="card-img">
+                            <img src="../img/3.jpg" alt="second card thumnail"/>
+                        </div>
+                        <div class="card-text">
+                            <li>2099.99.99</li>
+                            <li>project 2</li>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
+                        </div>
                     </div>
-                </article>
-
-                <article class="career-entrepreneur">
-                    <h2>E-commerce entrepreneur</h2>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
+                    <div class="card">
+                        <img src="../img/4.jpg" alt="second card thumnail" width="100%" height="300px"/>
+                        <div class="card-text">
+                            <li>2099.99.99</li>
+                            <li>project 3</li>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
+                        </div>
                     </div>
-                </article>
+                </div>
             </div>
 
-        </section>
-
-        <section>
-            <div class="project-paragraph container-project">
-                    <li class="item-first">project 1 of 5 - Meow Canvas</li>
-                    <li class="item-second">2 of 5</li>
-                    <li class="item-third">3 of 5</li>
-                    <li class="item-fourth">4 of 5</li>
-                    <li class="item-fifth">5 of 5</li>
+            <div id="developer flex-item">
+                <h2 id="multi-column-title" style="font-size: 2rem;">Developer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
             </div>
-        </section>
+
+            <div id="etsy-owner flex-item">
+                <h2 id="multi-column-title" style="font-size: 2rem;">Etsy Owner</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
+            </div>
+
+        </div>
     </main>
 
+    <footer class="footer">
+        <div class="footer-info">
+            <ul>
+                <li class="author">
+                    <span>Project leader: Jake Sung</span>
+                    <span>Location: Daegu, South Korea</span>
+                    <span>Contact: designerasun@gmail.com</span>
+                </li>
+                <li class="copyright"><span>Copyright© 2021 DEVELOPERASUN All rights reserved</span></li>
+            </ul>
+            </div>
+        <div class="footer-social">
+            <ul>
+                <li>Github</li>
+                <li>Instagram</li>
+                <li>Pinterest</li>
+            </ul>
+        </div>
+    </footer>
 
-    <!-- <footer id="footer"> <div class="footer">this is a footer section</div></footer> -->
-
+    <script src="../js/slideToggle.js"></script>
 </body>
 
 </html>
