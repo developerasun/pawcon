@@ -3,17 +3,16 @@
 // addEventListener: can add multiple events to an element - method 
 // onclick: can be added to a single element only. can be added 
 // in HTML as attribute - property 
+// document.getElementById : returns HTML collection(items can be referred with name, id, index)
+// document.querySelectorAll : returns NodeList(items only can be referred with index)
+const slides = document.querySelectorAll(".artwork");
+const bars = document.querySelectorAll(".bar"); 
+let slideIndex = 1;
 
-let slideIndex = 1; 
 showSlides(slideIndex); 
 
 function showSlides(n){    
     let i; 
-
-    // document.getElementById : returns HTML collection(items can be referred with name, id, index)
-    // document.querySelectorAll : returns NodeList(items only can be referred with index)
-    const slides = document.querySelectorAll(".artwork");
-    const bars = document.querySelectorAll(".bar"); 
 
     if (n > slides.length) { slideIndex = 1; }
     if (n < 1) { slideIndex = slides.length; }
@@ -27,18 +26,31 @@ function showSlides(n){
         console.log(bars[i].className)
     }
 
-    slides[slideIndex-1].style.display = "block";
-    bars[slideIndex-1].className += " clicked";
+    if (slideIndex < slides.length+1) {
+        slideIndex++;
+        slides[slideIndex-2].style.display = "block";
+        bars[slideIndex-2].className += " clicked";
+        setTimeout(showSlides, 3000);
+    } else {
+        slideIndex = 1;
+        showSlides(slideIndex); 
+    }
 }
 
 function plusSlide(number){
-    showSlides( slideIndex += number );
+    showSlides( slideIndex += number-1 );
 }
 
 function currentSlide(number){
-    slideIndex = number; 
+    slideIndex = number-1; 
     showSlides(slideIndex); 
 }
+
+// function autoSlide(slideIndex, slideLength) {
+//     for (let i = slideIndex; i < slideLength; i++) {
+//         slideIndex += 1; 
+//     }
+// }
 
 // const userItems = document.querySelector(".user-items"); 
 
