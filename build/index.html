@@ -74,22 +74,22 @@
 
         <!-- promotion img : image slider -->
         <div class="artworks">
-            <div class="artwork fade"><img src="assets/img/banner/finished/beauty-ps.png" alt="cat"/></div>
-            <div class="artwork fade"><img src="assets/img/banner/finished/elegance-ps.png" alt="cat"/></div>
             <div class="artwork fade"><img src="assets/img/banner/finished/lying-ps.png" alt="cat"/></div>
+            <div class="artwork fade"><img src="assets/img/banner/finished/elegance-ps.png" alt="cat"/></div>
             <div class="artwork fade"><img src="assets/img/banner/finished/slider-improved.png" alt="cat"/></div>
+            <div class="artwork fade"><img src="assets/img/banner/finished/beauty-ps.png" alt="cat"/></div>
 
             <!-- Special symbols can be represented in HTML code. 
             e.g : ◀	&#9664;   ▶	&#9654; -->
-            <a class="prev" onclick="plusSlide(-1)"><p>&#9664;</p></a>
-            <a class="next" onclick="plusSlide(1)"><p>&#9654;</p></a>
+            <!-- <a class="prev" onclick="plusSlide(-1)"><p>&#9664;</p></a>
+            <a class="next" onclick="plusSlide(1)"><p>&#9654;</p></a> -->
 
             <!-- the bars : image slider bottom -->
             <div class="bars">
-                <button class="bar" onclick="currentSlide(1)"></button>
-                <button class="bar" onclick="currentSlide(2)"></button>
-                <button class="bar" onclick="currentSlide(3)"></button>
-                <button class="bar" onclick="currentSlide(4)"></button>
+                <button class="bar"></button>
+                <button class="bar"></button>
+                <button class="bar"></button>
+                <button class="bar"></button>
             </div>
         </div>
 
@@ -118,32 +118,54 @@
             </div>
         </div>
 
-        <!-- Recommended canvas templates to trace -->
-        <h2 style="font-size: 2rem; text-align: center">Weekly Top</h2>
-        <div class="weekly-tops weekly-img-container scroller-m">
-                <div class="item">
-                    <img src="assets/img/2.jpg" alt="">
-                    <h3>Main</h3>
-                        <li>1 of 3</li>
-                        <li>2 of 3</li>
-                        <li>3 of 3</li>
+        <!-- promotion section 1 -->
+        <div class="promotion-para-first" style="background-color: #eefff8; height:400px; text-align:center">
+            <h2 class="promotion-para-first-title" style="font-size:3rem; text-align:center; margin:1rem"></h2>
+            <div class="message" style="font-size:1.5rem; text-align:center"></div>
+            <div class="message"></div>
+            <div class="message"></div>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio repellat officia veritatis quas assumenda! Reprehenderit deserunt tenetur aliquid, voluptatem ipsum incidunt quod saepe quas esse voluptate, doloremque quae illum quia.</p> -->
+        </div>
+        
+        <br><br><br><br><br>
+
+        <!-- Weekly Tops -->
+        <div id="weekly-tops">
+            <h2 style="font-size: 2rem;">Weekly Tops</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, illo libero maiores doloremque soluta aut architecto nihil assumenda quia culpa.</p>
+            <div class="card-container">
+                <div class="card">
+                    <img src="assets/img/2.jpg" alt="second card thumnail" width="100%" height="300px"/>
+                    <div class="card-text">
+                        <span>2099.99.99</span>
+                        <h3 style="font-size: 2rem; font-weight:bold">project 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="assets/img/2.jpg" alt="">
-                    <h3>Main</h3>
-                        <li>1 of 3</li>
-                        <li>2 of 3</li>
-                        <li>3 of 3</li>
+                <div class="card testing">
+                    <div class="card-img">
+                        <img src="assets/img/3.jpg" alt="second card thumnail"/>
+                    </div>
+                    <div class="card-text">
+                        <span>2099.99.99</span>
+                        <h3 style="font-size: 2rem; font-weight:bold">project 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="assets/img/2.jpg" alt="">
-                    <h3>Main</h3>
-                        <li>1 of 3</li>
-                        <li>2 of 3</li>
-                        <li>3 of 3</li>
+                <div class="card">
+                    <img src="assets/img/4.jpg" alt="second card thumnail" width="100%" height="300px"/>
+                    <div class="card-text">
+                        <span>2099.99.99</span>
+                        <h3 style="font-size: 2rem; font-weight:bold">project 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
+                    </div>
                 </div>
+            </div>
         </div>
 
+        <br><br><br><br><br>
+
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-info">
                 <ul>
@@ -156,11 +178,9 @@
                 </ul>
                 </div>
             <div class="footer-social">
-                <ul>
-                    <li>Github</li>
-                    <li>Instagram</li>
-                    <li>Pinterest</li>
-                </ul>
+                    <a href="https://github.com/developerasun" target="_blank">Github </a>
+                    <span>|</span>
+                    <a href="http://instagram.com/designerasun" target="_blank">Instagram</a>
             </div>
         </footer>
 
@@ -170,6 +190,7 @@
     <script src="assets/js/background.js"></script>
     <script src="assets/js/slideToggle.js"></script>
     <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/typeEffect.js"></script>
 
 </body>
 </html>
