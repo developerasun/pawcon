@@ -4,7 +4,6 @@
 # What is Meow Canvas?
 ### *This is a ongoing project that is actively being updated*
 [See Demo](https://meowcanvas.netlify.app/) <br/> 
-[See Business Proposal](https://docs.google.com/presentation/d/1IHb0xbrq-HqN_qfFg0-nPBrZMRjabtDE4lY-neMKXoI/edit?usp=sharing) <br/>
 <img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
@@ -41,38 +40,35 @@ Business proposal will be updeated on a regualr basis depending on the project's
     <li>Launch and maintenance</li>
 </ol>
 
-## Section 1 - Front End : Meow Canvas Ver 1.0.2
-<li> Goal : developing responsive web/mobile screen </li> 
-<li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) </li>
-<li> What : HTML & CSS : 2 month, Javascript : 2 month </li>
+## Section 0 - Programming Basic
+<li> Goal : stepping my foot into programming</li>
+<li> Timeline : 4 month (2021.05.17 ~ 2021.09.10) : registering blockchain training school</li>
+<li> What : Python, Go, and blockchain theory </li>
 
-## Section 2 - Backend : Meow Canvas Ver 1.1.0
-<li> Goal : developing web server, creating database tables, connecting the database with front end </li>
-<li> Timeline :3 month (2022.01.01 ~ 2022.03.31)  </li>
-<li> What : Node.js : 3 month, MongoDB/MariaDB : 1 month </li>
+## Section 1 - Front End 
+<li> Goal : developing responsive website from the bottom </li> 
+<li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) : learning by personal project </li>
+<li> What : HTML, CSS, Javascript, React </li>
 
-## Section 3 - Blockchain : Meow Canvas Ver 1.2.0
-<li> Goal : developing smart contract, linking to (Klaytn/Ethereum/Polygon) blockchain  </li>
-<li> Timeline : 4 month (2022.04.01 ~ 2022.07.31) </li>
-<li> What : Go/Solidity : 2 month, Wallet, Smart contract, testnet/Mainnet, Truffle, Ganache/Geth, Docker </li>
-
-## Section 4 - Artificial Intelligence : Meow Canvas Ver 1.3.0
+## Section 2 - Artificial Intelligence 
 <li> Goal : comparing image similiarity, generating random images for NFT with machine learning </li>
-<li> Timeline : 5 month (2022.08.01 ~ 2022.12.31) </li>
-<li> What : Python : 3 month, Tensorflow, Keras, Docker, AWS/Firebase </li>
+<li> Timeline : 6 month (2021.12.27 ~ 2022.06.22) : registering AI training school</li>
+<li> What : Tensorflow, Keras, machine learning theory </li>
 
-## Section 5 - Launch And Maintenance : Meow Canvas Ver ?.?.?
+## Section 3 - Backend 
+<li> Goal : developing web server, creating database tables, connecting the database with front end </li>
+<li> Timeline :3 month (2022.06.25 ~ 2022.10.31)  </li>
+<li> What : Node.js, MongoDB/MariaDB</li>
+
+## Section 4 - Blockchain
+<li> Goal : developing smart contract, linking to (Klaytn/Ethereum/Polygon) blockchain  </li>
+<li> Timeline : 4 month (2022.11.01 ~ 2022.12.31)</li>
+<li> What : Wallet, smart contract</li>
+
+## Section 5 - Launch And Maintenance
 <li> Goal : subscription business that makes at least $1K per month </li>
 <li> Timeline : 2 years (2023.01.01 ~ 2025.12.31) </li>
-<li> What :  web : deployment, server, domain </li>
-
-## Target Output lists
-### Front end
-[Toonize](https://www.toonize.me/) <br/>
-[CDG's portfolio](https://cdg-portfolio.com/) <br/>
-[Jeky22](https://www.jeky22.com/) <br/>
-[Kije Park](https://kijepark.com/#Home) <br/>
-
+<li> What :  deployment, business proposla/model </li>
 
 # Code example - Javascript 
 simple slideToggle function in Javascript
@@ -80,7 +76,6 @@ simple slideToggle function in Javascript
 ``` Javascript:slideToggle.js
 const trigger = document.querySelector("#trigger");
 const navbar = document.querySelector(".navbar"); 
-const menu_icon = document.querySelector("#trigger .menu-icon");
 const menuText = document.createElement("span");
 
 const TRIGGER_MENU = "MENU";
@@ -110,14 +105,17 @@ trigger.addEventListener("click", triggerOn);
 
 ```
 
-
-## Creator 
+# Author
 Jake Sung
 - Github: [@developerasun](https://github.com/developerasun)
 - Youtube: [@jakesung](https://www.youtube.com/channel/UC6p9E2JINhaAB7cTd8T2gig)
-<br/>
 
-## Contact
+# Contributor
+<a href="https://github.com/developerasun">
+<img src="https://github.com/developerasun.png?size=50" alt="Jake Sung"/>
+</a>
+
+# Contact
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
 [KakaoTalk Open Chat](https://open.kakao.com/o/giViVoCd)
 <p>
@@ -136,12 +134,14 @@ Topics for brainstroming - for example,
  - Cat supply recommendation -forMeows : affiliate marketing 
 ```
 
-## Contributor
-<a href="https://github.com/developerasun">
-<img src="https://github.com/developerasun.png?size=50" alt="Jake Sung"/>
-</a>
+# Reference website
+[Toonize](https://www.toonize.me/) <br/>
+[CDG's portfolio](https://cdg-portfolio.com/) <br/>
+[Jeky22](https://www.jeky22.com/) <br/>
+[Kije Park](https://kijepark.com/#Home) <br/>
+[Alon Shklarek](https://www.alonshklarek.com/)
     
-## License 
+# License 
 This project is MIT-licensed. <br/>
 Copyright © 2021 [Jake Sung](https://github.com/developerasun) 
 
