@@ -1,5 +1,4 @@
 const promotionFirstTitle = document.querySelector(".promotion-title");
-const testing = document.querySelector(".message");
 
 // create a typewriter object
 const typewriter = {
@@ -9,12 +8,6 @@ const typewriter = {
 
 // create promotion message variables
 const text_title = "Here in Meow Canvas, You will find: ";
-const text_msg_first = "an unique cat art you create";
-const text_msg_second = "an entertaining hobby";
-const text_msg_third = "a new way to make extra income";
-
-// create promotion message group array
-const message_group = new Array(text_msg_first, text_msg_second, text_msg_third);
 
 function typeEffect() {
     if (typewriter.position <= text_title.length) { 
@@ -22,20 +15,10 @@ function typeEffect() {
         typewriter.position ++;
         
         setTimeout(typeEffect, typewriter.speed); 
-    } else {
-            
-            promotionFirstTitle.innerHTML = promotionFirstTitle.innerHTML.slice(0,promotionFirstTitle.innerHTML.length-1);
-            setTimeout(typeEffect, typewriter.speed);
-
-            if (promotionFirstTitle.innerHTML.length === 1) {
-                typewriter.position = 1;
-            }
-        }
+    } 
 }
 
 typeEffect();
-
-
 
 
 // third try 
