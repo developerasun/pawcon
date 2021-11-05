@@ -295,7 +295,29 @@ html {
     }
 
     /* promotion paragraph first */
-    .promotion-para-first-title {
+    .promotion {
+        background-color: #eefff8; 
+        height:auto; 
+        text-align:center; 
+        font-size:1.5rem;
+    }
+
+    .message-group {
+        display: flex;
+        flex-flow: row nowrap;
+        text-align: center;
+    }
+
+    .message {
+        width: 400px;
+        margin: 2rem;
+    }
+
+    .message p {
+        text-align:justify;
+    }
+
+    .promotion-title {
         display: inline-block;
         border-right: 0.2rem solid #222;
         animation : blink 1s infinite;
