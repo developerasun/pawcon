@@ -2,5 +2,13 @@
 .icon-article-alt:before { content: '\e800'; } /* '' */
 .icon-award:before { content: '\e801'; } /* '' */
 .icon-help-circled:before { content: '\e802'; } /* '' */
+.icon-instagram:before { content: '\e803'; } /* '' */
+.icon-pinterest:before { content: '\e804'; } /* '' */
+.icon-bucket:before { content: '\e805'; } /* '' */
+.icon-floppy:before { content: '\e806'; } /* '' */
+.icon-home:before { content: '\e807'; } /* '' */
+.icon-github-circled:before { content: '\f09b'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
+.icon-coffee:before { content: '\f0f4'; } /* '' */
+.icon-paypal:before { content: '\f1ed'; } /* '' */
 .icon-brush:before { content: '\f1fc'; } /* '' */
