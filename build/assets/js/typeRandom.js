@@ -1,10 +1,12 @@
-const message = document.querySelector(".message");
-
-// ========================== testing ============================= // 
-// create promotion message group array
+const subtitle = document.querySelector(".promotion-subtitle");
 
 let test_position = 0; 
 const test_speed = 150;
+
+const message_group_test = new Array(
+    "an unique cat art you create ", 
+    "an entertaining hobby ", 
+    "a new way to make extra income ");
 
 function getRandomMessage() {
     const index = Math.floor(Math.random()*message_group_test.length);
@@ -12,25 +14,21 @@ function getRandomMessage() {
     return randomMessage; 
 }
 
-const message_group_test = new Array(
-    "an unique cat art you create ", 
-    "an entertaining hobby ", 
-    "a new way to make extra income ");
-
 function myTest() {
     if (test_position < randomMsg.length) {
-        message.innerHTML += randomMsg.charAt(test_position);
+        subtitle.innerHTML += randomMsg.charAt(test_position);
         test_position += 1; 
         
         setTimeout(myTest, test_speed); 
-    }
+    } else {
+        subtitle.innerHTML = subtitle.innerHTML.slice(0,subtitle.innerHTML.length-1);
+        setTimeout(myTest, test_speed); 
 
-    if (message.innerHTML.length === randomMsg.length) {
-        test_position = 0;
-        message.innerHTML = "&nbsp";
+        if (subtitle.innerHTML.length === 1) {
+            test_position = 1;
+        }
     }
 }
-// ========================== testing ============================= // 
 
 const randomMsg = getRandomMessage();
 myTest(randomMsg);
