@@ -1,5 +1,5 @@
 <img src = https://img.shields.io/badge/NFT-Blockchain-blue></a>
-<img src = https://img.shields.io/badge/ImgSimilarity-A.I-red></a><br/>
+<img src = https://img.shields.io/badge/GAN-A.I-red></a><br/>
 
 # What is Meow Canvas?
 ### *This is a ongoing project that is actively being updated*
@@ -7,25 +7,31 @@
 <img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
-Meow canvas is a web service project that is <b>dedicated to all the cat lovers in github.</b> It targets to provide a virtual playground for cat owners so that they can share and show off their lovely cats by exploiting technologies like <b>NFT, machine learning.</b>    
+Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background and then link the artworks with major NFT marketplaces such as Opensea and Rariable.   
 </p>
 
 <p>
-Main service feature of Meow Canvas is like below
+The main feature of Meow Canvas is as follows 
 <ul>
-    <li> Upload your cat photo and draw your cat as you wish(2D, 3D) </li>
-    <li> Share the drawing on social </li>
-    <li> Make the drawing NFT and save it to your wallet</li>
-    <li> Purchase your NFT and sell it to others </li>
-    <li> Compare image similiarity between your photo and drawing </li>
-    <li> Find out your ranking and increase it by resubmitting! </li>
+    <li> Draw artwork with HTML/Javascript canvas - free/watermark </li>
+    <li> Pixelate artwork with Javascfipt - free/watermark </li>
+    <li> Generate artwork with Python GAN - paid </li>
+    <li> Display your artwork and aim the highest rank - free<li>
+    <li> Save and download the artwork to your wallet</li>
 </ul>
 </p>
 
-# Project Progress
-https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4
+# Progress(monthly)
+Oct, 2021 <br/>
+https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 <br/>
 
-# Project schedule
+Nov, 2021 <br/>
+(link here)
+
+Dec, 2021 <br/>
+(link here)
+
+# Schedule
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
 Business proposal will be updeated on a regualr basis depending on the project's progress.
 
