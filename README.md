@@ -11,25 +11,30 @@ Meow canvas is a NFT artwork generation service for those who are not familiar w
 </p>
 
 <p>
-The main feature of Meow Canvas is as follows 
-<ul>
+The main feature of Meow Canvas is as follows. 
+<ol>
     <li> Draw artwork with HTML/Javascript canvas - free/watermark </li>
     <li> Pixelate artwork with Javascfipt - free/watermark </li>
     <li> Generate artwork with Python GAN - paid </li>
-    <li> Display your artwork and aim the highest rank - free<li>
+    <li> Display your artwork and aim the highest rank - free</li>
     <li> Save and download the artwork to your wallet</li>
-</ul>
+</ol>
 </p>
 
+<p> 
+To acheive above, below sub feature should be developed.
+    <ol>
+        <li>Login and sign up</li>
+        <li>Shopping cart for membership</li>
+        <li>Membership payment</li>
+    </ol>
+</p>
+
+
 # Progress(monthly)
-Oct, 2021 <br/>
-https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 <br/>
+## Oct, 2021    
+https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 
 
-Nov, 2021 <br/>
-(link here)
-
-Dec, 2021 <br/>
-(link here)
 
 # Schedule
 The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
@@ -53,28 +58,28 @@ Business proposal will be updeated on a regualr basis depending on the project's
 
 ## Section 1 - Front End 
 <li> Goal : developing responsive website from the bottom </li> 
-<li> Timeline : 4 month (2021.09.01 ~ 2022.12.31) : learning by personal project </li>
-<li> What : HTML, CSS, Javascript, React </li>
+<li> Deadline : 4 month (2021.09.01 ~ 2022.12.31) : self-taught </li>
+<li> What : HTML, CSS, Javascript(basic, web browser), React </li>
 
 ## Section 2 - Artificial Intelligence 
-<li> Goal : comparing image similiarity, generating random images for NFT with machine learning </li>
-<li> Timeline : 6 month (2021.12.27 ~ 2022.06.22) : registering AI training school</li>
+<li> Goal : developing efficient generative adversarial network model</li>
+<li> Deadline : 6 month (2021.12.27 ~ 2022.06.22) : registering AI training school</li>
 <li> What : Tensorflow, Keras, machine learning theory </li>
 
 ## Section 3 - Backend 
-<li> Goal : developing web server, creating database tables, connecting the database with front end </li>
-<li> Timeline :3 month (2022.06.25 ~ 2022.10.31)  </li>
+<li> Goal : developing stable web server and database </li>
+<li> Deadline :5 month (2022.06.25 ~ 2022.10.31)  </li>
 <li> What : Node.js, MongoDB/MariaDB</li>
 
 ## Section 4 - Blockchain
 <li> Goal : developing smart contract, linking to (Klaytn/Ethereum/Polygon) blockchain  </li>
-<li> Timeline : 4 month (2022.11.01 ~ 2022.12.31)</li>
-<li> What : Wallet, smart contract</li>
+<li> Deadline : 2 month (2022.11.01 ~ 2022.12.31)</li>
+<li> What : Solidity, Go</li>
 
 ## Section 5 - Launch And Maintenance
-<li> Goal : subscription business that makes at least $1K per month </li>
-<li> Timeline : 2 years (2023.01.01 ~ 2025.12.31) </li>
-<li> What :  deployment, business proposla/model </li>
+<li> Goal : subscription business with monthly $1K net profits </li>
+<li> Deadline : 2 years (2023.01.01 ~ 2025.12.31) </li>
+<li> What :  deployment, monetization </li>
 
 # Code example - Javascript 
 simple slideToggle function in Javascript
