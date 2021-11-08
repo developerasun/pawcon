@@ -1,0 +1,11 @@
+html {
+    background: url("../../img/gif/cat-keyboard.gif") no-repeat center fixed;
+    background-size: cover;
+} 
+
+p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
