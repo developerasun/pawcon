@@ -13,7 +13,8 @@
 
     <!-- connecting CSS -->
     <link rel="stylesheet" href="assets/css/import/common.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
     <link rel="stylesheet" href="assets/font/fontello/css/fontello.css">
 
 
@@ -24,6 +25,22 @@
 </head>
 
 <body>
+        <!-- Modal : how to explore this page -->
+        <div class="modal">
+            <button id="close">&times;</button>
+                <h1>Welcome to Meow Canvas</h1>
+                <p> 
+                    A few part of website has not been completed thus I recommend you to explore this website by below order :)
+                </p>  
+                <h2>
+                    Recommended order to explore 
+                </h2>
+                <p>
+                    Main(this page) => Paintbrush => About => Sign Up
+                </p>
+                <span>Let's Go</span>
+        </div>
+
         <!-- Header: navigation bar -->
         <header class="header" id="header">
             <nav class="navigation">
@@ -235,7 +252,7 @@
     <!-- Jquery should be declared first - otherwise it will cause an uncaught 
     reference error. -->
     <!-- <script src="assets/js/jquery-2.2.4.min.js"></script> -->
-    <script src="assets/js/background.js"></script>
+    <script src="assets/js/modal.js"></script>
     <script src="assets/js/slideToggle.js"></script>
     <script src="assets/js/carousel.js"></script>
     <script src="assets/js/typeEffect.js"></script>
