@@ -3,7 +3,7 @@
 
 # What is Meow Canvas?
 ### *This is a ongoing project that is actively being updated*
-[See Demo](https://meowcanvas.netlify.app/) <br/> 
+[See Beta](https://meowcanvas.netlify.app/) <br/> 
 <img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
@@ -11,7 +11,11 @@ Meow canvas is a NFT artwork generation service for those who are not familiar w
 </p>
 
 <p>
-The main feature of Meow Canvas is as follows. 
+Once the beta is fairly developed with at least two main features, listed below, refactoring towards previously written codes will start. To make this project more efficient, cleaner, and more functional. 
+</p>
+
+<p>
+The main feature of Meow Canvas, that will updated in future, is as follows. 
 <ol>
     <li> Draw artwork with HTML/Javascript canvas - free/watermark </li>
     <li> Pixelate artwork with Javascfipt - free/watermark </li>
@@ -22,12 +26,16 @@ The main feature of Meow Canvas is as follows.
 </p>
 
 <p> 
-To acheive above, below sub feature should be developed.
+To acheive above, below sub-feature should be developed.
     <ol>
         <li>Login and sign up</li>
         <li>Shopping cart for membership</li>
         <li>Membership payment</li>
     </ol>
+</p>
+
+<p>
+Handicrafted design assets will be introduced in the refactored project for more clearer project identity. Currently, only banner images in image slider and logo is photoshopped and created by me. Design assets that will be added are such as : logo, icon, banner, brand colors, font.
 </p>
 
 
@@ -46,7 +54,7 @@ Business proposal will be updeated on a regualr basis depending on the project's
     <li>Service/product brainstorming</li>
     <li>Marketing/Branding concept</li>
     <li>Wireframe</li>
-    <li>Front end coding</li>
+    <li>Front end coding : now here as of Nov 2021</li>
     <li>Backend coding</li>
     <li>Launch and maintenance</li>
 </ol>
@@ -72,7 +80,7 @@ Business proposal will be updeated on a regualr basis depending on the project's
 <li> What : Node.js, MongoDB/MariaDB</li>
 
 ## Section 4 - Blockchain
-<li> Goal : developing smart contract, linking to (Klaytn/Ethereum/Polygon) blockchain  </li>
+<li> Goal : choosing blockchain(Klaytn/Ethereum/Polygon), developing smart contract, wallet  </li>
 <li> Deadline : 2 month (2022.11.01 ~ 2022.12.31)</li>
 <li> What : Solidity, Go</li>
 
@@ -116,16 +124,6 @@ trigger.addEventListener("click", triggerOn);
 
 ```
 
-# Author
-Jake Sung
-- Github: [@developerasun](https://github.com/developerasun)
-- Youtube: [@jakesung](https://www.youtube.com/channel/UC6p9E2JINhaAB7cTd8T2gig)
-
-# Contributor
-<a href="https://github.com/developerasun">
-<img src="https://github.com/developerasun.png?size=50" alt="Jake Sung"/>
-</a>
-
 # Contact
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
 [KakaoTalk Open Chat](https://open.kakao.com/o/giViVoCd)
@@ -138,11 +136,6 @@ Note that it is not 'developerasun@gmail.com', but 'designerasun@gmail.com'.
 To designerasun@gmail.com 
 I like cat. So count me in.
 From cuteLoaf@meow.com
-
-Topics for brainstroming - for example,  
- - NFT marketplace - meowCanvas : selling NFTs 
- - Weight tracker for feline obesity - noTummy : SaaS subscription added 
- - Cat supply recommendation -forMeows : affiliate marketing 
 ```
 
 # Reference website
@@ -151,7 +144,12 @@ Topics for brainstroming - for example,
 [Jeky22](https://www.jeky22.com/) <br/>
 [Kije Park](https://kijepark.com/#Home) <br/>
 [Alon Shklarek](https://www.alonshklarek.com/)
-    
+
+# Author
+Jake Sung
+- Github: [@developerasun](https://github.com/developerasun)
+- Youtube: [@jakesung](https://www.youtube.com/channel/UC6p9E2JINhaAB7cTd8T2gig)
+
 # License 
 This project is MIT-licensed. <br/>
 Copyright © 2021 [Jake Sung](https://github.com/developerasun) 
