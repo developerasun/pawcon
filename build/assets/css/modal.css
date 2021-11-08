@@ -1,0 +1,86 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.modal {
+    display: none;
+    width: 500px;
+    color: white;
+    font-size: 1.4rem;
+    text-align: left;
+    background: rgb(151, 173, 177);
+    position: absolute;
+    padding: 1rem;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 1.5rem;
+    z-index: 1;
+}
+
+.modal>h1,h2 {
+    display: inline-block;
+    border-bottom: 0.3rem solid rgb(68, 90, 94);
+    position: relative;
+    margin: 1rem;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.modal p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.modal span {
+    display: block;
+    position: relative;
+    width: 100px;
+    margin: 0.5rem auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-weight: 300;
+    text-align:center;
+}
+
+#close {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    outline: none;
+    cursor: pointer;
+    color: aliceblue;
+    transform: translate(435px, -5px);
+}
+
+.modal-animate-fade-out {
+    animation: fade-out 1s 1 ease;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.modal-animate-fade-in {
+    animation: fade-in 1s 1 ease;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
