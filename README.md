@@ -4,7 +4,14 @@
 # What is Meow Canvas?
 ### *This is a ongoing project that is actively being updated*
 [See Beta](https://meowcanvas.netlify.app/) <br/> 
-<img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
+
+|Cross Browsing|Tested|Work|
+|:------------:|:----:|:--:|
+|Chrome|O|O|
+|Edge|O|O|
+|I.E|O|X|
+|Safari|X|-|
+|Fire Fox|X|-|
 
 <p>
 Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background and then link the artworks with major NFT marketplaces such as Opensea and Rariable.   
@@ -13,6 +20,8 @@ Meow canvas is a NFT artwork generation service for those who are not familiar w
 <p>
 Once the beta is fairly developed with at least two main features, listed below, refactoring towards previously written codes will start. To make this project more efficient, cleaner, and more functional. 
 </p>
+
+<img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
 The main feature of Meow Canvas, that will updated in future, is as follows. 
@@ -43,51 +52,6 @@ Handicrafted design assets will be introduced in the refactored project for more
 ## Oct, 2021    
 https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 
 
-
-# Schedule
-The <b>expected</b> project schedule, which is very roughly estimated, is from early August of 2021 to at the end of 2022(one and half year).
-Business proposal will be updeated on a regualr basis depending on the project's progress.
-
-## Workflow
-<ol>
-    <li>Market research and plannning</li>
-    <li>Service/product brainstorming</li>
-    <li>Marketing/Branding concept</li>
-    <li>Wireframe</li>
-    <li>Front end coding : now here as of Nov 2021</li>
-    <li>Backend coding</li>
-    <li>Launch and maintenance</li>
-</ol>
-
-## Section 0 - Programming Basic
-<li> Goal : stepping my foot into programming</li>
-<li> Timeline : 4 month (2021.05.17 ~ 2021.09.10) : registering blockchain training school</li>
-<li> What : Python, Go, and blockchain theory </li>
-
-## Section 1 - Front End 
-<li> Goal : developing responsive website from the bottom </li> 
-<li> Deadline : 4 month (2021.09.01 ~ 2022.12.31) : self-taught </li>
-<li> What : HTML, CSS, Javascript(basic, web browser), React </li>
-
-## Section 2 - Artificial Intelligence 
-<li> Goal : developing efficient generative adversarial network model</li>
-<li> Deadline : 6 month (2021.12.27 ~ 2022.06.22) : registering AI training school</li>
-<li> What : Tensorflow, Keras, machine learning theory </li>
-
-## Section 3 - Backend 
-<li> Goal : developing stable web server and database </li>
-<li> Deadline :5 month (2022.06.25 ~ 2022.10.31)  </li>
-<li> What : Node.js, MongoDB/MariaDB</li>
-
-## Section 4 - Blockchain
-<li> Goal : choosing blockchain(Klaytn/Ethereum/Polygon), developing smart contract, wallet  </li>
-<li> Deadline : 2 month (2022.11.01 ~ 2022.12.31)</li>
-<li> What : Solidity, Go</li>
-
-## Section 5 - Launch And Maintenance
-<li> Goal : subscription business with monthly $1K net profits </li>
-<li> Deadline : 2 years (2023.01.01 ~ 2025.12.31) </li>
-<li> What :  deployment, monetization </li>
 
 # Code example - Javascript 
 simple slideToggle function in Javascript
