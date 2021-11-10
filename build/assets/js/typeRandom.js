@@ -14,15 +14,15 @@ function getRandomMessage() {
     return randomMessage; 
 }
 
-function myTest() {
+function paintRandomMessage() {
     if (test_position < randomMsg.length) {
         subtitle.innerHTML += randomMsg.charAt(test_position);
         test_position += 1; 
         
-        setTimeout(myTest, test_speed); 
+        setTimeout(paintRandomMessage, test_speed); 
     } else {
         subtitle.innerHTML = subtitle.innerHTML.slice(0,subtitle.innerHTML.length-1);
-        setTimeout(myTest, test_speed); 
+        setTimeout(paintRandomMessage, test_speed); 
 
         if (subtitle.innerHTML.length === 1) {
             test_position = 1;
@@ -31,4 +31,4 @@ function myTest() {
 }
 
 const randomMsg = getRandomMessage();
-myTest(randomMsg);
+paintRandomMessage(randomMsg);
