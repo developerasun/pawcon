@@ -129,6 +129,7 @@
         position: relative;
         width: 100px;
         margin: 1rem auto;
+        padding: 0.5rem;
         background-color: white;
         color: black;
         cursor: pointer;
@@ -136,4 +137,7 @@
         text-align:center;
     }
 
+    #close {
+        display: none;
+    }
 }
