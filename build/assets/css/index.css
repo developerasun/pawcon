@@ -135,9 +135,14 @@ html {
         text-align: center;
     }
 
-    .promotion-title {
+    .promotion-title-first {
         display: inline-block;
         font-size: 2rem;
+        margin: 1rem;
+    }
+
+    .promotion>div {
+        font-size: 1.5rem;
         margin: 1rem;
     }
 
@@ -152,7 +157,59 @@ html {
     }
 
     /* promotion section 2 : youtube video */
+    .promotion-title-second>h2 {
+        font-size: 2rem;
+        margin: 1rem;
+    }
 
+    .promotion-title-second>p {
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+
+    .youtube-video {
+        display:flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .promotion-youtube {
+        min-width: 400px;
+        height: 700px;
+        margin: 0.5rem;
+    }
+
+    .footer{
+        display: grid;
+        grid-template-columns:repeat(12, 1fr);
+        grid-template-rows: minmax(60px, auto);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        background-color:rgb(196, 196, 196);
+    }
+
+    .footer-info { 
+        grid-column: 1/8;
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    .author>span:nth-child(2),
+    .author>span:nth-child(3),
+    .copyright {
+        display: none;
+    }
+    
+    .footer-social { 
+        grid-column: 8/13;
+        text-align: right;
+        margin-right: 50px;
+    }
 
 
     /* Javascript-linked CSSs */
@@ -381,7 +438,7 @@ html {
         display: none;
     }
 
-    /* promotion paragraph first */
+    /* tablet promotion paragraph first */
     .message-group {
         display: flex;
         flex-flow: row wrap;
@@ -400,7 +457,7 @@ html {
         text-align:center;
     }
 
-    .promotion-title {
+    .promotion-title-first {
         display: inline-block;
         border-right: 0.2rem solid #222;
         animation : blink 1s infinite;
@@ -413,6 +470,25 @@ html {
         100% {
             border-right: 1;
         }
+    }
+
+    /* tablet promotion paragraph second */
+
+    .promotion-title-second>h2 {
+        font-size: 3rem;
+        margin: 1rem;
+    }
+
+    .promotion-title-second>p {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+
+    .promotion-youtube {
+        min-width: 800px;
+        padding: 1rem;
+        height: 600px;
+        margin: 0.5rem;
     }
 
 
@@ -432,7 +508,17 @@ html {
     .footer-info { 
         grid-column: 1/8;
         text-align: left;
-        margin-left: 50px;
+        margin: 1rem;
+    }
+
+    .author>span {
+        margin: 1rem 1rem 1rem 0;
+    }
+
+    .author>span:nth-child(2),
+    .author>span:nth-child(3),
+    .copyright {
+        display: grid;
     }
     
     .footer-social { 
@@ -632,7 +718,7 @@ html {
         text-align:justify;
     }
 
-    .promotion-title {
+    .promotion-title-first {
         display: inline-block;
         border-right: 0.2rem solid #222;
         font-size: 3rem;
