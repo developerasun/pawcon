@@ -9,131 +9,113 @@
     <link rel="stylesheet" href="../css/about.css">
     <link rel="stylesheet" href="../css/import/common.css">
     <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <title>About</title>
 </head>
 <body>
     
-    <!-- Header: navigation bar -->
-    <header class="header" id="header">
-        <nav class="navigation">
-            
-            <!-- trigger: when triggered, elements in mobile environment either 
-            pops up or gone  -->
-            <a href="#" id="trigger">
-                <!-- <img src="assets/img/logo/logo-fixed.png" alt="logo mobile" id="trigger-logo"/> -->
-                <img src="../icon/flaticon/burger-menu.png" alt="menu icon" class="menu-icon"/>
-            </a>
-            
-            <div class="logo">
-                <a href="https://meowcanvas.netlify.app/"><img src="../img/logo/logo-fixed.png" alt="logo"/></a>
-            </div>
-            <div class="navbar" id="navbar">
-                <div class="navbar" id="navbar">
-                    <div class="navbar-item icon-brush">
-                        <a href="assets/pages/paintbrush.html">
-                            <span>PaintBrush</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-article-alt">
-                        <a href="assets/pages/nft.html">
-                        <span>NFT</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-award">
-                        <a href="assets/pages/ranking.html">
-                        <span>Ranking</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-help-circled">
-                        <a href="assets/pages/about.html">
-                        <span>About</span>
-                        </a>    
-                    </div>
-                    <div class="navbar-item icon-mail-alt">
-                        <a href="assets/pages/contact.html">
-                        <span>Contact</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav> 
-    </header>
+    <!-- Modal : how to explore this page -->
+    <div class="modal">
+        <button id="close">&times;</button>
+            <h1>Note : this section under coding yet</h1>
+            <p> 
+                A few part of website has not been completed thus I recommend you to explore this website by below order :)
+            </p>  
+            <h2>
+                Recommended order to explore 
+            </h2>
+            <p>
+                Main(this page) => Paintbrush => About => Sign Up
+            </p>
+            <span>Let's Go</span>
+    </div>
 
-    <!-- Main : contents -->
-    <main>    
-        <div class="intro-paragraph">
-            <h1 style="text-align: center;">Who am I</h1>
-            <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni similique deleniti, dignissimos repellendus dolorem id possimus officia, nisi totam asperiores explicabo provident, eius in ducimus consequatur ipsa voluptatum nemo pariatur.
+    <div class="intro">
+        <div class="intro-title">
+            <h1>What is Meow Canvas?</h1>
         </div>
+        <div class="logo">
+            <img src="../img/logo/logo-fixed.png" alt="logo"/>
+        </div>
+        <div class="intro-paragraph">
+            <p>
+                Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. 
+            </p>
+            <p>
+                It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background. 
+            </p>
+        </div>
+    </div>
 
-        <div class="career-paragraph">
-            <h1 style="font-size: 4rem; text-align: center;">Career Development</h1>
-            <div id="graphic-designer flex-item">
-                <h2 id="multi-column-title" style="font-size: 2rem;">Graphic Designer</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, vitae.</p>
-                <div class="project-paragraph container-project">
-                    <li class="item-first">logo 1 of 5 - netflix</li>
-                    <li class="item-second">logo 2 of 5 - hyundai</li>
-                    <li class="item-third">logo 3 of 5 - d.asun</li>
-                    <li class="item-fourth">logo 4 of 5 - 90 / 200</li>
-                    <li class="item-fifth">logo 5 of 5 - moment, art insight</li>
+    <div class="middle">
+        <div class="middle-title">
+            <h2>Why Meow Canvas?</h2>
+        </div>
+        <div class="middle-paragraph">
+            <p>first feature</p>
+            <p>second feature</p>
+            <p>third feature</p>
+        </div>
+    </div>
+
+    <div class="end">
+        <div class="end-title">
+            <h2>Who developed Meow Canvas?</h2>
+            <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
+        </div>
+        <div class="end-about-developer">
+            <h2>About Jake Sung</h2>
+            <div class="career">
+                <h2>Developer</h2>
+                <li>A self-taught front end developer who majored in business</li>
+                <li>Passionate cat addict</li>
+                <li>Available for hire</li>
+                <button><a href="https://github.com/developerasun">Follow Github</a></button>
+            </div>
+
+            <div class="career">
+                <h2>Global top 13% Etsy Seller</h2>
+                <button><a href="https://www.etsy.com/shop/DesignerAsun">Explore shop</a></button>
+            </div>
+
+            <div class="career">
+                <h2>Freelance logo designer</h2>
+                <div class="designer-portfolios">
+                    <li class="item-first">Netflix</li>
+                    <li class="item-second">Hyundai</li>
+                    <li class="item-third">d.asun</li>
+                    <li class="item-fourth">90 / 200</li>
+                    <li class="item-fifth">Moment</li>
                 </div>          
+                <button><a href="https://www.etsy.com/shop/DesignerAsun">Check Instragram</a></button>
             </div>  
 
-            <br><br><br><br><br>
-
-            <div id="content-creator flex-item">
-                <h2 id="multi-column-title" style="font-size: 2rem;">Content Creator</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, illo libero maiores doloremque soluta aut architecto nihil assumenda quia culpa.</p>
-                <div class="card-container">
-                    <div class="card">
-                        <img src="../img/2.jpg" alt="second card thumnail" width="100%" height="300px"/>
-                        <div class="card-text">
-                            <li>2099.99.99</li>
-                            <li>project 1</li>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                        </div>
-                    </div>
-                    <div class="card testing">
-                        <div class="card-img">
-                            <img src="../img/3.jpg" alt="second card thumnail"/>
-                        </div>
-                        <div class="card-text">
-                            <li>2099.99.99</li>
-                            <li>project 2</li>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../img/4.jpg" alt="second card thumnail" width="100%" height="300px"/>
-                        <div class="card-text">
-                            <li>2099.99.99</li>
-                            <li>project 3</li>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
-                        </div>
-                    </div>
+            <div class="career">
+                <h2>Content Creator</h2>
+                <div class="video-analytics">
+                    <li>Pinterest</li>
+                    <li>Title : XXX</li>
+                    <li>Performance : YYY views, ZZZ reaches</li>
                 </div>
+                <div class="video-analytics">
+                    <li>TikTok</li>
+                    <li>Title : XXX</li>
+                    <li>Performance : YYY views, ZZZ reaches</li>
+                </div>
+                <div class="video-analytics">
+                    <li>Instagram</li>
+                    <li>Title : XXX</li>
+                    <li>Performance : YYY views, ZZZ reaches</li>
+                </div>
+                <button><a href="https://www.instagram.com/designerasun/">IG</a></button>
+                <button><a href="https://www.tiktok.com/@owltheletterer">TikTok</a></button>
+                <button><a href="https://www.pinterest.com/designerasun/">Pinterest</a></button>
             </div>
-
-            <br><br><br><br><br>
-
-            <div id="developer flex-item">
-                <h2 id="multi-column-title" style="font-size: 2rem;">Developer</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
-            </div>
-
-            <br><br><br><br><br>
-
-            <div id="etsy-owner flex-item">
-                <h2 id="multi-column-title" style="font-size: 2rem;">Etsy Owner</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur laborum voluptatem quos nostrum asperiores molestias magnam impedit debitis neque saepe.</p>
-            </div>
-
-            <br><br><br><br><br>
-
+    
+                
+            
         </div>
-    </main>
+    </div>
 
     <footer class="footer">
         <div class="footer-info">
@@ -155,7 +137,8 @@
         </div>
     </footer>
 
-    <script src="../js/slideToggle.js"></script>
+    <script src="../js/modal.js"></script>
+
 </body>
 
 </html>
