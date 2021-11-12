@@ -3,14 +3,57 @@
 /* setting */
 * { 
     box-sizing: border-box;
-}
-
-li {
     list-style-type: none;
 }
 
+/* Mobile layout */
+.intro,
+.middle,
+.end {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.end-title {
+    margin-bottom: 1rem;
+}
+
+.logo img,
+.end-title img {
+    width: 300px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.intro-paragraph>p,
+.middle-paragraph>p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.career {
+    font-size: 1.5rem;
+    margin: 2rem;
+    padding: 1rem;
+    border: 2px solid #222;
+}
+
+
+/* Tablet layout */
+@media screen and (min-width:576px) {
+
+}
+
+
 /* PC layout */
-@media screen and (min-width:721px) {
+@media screen and (min-width:992px) {
     /* navigation */
     .navigation {
         display: flex;
