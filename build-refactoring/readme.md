@@ -24,3 +24,11 @@ Meow Canvas is my first-ever web front end project and solo project, which inevi
   <li>Getting teammates</li>
   <li>Getting enough contents(text, image) for website</li>
 </ol>
+
+## Refactoring self-check list
+- [ ] Accessible URL and auto deployment
+- [ ] Getting user feedbacks
+- [ ] Use of libary/framework
+- [ ] Writing test codes
+- [ ] Design pattern used
+- [ ] Documenting bugs and improvements
