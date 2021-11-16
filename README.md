@@ -8,10 +8,16 @@
 |Cross Browsing|Tested|Work|
 |:------------:|:----:|:--:|
 |Chrome|O|O|
-|Edge|O|O|
-|I.E|O|X|
+|Edge|X|O|
+|I.E 11|O|X|
 |Safari|X|-|
 |Fire Fox|X|-|
+
+<p>
+Browser dominance research is needed to support cross browsing issues. The project works best in Chrome browser since the browser is development environment.
+</p>
+
+<img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
 Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background and then link the artworks with major NFT marketplaces such as Opensea and Rariable.   
@@ -20,8 +26,6 @@ Meow canvas is a NFT artwork generation service for those who are not familiar w
 <p>
 Once the beta is fairly developed with at least two main features, listed below, refactoring towards previously written codes will start. To make this project more efficient, cleaner, and more functional. 
 </p>
-
-<img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
 The main feature of Meow Canvas, that will updated in future, is as follows. 
@@ -49,6 +53,9 @@ Handicrafted design assets will be introduced in the refactored project for more
 
 
 # Progress(monthly)
+## Nov, 2021
+(will be added) 
+
 ## Oct, 2021    
 https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 
 
@@ -107,7 +114,9 @@ From cuteLoaf@meow.com
 [CDG's portfolio](https://cdg-portfolio.com/) <br/>
 [Jeky22](https://www.jeky22.com/) <br/>
 [Kije Park](https://kijepark.com/#Home) <br/>
-[Alon Shklarek](https://www.alonshklarek.com/)
+[Alon Shklarek](https://www.alonshklarek.com/) <br/>
+[Matt Farley](https://mattfarley.ca/)
+
 
 # Author
 Jake Sung
