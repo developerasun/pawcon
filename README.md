@@ -1,7 +1,7 @@
 <img src = https://img.shields.io/badge/NFT-Blockchain-blue></a>
 <img src = https://img.shields.io/badge/GAN-A.I-red></a><br/>
 
-# What is Meow Canvas?
+# Heads-up
 ### *This is a ongoing project that is actively being updated*
 [See Beta](https://meowcanvas.netlify.app/) <br/> 
 
@@ -14,9 +14,19 @@
 |Fire Fox|X|-|
 
 <p>
-Browser dominance research is needed to support cross browsing issues. The project works best in Chrome browser since the browser is development environment.
+As of Oct 2021, the market share of each browser is as follows : 
 </p>
 
+<img src="https://user-images.githubusercontent.com/83855174/142166441-717e1e94-39c8-4676-a659-f59d3116f123.png" width=1000px height=300px/> <br/>
+
+<p>
+This project works best in Google Chrome and cross browsing will be handled to support Safari. If users visit in other browser, it should kindly inform to use Chrome or Safari. 
+</p>
+
+<br/>
+<br/>
+
+# What is Meow Canvas?
 <img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
 
 <p>
