@@ -51,15 +51,22 @@ The main feature of Meow Canvas, that will updated in future, is as follows.
 <p> 
 To acheive above, below sub-feature should be developed.
     <ol>
+        <li>CRUD</li>
         <li>Login and sign up</li>
         <li>Shopping cart for membership</li>
         <li>Membership payment</li>
+        <li>Search and filter</li>
     </ol>
 </p>
 
 <p>
 Handicrafted design assets will be introduced in the refactored project for more clearer project identity. Currently, only banner images in image slider and logo is photoshopped and created by me. Design assets that will be added are such as : logo, icon, banner, brand colors, font.
 </p>
+
+<span><b>Icon example</b></span><br/>
+<img src="https://user-images.githubusercontent.com/83855174/142178450-d5122fee-cfd5-422a-88dc-db9fd6cdef9e.png" width=1000px height=400px/><br/>
+Icons made by [Nour Oumousse](https://twitter.com/NourOumousse)
+
 
 
 # Progress(monthly)
