@@ -132,7 +132,9 @@ From cuteLoaf@meow.com
 [Jeky22](https://www.jeky22.com/) <br/>
 [Kije Park](https://kijepark.com/#Home) <br/>
 [Alon Shklarek](https://www.alonshklarek.com/) <br/>
-[Matt Farley](https://mattfarley.ca/)
+[Matt Farley](https://mattfarley.ca/) <br/
+[Finda](https://finda.co.kr/)<br/>
+[Algorithm labs](https://algorithmlabs.io/)
 
 
 # Author
