@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* mobile : 0 ~ 575px */
+header {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#trigger {
+    display: flex;
+    position: absolute;
+    flex-flow: row wrap;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    font-size: 3rem;
+    background-color: white;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+#logo {
+    margin-left: 2rem;
+    height: 100px;
+}
+
+.bars, 
+.cancel {
+    text-align: center;
+    position: absolute;
+    right: 2rem;
+    transition: all 1s ease-in-out;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 100px;
+    padding: 2rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    transition: all 1s ease-in-out;
+    animation: slide 1s 1;
+}
+
+/* click event animation */
+.clicked {
+    animation: rotate 1s 1;
+}
+
+/* default hidden */ 
+.hidden {
+    display: none;
+}
+
+/* hidden to active animaiton */
+.active {
+    display: inline-block;
+    animation: rotate-reverse 1s 1;
+}
+
+@keyframes rotate-reverse {
+    0% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Tablet layout */
+@media screen and (min-width:576px) {
+    #trigger {
+        display: none;
+    }
+}
+
+
+/* PC layout */
+@media screen and (min-width:992px) {
+    #trigger {
+        display: none;
+    }
+}
