@@ -32,37 +32,53 @@ header {
     text-align: center;
     position: absolute;
     right: 2rem;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.bars { 
+    font-size: 2rem;
 }
 
 .navigation {
     display: flex;
     flex-flow: column nowrap;
     margin-top: 100px;
-    padding: 2rem;
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     transition: all 1s ease-in-out;
-    animation: slide 1s 1;
+    animation: slide 0.5s 1;
+}
+
+.navbar-item {
+    display: inline-block;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid #ffffff;
+    background-color: #90abaf;
+}
+
+.navbar-item>a {
+    color: white;
 }
 
 /* click event animation */
 .clicked {
-    animation: rotate 1s 1;
+    animation: rotate 0.5s 1;
 }
 
 /* default hidden */ 
 .hidden {
     display: none;
+    animation: hidden_ 0.5s 1;
 }
 
-/* hidden to active animaiton */
-.active {
+/* cancel button : active  */
+.rotate-reverse {
     display: inline-block;
-    animation: rotate-reverse 1s 1;
+    animation: rotate-reverse 0.5s 1;
 }
 
 @keyframes rotate-reverse {
@@ -96,6 +112,16 @@ header {
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes hidden_ {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
