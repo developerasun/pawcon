@@ -1,6 +1,16 @@
 <img src = https://img.shields.io/badge/NFT-Blockchain-blue></a>
 <img src = https://img.shields.io/badge/GAN-A.I-red></a><br/>
 
+# Table of contents 
+- [Heads-up](#heads-up)
+- [What is Meow Canvas?](#what-is-meow-canvas)
+- [Monthly Progress](#progressmonthly)
+- [Code Example](#code-example---javascript)
+- [Contact](#contact)
+- [Reference](#reference-website)
+- [Author](#author)
+- [License](#license)
+
 # Heads-up
 ### *This is a ongoing project that is actively being updated*
 [See Beta](https://meowcanvas.netlify.app/) <br/> 
@@ -25,6 +35,8 @@ This project works best in Google Chrome and cross browsing will be handled to s
 
 <br/>
 <br/>
+
+---
 
 # What is Meow Canvas?
 <img src="https://user-images.githubusercontent.com/83855174/137261357-841014a3-63bb-4002-a39d-0de216b8e2f4.png" width=400px height=400px/>
@@ -67,7 +79,7 @@ Handicrafted design assets will be introduced in the refactored project for more
 <img src="https://user-images.githubusercontent.com/83855174/142178450-d5122fee-cfd5-422a-88dc-db9fd6cdef9e.png" width=1000px height=400px/><br/>
 Icons made by [Nour Oumousse](https://twitter.com/NourOumousse)
 
-
+---
 
 # Progress(monthly)
 ## Nov, 2021
