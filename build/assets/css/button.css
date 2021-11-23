@@ -1,0 +1,25 @@
+button {
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+    /* border-image-slice : border sliced into region */
+    border-image-slice: 1; 
+    border-image-width: 0.1rem;
+}
+
+button:hover {
+    animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-2px) rotate(-5deg) scale(1.1);
+    }
+    50% {
+        transform: translateY(-2px) rotate(5deg);
+    } 
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    } 
+}
