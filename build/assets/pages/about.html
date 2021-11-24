@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="../css/moveToTop.css">
     <link rel="stylesheet" href="../css/toggle.css">
     <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>About</title>
 </head>
 <body>
     
     <!-- Modal : how to explore this page -->
     <div class="modal">
-        <button id="close">&times;</button>
+        <div id="close">&times;</div>
             <h1>Note : this section under coding yet</h1>
             <p> 
                 A few part of website has not been completed thus I recommend you to explore this website by below order :)
@@ -35,7 +36,7 @@
 
     <!-- move to to button -->
     <div class="moveToTop">
-        <span></span>
+        <img src="../img/icon/cat-running.png" alt="cat running"/>
     </div>
     
 <header>
@@ -86,17 +87,17 @@
         </div>
         <div class="middle-paragraph">
             <div class="feature">
-                <div>icon here</div>
+                <img src="../img/icon/draw-cat.png" alt="">
                 <h2>Premade Templates</h2>
                 <p>Pick template and draw on it.</p>
             </div>
             <div class="feature">
-                <div>icon here</div>
+                <img src="../img/icon/right-click.png" alt="">
                 <h2>One-click Drawing</h2>
                 <p>One-click and Your artwork is ready</p>
             </div>
             <div class="feature">
-                <div>icon here</div>
+                <img src="../img/icon/camera.png" alt="">
                 <h2>One-click Art Filter</h2>
                 <p>One-click and Filter your images</p>
             </div>
@@ -149,9 +150,11 @@
                     </p>
                     <p>Planned and created 500++ social media contents</p>
                 </div>
-                <button><a href="https://www.instagram.com/designerasun/">Instagram</a></button>
-                <button><a href="https://www.tiktok.com/@owltheletterer">TikTok</a></button>
-                <button><a href="https://www.pinterest.com/designerasun/">Pinterest</a></button>
+                <div class="buttons">
+                    <button><a href="https://www.instagram.com/designerasun/">Instagram</a></button>
+                    <button><a href="https://www.tiktok.com/@owltheletterer">TikTok</a></button>
+                    <button><a href="https://www.pinterest.com/designerasun/">Pinterest</a></button>
+                </div>
             </div>
             <div class="career">
                 <div class="career-title">
@@ -170,23 +173,9 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-info">
-            <ul>
-                <li class="author">
-                    <span>Project leader: Jake Sung</span>
-                    <span>Location: Daegu, South Korea</span>
-                    <span>Contact: designerasun@gmail.com</span>
-                </li>
-                <li class="copyright"><span>Copyright© 2021 DEVELOPERASUN All rights reserved</span></li>
-            </ul>
-            </div>
-        <div class="footer-social">
-            <ul>
-                <li>Github</li>
-                <li>Instagram</li>
-                <li>Pinterest</li>
-            </ul>
-        </div>
+            <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
+            <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
+            <div class="footer-item">Copyright© 2021 DEVELOPERASUN All rights reserved</div>
     </footer>
 
     <script src="../js/modal.js"></script>
