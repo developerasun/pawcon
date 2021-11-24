@@ -29,22 +29,15 @@
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(270deg);
+        transform: rotate(-360deg);
     }
 }
 
-.moveToTop span {
+.moveToTop img {
     display: inline-block;
-    width: 0.35rem;
-    height: 2rem;
+    width: 45px;
+    height: 45px;
     background-color: #ADDCCB;
-}
-
-.moveToTop span::after {
-    content: "";
-    position: absolute;
-    width: 0.35rem;
-    height: 2rem;
-    background-color: #ADDCCB;
-    transform: rotate(-90deg) translateY(-9%);
+    border-radius: 50%;
+    transform: rotate(-45deg);
 }
