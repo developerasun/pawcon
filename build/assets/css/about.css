@@ -48,19 +48,23 @@
 }
 
 .feature {
-    margin: 2rem;
+    margin: 3rem;
+}
+
+.feature>img {
+    width: 100px;
+    height: 100px;
 }
 
 .feature>p {
     font-size: 1.2rem;
 }
 
-
 /* End */
 .career {
     margin: 1rem;
     padding: 1rem;
-    border: 2px solid #222;
+    border: 2px solid #1d9cb3;
 }
 
 .career-title {
@@ -88,6 +92,10 @@
     font-weight: bold;
 }
 
+/* to prevent distortion in mobile */
+.career .buttons {
+    width: 100%;
+}
 
 /* Tablet layout */
 @media screen and (min-width:576px) {
