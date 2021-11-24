@@ -1,7 +1,7 @@
 const subtitle = document.querySelector(".promotion-subtitle");
 
-let test_position = 0; 
-const test_speed = 150;
+let position = 0; 
+const speed = 150;
 
 const message_group_test = new Array(
     "an unique cat art you create ", 
@@ -15,17 +15,17 @@ function getRandomMessage() {
 }
 
 function paintRandomMessage() {
-    if (test_position < randomMsg.length) {
-        subtitle.innerHTML += randomMsg.charAt(test_position);
-        test_position += 1; 
+    if (position < randomMsg.length) {
+        subtitle.innerHTML += randomMsg.charAt(position);
+        position += 1; 
         
-        setTimeout(paintRandomMessage, test_speed); 
+        setTimeout(paintRandomMessage, speed); 
     } else {
         subtitle.innerHTML = subtitle.innerHTML.slice(0,subtitle.innerHTML.length-1);
-        setTimeout(paintRandomMessage, test_speed); 
+        setTimeout(paintRandomMessage, speed); 
 
         if (subtitle.innerHTML.length === 1) {
-            test_position = 1;
+            position = 1;
         }
     }
 }

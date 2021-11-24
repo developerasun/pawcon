@@ -1,4 +1,4 @@
-const promotionFirstTitle = document.querySelector(".promotion-title");
+const promotionFirstTitle = document.querySelector(".promotion-title-first");
 
 // create a typewriter object
 const typewriter = {
