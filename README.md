@@ -10,6 +10,7 @@
 - [Reference](#reference-website)
 - [Author](#author)
 - [License](#license)
+- [Inspiration](#inspiration)
 
 # Heads-up
 ### *This is a ongoing project that is actively being updated*
@@ -90,37 +91,43 @@ https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-
 
 
 # Code example - Javascript 
-simple slideToggle function in Javascript
+simple typing random text in Javascript
 
-``` Javascript:slideToggle.js
-const trigger = document.querySelector("#trigger");
-const navbar = document.querySelector(".navbar"); 
-const menuText = document.createElement("span");
+``` Javascript:typeRandom.js
+const subtitle = document.querySelector(".promotion-subtitle");
 
-const TRIGGER_MENU = "MENU";
-const TRIGGER_HIDE = "HIDE"; 
-const CLASS_ACITVE = "active"; 
-const CLASS_INACTIVE = "hidden"; 
+let position = 0; 
+const speed = 150;
 
-function triggerOn(event) { 
-    event.preventDefault();
+const message_group_test = new Array(
+    "an unique cat art you create ", 
+    "an entertaining hobby ", 
+    "a new way to make extra income ");
 
-    if (menuText.innerHTML  === TRIGGER_MENU) { 
-        menuText.innerHTML = TRIGGER_HIDE;
-        debugger;
-        navbar.classList.add(CLASS_ACITVE); 
+function getRandomMessage() {
+    const index = Math.floor(Math.random()*message_group_test.length);
+    const randomMessage = message_group_test[index];
+    return randomMessage; 
+}
 
-    } else { 
-        menuText.innerHTML = TRIGGER_MENU;
-        navbar.classList.remove(CLASS_ACITVE);
-        debugger;
-        navbar.classList.add(CLASS_INACTIVE);
+function paintRandomMessage() {
+    if (position < randomMsg.length) {
+        subtitle.innerHTML += randomMsg.charAt(test_position);
+        position += 1; 
+        
+        setTimeout(paintRandomMessage, speed); 
+    } else {
+        subtitle.innerHTML = subtitle.innerHTML.slice(0,subtitle.innerHTML.length-1);
+        setTimeout(paintRandomMessage, speed); 
+
+        if (subtitle.innerHTML.length === 1) {
+            position = 1;
+        }
     }
 }
 
-menuText.innerHTML = TRIGGER_MENU;
-trigger.prepend(menuText);
-trigger.addEventListener("click", triggerOn);
+const randomMsg = getRandomMessage();
+paintRandomMessage(randomMsg);
 
 ```
 
@@ -139,15 +146,17 @@ From cuteLoaf@meow.com
 ```
 
 # Reference website
-[Toonize](https://www.toonize.me/) <br/>
-[CDG's portfolio](https://cdg-portfolio.com/) <br/>
-[Jeky22](https://www.jeky22.com/) <br/>
-[Kije Park](https://kijepark.com/#Home) <br/>
-[Alon Shklarek](https://www.alonshklarek.com/) <br/>
-[Matt Farley](https://mattfarley.ca/) <br/
-[Finda](https://finda.co.kr/)<br/>
-[Algorithm labs](https://algorithmlabs.io/)
+- [Toonize](https://www.toonize.me/)
+- [CDG's portfolio](https://cdg-portfolio.com/)
+- [Jeky22](https://www.jeky22.com/)
+- [Kije Park](https://kijepark.com/#Home)
+- [Alon Shklarek](https://www.alonshklarek.com/)
+- [Matt Farley](https://mattfarley.ca/)
+- [Finda](https://finda.co.kr/)
+- [Algorithm labs](https://algorithmlabs.io/)
 
+# Inspiration
+- [It just WOW level!!](https://bruno-simon.com/#cybertruck)
 
 # Author
 Jake Sung
