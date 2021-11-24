@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.footer-item {
+    margin: 0.5rem;
+    padding:1rem;
+    border: 2px solid #222;
+}
+
+.footer-item:last-child {
+    border: none;
+    text-align: justify;
+    margin: 1rem auto;
+    padding: 0;
+}
+
+.footer-item:hover {
+    background-color: white;
+    font-weight: bold;
+}
