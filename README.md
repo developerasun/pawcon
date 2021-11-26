@@ -84,7 +84,7 @@ Icons made by [Nour Oumousse](https://twitter.com/NourOumousse)
 
 # Progress(monthly)
 ## Nov, 2021
-(will be added) 
+https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
 
 ## Oct, 2021    
 https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 
