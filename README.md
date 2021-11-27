@@ -4,13 +4,14 @@
 # Table of contents 
 - [Heads-up](#heads-up)
 - [What is Meow Canvas?](#what-is-meow-canvas)
-- [Monthly Progress](#progressmonthly)
+- [Monthly Progress](#progress)
+- [Architecture](#architecture)
 - [Code Example](#code-example---javascript)
 - [Contact](#contact)
 - [Reference](#reference-website)
+- [Inspiration](#inspiration)
 - [Author](#author)
 - [License](#license)
-- [Inspiration](#inspiration)
 
 # Heads-up
 ### *This is a ongoing project that is actively being updated*
@@ -77,17 +78,25 @@ Handicrafted design assets will be introduced in the refactored project for more
 </p>
 
 <span><b>Icon example</b></span><br/>
-<img src="https://user-images.githubusercontent.com/83855174/142178450-d5122fee-cfd5-422a-88dc-db9fd6cdef9e.png" width=1000px height=400px/><br/>
+<img src="https://user-images.githubusercontent.com/83855174/142178450-d5122fee-cfd5-422a-88dc-db9fd6cdef9e.png" width=500px height=300px/><br/>
 Icons made by [Nour Oumousse](https://twitter.com/NourOumousse)
 
 ---
 
-# Progress(monthly)
-## Nov, 2021
-https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
+# Progress
+- [Nov 2021](https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4)
+- [Oct 2021](https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4)  
 
-## Oct, 2021    
-https://user-images.githubusercontent.com/83855174/139105874-4fe3f9ec-e93e-41ec-bffe-37ae867f367d.mp4 
+# Architecture
+<p>
+The architecture of this project is divided into two different sections. Pre-refactoring architecture is a learning phase, being familiar with web development basics. 
+</p>
+
+<p>
+The second phase is all about refactorting and improving project quality, applying frameworks and libraries that is actively used in modern web development environment.
+</p>
+
+<img src="https://user-images.githubusercontent.com/83855174/143672081-2a918f70-e50c-4a1e-a79e-9b14f0130917.jpg" width=600 height=600 />
 
 
 # Code example - Javascript 
@@ -130,6 +139,7 @@ const randomMsg = getRandomMessage();
 paintRandomMessage(randomMsg);
 
 ```
+
 
 # Contact
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
