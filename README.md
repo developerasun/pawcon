@@ -15,7 +15,7 @@
 
 # Heads-up
 ### *This is a ongoing project that is actively being updated*
-[See Beta](https://meowcanvas.netlify.app/) <br/> 
+[See Beta](https://bit.ly/my_secret_box) <br/> 
 
 |Cross Browsing|Tested|Work|
 |:------------:|:----:|:--:|
