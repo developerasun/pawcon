@@ -6,6 +6,11 @@
     list-style-type: none;
 }
 
+body {
+    background-color: #202225;
+    color: white;
+}
+
 /* Mobile layout : 0~575px */
 .intro,
 .middle,
@@ -15,7 +20,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    padding: 1rem;
+    padding: 3rem;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -28,7 +33,7 @@
     margin-bottom: 1rem;
 }
 
-.logo img,
+.logo-img img,
 .end-title img {
     width: 300px;
     border-radius: 50%;
@@ -43,6 +48,10 @@
 }
 
 /* Middle */
+.middle {
+    background-color: #418794;
+    margin: auto 0;
+}
 .middle-paragraph {
     font-size: 1.5rem;
 }
@@ -61,6 +70,11 @@
 }
 
 /* End */
+
+.end {
+    padding: 1rem;
+}
+
 .career {
     margin: 1rem;
     padding: 1rem;
@@ -71,7 +85,7 @@
     display:inline-block;
     font-size: 1.5rem;
     font-weight: bold;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #1d9cb3;
     padding: 1rem;
 }
 
@@ -106,5 +120,8 @@
 /* PC layout */
 @media screen and (min-width:992px) {
 
-
+    .middle-paragraph {
+        display: flex;
+        flex-flow: row nowrap;
+    }
 }
