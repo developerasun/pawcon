@@ -18,6 +18,7 @@ header {
     align-items: center;
     font-size: 3rem;
     background-color: white;
+    color: black;
     border-bottom: 1px solid black;
     cursor: pointer;
 }
@@ -25,6 +26,10 @@ header {
 #logo {
     margin-left: 2rem;
     height: 100px;
+}
+
+#navbar-logo {
+    display: none;
 }
 
 .bars, 
@@ -61,7 +66,7 @@ header {
 }
 
 .navbar-item>a {
-    color: white;
+    color: black;
 }
 
 /* click event animation */
@@ -81,6 +86,7 @@ header {
     animation: rotate-reverse 0.5s 1;
 }
 
+/* mobile animation */
 @keyframes rotate-reverse {
     0% {
         transform: rotate(360deg);
@@ -109,6 +115,10 @@ header {
         opacity: 0;
     }
 
+    50% {
+        opacity: 0.5;
+    }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -120,6 +130,10 @@ header {
         opacity: 1;
     }
 
+    50% {
+        opacity: 0.5;
+    }
+
     100% {
         opacity: 0;
     }
@@ -128,15 +142,71 @@ header {
 
 /* Tablet layout */
 @media screen and (min-width:576px) {
-    #trigger {
-        display: none;
+    header {
+        display: block;
+    }
+
+    .navbar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        background-color: #90abaf;
+    }
+
+    .navbar-item {
+        border-top: 0;
+        border-right: 1px solid white;
+        border-left: 0;
+        border-bottom: 0;
     }
 }
 
 
 /* PC layout */
 @media screen and (min-width:992px) {
+
     #trigger {
         display: none;
     }
+
+    #navbar-logo {
+        display: inline-block;
+        margin-left: 2rem;
+        height: 100px;
+    }
+   
+    .navigation {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        font-size: 1.5rem;
+        margin: 0;
+        text-align: center;
+        background-color: #90abaf;
+        border: none;
+        animation: none;
+    }
+
+    .navbar-item:last-child {
+        border-right: 0;
+    }
+
+    .login-menu>button {
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border: 1px solid black;
+    }
+
+    .login-menu>button:hover {
+        animation: none;
+        background-color: #e8fbff;
+    }
+
+
 }
