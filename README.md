@@ -164,9 +164,11 @@ From cuteLoaf@meow.com
 - [Matt Farley](https://mattfarley.ca/)
 - [Finda](https://finda.co.kr/)
 - [Algorithm labs](https://algorithmlabs.io/)
+- [Always Fun](https://a-fun.co.kr/index.html)
 
 # Inspiration
-- [It just WOW level!!](https://bruno-simon.com/#cybertruck)
+- [Cybertruck](https://bruno-simon.com/#cybertruck)
+- [Kode Sports Club](https://www.kodeclubs.com/)
 
 # Author
 Jake Sung
