@@ -18,6 +18,13 @@
     border: none;
     cursor: pointer;
     transition: all 1s ease-in-out;
+    z-index: 100000;
+}
+
+.moveToTop>img:hover {
+    transform: rotate(-3deg) scale(0.95);
+    box-shadow: 1px 1px 5px;
+    transition: all 0.25s ease-in;
 }
 
 .click {
