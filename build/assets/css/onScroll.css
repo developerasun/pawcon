@@ -1,0 +1,41 @@
+.testing {
+    display: none;
+    position: relative;
+    top: 400px;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    /* CSS transition effect will execute when a specified property is changed */
+    transition: all 1s ease-in-out;
+}
+
+.active {
+    display: block;
+    transition: all 1s ease-in-out;
+    animation: appear 1s 1 ease-in-out;
+}
+
+.deactive {
+    display: block;
+    animation: disappear 1s 1 ease-in-out;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
