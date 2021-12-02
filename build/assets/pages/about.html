@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/toggle.css">
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/onScroll.css">
     <title>About</title>
 </head>
 <body>
@@ -39,17 +40,20 @@
         <img src="../img/icon/cat-running.png" alt="cat running"/>
     </div>
     
-<header>
-    <!-- trigger-->
+    <header>
+        <!-- trigger-->
     <div href="#" id="trigger">
-        <a href="https://meowcanvas.netlify.app/"><img src="../img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
+        <a href="../../index.html" target="_blank"><img src="../img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
         <div class="bars">&#8801;</div>
         <div class="cancel hidden">&#215;</div>
     </div>
     <!-- navigation -->
     <div class="navigation hidden">
         <div class="navbar" id="navbar">
-            <div class="navbar-item icon-brush"><a href="assets/pages/paintbrush.html">PaintBrush</a></div>
+            <a href="../../index.html" target="_blank"><img src="../img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
+            <div class="navbar-item icon-brush">
+                <a href="assets/pages/paintbrush.html">PaintBrush</a>
+            </div>
             <div class="navbar-item icon-article-alt"><a href="assets/pages/nft.html">NFT</a></div>
             <div class="navbar-item icon-award"><a href="assets/pages/ranking.html">Ranking</a></div>
             <div class="navbar-item icon-help-circled"><a href="assets/pages/about.html">About</a></div>
@@ -62,55 +66,19 @@
     </div> 
 </header>
 
-    
-    <!-- body -->
-    <div class="intro">
-        <div class="intro-title">
-            <h1>What is Meow Canvas?</h1>
-        </div>
-        <div class="logo">
-            <img src="../img/logo/logo-fixed.png" alt="logo"/>
-        </div>
-        <div class="intro-paragraph">
-            <p>
-                Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. 
-            </p>
-            <p>
-                It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background. 
-            </p>
-        </div>
-    </div>
 
-    <div class="middle">
-        <div class="middle-title">
-            <h2>Why Meow Canvas?</h2>
-        </div>
-        <div class="middle-paragraph">
-            <div class="feature">
-                <img src="../img/icon/draw-cat.png" alt="">
-                <h2>Premade Templates</h2>
-                <p>Pick template and draw on it.</p>
-            </div>
-            <div class="feature">
-                <img src="../img/icon/right-click.png" alt="">
-                <h2>One-click Drawing</h2>
-                <p>One-click and Your artwork is ready</p>
-            </div>
-            <div class="feature">
-                <img src="../img/icon/camera.png" alt="">
-                <h2>One-click Art Filter</h2>
-                <p>One-click and Filter your images</p>
-            </div>
-        </div>
-    </div>
+<!-- body -->
 
-    <div class="end">
-        <div class="end-title">
-            <h2>Who developed Meow Canvas?</h2>
-            <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
-        </div>
-        <div class="end-about-developer">
-            <h2>About Jake Sung</h2>
+<!-- <div class="testing"></div> -->
+
+<div class="end">
+    <div class="end-title">
+        <h2>Who developed Meow Canvas?</h2>
+        <img src="../img/photo/profile.jpg" alt="profile" id="profile" />
+    </div>
+    <div class="end-about-developer">
+        <h2>About Jake Sung</h2>
+        <div class="careers">
             <div class="career">
                 <div class="career-title">
                     <h2>Front End Developer</h2>
@@ -118,16 +86,19 @@
                 </div>
                 <div class="career-text">
                     <p>
-                        Self-taught. <br/> Learn to build, Make to sell is the motto.
+                        Code since 2021 <br/> total 900++ commits 2021, total 20++ issues
                     </p>
-                    <p>HTML5, CSS3, Javascript</p>
+                    <p>
+                        HTML5, CSS3, Javascript <br/>
+                        MERN stack
+                    </p>
                 </div>
                 <button><a href="https://github.com/developerasun">Follow Github</a></button>
             </div>
             <div class="career">
                 <div class="career-title">
                     <h2>Etsy Seller</h2>
-                    <p>(Sep 2021 ~ Current)</p>
+                    <p>(Sep 2020 ~ Current)</p>
                 </div>
                 <div class="career-text">
                     <p>
@@ -145,8 +116,8 @@
                 <div class="career-text">
                     <p>
                     TikTok : 400K video views under 28 days. <br/><br/>
-                       Instagram  : 2K++ followers <br/><br/>
-                       Pinterest : Group board with 230++ collaborators
+                    Instagram  : 2K++ followers <br/><br/>
+                    Pinterest : Group board with 230++ collaborators
                     </p>
                     <p>Planned and created 500++ social media contents</p>
                 </div>
@@ -163,7 +134,7 @@
                 </div>
                 <div class="career-text">
                     <p>Self-taught graphic designer <br/>
-                       Self-taught calligrapher
+                    Self-taught calligrapher
                     </p>
                     <p>Created 100++ typographic logo remakes</p>
                 </div>
@@ -171,16 +142,65 @@
             </div>
         </div>
     </div>
+</div>
 
-    <footer class="footer">
-            <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
-            <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
-            <div class="footer-item">Copyright© 2021 DEVELOPERASUN All rights reserved</div>
-    </footer>
+<div class="intro">
+    <div class="intro-title">
+            <h1>What is Meow Canvas?</h1>
+        </div>
+        <div class="logo-img">
+            <img src="../img/logo/logo-fixed.png" alt="logo"/>
+        </div>
+        <div class="intro-paragraph">
+            <p>
+                Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. 
+            </p>
+            <p>
+                It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background. 
+            </p>
+        </div>
+    </div>
 
-    <script src="../js/modal.js"></script>
+<div class="middle">
+    <div class="middle-title">
+        <h2>Why Meow Canvas?</h2>
+    </div>
+    <div class="middle-paragraph">
+        <div class="feature">
+            <img src="../img/icon/draw-cat.png" alt="">
+            <h2>Premade Templates</h2>
+            <p>Pick template and draw on it.</p>
+        </div>
+        <div class="feature">
+            <img src="../img/icon/right-click.png" alt="">
+            <h2>One-click Drawing</h2>
+            <p>One-click and Your artwork is ready</p>
+        </div>
+        <div class="feature">
+            <img src="../img/icon/camera.png" alt="">
+            <h2>One-click Art Filter</h2>
+            <p>One-click and Filter your images</p>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+        <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
+        <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
+        <div class="footer-item"><a href="#">Copyright© 2021 DEVELOPERASUN All rights reserved</a></div>
+        <div class="footer-item waves"> 
+            <div class="wave1"></div>
+            <div class="wave2" ></div>
+            <div class="wave3"></div>
+            <div class="wave4"></div>
+        </div>
+</footer>
+
+    <!-- <script src="../js/modal.js"></script> -->
     <script src="../js/toggle.js"></script>
     <script src="../js/moveToTop.js"></script>
+    <script src="../js/onScroll.js"></script>
 
 </body>
 
