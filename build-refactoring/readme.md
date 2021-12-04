@@ -8,10 +8,14 @@ Meow Canvas is my first-ever web front end project and solo project, which inevi
 <strong>In code-level</strong>
 <ol>
   <li>More sematic HTML structure</li>
-  <li>Responsive CSS in order : mobile -> tablet -> PC </li>
-  <li>Object-oriented, modularized Javascript coding</li>
-  <li>Writing modules, preventing one code file getting to big and fat</li>
-</ol>
+  <li>More CSS libraries : Sass</li>
+  <li>Less web design troubleshooting : mobile -> tablet -> PC </li>
+  <li>More modularized UI : React</li>
+  <li>More test codes : Mocha</li>
+  <li>Git branch and semantic versioning for version control</li>
+  <li>Git pull request and code reviews</li>
+  <li>More functional features with open source library : Hashlip</li>
+  </ol>
 
 <strong>Out code-level</strong>
 <ol>
@@ -19,10 +23,8 @@ Meow Canvas is my first-ever web front end project and solo project, which inevi
   <li>More wireframes</li>
   <li>Handicrafed design asset : logo, icon, banner images</li>
   <li>Higher quality of design mockups</li>
-  <li>Use of git branch</li>
-  <li>Use of git pull request</li>
   <li>Getting teammates</li>
-  <li>Getting enough contents(text, image) for website</li>
+  <li>Planning promotion contents in advance</li>
 </ol>
 
 ## Refactoring self-check list
