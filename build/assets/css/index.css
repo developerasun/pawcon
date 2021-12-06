@@ -1,65 +1,22 @@
-@import "./reset.css";
+@import "reset.css";
+@import "import/common.css";
+@import "modal.css";
+@import "toggle.css";
+@import "button.css";
+@import "footer.css";
 
 * { 
     box-sizing: border-box;
 }
 
 html { 
+    background-color: #202225;
+    color: rgb(204, 204, 204);
     font-family: 'Montserrat', sans-serif;
 }
 
 /* Mobile : 0~575px */
-    /* navigation */
-    .navigation { 
-        width: 100%;
-        background-color: #97ADB1;
-    }
-    
-    .logo, 
-    .navbar,
-    .login-menu,
-    .artworks,
-    .footer { 
-        display: none;
-    }
-    
-    .navbar-item { 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-        border-bottom: 1px solid #eee;
-        font-size: 1.2rem;
-    }
-
-    .navbar-item>a>span {
-        color: white;
-    }
-    
-    .navbar-item-icon {
-        margin-right: 0.3rem;
-    }
-    
-    .navigation #trigger {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(255, 255, 255);
-        border-bottom: 2px solid rgb(122, 122, 122);
-        color: black;
-        font-weight:bold;
-        padding: 0 10px;
-        width: 100%;
-        height: 40px;
-    }
-    
-    #trigger img { 
-        width: auto;
-        height: 50%;
-        object-fit: cover;
-    }
-    
-    /* Mobile : User Canvas */
+    /* User Canvas */
     .user-canvas { 
         display: flex;
         flex-direction: column-reverse;
@@ -180,139 +137,10 @@ html {
         margin: 0.5rem;
     }
 
-    .footer{
-        display: grid;
-        grid-template-columns:repeat(12, 1fr);
-        grid-template-rows: minmax(60px, auto);
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-        background-color:rgb(196, 196, 196);
-    }
-
-    .footer-info { 
-        grid-column: 1/8;
-        text-align: left;
-        margin-left: 50px;
-    }
-
-    .author>span:nth-child(2),
-    .author>span:nth-child(3),
-    .copyright {
-        display: none;
-    }
-    
-    .footer-social { 
-        grid-column: 8/13;
-        text-align: right;
-        margin-right: 50px;
-    }
-
-
-    /* Javascript-linked CSSs */
-    .hidden { 
-        display: none;
-        /* transition: linear .5s; */
-    }
-    
-    .active { 
-        display: block;
-        width: 100%;
-        height: auto;
-        line-height: 40px;
-    }
-
-
 /* Tablet : 576px~991px */
 @media screen and (min-width: 576px) {
-
-    /* navigation */
-    .navigation {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        height: 60px;
-        font-size: 1rem;
-        background-color:rgb(255, 255, 255);
-        border-bottom: 2px solid rgb(122, 122, 122);
-    }
-
-    .logo,
-    .login-menu { 
-        display: block;
-        width: 200px;
-    }
-
-    .logo img { 
-        position: relative;
-        left: 0;
-        width: 100px;
-        height: 60px;
-        object-fit: cover;
-    }
-
-    #navbar {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        width: 720px;
-        height: 60px;
-    }
-    
-    .navbar-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px 0 20px;
-        width: 144px;
-        line-height: 60px;
-        border-bottom: 0;
-        font-size: 1em;
-        margin-right: -6px;
-    }
-
-    .navbar-item>a>span {
-        color: black;
-    }
-    
-    .navbar-item>img {
-        padding-right: 0.5rem;
-    }
-
-    .navbar-item:last-child {
-        border-right: 0;
-    }
-
     /* tablet : image slider */
-    .img-m,
-    .navigation #trigger { 
-        display: none;
-    }
-
-    .bars { 
-        position: absolute;
-        left: 42%;
-    }
-
-    .bar { 
-        cursor: pointer;
-        display: inline-block;
-        height: 10px;
-        width: 30px;
-        background-color: azure;
-        transition: background-color 0.3s ease-in-out;
-        border: 0;
-        margin: 0px 0.5em;
-    }
-
-    .clicked, .bar:hover { 
-        background-color: #FFB6C1;
-    }
-
+    
     .artworks { 
         width: 100%;
         display: block;
@@ -490,104 +318,10 @@ html {
         height: 600px;
         margin: 0.5rem;
     }
-
-
-    .footer{
-        display: grid;
-        grid-template-columns:repeat(12, 1fr);
-        grid-template-rows: minmax(60px, auto);
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-        background-color:rgb(196, 196, 196);
-    }
-
-    .footer-info { 
-        grid-column: 1/8;
-        text-align: left;
-        margin: 1rem;
-    }
-
-    .author>span {
-        margin: 1rem 1rem 1rem 0;
-    }
-
-    .author>span:nth-child(2),
-    .author>span:nth-child(3),
-    .copyright {
-        display: grid;
-    }
-    
-    .footer-social { 
-        grid-column: 8/13;
-        text-align: right;
-        margin-right: 50px;
-    }
-
 }
 
 /* PC layout sections using media query*/
 @media screen and (min-width:992px) {
-
-    /* navigation */
-    .navigation {
-        display: flex;
-        /* position: fixed; */
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: center;
-        height: 60px;
-        font-size: 1rem;
-        background-color:rgb(255, 255, 255);
-        border-bottom: 2px solid rgb(122, 122, 122);
-    }
-
-    .logo,
-    .login-menu { 
-        display: block;
-        width: 200px;
-    }
-
-    .logo img { 
-        position: relative;
-        left: 0;
-        width: 100px;
-        height: 60px;
-        object-fit: cover;
-    }
-
-    #navbar {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        /* border-bottom: 1rem solid black; */
-        width: 720px;
-        height: 60px;
-    }
-    
-    .navbar-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px 0 20px;
-        width: 144px;
-        /* font-size: 3rem; */
-        line-height: 60px;
-        border-bottom: 0;
-        font-size: 1em;
-        margin-right: -6px;
-    }
-    
-    .navbar-item>img {
-        padding-right: 0.5rem;
-    }
-
-    .navbar-item:last-child {
-        border-right: 0;
-    }
 
     /* image slider */
     .img-m,
@@ -628,17 +362,8 @@ html {
     }
 
     .artwork img { 
-        /* Use percentage unit to make layout flexible. Setting width 100% makes child width size 
-        parent width one. In box model, setting width/height 100% means that they are relatively 
-        resized compared to parent element. */
         width: 100%;
         height: 50vh;
-
-        /* Adjusting image size in container using object-fit property : setting width/height
-        and set object-fit to 'cover' to keep the width/height's ratio 
-        object-fit: fill/contain/cover/none/scale-down
-        */
-        /*object-fit: cover;  similar to background-image: cover; */ 
     }
 
     .fade { 
@@ -786,31 +511,6 @@ html {
         display: block;
     }
 
-    /* fix footer issue when screen size is around table-width */
-    .footer{
-        display: grid;
-        grid-template-columns:repeat(12, 1fr);
-        grid-template-rows: minmax(60px, auto);
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-        background-color:rgb(196, 196, 196);
-    }
-
-    .footer-info { 
-        grid-column: 1/8;
-        text-align: left;
-        margin-left: 50px;
-    }
-    
-    .footer-social { 
-        grid-column: 8/13;
-        text-align: right;
-        margin-right: 50px;
-    }
 
 }
 

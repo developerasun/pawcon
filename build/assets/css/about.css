@@ -1,4 +1,11 @@
-@import url("reset.css");
+@import "reset.css";
+@import "import/common.css";
+@import "modal.css";
+@import "moveToTop.css";
+@import "toggle.css";
+@import "button.css";
+@import "footer.css";
+@import "onScroll.css";
 
 /* setting */
 * { 

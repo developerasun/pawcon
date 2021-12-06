@@ -44,6 +44,7 @@ header {
     font-size: 2rem;
 }
 
+
 .navigation {
     display: flex;
     flex-flow: column nowrap;
@@ -63,6 +64,11 @@ header {
     padding: 2rem;
     border: 1px solid #ffffff;
     background-color: #90abaf;
+}
+
+.navbar-item:hover { 
+    background-color: #ececec;
+    font-weight: bold;
 }
 
 .navbar-item>a {
