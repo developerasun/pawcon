@@ -5,19 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- for SEO -->
-    <meta name="description"
-          content="NFT marketplace for cat drawings">
-    <meta name="keywords"
-          content="nft, digital art, drawing, painting, cat art, cat lover">
+    <meta name="description" content="NFT marketplace for cat drawings">
+    <meta name="keywords" content="nft, digital art, drawing, painting, cat art, cat lover">
 
-    <!-- connecting CSS -->
-    <link rel="stylesheet" href="assets/css/import/common.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/modal.css">
-    <link rel="stylesheet" href="assets/font/fontello/css/fontello.css">
-
-    <!-- Favicon : Use .ico format for broader browser compatability. Choose a clear image for favicon for visibility -->
     <link rel="shortcut icon" href="assets/img/favicon/paw.ico" type="image/x-icon">
     
     <title>Meow Canvas</title>
@@ -37,87 +28,42 @@
                 <span>Let's Go</span>
         </div>
 
-        <!-- Header: navigation bar -->
-        <header class="header" id="header">
-            <nav class="navigation">
-                
-                <!-- trigger: when triggered, elements in mobile environment either 
-                pops up or gone  -->
-                <a href="#" id="trigger">
-                    <!-- <img src="assets/img/logo/logo-fixed.png" alt="logo mobile" id="trigger-logo"/> -->
-                    <div class="bars">&#8801;</div>
-                </a>
-                
-                <div class="logo">
-                    <a href="https://meowcanvas.netlify.app/"><img src="assets/img/logo/logo-fixed.png" alt="logo"/></a>
-                </div>
+        <header>
+            <!-- trigger-->
+            <div href="#" id="trigger">
+                <a href="./index.html" target="_blank"><img src="assets/img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
+                <div class="bars">&#8801;</div>
+                <div class="cancel hidden">&#215;</div>
+            </div>
+            <!-- navigation -->
+            <div class="navigation hidden">
                 <div class="navbar" id="navbar">
-                    <div class="navbar-item icon-brush">
-                        <a href="assets/pages/paintbrush.html">
-                            <span>PaintBrush</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-article-alt">
-                        <a href="assets/pages/nft.html">
-                        <span>NFT</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-award">
-                        <a href="assets/pages/ranking.html">
-                        <span>Ranking</span>
-                        </a>
-                    </div>
-                    <div class="navbar-item icon-help-circled">
-                        <a href="assets/pages/about.html">
-                        <span>About</span>
-                        </a>    
-                    </div>
-                    <div class="navbar-item icon-mail-alt">
-                        <a href="assets/pages/contact.html">
-                        <span>Contact</span>
-                        </a>
-                    </div>
+                    <a href="./index.html" target="_blank"><img src="assets/img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
                     <div class="navbar-item">
-                        <a href="#">
-                        <span>Notice</span>
-                        </a>
+                        <a href="assets/pages/paintbrush.html">PaintBrush</a>
                     </div>
+                    <div class="navbar-item"><a href="assets/pages/nft.html">NFT</a></div>
+                    <div class="navbar-item"><a href="assets/pages/ranking.html">Ranking</a></div>
+                    <div class="navbar-item"><a href="assets/pages/about.html">About</a></div>
+                    <div class="navbar-item"><a href="assets/pages/contact.html">Contact</a></div>
                 </div>
                 <div class="login-menu">
                     <button class="login"><a href="assets/pages/login.html">Login</a></button>
                     <button class="sign-up"><a href="assets/pages/login.html">Sign up</a></button>
                 </div>
-            </nav> 
+            </div> 
         </header>
 
-        <!-- promotion img : image slider -->
-        <div class="artworks">
-            <div class="artwork fade"><img src="assets/img/banner/finished/lying-ps.png" alt="cat"/></div>
-            <div class="artwork fade"><img src="assets/img/banner/finished/elegance-ps.png" alt="cat"/></div>
-            <div class="artwork fade"><img src="assets/img/banner/finished/slider-improved.png" alt="cat"/></div>
-            <div class="artwork fade"><img src="assets/img/banner/finished/beauty-ps.png" alt="cat"/></div>
-
-            <!-- Special symbols can be represented in HTML code. 
-            e.g : ◀	&#9664;   ▶	&#9654; -->
-            <!-- <a class="prev" onclick="plusSlide(-1)"><p>&#9664;</p></a>
-            <a class="next" onclick="plusSlide(1)"><p>&#9654;</p></a> -->
-
-            <!-- the bars : image slider bottom -->
-            <div class="bars">
-                <button class="bar"></button>
-                <button class="bar"></button>
-                <button class="bar"></button>
-                <button class="bar"></button>
-            </div>
-        </div>
+        <!-- 3D image slider -->
+        <div class="3dSlider"></div>
 
         <!-- User canvas : CSS grid layout model - wrapper and items -->
         <div class="user-canvas">
-            <div class="user-image-container scroller-m">
+            <div class="user-image-container">
                 <img src="assets/img/2.jpg" class="user-img-first" alt="artwork-first"/>
-                <img src="assets/img/3.jpg" class="user-img-second img-m" alt="artwork-second"/>
-                <img src="assets/img/3.jpg" class="user-img-third img-m" alt="artwork-third"/>
-                <img src="assets/img/3.jpg" class="user-img-fourth img-m" alt="artwork-fourth"/>
+                <img src="assets/img/3.jpg" class="user-img-second" alt="artwork-second"/>
+                <img src="assets/img/3.jpg" class="user-img-third" alt="artwork-third"/>
+                <img src="assets/img/3.jpg" class="user-img-fourth" alt="artwork-fourth"/>
             </div>
             <div class="user-image-description">
                 <h2 style="font-size: 2rem;">Your Canvas</h2>
@@ -143,7 +89,7 @@
                 <div class="card">
                     <img src="assets/img/2.jpg" alt="second card thumnail" width="100%" height="300px"/>
                     <div class="card-text">
-                        <span>2099.99.99</span>
+                        <span>2021.11.15</span>
                         <h3 style="font-size: 2rem; font-weight:bold">project 1</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
                     </div>
@@ -153,7 +99,7 @@
                         <img src="assets/img/3.jpg" alt="second card thumnail"/>
                     </div>
                     <div class="card-text">
-                        <span>2099.99.99</span>
+                        <span>2021.11.16</span>
                         <h3 style="font-size: 2rem; font-weight:bold">project 2</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
                     </div>
@@ -161,7 +107,7 @@
                 <div class="card">
                     <img src="assets/img/4.jpg" alt="second card thumnail" width="100%" height="300px"/>
                     <div class="card-text">
-                        <span>2099.99.99</span>
+                        <span>2021.11.17</span>
                         <h3 style="font-size: 2rem; font-weight:bold">project 3</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
                     </div>
@@ -169,29 +115,28 @@
             </div>
         </div>
 
-        <br><br><br><br><br>
-
         <!-- promotion section 1 : user instruction -->
         <div class="promotion">
             <h2 class="promotion-title-first"></h2>
             <div class="promotion-subtitle"></div>
         </div>
         <div class="message-group">
-            <div class="message icon-bucket">
+            <div class="message">
+                <div>image here</div>
                 <h2>Draw, pixelate, or generate your cat artwork</h2><br/>
                 <p>
                     Pick the mode you like and enjoy it. 
                 </p>
             </div>
-            <div class="message icon-floppy">
-                <!-- icon 2 (save) -->
+            <div class="message">
+                <div>image here</div>
                 <h2> Save and donwload the artwork</h2><br/>
                 <p>
                     Save it your artwork to your account and safely download it.
                 </p>
             </div>
-            <div class="message icon-home">
-                <!-- icon 3 (home) -->
+            <div class="message">
+                <div>image here</div>
                 <h2> List your artworks for sale in NFT marketplace</h2><br/>
                 <p>
                     List your artwork below marketplace and make sales.
@@ -199,8 +144,8 @@
                 <button type="submit">Opensea</button>
                 <button type="submit">Rariable</button> 
             </div>
-            <div class="message icon-coffee">
-                <!-- icon 4 (paypal) -->
+            <div class="message">
+                <div>image here</div>
                 <h2> Donate and support a developer</h2><br/>
                 <p> 
                     Buy the developer a coffee
@@ -208,9 +153,6 @@
                 <button type="submit">Buy developer a coffee</button>
             </div>
         </div>
-        
-        
-        <br><br><br><br><br>
 
         <!-- promotion section 2 -->
         <div class="promotion youtube-video">
@@ -231,39 +173,25 @@
             <a href="assets/pages/ranking.html" target="_blank"><button>Explore Gallery</button></a>
         </div>
 
-        <br><br><br><br><br>
-
-
-       
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-info">
-                <ul>
-                    <li class="author">
-                        <span>Project leader: Jake Sung</span>
-                        <span>Location: Daegu, South Korea</span>
-                        <span>Contact: designerasun@gmail.com</span>
-                    </li>
-                    <li class="copyright"><span>Copyright© 2021 DEVELOPERASUN All rights reserved</span></li>
-                </ul>
-                </div>
-            <div class="footer-social">
-                    <a href="https://github.com/developerasun" target="_blank">Github </a>
-                    <span>|</span>
-                    <a href="http://instagram.com/designerasun" target="_blank">Instagram</a>
+    <!-- Footer -->
+    <footer class="footer">
+            <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
+            <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
+            <div class="footer-item"><a href="#">Copyright© 2021 DEVELOPERASUN All rights reserved</a></div>
+            <div class="footer-item waves"> 
+                <div class="wave1"></div>
+                <div class="wave2" ></div>
+                <div class="wave3"></div>
+                <div class="wave4"></div>
             </div>
-        </footer>
+    </footer>
 
-    <!-- Jquery should be declared first - otherwise it will cause an uncaught 
-    reference error. -->
-    <!-- <script src="assets/js/jquery-2.2.4.min.js"></script> -->
     <script src="assets/js/modal.js"></script>
-    <script src="assets/js/slideToggle.js"></script>
-    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/toggle.js"></script>
     <script src="assets/js/typeEffect.js"></script>
     <script src="assets/js/typeRandom.js"></script>
     <script src="assets/js/channelTalk.js"></script>
+
 
 </body>
 </html>
