@@ -4,14 +4,11 @@ const popUp = document.querySelector(".modal");
 const FADE_OUT = "modal-animate-fade-out";
 const FADE_IN = "modal-animate-fade-in";
 
-// load and change display 
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        popUp.classList.add(FADE_IN);
-        popUp.style.display = "block";
-        popUp.style.position = "fixed";
-    }, 1000);
-});
+setTimeout(() => {
+    popUp.classList.add(FADE_IN);
+    popUp.style.display = "block";
+    popUp.style.position = "fixed";
+}, 1000);
 
 // close and change display : button
 closeX.addEventListener("click", () => {
