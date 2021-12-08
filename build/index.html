@@ -28,6 +28,7 @@
                 <span>Let's Go</span>
         </div>
 
+        <!-- header -->
         <header>
             <!-- trigger-->
             <div href="#" id="trigger">
@@ -39,13 +40,12 @@
             <div class="navigation hidden">
                 <div class="navbar" id="navbar">
                     <a href="./index.html" target="_blank"><img src="assets/img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
-                    <div class="navbar-item">
-                        <a href="assets/pages/paintbrush.html">PaintBrush</a>
-                    </div>
-                    <div class="navbar-item"><a href="assets/pages/nft.html">NFT</a></div>
-                    <div class="navbar-item"><a href="assets/pages/ranking.html">Ranking</a></div>
-                    <div class="navbar-item"><a href="assets/pages/about.html">About</a></div>
-                    <div class="navbar-item"><a href="assets/pages/contact.html">Contact</a></div>
+                    <div class="navbar-item"><a href="index.html" target="_blank">Main</a></div>
+                    <div class="navbar-item"><a href="#">Create</a></div>
+                    <div class="navbar-item"><a href="#">Gallery</a></div>
+                    <div class="navbar-item"><a href="#">Shop</a></div>
+                    <div class="navbar-item"><a href="#">Community</a></div>
+                    <div class="navbar-item"><a href="assets/pages/about.html" target="_blank">About</a></div>
                 </div>
                 <div class="login-menu">
                     <button class="login"><a href="assets/pages/login.html">Login</a></button>
@@ -55,33 +55,30 @@
         </header>
 
         <!-- 3D image slider -->
-        <div class="3dSlider"></div>
-
-        <!-- User canvas : CSS grid layout model - wrapper and items -->
-        <div class="user-canvas">
-            <div class="user-image-container">
-                <img src="assets/img/2.jpg" class="user-img-first" alt="artwork-first"/>
-                <img src="assets/img/3.jpg" class="user-img-second" alt="artwork-second"/>
-                <img src="assets/img/3.jpg" class="user-img-third" alt="artwork-third"/>
-                <img src="assets/img/3.jpg" class="user-img-fourth" alt="artwork-fourth"/>
-            </div>
-            <div class="user-image-description">
-                <h2 style="font-size: 2rem;">Your Canvas</h2>
-                <li>
-                    <span>Description</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, molestiae!</p>
-                </li>
-                <li>
-                    <span>Author</span>
-                    <p>Impedit aliquid reprehenderit culpa vel ullam ad fugiat magni id.</p>
-                </li>
-                <li>
-                    <span>Bidding</span>
-                    <p>Eos commodi similique laudantium placeat maiores recusandae labore nam libero!</p>
-                </li>
-            </div>
+        <div class="imgSlider">
+            <span class="item-1"><img src="assets/img/1.jpg" /></span>
+            <span class="item-2"><img src="assets/img/2.jpg" /></span>
+            <span class="item-3"><img src="assets/img/3.jpg" /></span>
+            <span class="item-4"><img src="assets/img/4.jpg" /></span>
+            <span class="item-5"><img src="assets/img/5.jpg" /></span>
+        </div>
+        <div class="imgSlider-description">
+            <h2>Welcome to <br>Meow Canvas</h2>
+            <p>Website under building yet</p>
         </div>
         
+        <!-- Gallery -->
+        <div class="gallery" >
+            <div class="title" >
+                <h2>We help creators</h2>
+                <p>Spread your artistic talent and Make them NFTs</p>
+            </div>
+            <img src="assets/img/1.jpg"  alt="temp image" />
+            <div class="texts" >
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque omnis eos eaque laudantium aliquam aperiam!</p>
+            </div>
+        </div>
+
         <!-- Weekly Tops -->
         <div class="weekly-tops">
             <h2>Weekly Tops</h2>
@@ -170,7 +167,7 @@
                 allowfullscreen>
                 </iframe>
             </div>
-            <a href="assets/pages/ranking.html" target="_blank"><button>Explore Gallery</button></a>
+            <a href="#" target="_blank"><button>Explore Gallery</button></a>
         </div>
 
     <!-- Footer -->
