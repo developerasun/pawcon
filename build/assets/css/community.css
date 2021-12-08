@@ -1,0 +1,18 @@
+@import "reset.css";
+@import "import/common.css";
+@import "toggle.css";
+@import "button.css";
+@import "footer.css";
+
+.notice {
+    margin-top: 10rem;
+}
+
+.table,
+thead, 
+tbody, 
+td,
+tr,
+th {
+    border:1px solid white;
+}
