@@ -4,49 +4,24 @@
 @import "toggle.css";
 @import "button.css";
 @import "footer.css";
+@import "threeDimensionalSlider.css";
+@import "gallery.css";
 
-* { 
-    box-sizing: border-box;
-}
 
-html { 
-    background-color: #202225;
-    color: rgb(204, 204, 204);
-    font-family: 'Montserrat', sans-serif;
-}
 
 /* Mobile : 0~575px */
     /* User Canvas */
-    .user-canvas { 
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
+    .imgSlider-description {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
-    
-    .user-image-container { 
-        max-width: minmax(600px auto);
+
+    .imgSlider-description p {
+        font-size: 1rem;
+        padding: 2rem;
     }
-    
-    .user-image-container img { 
-        width: 50%;
-        height:200px;
-        margin-top: 1rem;
-        padding-right: 0.5rem;
-        object-fit: cover;
-    }
-    
-    .scroller-m {
-        display: block;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-    }
-    
-    .user-image-description> li {
-        display: none;
-    }
+
     
     /* Mobile : Weekly Tops, cards */
     .weekly-tops>h2 {
@@ -139,82 +114,6 @@ html {
 
 /* Tablet : 576px~991px */
 @media screen and (min-width: 576px) {
-    /* tablet : image slider */
-    
-    .artworks { 
-        width: 100%;
-        display: block;
-        position: relative;
-        height: minmax(200px auto);
-    }
-
-    .artwork { 
-        display: none;
-        width: 100%;
-    }
-
-    .artwork img { 
-        width: 100%;
-        height: 50vh;
-    }
-
-    .fade { 
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-
-    @-webkit-keyframes fade { 
-        from { 
-            opacity: 0.5;
-        }
-        to { 
-            opacity: 1;
-        }
-    }
-
-    @keyframes fade { 
-        from { 
-            opacity: 0.5;
-        }
-        to { 
-            opacity: 1;
-        }
-    }
-
-    /* tablet : user canvas */
-    .user-canvas { 
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: minmax(200px auto);
-        margin: 5em 5em;
-    }
-
-    .user-image-container { 
-        grid-column: 1/6;
-        grid-row: auto;
-        max-width: minmax(500px auto);
-    }
-
-    .user-image-container img { 
-        width: 100%;
-        min-width: 200px;
-        border-radius: 5%;
-        object-fit: cover;
-    }
-
-    .user-image-description {
-        grid-column: 7/13;
-        grid-row: auto;
-        align-self: center;
-    }
-
-    .user-image-description>li {
-        display: block;
-        font-size: 1.3rem;
-        margin: 2rem auto;
-    }
 
     /* tablet : card */
     .card-container {
@@ -324,106 +223,7 @@ html {
 @media screen and (min-width:992px) {
 
     /* image slider */
-    .img-m,
-    .navigation #trigger { 
-        display: none;
-    }
-
-    .bars { 
-        position: absolute;
-        left: 42%;
-    }
-
-    .bar { 
-        cursor: pointer;
-        display: inline-block;
-        height: 10px;
-        width: 30px;
-        background-color: azure;
-        transition: background-color 0.3s ease-in-out;
-        border: 0;
-        margin: 0px 0.5em;
-    }
-
-    .clicked, .bar:hover { 
-        background-color: #FFB6C1;
-    }
-
-    .artworks { 
-        width: 100%;
-        display: block;
-        position: relative;
-        height: minmax(200px auto);
-    }
-
-    .artwork { 
-        display: none;
-        width: 100%;
-    }
-
-    .artwork img { 
-        width: 100%;
-        height: 50vh;
-    }
-
-    .fade { 
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-
-    @-webkit-keyframes fade { 
-        from { 
-            opacity: 0.5;
-        }
-        to { 
-            opacity: 1;
-        }
-    }
-
-    @keyframes fade { 
-        from { 
-            opacity: 0.5;
-        }
-        to { 
-            opacity: 1;
-        }
-    }
-
-    /* user canvas */
-    .user-canvas { 
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: minmax(200px auto);
-        margin: 5em 5em;
-    }
-
-    .user-image-container { 
-        grid-column: 1/6;
-        grid-row: auto;
-        max-width: minmax(500px auto);
-    }
-
-    .user-image-container img { 
-        width: 100%;
-        height: auto;
-        border-radius: 5%;
-        object-fit: cover;
-    }
-
-    .user-image-description {
-        grid-column: 7/13;
-        grid-row: auto;
-        align-self: center;
-    }
-
-    .user-image-description>li {
-        display: block;
-        font-size: 1.3rem;
-        margin: 2rem auto;
-    }
-
+    
     /* promotion paragraph first */
     .message-group {
         display: flex;
@@ -510,7 +310,6 @@ html {
     .card:nth-child(3) {
         display: block;
     }
-
 
 }
 
