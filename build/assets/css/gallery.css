@@ -1,0 +1,42 @@
+.gallery {
+  position: relative;
+}
+
+.gallery .title {
+  background-color: blueviolet;
+  height: 200px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.gallery .title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.gallery .title p {
+  padding-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.gallery img {
+  width: 70%;
+  height: 200px;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+}
+
+.gallery .texts {
+  background-color: darkgreen;
+  height: 200px;
+}
+
+.gallery .texts p {
+  position: relative;
+  font-size: 1rem;
+  top: 55%;
+  padding: 1rem;
+  text-align: center;
+}
+/*# sourceMappingURL=gallery.css.map */
