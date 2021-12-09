@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- connect css -->
+    <link rel="stylesheet" href="../css/import/common.css">
+    <link rel="stylesheet" href="../css/paintbrush.css">
+    <title>Paintbrush</title>
+</head>
+<body>
+    
+
+ <!-- Create a Canvas -->
+    <canvas id = "myCanvas" class = "canvas"></canvas>
+    <div class="promotion">
+        <p>
+            Draw your cat and Make it NFT!
+            Show off the drawing to your friends on social and even <strong>sell them!</strong>
+        </p>
+    </div>
+    <!-- Create paypal payment button --> 
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class = "paypal">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="8UVFCBTVT6LA8">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/ko_KR/i/scr/pixel.gif" width="1" height="1">
+        </form>
+
+    <!-- Create social sharing link button -->
+        <div class = "social-share">
+            <!-- Twitter -->
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <!-- Facebook -->
+            <div class="fb-share-button" data-href="https://meowcanvas.netlify.app/" data-layout="button" data-size="small">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="9sWQnML0"></script>
+        </div>
+
+        <div class = "controls">
+            <!-- Create brush and adjust its size -->
+            <div class="controls_range">
+                <input type="range" name="my_brush" id="brush_range"
+                min = "0.1"
+                max = "10.1"
+                step = "0.5"
+                value = "2.5"
+                />
+            </div>
+            <!-- Create buttons : Fill and Save -->
+            <div class="controls_btns">
+                <button id="jsMode">Fill</button>
+                <button id="jsSave">Save</button>
+            </div>
+
+            <!-- Create color pickers -->
+            <div class="controls_colors" id = "myColors">
+                <div class="controls_color jsColor" style="background-color: white;"></div>
+                <div class="controls_color jsColor" style="background-color: red;"></div>
+                <div class="controls_color jsColor" style="background-color: orange;"></div>
+                <div class="controls_color jsColor" style="background-color: yellow;"></div>
+                <div class="controls_color jsColor" style="background-color: black;"></div>
+                <div class="controls_color jsColor" style="background-color: green;"></div>
+                <div class="controls_color jsColor" style="background-color: rgb(140, 222, 255);"></div>
+                <div class="controls_color jsColor" style="background-color: blue;"></div>
+                <div class="controls_color jsColor" style="background-color: purple;"></div>
+            </div>
+
+        </div>
+
+</body>
+</html>

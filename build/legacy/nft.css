@@ -1,0 +1,13 @@
+html {
+    background: url("../img/gif/old-computer.gif") repeat center fixed;
+    background-size: contain;
+} 
+
+p {
+    font-size: 2rem;
+    margin: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    transform: translateY(-20%);
+}

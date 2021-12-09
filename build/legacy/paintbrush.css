@@ -1,0 +1,73 @@
+
+body { 
+    background-color:gray;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.canvas {
+    width : 500px;
+    height : 500px; 
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
+}
+
+.promotion {
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+}
+
+.paypal{
+    padding-top: 20px;
+}
+
+.controls{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls_btns button{
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 20px;
+    margin-left: 5px;
+    width : 80px; 
+    text-align : center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border : 2px solid rgba(0, 0, 0, 0.2) ;
+    color: rgba(0, 0, 0, 0.08);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.controls .controls_range {
+    margin-bottom: 20px;
+}
+
+#myColors {
+    display: flex;
+    padding-top: 30px;
+}
+
+#myColors .controls_color{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    margin-left: 10px;
+}
+
+.social-share {
+    padding-top : 20px;
+}
