@@ -1,0 +1,128 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    background-color: #000000;
+}
+
+.name { 
+    display: block;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(235, 235, 235);
+    text-align: right;
+    padding: 0.5rem;
+}
+
+.name>a{
+    text-decoration: none;
+}
+
+#centerMe {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 30%;
+    left: 50%;
+    text-align: center;
+}
+
+.gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    font-size: 1.5rem;
+    background-image: linear-gradient(
+        60deg,
+        #40011E,
+        #BF34B6,
+        #711073,
+        #1B4C8C,
+        #0F8AA6);
+    background-clip:text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 1s linear;
+    animation: blink 3s ease-in-out infinite;
+}
+
+.hoverMe {
+    color:white;
+    /* text-shadow : offset-x, offset-y, blur-radius, color */
+    text-shadow: 3px 3px 10px rgb(255, 223, 83);
+}
+
+footer {
+    position : absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wave1 {
+    position: inherit;
+    background-image: url("./wave.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100px;
+    animation: wave 30s linear infinite;
+    animation-delay: 1s;
+    z-index: 997;
+    opacity: 0.8;
+} 
+
+.wave2 {
+    position: inherit;
+    background-image: url("./wave.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100px;
+    animation: wave 25s linear infinite;
+    animation-direction: reverse;
+    z-index: 998;
+    opacity: 0.6;
+}
+
+.wave3 {
+    position: inherit;
+    background-image: url("./wave.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100px;
+    animation: wave 20s linear infinite;
+    z-index: 999;
+    opacity: 0.4;
+}
+
+.wave4 {
+    background-image: url("./wave.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100px;
+    animation: wave 15s linear infinite;
+    animation-direction: reverse;
+    z-index: 1000;
+    opacity: 0.2;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
