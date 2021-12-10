@@ -1,0 +1,11 @@
+# npm packages
+node_modules
+
+# Browser config
+.env
+
+# Parcel cache
+.parcel-cache
+
+# Production
+build/dist
