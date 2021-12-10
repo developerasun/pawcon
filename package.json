@@ -1,0 +1,23 @@
+{
+  "name": "meow-canvas",
+  "version": "1.0.0",
+  "description": "Building NFT generation service from the bottom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cat",
+    "nft",
+    "e-commerce",
+    "website"
+  ],
+  "author": "Jake Sung",
+  "license": "ISC",
+  "dependencies": {
+    "@editorjs/editorjs": "^2.22.2",
+    "@editorjs/header": "^2.6.2",
+    "@editorjs/simple-image": "^1.4.1",
+    "parcel": "^2.0.1"
+  }
+}
