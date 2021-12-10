@@ -1,0 +1,23 @@
+.gallery {
+    background-color: black;
+    color: white;
+}
+
+.card-container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1rem;
+}
+
+// tablet 
+@media screen and (min-width:576px) {
+    * { 
+        background-color: aqua;
+    }
+}
+
+@media screen and (min-width:992px) {
+    * { 
+        background-color: beige;
+    }
+}
