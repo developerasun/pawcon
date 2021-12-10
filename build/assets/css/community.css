@@ -1,18 +1,85 @@
-@import "reset.css";
-@import "import/common.css";
-@import "toggle.css";
-@import "button.css";
-@import "footer.css";
+@import url("import/common.css");
+@import url("toggle.css");
+@import url("button.css");
+@import url("footer.css");
+.web-editor {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.web-editor #editorjs {
+  text-align: left;
+  background-color: white;
+  margin: 1.5rem;
+  color: black;
+}
+
+.web-editor .submitBtn {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.web-editor .submitBtn:hover {
+  -webkit-animation: none;
+          animation: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #eeeeee;
+}
 
 .notice {
-    margin-top: 10rem;
+  margin-top: 5rem;
 }
 
-.table,
-thead, 
-tbody, 
-td,
-tr,
-th {
-    border:1px solid white;
+.notice .title {
+  text-align: center;
+  padding: 0.8rem;
 }
+
+.notice .searchBox {
+  text-align: right;
+  padding: 0 2rem 0.5rem 0;
+}
+
+.notice .table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 5%;
+  text-align: center;
+}
+
+.notice .table thead > tr {
+  background-color: #0066ff;
+  font-weight: bold;
+}
+
+.notice .table tr:nth-child(even) {
+  background-color: #848486;
+}
+
+.notice .pagination {
+  padding: 1rem;
+  text-align: center;
+}
+
+.notice .getBtn {
+  width: 30%;
+  margin: 0 35%;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.notice .getBtn:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #eeeeee;
+}
+
+.banner {
+  color: black;
+  font-weight: bold;
+  margin-top: 5rem;
+  padding: 1rem;
+  background-color: #42ff91;
+}
+/*# sourceMappingURL=community.css.map */
