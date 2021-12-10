@@ -16,38 +16,39 @@
     <header>
         <!-- trigger-->
         <div href="#" id="trigger">
-            <a href="../../index.html" target="_blank"><img src="../img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
+            <a href="../../index.html"><img src="../img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
             <div class="bars">&#8801;</div>
             <div class="cancel hidden">&#215;</div>
         </div>
         <!-- navigation -->
         <div class="navigation hidden">
             <div class="navbar" id="navbar">
-                <a href="./index.html" target="_blank"><img src="../img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
-                <div class="navbar-item"><a href="#" target="_blank">Main</a></div>
+                <a href="../../index.html"><img src="../img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
+                <div class="navbar-item"><a href="../../index.html">Main</a></div>
                 <div class="navbar-item"><a href="#">Create</a></div>
                 <div class="navbar-item"><a href="#">Gallery</a></div>
                 <div class="navbar-item"><a href="#">Shop</a></div>
-                <div class="navbar-item"><a href="#">Notice</a></div>
-                <div class="navbar-item"><a href="#">About</a></div>
+                <div class="navbar-item"><a href="./community.html">Community</a></div>
+                <div class="navbar-item"><a href="./about.html">About</a></div>
             </div>
             <div class="login-menu">
-                <button class="login"><a href="assets/pages/login.html">Login</a></button>
-                <button class="sign-up"><a href="assets/pages/login.html">Sign up</a></button>
+                <button class="login"><a href="#">Login</a></button>
+                <button class="sign-up"><a href="#">Sign up</a></button>
             </div>
         </div> 
     </header>
 
-    <!-- Banner  -->
-    <div style="margin-top: 10rem;"> Banner here </div>
-
-    <div class="searchBox">Search bar here</div>
-
-    <div id="editorjs"></div>
-
+    <!-- Editor js plugin -->
+    <div class="web-editor">
+        <h1>Leave your feedback</h1>
+        <div id="editorjs"></div>
+        <button class="submitBtn">Submit</button>
+    </div>
+    
     <!-- Table -->
     <div class="notice">
-        <h1 class="title" style="font-size: 2rem;">Hello Visitors</h1>
+        <h1 class="title">Hello Visitors</h1>
+        <div class="searchBox">Search bar here</div>
         <table class="table">
             <thead>
                 <tr>
@@ -58,37 +59,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Testing Post</td>
-                    <td>Jake Sung</td>
-                    <td>2021.12.08</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Testing Post</td>
-                    <td>Jake Sung</td>
-                    <td>2021.12.08</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Testing Post</td>
-                    <td>Jake Sung</td>
-                    <td>2021.12.08</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Testing Post</td>
-                    <td>Jake Sung</td>
-                    <td>2021.12.08</td>
-                </tr>
                 
             </tbody>
         </table>
-        <textarea></textarea>
+        
         <!-- table pages -->
-        <div class="pagination" style="margin-bottom: 20rem;">Pagination here</div>
+        <div class="pagination">Pagination here</div>
+        <button class="getBtn">Get Dummies</button>
     </div>
+    
+    <!-- Banner  -->
+    <div class="banner"> Banner here </div>
 
     <!-- footer -->
     <footer class="footer">
@@ -104,7 +85,6 @@
     </footer>
 
     <script src="../js/toggle.js"></script>
-    <script src="../js/useEditor.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script> -->
+    <script src="../js/community.js" type="module"></script>
 </body>
 </html>
