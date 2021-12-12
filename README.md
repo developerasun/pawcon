@@ -1,11 +1,3 @@
-# Table of contents 
-- [Heads-up](#heads-up)
-- [What is Meow Canvas?](#what-is-meow-canvas)
-- [Architecture](#architecture)
-- [Contact](#contact)
-- [Inspiration](#inspiration)
-- [License](#license)
-
 # Heads-up
 ### *This is a ongoing project that is actively being updated*
 
@@ -14,36 +6,38 @@
 https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
 
 # What is Meow Canvas?
-<p>
-Meow canvas is a NFT artwork generation service for those who are not familiar with digital art and graphic design. It targets to provide easy and fun ways to create NFT artwork without any technical/artistic background and then link the artworks with major NFT marketplaces such as Opensea and Rariable.   
-</p>
+- One click graphic art generation service. 
+- Make tech and art public-friendly.
 
-## Main feature
-The main feature of Meow Canvas, that will updated in future, is as follows. 
-- Draw artwork with HTML/Javascript canvas - free/watermark
-- Pixelate artwork with Javascfipt - free/watermark
-- Generate artwork with Python GAN - paid
-- Display your artwork and aim the highest rank - free
-- Save and download the artwork to your wallet
+## Features
+|Main|Plan|Sub|
+|:---|:--|:---|
+|Draw artwork with HTML/Javascript canvas|free/watermark|Posting CRUD, Login and sign up, Shopping cart, Payment, Search and filter|
+|Pixelate artwork with Javascript|free/watermark
+|Generate artwork with Python GAN|paid
 
-## Sub feature
-- CRUD
-- Login and sign up
-- Shopping cart for membership
-- Membership payment
-- Search and filter
-
-## Architecture
+# Architecture
 |Type|Before|After|
-|:-----|:----|:---|
-|Front End|HTML, CSS, JS|HTML, Scss, React, TS|
-|Backend|X|Node.js, Express|
-|Database|X|MongoDB|
-|Deployment|Netlify|?|
+|:-----:|:----:|:---:|
+|Front End|HTML, CSS, JS|HTML, CSS, Scss, JS(TS), React|
+|Backend|X              |Node.js, Express|
+|Database|X             |MongoDB|
+|Deployment|Netlify     |Netlify|
+
+## Implementation
+|Front End|Backend|
+|:--------|:------|
+|Responsive web design|Database schema| 
+|Ajax|Database CRUD|
+|UI component|Server routing|
+|Web bundling|Login|
+|Modal|Web editor|
+|CSS animations|Posting CRUD|
 
 # Inspiration
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
 - [Kode Sports Club](https://www.kodeclubs.com/)
+- [Prior](https://prior.co.jp/discover/en)
 
 # Contact
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com)
