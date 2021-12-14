@@ -8,6 +8,9 @@
 # Changing browser
 .env
 
+# Sass mapping
+*.map
+
 # testing
 /coverage
 
