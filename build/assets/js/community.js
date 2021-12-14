@@ -1,13 +1,16 @@
+import { getRandomJSON } from './ajax/fetch.js'
+
 // table CRUD
 const getBtn = document.querySelector(".getBtn")
+const saveBtn = document.querySelector(".saveBtn")
 let count = 0
-const dummies = [
-    {"title":"How to learn javascript", "author": "Jake", "posted":"1995.02.02"},  
-    {"title":"What is a community?", "author": "Smith", "posted":"1900.10.22"},  
-    {"title":"Why cat always sleeps", "author": "Elly", "posted":"1896.06.19"},  
-    {"title":"111 secrents you never knew", "author": "Brian", "posted":"1200.01.30"},  
-    {"title":"Mermaid story", "author": "Paul", "posted":"1995.04.22"},  
-]
+let dummies 
+
+// getRandomJSON is asynchronous func, returning a Promise
+getRandomJSON().then((data) => { 
+    dummies = data
+    return data 
+}).catch( (err) => { return err })
 
 function Wrapper() {
     Trigger(dummies)
@@ -16,24 +19,29 @@ function Wrapper() {
 function Trigger(data) { 
     const tBody = document.querySelector("tbody")
 
-    if (count < 3) {
-        for (let i=0; i<data.length; i++) { 
+    if (count < 1) {
+        for (let i=0; i<Object.keys(data).length; i++) { 
             const row = tBody.insertRow()
             row.innerHTML = `
                              <td>${i+1}</td>
-                             <td>${data[i].title}</td>
-                             <td>${data[i].author}</td>
-                             <td>${data[i].posted}</td>
-                            `
-        }
+                             <td>${data.title}</td>
+                             <td>${data.userId}</td>
+                             <td>${data.completed}</td>`}
         count++
     } else { 
-        alert("Only 3 dummies available!")
-        for (let j=0; j<tBody.rows.length; j++) {
-            tBody.rows.item(j).innerHTML = ""
+        alert("Only 1 dummy available!")
+        if (confirm("Delete the dummy?")) {
+            for (let j=0; j<tBody.rows.length; j++) {
+                tBody.rows.item(j).innerHTML = ""
+            }
+            count = 0
         }
-        count = 0
     }
 }
 
 getBtn.addEventListener("click", Wrapper)
+saveBtn.addEventListener("click", ()=>{ 
+    alert("this function on the way")
+})
+
+
