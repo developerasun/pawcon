@@ -10,17 +10,17 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="*">
+              <NotFound/>
+            </Route>
+        </Switch>
         <BestCanvas />
         <Gallery galleryName={"Hall Of Fame This Week"}/>
-        {/* <Pagination /> */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="*">
-            <NotFound/>
-          </Route>
-        </Switch>
+          {/* <Pagination /> */}
       </div>
     </Router>
   );
