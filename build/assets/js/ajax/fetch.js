@@ -3,7 +3,7 @@
 const resource_root = "https://jsonplaceholder.typicode.com/todos/"
 const resource_entity = Math.floor(Math.random()*200).toString()
 
-const getRandomJSON = async ()=>{
+export const getRandomJSON = async ()=>{
     const response = await fetch(resource_root+resource_entity)
     
     if (response.status !== 200) { 
@@ -14,7 +14,3 @@ const getRandomJSON = async ()=>{
     console.log(data)
     return data // async function always returns a Promise 
 }
-
-getRandomJSON()
-            .then( data => { return data } )
-            .catch( err => { return console.log(err)} )
