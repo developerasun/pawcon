@@ -1,42 +1,28 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import useFetch from "./customHook/useFetch"
+
 
 // useEffect is to run rendering in every code
 
 const Home = () => {
     // create a reactive value
     // variable, function to change the variable
-    const [name, setName] = useState('mario') // any data type can be used in useState hook
+    
     const [age, setAge] = useState(25)
     const [test, testUseEffect] = useState("test")
-    const [isPending, setIsPending] = useState(true)
-    const [content, setContent] = useState(false)
-
+    // you can rename the imported value from custom hook 
+    const { name : myName, isPending, content, error } = useFetch(`https://jsonplaceholder.typicode.com/todos/5`)
     const handleClick = () => {
-        setName('luigi') // triggers React to re-render the component in browser with a new value
+         // triggers React to re-render the component in browser with a new value
         setAge(38)
     }
-
     const doTest = () => { 
         testUseEffect("clicked and test began")
     }
 
-    // fetch data within useEffect with loading message
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/todos/2')
-            .then( res => { return res.json() })
-            .then( (data) => { 
-                console.log(data) 
-                setName(data.title)
-
-                setTimeout(()=>{
-                    setIsPending(false)
-                    setContent(true)
-                }, 1000)
-            })
-    }, [])
-
     return (
         <div>
+            {error && <div>{error}</div>}
             {isPending && 
                 <div style={{
                     backgroundColor:"black", 
@@ -49,7 +35,7 @@ const Home = () => {
             {content && 
                 <div>
                     <h2>Homepage</h2> 
-                    <p>{name} is {age} old</p>
+                    <p>{myName} is {age} old</p>
                     <p>{test}</p>
                     <button onClick={handleClick}>Click Me</button>
                     <button onClick={doTest}>start test</button>
