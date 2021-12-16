@@ -9,7 +9,9 @@ const useFetch = (url) => {
         // fetch data within useEffect with loading message
         useEffect(()=>{
            
-            fetch(url)
+            const abortCont = new AbortController() 
+
+            fetch(url, { signal : abortCont.signal })
                 .then( res => { 
                     console.log(res)
                     if (!res.ok) { // depending on response's ok status, contents shown will be different
@@ -28,9 +30,18 @@ const useFetch = (url) => {
                         setError(null)
                     }, 1000)})
                 .catch((err)=>{
-                    console.log(err) 
-                    setError(err.message)
+                    if (err.name === 'AbortError') { 
+                        console.log('fetch aborted')
+                    } else {
+                        console.log(err) 
+                        setError(err.message)
+                    }
                  }) // the above throw Error will be shown here
+
+            // Create a cleanup function to prevent side effect once fetch 
+            // is finished
+            return () => { abortCont.abort() }
+                
         }, [url]) // useEffect(callback, dependency)
 
         return { name, isPending, content, error } // custom book useFetch returns an object with four properties
