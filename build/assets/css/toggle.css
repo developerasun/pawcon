@@ -64,6 +64,7 @@ header {
     padding: 2rem;
     border: 1px solid #ffffff;
     background-color: #90abaf;
+    list-style: none;
 }
 
 .navbar-item:hover { 
@@ -73,6 +74,20 @@ header {
 
 .navbar-item>a {
     color: black;
+}
+
+/* fix this later */
+.dropdown { 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-drops-item>li {
+    color: #818181;
+    font-weight: bold;
+    margin: 1rem;
 }
 
 /* click event animation */
@@ -166,6 +181,11 @@ header {
         border-right: 1px solid white;
         border-left: 0;
         border-bottom: 0;
+    }
+
+    /*  fix this later */
+    .create-drops-item {
+        display: none;
     }
 }
 
