@@ -3,7 +3,7 @@ import Card from './card';
 import images from "../img";
 
 // Presume backend data here
-const artworks = [ 
+export const artworks = [ 
     {id : 1, title: "Fresh loaf chunk", author:"Jake", date:"2021.10.10" },
     {id : 2, title: "Wildness", author:"Elly", date:"2017.06.30" },
     {id : 3, title: "Goodbye World", author:"Smith", date:"2020.10.07" },
@@ -19,11 +19,13 @@ function Gallery(props) {
             <div className="gallery">
                 { artworks.map((item, index)=>{
                     return (
-                        <Card 
-                            image={images[index]}
-                            title={item.title}
-                            author={item.author}
-                            date={item.date}/>
+                            <Card 
+                                key={Math.random()*artworks.length}
+                                image={images[index]}
+                                title={item.title}
+                                author={item.author}
+                                date={item.date}
+                                routeDetails={item.title}/>
                     )}) }
             </div>
         </div>
