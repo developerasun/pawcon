@@ -8,6 +8,7 @@ This is a repository where I refactor all the codes written before and document 
 |Front End|HTML, CSS, JS|HTML, Scss, React, TS|
 |Backend|X|Node.js, Express|
 |Database|X|MongoDB|
+|Test|X|Mocha, Jest|
 |Deployment|Netlify|?|
 
 ## Check List
