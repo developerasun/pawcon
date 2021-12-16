@@ -1,7 +1,7 @@
 # npm packages
 node_modules
 
-# Browser config
+# Config : browser, database
 .env
 
 # Parcel cache
@@ -9,3 +9,6 @@ node_modules
 
 # Production
 build/dist
+
+# Reminder
+reminder.md
