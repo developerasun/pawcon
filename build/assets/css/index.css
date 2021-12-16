@@ -20,52 +20,63 @@
 }
 
 /* Mobile : Weekly Tops, cards */
-.weekly-tops > h2 {
+.weekly-tops {
+  margin: 3rem 0;
+}
+
+.weekly-tops .weekly-tops-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .card-container {
+  margin: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: row nowrap;
+          flex-direction: row nowrap;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: auto;
+  white-space-collapsing: nowrap;
   color: black;
 }
 
 .card-container .card {
-  width: 30%;
-  min-width: 350px;
-  margin: 2rem;
+  width: 80%;
+  min-width: 300px;
+  margin: 1rem;
   border: 0.2rem solid #eee;
   -webkit-box-shadow: 0.2rem 0.2rem 0.7rem;
           box-shadow: 0.2rem 0.2rem 0.7rem;
   position: relative;
   cursor: pointer;
   background-color: white;
+  border-radius: 5%;
 }
 
 .card-container .card img {
   width: 100%;
-  max-height: 300px;
+  height: 200px;
+  border-radius: 5%;
 }
 
 .card-container .card .card-text {
+  padding: 1rem;
   text-align: left;
-  margin: 1rem;
   background-color: white;
+  border-radius: 5%;
 }
 
 .card-container .card .card-text h3 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -97,10 +108,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-color: #ffffff;
-  color: black;
+  background-color: black;
+  color: white;
   font-size: 1.5rem;
   padding: 1.5rem;
+}
+
+.message-group .instruction-icon {
+  width: 200px;
+  height: 200px;
 }
 
 /* promotion section 2 : youtube video */
@@ -136,65 +152,13 @@
   margin: 0.5rem;
 }
 
+.pawcon-banner {
+  margin: 4rem 0 2rem 0;
+  width: 100%;
+}
+
 /* Tablet : 576px~991px */
 @media screen and (min-width: 576px) {
-  /* tablet : card */
-  .card-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    min-width: 60%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 1rem 2rem;
-    padding: 0 10rem;
-  }
-  .card {
-    width: 30%;
-    min-width: 350px;
-    height: auto;
-    margin-right: 2rem;
-    border: 0.2rem solid #eee;
-    -webkit-box-shadow: 0.2rem 0.2rem 0.7rem;
-            box-shadow: 0.2rem 0.2rem 0.7rem;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.5s;
-    -webkit-filter: blur(0.15rem);
-            filter: blur(0.15rem);
-    background-color: white;
-  }
-  .card:hover {
-    -webkit-transform: scale(105%);
-            transform: scale(105%);
-    -webkit-filter: blur(0rem);
-            filter: blur(0rem);
-  }
-  .card img {
-    width: 100%;
-    max-height: 300px;
-  }
-  .card-text {
-    text-align: left;
-    margin: 1rem;
-    background-color: white;
-  }
-  .card-text > h3 {
-    margin-bottom: 1.5rem;
-  }
-  .card:nth-child(3) {
-    display: none;
-  }
   /* tablet promotion paragraph first */
   .message-group {
     display: -webkit-box;
@@ -205,7 +169,8 @@
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     text-align: center;
-    background-color: #ffffff;
+    background-color: black;
+    color: white;
     height: auto;
     font-size: 1.5rem;
   }
@@ -253,11 +218,14 @@
     height: 600px;
     margin: 0.5rem;
   }
+  .pawcon-banner {
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+  }
 }
 
 /* PC layout sections using media query*/
 @media screen and (min-width: 992px) {
-  /* image slider */
   /* promotion paragraph first */
   .message-group {
     display: -webkit-box;
@@ -268,7 +236,8 @@
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
     text-align: center;
-    background-color: #ffffff;
+    background-color: black;
+    color: white;
     height: auto;
     font-size: 1.5rem;
   }
