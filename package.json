@@ -18,6 +18,8 @@
     "@editorjs/editorjs": "^2.22.2",
     "@editorjs/header": "^2.6.2",
     "@editorjs/simple-image": "^1.4.1",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.1.1",
     "parcel": "^2.0.1"
   }
 }
