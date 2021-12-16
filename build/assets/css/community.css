@@ -62,24 +62,43 @@
   text-align: center;
 }
 
-.notice .getBtn {
+.notice .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.notice .buttons .getBtn,
+.notice .buttons .saveBtn {
   width: 30%;
-  margin: 0 35%;
+  margin: 0 auto;
   -webkit-animation: none;
           animation: none;
 }
 
-.notice .getBtn:hover {
+.notice .buttons .getBtn:hover,
+.notice .buttons .saveBtn:hover {
   cursor: pointer;
   font-weight: bold;
   background-color: #eeeeee;
 }
 
-.banner {
-  color: black;
-  font-weight: bold;
-  margin-top: 5rem;
-  padding: 1rem;
-  background-color: #42ff91;
+.pawcon-banner {
+  margin: 4rem 0 2rem 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .pawcon-banner {
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=community.css.map */
