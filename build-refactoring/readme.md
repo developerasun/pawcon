@@ -11,6 +11,9 @@ This is a repository where I refactor all the codes written before and document 
 |Test|X|Mocha, Jest|
 |Deployment|Netlify|?|
 
+## Change of Branding
+- Project name change : Meow Canvas => PawCon
+
 ## Check List
 - [ ] Accessible URL and auto deployment
 - [ ] Getting user feedbacks
