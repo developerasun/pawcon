@@ -4,7 +4,7 @@
 - [See Beta](https://meowcanvas.netlify.app/)
 
 https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
-
+  
 # What is Meow Canvas?
 - One click graphic art generation service. 
 - Make tech and art public-friendly.
@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-
 |Type|Before|After|
 |:-----:|:----:|:---:|
 |Front End|HTML, CSS, JS|HTML, CSS, Scss, JS(TS), React|
-|Backend|X              |Node.js, Express|
+|Backend|X              |Node.js, Express.js|
 |Database|X             |MongoDB|
 |Deployment|Netlify     |Netlify|
 
@@ -33,6 +33,12 @@ https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-
 |Web bundling|Login|
 |Modal|Web editor|
 |CSS animations|Posting CRUD|
+
+## Roles 
+|Front End, Backend|
+|:-------:|
+|<img src="https://github.com/developerasun.png?size=200" alt="Jake Sung"/>|
+|<a href="https://github.com/developerasun">Jake Sung</a>|
 
 # Inspiration
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
