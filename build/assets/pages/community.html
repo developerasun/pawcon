@@ -22,32 +22,39 @@
         </div>
         <!-- navigation -->
         <div class="navigation hidden">
+            <a href="../../index.html"><img src="../img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
             <div class="navbar" id="navbar">
-                <a href="../../index.html"><img src="../img/logo/logo-fixed.png" id="navbar-logo" alt="logo"/></a>
-                <div class="navbar-item"><a href="../../index.html">Main</a></div>
-                <div class="navbar-item"><a href="#">Create</a></div>
-                <div class="navbar-item"><a href="#">Gallery</a></div>
-                <div class="navbar-item"><a href="#">Shop</a></div>
-                <div class="navbar-item"><a href="./community.html">Community</a></div>
-                <div class="navbar-item"><a href="./about.html">About</a></div>
+                <li class="navbar-item"><a href="../../index.html">Main</a></li>
+                <li class="navbar-item create-drops">
+                    <a href="#">Create</a>
+                    <ul class="create-drops-item hidden">
+                        <li><a href="#">Draw</a></li>
+                        <li><a href="#">Pixelate</a></li>
+                        <li><a href="#">Generate</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="#">Gallery</a></li>
+                <li class="navbar-item"><a href="#">Shop</a></li>
+                <li class="navbar-item"><a href="./community.html">Community</a></li>
+                <li class="navbar-item"><a href="./about.html">About</a></li>
             </div>
             <div class="login-menu">
-                <button class="login"><a href="#">Login</a></button>
-                <button class="sign-up"><a href="#">Sign up</a></button>
+                <a href="assets/pages/login.html">Login</a>
+                <a href="assets/pages/login.html">SignUp</a>
             </div>
         </div> 
     </header>
 
     <!-- Editor js plugin -->
     <div class="web-editor">
-        <h1>Leave your feedback</h1>
+        <h1>Tell Us What You Felt</h1>
         <div id="editorjs"></div>
         <button class="submitBtn">Submit</button>
     </div>
     
     <!-- Table -->
     <div class="notice">
-        <h1 class="title">Hello Visitors</h1>
+        <h1 class="title">See Reviews Here</h1>
         <div class="searchBox">Search bar here</div>
         <table class="table">
             <thead>
@@ -72,7 +79,7 @@
     </div>
     
     <!-- Banner  -->
-    <div class="banner"> Banner here </div>
+    <img class="pawcon-banner" src="../img/banner/pawcon-banner.png" alt="salute banner" />
 
     <!-- footer -->
     <footer class="footer">
@@ -88,6 +95,7 @@
     </footer>
 
     <script src="../js/toggle.js"></script>
+    <script src="../js/dropdown.js"></script>
     <script src="../js/editor/editor.js" type="module"></script>
     <script src="../js/community.js" type="module"></script>
 </body>

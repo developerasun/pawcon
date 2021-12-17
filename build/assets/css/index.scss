@@ -1,5 +1,6 @@
 @import url("reset.css"), url("import/common.css"), url("modal.css"), url("toggle.css"), url("button.css");
 @import url("footer.css"), url("threeDimensionalSlider.css"),  url("gallery.css");
+@import './screenSize';
 
 @mixin card-container { 
     display: flex;
@@ -47,9 +48,6 @@
 
 // Variables
 $border-radius : 5%;
-$tablet : 576px; 
-$pc : 992px;
-
 
 /* Mobile : 0~575px */
     /* User Canvas */
