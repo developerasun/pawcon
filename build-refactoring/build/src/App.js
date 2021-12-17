@@ -1,10 +1,11 @@
-import './App.css';
+import './sass/App.css';
 import BestCanvas from './components/bestCanvas';
 import Gallery from './components/gallery';
 import Home from './components/home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFound from './components/notFound';
 import Details from './components/details';
+import Create from './components/create';
 // import Footer from './components/footer';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/details/:title">
               <Details />
+            </Route>
+            <Route path="/create">
+              <Create />
             </Route>
             <Route path="*">
               <NotFound/>
