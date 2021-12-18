@@ -106,6 +106,24 @@
   }
 }
 
+@-webkit-keyframes blink {
+  0% {
+    border-right: 1;
+  }
+  100% {
+    border-right: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right: 1;
+  }
+  100% {
+    border-right: 0;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -190,7 +208,7 @@ header {
           animation: slide 0.5s 1;
 }
 
-.navigation #navbar-logo {
+.navigation #pawcon-logo {
   display: none;
 }
 
@@ -345,15 +363,18 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    top: -100px;
     width: 100%;
     background-color: black;
     gap: 3rem;
     position: absolute;
   }
-  header .navigation a #navbar-logo {
+  header .navigation #pawcon-logo {
     display: block;
-    width: 100px;
-    background-color: white;
+    padding-left: 2rem;
+    color: white;
+    font-weight: bolder;
+    font-size: 2rem;
   }
   header .navigation .login-menu {
     display: -webkit-box;

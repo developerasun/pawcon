@@ -1,5 +1,5 @@
-@import './screenSize';
-@import './animation';
+@import './sass/screenSize';
+@import './sass/animation';
 
 * {
     margin: 0;
@@ -62,9 +62,11 @@ header {
     text-align: center;
     transition: all 1s ease-in-out;
     animation: slide 0.5s 1;
-    #navbar-logo {
+
+    #pawcon-logo { 
         display: none;
-    }
+    }    
+
     .navbar { 
         .navbar-item {
             display: inline-block;
@@ -149,16 +151,20 @@ header {
         #trigger {
             display: none;
         }
+        
         .navigation { 
             @include flexRowNowrap();
+            top: -100px;
             width: 100%;
             background-color: black;
             gap: 3rem;
             position: absolute;
-            a #navbar-logo { 
+            #pawcon-logo { 
                 display: block;
-                width: 100px;
-                background-color: white;
+                padding-left: 2rem;
+                color:white;
+                font-weight: bolder;
+                font-size: 2rem;
             }
             .login-menu {
                 @include flexColumnNowrap();
