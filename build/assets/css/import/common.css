@@ -7,17 +7,17 @@ different CSSs files correspoding HTMLs when some codes should change.
 */
 
 /* common tag setting first */
+* { 
+    box-sizing: border-box;
+}
+
 html { 
-    background-color: rgb(238, 238, 238); 
+    background-color: #202225;
+    color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
-  } 
+}
 
 a {
     text-decoration: none;
     color: black;
-}
-
-a:hover {
-    font-weight: bold;
-    color: rgb(255, 153, 0);
 }
