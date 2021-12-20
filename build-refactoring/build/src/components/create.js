@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 import '../sass/create.css'
 
 const Create = () => {
@@ -7,6 +8,7 @@ const Create = () => {
     const  [body, setBody] = useState('Enter your content')
     const  [author, setAuthor] = useState('Jake')
     const  [isPending, setPending] = useState(false)
+    const history = useHistory() // for redirect
 
     const handleSubmit = (event) => { 
         event.preventDefault()
@@ -29,6 +31,9 @@ const Create = () => {
         }).then(()=>{
             console.log("new card added")
             setPending(false)
+            alert("successfully added!")
+            history.go(-1) // redirect use to a previous page
+            history.push('/details/Wildness') // redirect user to a certain path
         })
     }
     return ( 
