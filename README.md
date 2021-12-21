@@ -22,17 +22,31 @@ https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-
 |Front End|HTML, CSS, JS|HTML, CSS, Sass, JS(TS), React|
 |Backend|X              |Node.js, Express.js|
 |Database|X             |MongoDB/PostgreDB|
+|Test|X                 |Mocha, Jest|
 |Deployment|Netlify     |Netlify/Firebase/Heroku/Supabase|
 
 ## Implementation
-|Front End|Backend|
-|:--------|:------|
-|Responsive web design|Database schema| 
-|Ajax|Database CRUD|
-|UI component|Server routing|
-|Web bundling|Login|
-|Modal|Web editor|
-|CSS animations|Posting CRUD|
+### Front End
+- [X] Responsive web design
+- [X] Ajax : XMLHttepRequest, Fetch
+- [ ] Dashboard : D3, React
+- [X] Web bundling : Parcel
+- [X] Modal
+- [X] CSS animations
+- [ ] Drawing app : Tldraw
+
+### Backend
+- [ ] Server routing
+- [ ] Database schema/CRUD
+- [ ] Login, Oauth
+- [X] Web editor with CRUD
+- [ ] Web socket : real time chat
+- [ ] Shopping cart
+- [ ] Smart contract
+- [ ] Payment
+- [ ] Uploading and saving files
+- [ ] Pixelating filter app : Pillow, Numpy
+- [ ] Image generating engine : Node.js, HTML canvas
 
 ## Roles 
 |100% contribution|
