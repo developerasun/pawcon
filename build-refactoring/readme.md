@@ -5,7 +5,7 @@ This is a repository where I refactor all the codes written before and document 
 
 |Type|Before|After|
 |:-----|:----|:---|
-|Front End|HTML, CSS, JS|HTML, Scss, React, TS|
+|Front End|HTML, CSS, JS|HTML5, CSS3, Sass, React, JS/TS|
 |Backend|X|Node.js, Express|
 |Database|X|MongoDB|
 |Test|X|Mocha, Jest|
@@ -13,6 +13,7 @@ This is a repository where I refactor all the codes written before and document 
 
 ## Change of Branding
 - Project name change : Meow Canvas => PawCon
+- Logo change 
 
 ## Check List
 - [ ] Accessible URL and auto deployment
@@ -21,3 +22,4 @@ This is a repository where I refactor all the codes written before and document 
 - [ ] Writing test codes
 - [ ] Design pattern used
 - [ ] Documenting bugs and improvements
+- [ ] Improving web accessibility
