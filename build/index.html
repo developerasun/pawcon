@@ -16,77 +16,77 @@
 
 <body>
         <!-- Modal : how to explore this page -->
-        <div class="modal">
+        <article class="modal">
             <div id="close">&times;</div>
-                <h1>Welcome to PawCon</h1>
-                <p> 
-                    This website still under coding :) <br/> 
-                    Explore by Main => Community => About
-                </p>  
-                <span>Let's Go</span>
-        </div>
+            <h2>Welcome to PawCon</h2>
+            <p> 
+                This website still under coding :) <br/> 
+                Explore by Main => Community => About
+            </p>  
+            <span>Let's Go</span>
+        </article>
 
         <!-- header -->
         <header>
             <!-- trigger-->
-            <div href="#" id="trigger">
+            <ul href="#" id="trigger">
                 <a href="./index.html"><img src="assets/img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
                 <div class="bars">&#8801;</div>
                 <div class="cancel hidden">&#215;</div>
-            </div>
-            <div class="navigation hidden">
-                <a href="./index.html" id="pawcon-logo">PawCon</a>
-                <div class="navbar" id="navbar">
+            </ul>
+            <nav class="navigation hidden">
+                <a href="/index.html" id="pawcon-logo">PawCon</a>
+                <ul class="navbar" id="navbar">
                     <li class="navbar-item"><a href="./index.html">Main</a></li>
-                    <li class="navbar-item create-drops">
+                    <ul class="navbar-item create-drops">
                         <a href="#">Create</a>
                         <ul class="create-drops-item hidden">
                             <li><a href="#">Draw</a></li>
                             <li><a href="#">Pixelate</a></li>
                             <li><a href="#">Generate</a></li>
                         </ul>
-                    </li>
+                    </ul>
                     <li class="navbar-item"><a href="#">Gallery</a></li>
                     <li class="navbar-item"><a href="#">Shop</a></li>
                     <li class="navbar-item"><a href="./assets/pages/community.html">Community</a></li>
                     <li class="navbar-item"><a href="./assets/pages/about.html">About</a></li>
-                </div>
-                <div class="login-menu">
+                </ul>
+                <ul class="login-menu">
                     <a href="#">Login</a>
                     <a href="#">SignUp</a>
-                </div>
-            </div> 
+                </ul>
+            </nav> 
         </header>
 
         <!-- 3D image slider -->
-        <div class="imgSlider">
+        <section class="imgSlider">
             <span class="item-1"><img src="assets/img/1.jpg" /></span>
             <span class="item-2"><img src="assets/img/2.jpg" /></span>
             <span class="item-3"><img src="assets/img/3.jpg" /></span>
             <span class="item-4"><img src="assets/img/4.jpg" /></span>
             <span class="item-5"><img src="assets/img/5.jpg" /></span>
-        </div>
-        <div class="imgSlider-description">
-            <h2>Welcome to <br>PawCon</h2>
-            <p>Website under building yet</p>
-        </div>
+        </section>
+        <ul class="imgSlider-description">
+            <li><h2>Welcome to <br>PawCon</h2></li>
+            <li><p>Website under building yet</p></li>
+        </ul>
         
         <!-- Gallery -->
-        <div class="gallery" >
+        <section class="gallery" >
             <div class="title" >
                 <h2>We help creators</h2>
                 <p>Spread your artistic talent and Make them NFTs</p>
             </div>
-            <img src="assets/img/1.jpg"  alt="temp image" />
+            <img src="assets/img/1.jpg"  alt="temporary image" />
             <div class="texts" >
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque omnis eos eaque laudantium aliquam aperiam!</p>
             </div>
-        </div>
+        </section>
 
         <!-- Weekly Tops -->
         <main class="weekly-tops">
-            <h2 class="weekly-tops-title">Weekly Tops</h2>
-            <div class="card-container">
+            <h1 class="weekly-tops-title">Weekly Tops</h1>
+            <ul class="card-container">
                 <div class="card">
                     <img src="assets/img/2.jpg" alt="first cat card"/>
                     <div class="card-text">
@@ -113,7 +113,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, est?</p>
                     </div>
                 </div>
-            </div>
+            </ul>
         </main>
 
         <!-- promotion section 1 : user instruction -->
@@ -184,13 +184,13 @@
     <footer class="footer">
             <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
             <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
-            <div class="footer-item"><a href="#">Copyright© 2021 DEVELOPERASUN All rights reserved</a></div>
-            <div class="footer-item waves"> 
-                <div class="wave1"></div>
-                <div class="wave2" ></div>
-                <div class="wave3"></div>
-                <div class="wave4"></div>
-            </div>
+            <div class="footer-item"><a href="#">Copyright &copy; 2021 DEVELOPERASUN All rights reserved</a></div>
+            <ul class="footer-item waves"> 
+                <li class="wave1"></li>
+                <li class="wave2"></li>
+                <li class="wave3"></li>
+                <li class="wave4"></li>
+            </ul>
     </footer>
 
     <script src="assets/js/modal.js"></script>
