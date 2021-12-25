@@ -1,0 +1,103 @@
+@import url("import/common.css");
+@import url("toggle.css");
+@import url("button.css");
+@import url("footer.css");
+.web-editor {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.web-editor #editorjs {
+  text-align: left;
+  background-color: white;
+  margin: 1.5rem;
+  color: black;
+}
+
+.web-editor .submitBtn {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.web-editor .submitBtn:hover {
+  -webkit-animation: none;
+          animation: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #eeeeee;
+}
+
+.notice {
+  margin-top: 5rem;
+}
+
+.notice .title {
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.notice .searchBox {
+  text-align: right;
+  padding: 0 2rem 0.5rem 0;
+}
+
+.notice .table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 5%;
+  text-align: center;
+}
+
+.notice .table thead > tr {
+  background-color: #0066ff;
+  font-weight: bold;
+}
+
+.notice .table tr:nth-child(even) {
+  background-color: #848486;
+}
+
+.notice .pagination {
+  padding: 1rem;
+  text-align: center;
+}
+
+.notice .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.notice .buttons .getBtn,
+.notice .buttons .saveBtn {
+  width: 30%;
+  margin: 0 auto;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.notice .buttons .getBtn:hover,
+.notice .buttons .saveBtn:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #eeeeee;
+}
+
+.pawcon-banner {
+  margin: 4rem 0 2rem 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .pawcon-banner {
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+  }
+}

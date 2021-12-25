@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* This is a consistent-theme CSS that is applied to all the HTMLs. 
+Use link tag in HTML to connect this CSSs to avoid editing all the 
+different CSSs files correspoding HTMLs when some codes should change.
+(removing duplicates)
+*/
+
+/* common tag setting first */
+* { 
+    box-sizing: border-box;
+}
+
+html { 
+    background-color: #202225;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

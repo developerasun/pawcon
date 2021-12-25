@@ -1,0 +1,202 @@
+@import url("reset.css"), url("import/common.css"), url("modal.css"), url("toggle.css"), url("button.css");
+@import url("footer.css"), url("threeDimensionalSlider.css"),  url("gallery.css");
+@import './sass/screenSize';
+@import './sass/animation'; 
+
+@mixin flexColumnNowrap { 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin card-container { 
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+    // white-space : 'white-space-collapsing' and 'text-wrap'
+    white-space-collapsing: nowrap;
+    color: black;
+}
+
+@mixin card {
+    width: 80%;
+    min-width: 300px;
+    margin: 1rem;
+    border: 0.2rem solid #eee;
+    box-shadow: 0.2rem 0.2rem 0.7rem;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5%;
+}
+
+@mixin card-image { 
+    width: 100%;
+    height: 200px
+}
+
+@mixin card-text { 
+    padding: 1rem; 
+    text-align: left;
+    background-color: white;
+}
+
+@mixin banner {  
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+}
+
+@mixin instruction-icon { 
+    width: 200px;
+    height: 200px;
+}
+
+@mixin blink_animation {
+    animation: blink 2s infinite linear;
+}
+// Variables
+$border-radius : 5%;
+
+/* Mobile : 0~575px */
+    /* User Canvas */
+    .imgSlider-description {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        p { 
+            font-size: 1rem;
+            padding: 2rem;
+        }
+    }
+    
+    /* Mobile : Weekly Tops, cards */
+    .weekly-tops { 
+        margin: 3rem 0;  
+        .weekly-tops-title {
+            text-align: center;
+            font-size: 3rem;
+        }
+    }
+
+    .card-container {
+        margin: 1rem 0;
+        @include card-container();
+        .card { 
+            @include card();
+            img {
+                @include card-image();
+                border-radius: $border-radius;
+            }
+            .card-text {
+                @include card-text();
+                border-radius: $border-radius;
+                h3 {
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+    /* Mobile : promotion section 1 : typing effect texts */
+    .promotion { 
+        .promotion-title { 
+            @include flexColumnNowrap();
+            background-color: #1D9CB3;
+            padding: 1rem;
+            text-align: center;
+            .promotion-title-first {
+                font-size: 2rem;
+            }
+        }
+        .message-group {
+            @include flexColumnNowrap();
+            background-color: black; 
+            color: white;
+            height:auto; 
+            font-size:1.5rem;
+            padding: 1.5rem;
+            .instruction-icon {
+                @include instruction-icon();
+            }
+        }
+    }
+
+    /* promotion section 2 : youtube video */
+    .youtube-video {
+        @include flexColumnNowrap();
+        .promotion-title-second{
+            h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin: 1rem;
+            }
+            p {
+                font-size: 1.2rem;
+                margin: 1rem;
+            }
+        }
+
+        .promotion-youtube {
+            min-width: 400px;
+            height: 700px;
+            margin: 0.5rem;
+        }
+    }
+
+    .pawcon-banner { 
+        @include banner(); 
+    }
+
+/* Tablet : 576px~991px */
+@media screen and (min-width: $tablet) {
+
+    /* tablet promotion paragraph first */
+    .promotion { 
+        .promotion-title-first {
+            border-right: 0.2rem solid #222;
+            @include blink_animation();
+        }
+        .message-group {
+            display: flex;
+            flex-flow: row wrap;
+            font-size:1.5rem;
+        }
+    }
+
+    .youtube-video { 
+        padding: 2rem;
+        gap: 1rem;
+        .promotion-youtube {
+            width: 80%;
+            height: 700px;
+        }
+    }
+
+    .pawcon-banner { 
+        @include banner(); 
+    }
+}
+
+/* PC layout sections using media query*/
+@media screen and (min-width: $pc) {
+    /* card */
+    .card-container {
+        min-width: 60%;
+        margin: 1rem 2rem;
+        padding: 0 10rem;
+        @include card-container();
+        .card { 
+            filter: blur(0.15rem);
+            transition: all 0.5s linear;
+        }
+        .card:hover {
+            transform: scale(105%);
+            filter: blur(0rem);
+        }
+    }
+}

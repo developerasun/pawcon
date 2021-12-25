@@ -1,0 +1,98 @@
+// do import url(dir) instead of import. 
+@import url("import/common.css"), url("toggle.css"), url("button.css"), url("footer.css"); 
+
+// Set screen size for media query
+$tablet : 576px; 
+$pc : 992px;
+
+
+@mixin banner {  
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+}
+
+// web editor
+.web-editor { 
+    margin-top: 10rem;
+    text-align: center;
+    #editorjs {
+        text-align: left;
+        background-color: rgb(255, 255, 255);
+        margin: 1.5rem;
+        color: black;
+    }
+    .submitBtn {
+        width: 80%;
+        margin: 0 10%;
+    }
+    .submitBtn:hover { 
+        animation: none;
+        cursor: pointer;
+        font-weight: bold;
+        background-color: rgb(238, 238, 238);
+    }
+}
+
+// table
+.notice {
+    margin-top: 5rem;
+    .title { 
+        text-align: center;
+        padding: 0.8rem;
+    }
+    .searchBox {
+        text-align: right;
+        padding: 0 2rem 0.5rem 0;
+    }
+    .table {
+        border-collapse: collapse;
+        width: 90%;
+        margin: 0 5%;
+        text-align: center;
+        thead>tr { 
+            background-color: rgb(0, 102, 255);
+            font-weight: bold;
+        }
+        tr:nth-child(even) { 
+            background-color: rgb(132, 132, 134);
+        }
+    }
+    .pagination { 
+        padding: 1rem;
+        text-align: center;
+    }
+    .buttons { 
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        .getBtn,
+        .saveBtn {
+            width: 30%;
+            margin: 0 auto;
+            animation: none;
+        }
+        .getBtn:hover,
+        .saveBtn:hover {
+            cursor: pointer;
+            font-weight: bold;
+            background-color: rgb(238, 238, 238);
+        }
+    }
+}
+
+    // banner
+    .pawcon-banner { 
+        @include banner();
+    }
+
+@media screen and (min-width: $tablet) {
+    // banner
+    .pawcon-banner { 
+        @include banner();
+    }
+}
+
+@media screen and (min-width: $pc) {
+    
+    
+}

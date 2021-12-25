@@ -1,0 +1,83 @@
+.imgSlider {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  margin: 15rem auto 7rem auto;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: circling 20s ease-in-out infinite;
+          animation: circling 20s ease-in-out infinite;
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+}
+
+.imgSlider span {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.imgSlider span img {
+  width: 100%;
+  height: 100%;
+}
+
+.item-1 {
+  -webkit-transform: rotateX(72deg) translateZ(100px);
+          transform: rotateX(72deg) translateZ(100px);
+}
+
+.item-2 {
+  -webkit-transform: rotateX(144deg) translateZ(100px);
+          transform: rotateX(144deg) translateZ(100px);
+}
+
+.item-3 {
+  -webkit-transform: rotateX(216deg) translateZ(100px);
+          transform: rotateX(216deg) translateZ(100px);
+}
+
+.item-4 {
+  -webkit-transform: rotateX(288deg) translateZ(100px);
+          transform: rotateX(288deg) translateZ(100px);
+}
+
+.item-5 {
+  -webkit-transform: rotateX(360deg) translateZ(100px);
+          transform: rotateX(360deg) translateZ(100px);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(20deg) rotateY(360deg);
+            transform: perspective(10000px) rotateX(20deg) rotateY(360deg);
+  }
+  50% {
+    -webkit-transform: perspective(1000px) rotateX(340deg) rotateY(0deg);
+            transform: perspective(10000px) rotateX(340deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(20deg) rotateY(360deg);
+            transform: perspective(10000px) rotateX(20deg) rotateY(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(20deg) rotateY(360deg);
+            transform: perspective(10000px) rotateX(20deg) rotateY(360deg);
+  }
+  50% {
+    -webkit-transform: perspective(1000px) rotateX(340deg) rotateY(0deg);
+            transform: perspective(10000px) rotateX(340deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(20deg) rotateY(360deg);
+            transform: perspective(10000px) rotateX(20deg) rotateY(360deg);
+  }
+}
+/*# sourceMappingURL=calc.css.map */
