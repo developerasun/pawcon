@@ -1,11 +1,11 @@
-# Heads-up
+## Heads-up
 ### *This is a ongoing project that is actively being updated*
 
 - [See Beta](https://meowcanvas.netlify.app/)
 
 https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
   
-# What is Meow Canvas?
+# What is PawCon?
 - One click graphic art generation service. 
 - Make tech and art public-friendly.
 
@@ -24,6 +24,17 @@ https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-
 |Database|X             |MongoDB/PostgreDB|
 |Test|X                 |Mocha, Jest|
 |Deployment|Netlify     |Netlify/Firebase/Heroku/Supabase|
+
+## Project tree
+### Before
+<img src="https://user-images.githubusercontent.com/83855174/147398746-07ff4670-ba49-4436-b78b-a7c064b17e6e.png" width=300 height=680 alt="project tree before" />
+
+### After
+<img src="https://user-images.githubusercontent.com/83855174/147398795-b09a954c-60a1-42e6-a562-dbc423989686.png" width=450 height=680 alt="project tree after" />
+
+
+
+  
 
 ## Implementation
 ### Front End
