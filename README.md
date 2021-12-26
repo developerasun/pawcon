@@ -2,8 +2,6 @@
 ### *This is a ongoing project that is actively being updated*
 
 - [See Beta](https://meowcanvas.netlify.app/)
-
-https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-9a32-92aa616bd365.mp4
   
 # What is PawCon?
 - One click graphic art generation service. 
@@ -24,40 +22,38 @@ https://user-images.githubusercontent.com/83855174/143537261-009537d7-2eb6-4dfd-
 |Database|X             |MongoDB/PostgreDB|
 |Test|X                 |Mocha, Jest|
 |Deployment|Netlify     |Netlify/Firebase/Heroku/Supabase|
-
-## Project tree
-### Before
-<img src="https://user-images.githubusercontent.com/83855174/147398746-07ff4670-ba49-4436-b78b-a7c064b17e6e.png" width=300 height=680 alt="project tree before" />
-
-### After
-<img src="https://user-images.githubusercontent.com/83855174/147398795-b09a954c-60a1-42e6-a562-dbc423989686.png" width=450 height=680 alt="project tree after" />
-
-
-
-  
+|CI, CD|X               |Github Actions|
 
 ## Implementation
+- O : fully applied
+- △ : partially applied yet
+- X : not adopted yet
+
 ### Front End
-- [X] Responsive web design
-- [X] Ajax : XMLHttepRequest, Fetch
-- [ ] Dashboard : D3, React
-- [X] Web bundling : Parcel
-- [X] Modal
-- [X] CSS animations
-- [ ] Drawing app : Tldraw
+|Unit                                    |Developed|Applied|
+|:--------------------------------------:|:-------:|:-----:|
+|Responsive web design                   |O        |O      |
+|Ajax:XMLHttepRequest, Fetch             |O        |△      |
+|Dashboard : D3, React                   |O        |X      |
+|Web bundling : Parcel/Webpack           |O        |△      |
+|Modal                                   |O        |O      |
+|CSS animations                          |O        |O      |
 
 ### Backend
-- [ ] Server routing
-- [ ] Database schema/CRUD
-- [ ] Login, Oauth
-- [X] Web editor with CRUD
-- [ ] Web socket : real time chat
-- [ ] Shopping cart
-- [ ] Smart contract
-- [ ] Payment
-- [ ] Uploading and saving files
-- [ ] Pixelating filter app : Pillow, Numpy
-- [ ] Image generating engine : Node.js, HTML canvas
+|Unit                                                     |Developed|Applied|
+|:-------------------------------------------------------:|:-------:|:-----:|
+|Server routing                                           |X        |X      |
+|Database schema/model                                    |O        |△      |
+|Login, Oauth                                             |X        |X      |
+|Web editor with CRUD                                     |O        |△      |
+|Web socket : real time chat                              |O        |△      |
+|Shopping cart                                            |X        |X      |
+|Smart contract                                           |X        |X      |
+|Payment                                                  |X        |X      |
+|Uploading and saving files                               |X        |X      |
+|Drawing app : Tldraw                                     |X        |X      |
+|Pixelating filter app : Pillow, Numpy                    |X        |X      |
+|Image generating engine : Node.js, HTML canvas           |X        |X      | 
 
 ## Roles 
 |100% contribution|
