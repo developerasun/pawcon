@@ -20,6 +20,7 @@
     "@editorjs/simple-image": "^1.4.1",
     "dotenv": "^10.0.0",
     "mongoose": "^6.1.1",
-    "parcel": "^2.0.1"
+    "parcel": "^2.0.1",
+    "typescript": "^4.5.4"
   }
 }
