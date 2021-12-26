@@ -4,27 +4,27 @@
 
 .gallery .title {
   background-color: blueviolet;
-  height: 200px;
   padding: 1.5rem;
   text-align: center;
+  height: 200px;
 }
 
 .gallery .title h2 {
   font-size: 2rem;
-  font-weight: bold;
 }
 
-.gallery .title p {
-  padding-top: 0.5rem;
+.gallery .title h2 p {
   font-size: 1rem;
 }
 
 .gallery img {
   width: 70%;
   height: 200px;
+  margin: 0 15%;
+  z-index: 1000;
   position: absolute;
-  top: 25%;
-  left: 15%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .gallery .texts {
@@ -33,10 +33,9 @@
 }
 
 .gallery .texts p {
-  position: relative;
-  font-size: 1rem;
-  top: 55%;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
+  font-size: 1rem;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
 }
-/*# sourceMappingURL=gallery.css.map */
