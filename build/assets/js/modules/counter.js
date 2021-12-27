@@ -8,6 +8,6 @@ export const IncreaseToTarget = (param) => {
         setTimeout(() => { Wrapper(param); }, param.speed);
     }
 };
-export const Wrapper = (param) => {
+const Wrapper = (param) => {
     IncreaseToTarget(param);
 };
