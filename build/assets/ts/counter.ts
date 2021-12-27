@@ -10,14 +10,14 @@ interface setPoints {
 // reflect the i in html
 // stop if i reaches 100
 export const IncreaseToTarget = (param: setPoints):void => {
-    if (param.count <param.target) { 
+    if (param.count < param.target) { 
         param.display.textContent = `${param.count}`
         param.count++
         setTimeout(()=>{ Wrapper(param) }, param.speed)
     }
 }
     
-export const Wrapper = (param : setPoints) => {
+const Wrapper = (param : setPoints) => {
     IncreaseToTarget(param)
 }
 

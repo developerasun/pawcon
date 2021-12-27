@@ -1,4 +1,4 @@
-import { IncreaseToTarget, Wrapper } from './counter.js'
+import { IncreaseToTarget } from './counter.js'
  
 const display = document.querySelector(".display") as HTMLHeadingElement // type casting
 const dataTarget = display.getAttribute('data-target') as string
