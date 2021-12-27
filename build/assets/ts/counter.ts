@@ -9,7 +9,7 @@ interface setPoints {
 // increase value i to 100 
 // reflect the i in html
 // stop if i reaches 100
-export const IncreaseToTarget = <T extends setPoints>(param: setPoints):void => {
+export const IncreaseToTarget = (param: setPoints):void => {
     if (param.count <param.target) { 
         param.display.textContent = `${param.count}`
         param.count++
@@ -17,7 +17,7 @@ export const IncreaseToTarget = <T extends setPoints>(param: setPoints):void => 
     }
 }
     
-export const Wrapper = <T extends setPoints>(param : setPoints) => {
+export const Wrapper = (param : setPoints) => {
     IncreaseToTarget(param)
 }
 
