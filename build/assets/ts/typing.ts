@@ -1,8 +1,9 @@
 // When scroll reaches window.scrollY > 900, start typing
 // typing shows one sentence at a time, refreshing when done
-// functions : 1) getOneSentence 2) startTyping 3) eraseTyping
+// functions : 1) getOneSentence 2) startTyping 3) eraseTyping 4) getNextSentence
 // typewriter object
 
+// Type settings
 export type Typewriter = { 
     position : number, 
     speed : number
@@ -10,24 +11,37 @@ export type Typewriter = {
 
 type Sentences =  NodeListOf<HTMLLIElement>
 
+// Create random sentence from promotion texts
 export const GetOneSentence = (items : Sentences):HTMLLIElement => { 
     const randomIdx = Math.floor(Math.random()*items.length)
     return items[randomIdx]
 }
 
+// Initiate typewriter effect : 1) start typing 2) erase typing
 export const StartTyping = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
     if (tw.position < li.innerText.length) { 
-        span.innerHTML += li.innerText.charAt(tw.position)
+        span.innerHTML += li.innerHTML.charAt(tw.position)
         tw.position++
 
-        setTimeout(() => { TypingWrapper(tw, li, span) }, tw.speed)
+        setTimeout(() => { StartTypingWrapper(tw, li, span) }, tw.speed)
+    } else { 
+        EraseTypingWrapper(tw,li, span)
     }
 }
 
-const TypingWrapper = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
+// Erase what has been typed
+const EraseTyping = <T extends Typewriter>(tw: T, li:HTMLLIElement, span:HTMLSpanElement) => {
+    if (span.innerHTML.length > 0) {
+        span.innerHTML = span.innerHTML.slice(0, span.innerHTML.length-1)
+        setTimeout(()=> EraseTypingWrapper(tw, li, span), tw.speed-100)
+    }
+}
+
+// Wrapper functions
+const StartTypingWrapper = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
     StartTyping(tw, li, span) 
 }
 
-const EraseTyping = () => { }
-
-
+const EraseTypingWrapper = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
+    EraseTyping(tw, li, span) 
+}

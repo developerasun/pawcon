@@ -1,6 +1,6 @@
-import { StartTyping, GetOneSentence } from './typing.js'
+import { StartTyping, GetOneSentence, Typewriter } from './typing.js'
 
-const promoTexts = document.querySelectorAll(".text-container") as NodeListOf<HTMLLIElement>
+const promoTexts = document.querySelectorAll(".text-container>li") as NodeListOf<HTMLLIElement>
 const showTyping = document.querySelector(".showTyping") as HTMLSpanElement
 
 window.addEventListener("load", ()=>{
@@ -9,12 +9,10 @@ window.addEventListener("load", ()=>{
     })
 })
 
+const typewriterSetting: Typewriter = { position: 0, speed : 150 }
 const sentence = GetOneSentence(promoTexts)
-StartTyping({ position : 0, speed : 150 }, sentence, showTyping)
 
-window.addEventListener("scroll", ()=>{
-    if (window.scrollY > 900) { 
-        promoTexts[0].style.display = "block"
-        console.log("hi")
+// initiate type effect with random sentence
+    if (window.scrollY > 1100) { 
+        StartTyping(typewriterSetting, sentence, showTyping)
     }
-})
