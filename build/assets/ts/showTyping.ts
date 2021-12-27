@@ -13,6 +13,10 @@ const typewriterSetting: Typewriter = { position: 0, speed : 150 }
 const sentence = GetOneSentence(promoTexts)
 
 // initiate type effect with random sentence
-    if (window.scrollY > 1100) { 
-        StartTyping(typewriterSetting, sentence, showTyping)
+window.addEventListener("scroll", ()=> {
+    if (window.scrollY > 1100) {
+        setTimeout(()=> {
+            StartTyping(typewriterSetting, sentence, showTyping)
+        }, 500)
     }
+})
