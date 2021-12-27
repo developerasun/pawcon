@@ -1,41 +1,67 @@
-.gallery {
+.frame {
   position: relative;
+  padding: 1rem;
 }
 
-.gallery .title {
+.frame .title {
   background-color: blueviolet;
   padding: 1.5rem;
   text-align: center;
   height: 200px;
 }
 
-.gallery .title h2 {
+.frame .title h2 {
   font-size: 2rem;
 }
 
-.gallery .title h2 p {
+.frame .title h2 p {
   font-size: 1rem;
 }
 
-.gallery img {
-  width: 70%;
+.frame .frame-creators-banner {
+  width: 95%;
   height: 200px;
-  margin: 0 15%;
-  z-index: 1000;
+  margin: 0 auto;
   position: absolute;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(50%);
+          transform: translateX(-50%) translateY(50%);
+  bottom: 50%;
+  left: 50%;
 }
 
-.gallery .texts {
+.frame .texts {
   background-color: darkgreen;
   height: 200px;
 }
 
-.gallery .texts p {
+.frame .texts p {
   padding: 1.5rem;
   text-align: center;
   font-size: 1rem;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
+  -webkit-transform: translateY(110px);
+          transform: translateY(110px);
+}
+
+@media screen and (min-width: 992px) {
+  .frame .title h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .frame .title h2, .frame .title p {
+    width: 30%;
+    margin: 0 auto;
+    background-color: blueviolet;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem;
+  }
+  .frame .frame-creators-banner {
+    width: 100%;
+    height: 100%;
+  }
+  .frame .texts p {
+    width: 50%;
+    margin: 0 auto;
+    background-color: darkgreen;
+  }
 }
