@@ -22,26 +22,19 @@ export const StartTyping = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:H
     if (tw.position < li.innerText.length) { 
         span.innerHTML += li.innerHTML.charAt(tw.position)
         tw.position++
-
-        setTimeout(() => { StartTypingWrapper(tw, li, span) }, tw.speed)
-    } else { 
-        EraseTypingWrapper(tw,li, span)
-    }
+        setTimeout(()=>StartTyping(tw, li, span), tw.speed)
+    } 
+    return tw.position
 }
 
 // Erase what has been typed
-const EraseTyping = <T extends Typewriter>(tw: T, li:HTMLLIElement, span:HTMLSpanElement) => {
+export const EraseTyping = <T extends Typewriter>(tw: T, li:HTMLLIElement, span:HTMLSpanElement) => {
     if (span.innerHTML.length > 0) {
         span.innerHTML = span.innerHTML.slice(0, span.innerHTML.length-1)
-        setTimeout(()=> EraseTypingWrapper(tw, li, span), tw.speed-100)
-    }
-}
+        setTimeout(()=>EraseTyping(tw, li, span), tw.speed-50)
+    } 
 
-// Wrapper functions
-const StartTypingWrapper = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
-    StartTyping(tw, li, span) 
-}
-
-const EraseTypingWrapper = <T extends Typewriter>(tw:T, li:HTMLLIElement, span:HTMLSpanElement) => { 
-    EraseTyping(tw, li, span) 
+    // if (span.innerHTML.length === 0) { 
+    //     span.innerHTML = "testing string"       
+    // }
 }
