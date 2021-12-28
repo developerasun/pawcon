@@ -2,7 +2,9 @@
 ### *This is a ongoing project that is actively being updated*
 
 - [See Beta](https://meowcanvas.netlify.app/)
-  
+
+https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
+
 # What is PawCon?
 - One click graphic art generation service. 
 - Make tech and art public-friendly.
@@ -30,30 +32,30 @@
 - X : not adopted yet
 
 ### Front End
-|Unit                                    |Developed|Applied|
-|:--------------------------------------:|:-------:|:-----:|
-|Responsive web design                   |O        |O      |
-|Ajax:XMLHttepRequest, Fetch             |O        |△      |
-|Dashboard : D3, React                   |O        |X      |
-|Web bundling : Parcel/Webpack           |O        |△      |
-|Modal                                   |O        |O      |
-|CSS animations                          |O        |O      |
+|Unit                                    |Developed|Applied|Learned|
+|:--------------------------------------:|:-------:|:-----:|:-----:|
+|Responsive web design                   |O        |O      |O      |
+|Ajax:XMLHttepRequest, Fetch             |O        |△      |O     |
+|Dashboard : D3, React                   |O        |X      |△     |
+|Web bundling : Parcel/Webpack           |O        |△      |△     |
+|Modal                                   |O        |O      |O      |
+|CSS animations                          |O        |O      |O      |
 
 ### Backend
-|Unit                                                     |Developed|Applied|
-|:-------------------------------------------------------:|:-------:|:-----:|
-|Server routing                                           |X        |X      |
-|Database schema/model                                    |O        |△      |
-|Login, Oauth                                             |X        |X      |
-|Web editor with CRUD                                     |O        |△      |
-|Web socket : real time chat                              |O        |△      |
-|Shopping cart                                            |X        |X      |
-|Smart contract                                           |X        |X      |
-|Payment                                                  |X        |X      |
-|Uploading and saving files                               |X        |X      |
-|Drawing app : Tldraw                                     |X        |X      |
-|Pixelating filter app : Pillow, Numpy                    |X        |X      |
-|Image generating engine : Node.js, HTML canvas           |X        |X      | 
+|Unit                                                     |Developed|Applied|Learned|
+|:-------------------------------------------------------:|:-------:|:-----:|:-----:|
+|Server routing                                           |X        |X      |O      |
+|Database schema/model                                    |O        |△      |O     |
+|Login, Oauth                                             |X        |X      |△     |
+|Web editor with CRUD                                     |O        |△      |O     |
+|Web socket : real time chat                              |O        |△      |O     |
+|Shopping cart                                            |X        |X      |X      |
+|Smart contract                                           |X        |X      |X      |
+|Payment                                                  |X        |X      |X      |
+|Uploading and saving files                               |X        |X      |X      |
+|Drawing app : Tldraw                                     |X        |X      |X      |
+|Pixelating filter app : Pillow, Numpy                    |X        |X      |X      |
+|Image generating engine : Node.js, HTML canvas           |X        |X      |X      |
 
 ## Roles 
 |100% contribution|
