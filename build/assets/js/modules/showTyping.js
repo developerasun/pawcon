@@ -1,4 +1,4 @@
-import { StartTyping, GetOneSentence } from './typing.js';
+import { StartTyping, EraseTyping, GetOneSentence } from './typing.js';
 const promoTexts = document.querySelectorAll(".text-container>li");
 const showTyping = document.querySelector(".showTyping");
 window.addEventListener("load", () => {
@@ -6,9 +6,11 @@ window.addEventListener("load", () => {
         item.style.display = "none";
     });
 });
-const typewriterSetting = { position: 0, speed: 150 };
 const sentence = GetOneSentence(promoTexts);
-// initiate type effect with random sentence
-if (window.scrollY > 1100) {
+const typewriterSetting = { position: 0, speed: 150 };
+function InitTypewriter() {
     StartTyping(typewriterSetting, sentence, showTyping);
 }
+// initiate type effect with random sentence
+InitTypewriter();
+setTimeout(() => EraseTyping(typewriterSetting, sentence, showTyping), 7000);
