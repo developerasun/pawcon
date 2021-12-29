@@ -120,9 +120,12 @@ $border-radius : 5%;
             color: white;
             height:auto; 
             font-size:1.5rem;
-            padding: 1.5rem;
+            padding: 2rem;
+            gap: 3rem;
             .instruction-icon {
                 @include instruction-icon();
+            }
+            .message { 
             }
         }
     }
@@ -198,6 +201,12 @@ $border-radius : 5%;
         .card:hover {
             transform: scale(105%);
             filter: blur(0rem);
+        }
+    }
+    .promotion { 
+        .message-group { 
+            padding: 3rem;
+            gap: 2rem;
         }
     }
 }

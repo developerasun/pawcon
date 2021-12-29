@@ -250,7 +250,8 @@
   color: white;
   height: auto;
   font-size: 1.5rem;
-  padding: 1.5rem;
+  padding: 2rem;
+  gap: 3rem;
 }
 
 .promotion .message-group .instruction-icon {
@@ -365,5 +366,9 @@
             transform: scale(105%);
     -webkit-filter: blur(0rem);
             filter: blur(0rem);
+  }
+  .promotion .message-group {
+    padding: 3rem;
+    gap: 2rem;
   }
 }

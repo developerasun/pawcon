@@ -7,15 +7,17 @@
 }
 
 .footer-item {
+    list-style-type: none;
+    text-decoration: none;
     margin: 0.5rem;
     padding:1rem;
     border: 2px solid #222;
-    color: white;
+    color: black;
     background-color: beige;
 }
 
 .footer-item:hover {
-    background-color: white;
+    background-color: rgb(219, 219, 202);
     font-weight: bold;
 }
 
