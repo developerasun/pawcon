@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
+    <meta name="description" content="PawCon community with reviews">
+    <meta name="keywords" content="PawCon reveiw, user feedback">
+    <meta property="og:title" content="Community" />
+    <meta property="og:description" content="Leave your feedback and proposal for PawCon" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../img/logo/pawcon-logo.png" />
+    <meta property="og:url" content="https://meowcanvas.netlify.app/assets/pages/community.html" />
+
     <!-- connect css -->
     <link rel="stylesheet" href="../sass/css/community.css">
 
@@ -16,7 +25,12 @@
     <header>
         <!-- trigger-->
         <div href="#" id="trigger">
-            <a href="../../index.html"><img src="../img/logo/logo-fixed.png" id="logo" alt="logo"/></a>
+            <a href="../../index.html">
+                <img src="../img/logo/pawcon-logo.png" 
+                     loading="lazy"
+                     id="logo" 
+                     alt="logo"/>
+            </a>
             <div class="bars">&#8801;</div>
             <div class="cancel hidden">&#215;</div>
         </div>
@@ -47,9 +61,9 @@
 
     <!-- Editor js plugin -->
     <div class="web-editor">
-        <article>
+        <!-- <article>
             <p class="editorDisplay">You have typed : </p>
-        </article>
+        </article> -->
         <h2>Tell Us What You Felt</h2>
         <div id="editorjs"></div>
         <button class="submitBtn">Submit</button>
@@ -83,20 +97,29 @@
     
     <!-- Banner  -->
     <section>
-        <img class="pawcon-banner" src="../img/banner/salute-devs.png" alt="salute banner" />
+        <img class="pawcon-banner" 
+             src="../img/banner/salute-devs.png" 
+             loading="lazy"
+             alt="salute banner" />
     </section>
-    <!-- footer -->
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-item"><a href="https://github.com/developerasun/meow-canvas" target="_blank">Project Detail</a></div>
-        <div class="footer-item"><a href="mailto: designerasun@gmail.com" target="_blank">Send Email</a></div>
-        <div class="footer-item"><a href="#">Copyright© 2021 DEVELOPERASUN All rights reserved</a></div>
-        <div class="footer-item waves"> 
-            <div class="wave1"></div>
-            <div class="wave2" ></div>
-            <div class="wave3"></div>
-            <div class="wave4"></div>
-        </div>
-    </footer>
+        <a href="https://github.com/developerasun/meow-canvas" 
+           target="_blank" 
+           class="footer-item">Project Detail</a>
+        <a href="mailto: designerasun@gmail.com" 
+           target="_blank" 
+           class="footer-item">Send Email</a>
+        <a href="#" 
+           class="footer-item">Copyright &copy; 2021 DEVELOPERASUN All rights reserved</a>
+        <ul class="footer-item waves"> 
+            <li class="wave1"></li>
+            <li class="wave2"></li>
+            <li class="wave3"></li>
+            <li class="wave4"></li>
+        </ul>
+</footer>
 
     <script src="../js/toggle.js"></script>
     <script src="../js/dropdown.js"></script>
