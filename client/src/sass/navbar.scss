@@ -1,0 +1,29 @@
+@import './variables';
+@import './display'
+
+// mobile
+#navigation {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
+
+    .mainMenu { 
+        .dropdown { 
+            .dropdown-sub { 
+                display: none;
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width : $tablet) {
+
+}
+
+// pc
+@media screen and (min-width : $pc) {
+    #navigation { 
+        background-color: lightblue;
+    }
+}
