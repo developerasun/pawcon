@@ -1,0 +1,18 @@
+// display mixin
+@mixin flexRowNowrap {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+@mixin flexColumnNowrap {
+    display: flex;
+    flex-flow: column nowrap;
+    gap : 1rem;
+}
+
+@mixin grid {
+    display: grid;
+    gap : 1rem;
+}
+
