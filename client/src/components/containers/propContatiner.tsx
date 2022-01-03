@@ -5,4 +5,7 @@ export type SampleProps = {
     name : string
 }
 
-
+export type LoginStatusProps = {
+    name : string
+    email : string
+}
