@@ -1,14 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './sass/css/reset.css'
 // React router v6
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './components/home'
 import { About } from './components/about'
 import { Community } from './components/community'
 import { Create } from './components/create'
 import { Gallery } from './components/gallery'
 import { Shop } from './components/shop'
+import { Login } from './components/login';
+import { SignUp } from './components/signup';
+import { Page404 } from './components/partials/page404';
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path='/create' element={<Create />}/>
         <Route path='/gallery' element={<Gallery />}/>
         <Route path='/shop' element={<Shop />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<SignUp />}/>
+        <Route path='*' element={<Page404 />}/>
       </Routes>
     </BrowserRouter>
   );
