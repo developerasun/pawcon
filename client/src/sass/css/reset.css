@@ -11,3 +11,9 @@ html {
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+a, a:visited {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
