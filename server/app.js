@@ -1,19 +1,16 @@
-require('dotenv').config()
-
 const express = require('express')
 const app = express()
 const path = require('path')
+const config = require('./config/config')
 const router = require('./router/route')
-const MONGO_URI = process.env.MONGO_URI
-const PORT = process.env.PORT || 8080
 const mongoose = require('mongoose')
 
 // Connect mongoDB 
-mongoose.connect( MONGO_URI, {})
+mongoose.connect( config.MONGO_URI, {})
         .then(()=>{ 
                 console.log("db connected") 
                 // and then start Express app
-                app.listen(PORT, ()=> console.log(`app executed at ${PORT}`))
+                app.listen(config.PORT || 8080, ()=> console.log(`app executed at ${config.PORT || 8080}`))
         })
         .catch((err)=>{ console.log(err)} )
 
