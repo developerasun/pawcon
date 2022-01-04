@@ -30,14 +30,12 @@ app.use((req, res, next)=> {
 })
 app.use(router)
 
+// serve client build files
+app.use(express.static(path.join(__dirname, '../client/build')))
 
-// app.use(express.static(path.join(__dirname, '../client/build', 'index.html')))
-// app.use(express.static('public'))
-// app.use((req, res, next)=> {
-//         res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
-// })
-
-app.get('/', (req, res)=> {
-        res.send("hello server")
+// if client routing is used in React, any requests off the client routes
+// will be redirected to index.html by server
+app.get('/*', (req, res)=> {
+        res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
 })
 
