@@ -1,13 +1,47 @@
 @import './variables';
-@import './display'
+@import './display';
 
-// mobile
-#navigation {
+@mixin flexRowNowrapAllCenter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+@mixin flexColumNowrapAllCenter {
     display: flex;
     flex-flow: column nowrap;
-    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
 
-    .mainMenu { 
+// mobile
+#navigation { 
+    position: absolute;
+    right: 0;
+    padding: 2rem;
+    background-color: $subBgColor;
+    width: fit-content;
+    height: 100vh;
+    .navBtns { 
+        @include flexRowNowrapAllCenter();
+        padding: 2rem;
+        font-size: 1.5rem;
+        #triggerBtn {
+            position: absolute;
+            top: $flexGap;
+        }
+        #closeBtn { 
+            display: none;
+        }
+    }
+    .menu { 
+        @include flexColumNowrapAllCenter();
+        // display: none;
         .dropdown { 
             .dropdown-sub { 
                 display: none;
@@ -15,6 +49,7 @@
         }
     }
 }
+
 
 // tablet
 @media screen and (min-width : $tablet) {
