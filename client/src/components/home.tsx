@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Navbar } from './partials/nav';
-
+import { ImgBanner } from './partials/banner'
+import { tempImg } from './gallery'
 export interface HomeProps {
 }
 
@@ -15,6 +16,8 @@ export function Home (props:  HomeProps) {
           <p className='count'>second count here</p>
           <p className='count'>third count here</p>
       </section>
+
+      <ImgBanner src={tempImg}/>
     </div>
   );
 }
