@@ -1,54 +1,28 @@
 import * as React from 'react';
 import { Navbar } from './partials/nav';
+import { GalleryCard } from './partials/galleryPartials/card'
 
 export interface IGalleryProps {
 }
+
+export const tempImg = "https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 
 export function Gallery (props: IGalleryProps) {
   return (
     <div>
       <Navbar />
       
-      <h1>gallery route</h1>
-      <article className="counter">
-        <h1 className="display" data-target="301">asdf</h1>
-        <p>The number of artworks through PawCon!</p>
-    </article>
-
-    <main>
-        <h1>Hall of Paws</h1>
-        <ul>
-            <li></li>
-            <ul></ul>
-        </ul>
-    </main>
-
-    <section>    
-        <article className="semantic-article">
-            <h3>List of cats you should pat everyday</h3>
-            <p>Patting them will make your life sweeter</p>
-            <ul>
-                <li>Ragdoll</li>
-                <li>Siamese</li>
-                <li>Sphynx</li>
-            </ul>
-            <aside>
-                <label> Why traveling with cat becomes so popular</label>
-                Read article
-            </aside>
+        <h1>gallery route</h1>
+        <article className="counter">
+            <h1 className="display" data-target="301">asdf</h1>
+            <p>The number of artworks through PawCon!</p>
         </article>
-    </section>
 
-    <section className="subscribe">
-        <article>
-            <h2>Join Today!</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, animi?</p>
-            <form>
-                <input type="email" name="" id="" placeholder="enter your email" required/>
-                <button>Submit</button>
-            </form>
-        </article>
-    </section>
+        <main>
+            <h1>Hall of Paws</h1>
+            <GalleryCard author='Jake' date="2022.01.06" image={tempImg} title='testing'/>
+        </main>
+
     </div>
   );
 }
