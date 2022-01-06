@@ -1,15 +1,24 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import '../../sass/css/navbar.css'
+import { NavbarStyle } from '../containers/styleContainer'
 
 export function Navbar () {
+  const [toggle, setToggle] = React.useState(false)
+  const handleClick = () => setToggle(!toggle)
+
   return (
-    <nav id='navigation'>
-        <ul className="navBtns">
+    //   basic style is done with sass
+    //   style changed with state done with styleContainters. 
+    //   later will only be dome with styleContainers
+    <nav id='navigation' style={toggle ? NavbarStyle.navigation.toggled 
+                                       : NavbarStyle.navigation.notToggled}>
+        <ul className='navBtns'>
             <li id='closeBtn'>&times;</li>
-            <li id='triggerBtn'>&#8801;</li>
+            <li id='triggerBtn' onClick={handleClick}>&#8801;</li>
         </ul>
-        <ul className='mainMenu menu'>
+        <ul className={`mainMenu menu`} style={toggle ? NavbarStyle.menu.toggled 
+                                                      : NavbarStyle.menu.notToggled}>
             <Link to={'/'}><li>Main</li></Link>
 
             <li className='dropdown'>
@@ -39,11 +48,8 @@ export function Navbar () {
                     <li>Creator</li>
                 </ul>
             </li>
-
-        </ul>
-        <ul className='loginMenu menu'>
-            <Link to={'/login'}><li>Login</li></Link>
-            <Link to={'/signup'}><li>Sign up</li></Link>
+            
+            <Link to={'/login'}><li>Login/SignUp</li></Link>
         </ul>
     </nav>
   );
