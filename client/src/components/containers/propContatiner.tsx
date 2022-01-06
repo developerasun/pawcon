@@ -5,7 +5,8 @@ export type SampleProps = {
     name : string
 }
 
-export type LoginStatusProps = {
+export type ProfileProps = {
     name : string
     email : string
+    isLoggedIn : boolean 
 }
