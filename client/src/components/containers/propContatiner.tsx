@@ -10,3 +10,11 @@ export type ProfileProps = {
     email : string
     isLoggedIn : boolean 
 }
+
+export type GalleryCardsProps = {
+    title : string
+    author : string
+    date : string
+    image : string
+    id : string
+}

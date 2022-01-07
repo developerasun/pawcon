@@ -4,26 +4,7 @@ export type SampleStyleProps = {
     style : React.CSSProperties
 }
 
-export const NavbarStyle = {
-    navigation : { 
-        toggled : {
-            "backgroundColor" : "green"
-        }, 
-        notToggled : { 
-            "fontWeight" : "bold"
-        }
-    }, 
-    menu : { 
-        toggled : {
-            "display" : "block"
-        }, 
-        notToggled: { 
-            "display" : "none"
-        }
-    }
-}
-
-export const GalleryCardStyle = { 
+export const GalleryCardsStyle = { 
     'display' : 'flex', 
     'flexFlow':'column nowrap',
     'justifyContent':'center', 
@@ -37,4 +18,4 @@ export const GalleryCardStyle = {
 export const ImgBannerStyle = {
     "width":"50%", 
     "height":"50%"
-  }
+}
