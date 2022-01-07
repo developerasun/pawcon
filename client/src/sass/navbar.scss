@@ -19,46 +19,30 @@
     gap: 1rem;
 }
 
-// mobile
-#navigation { 
-    position: absolute;
-    right: 0;
-    padding: 2rem;
-    background-color: $subBgColor;
-    width: fit-content;
-    height: 100vh;
-    .navBtns { 
-        @include flexRowNowrapAllCenter();
-        padding: 2rem;
-        font-size: 1.5rem;
-        #triggerBtn {
-            position: absolute;
-            top: $flexGap;
-        }
-        #closeBtn { 
-            display: none;
-        }
-    }
-    .menu { 
-        @include flexColumNowrapAllCenter();
-        // display: none;
-        .dropdown { 
-            .dropdown-sub { 
-                display: none;
-            }
-        }
+// state : menu toggle
+.toggled {
+    display: block;
+    cursor: pointer;
+}
+
+.notToggled {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdownSub {
+    display: none;
+}
+
+// media query
+@media screen and (min-width: $tablet ) {
+    #navigation {
+        background-color: pink;
     }
 }
 
-
-// tablet
-@media screen and (min-width : $tablet) {
-
-}
-
-// pc
-@media screen and (min-width : $pc) {
-    #navigation { 
+@media screen and (min-width: $pc) {
+    #navigation {
         background-color: lightblue;
     }
 }

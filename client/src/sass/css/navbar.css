@@ -1,63 +1,21 @@
-#navigation {
-  position: absolute;
-  right: 0;
-  padding: 2rem;
-  background-color: #575757;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100vh;
+.toggled {
+  display: block;
+  cursor: pointer;
 }
 
-#navigation .navBtns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 2rem;
-  font-size: 1.5rem;
+.notToggled {
+  display: none;
+  cursor: pointer;
 }
 
-#navigation .navBtns #triggerBtn {
-  position: absolute;
-  top: 1rem;
-}
-
-#navigation .navBtns #closeBtn {
+.dropdownSub {
   display: none;
 }
 
-#navigation .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  gap: 1rem;
-}
-
-#navigation .menu .dropdown .dropdown-sub {
-  display: none;
+@media screen and (min-width: 576px) {
+  #navigation {
+    background-color: pink;
+  }
 }
 
 @media screen and (min-width: 992px) {
