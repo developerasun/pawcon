@@ -7,9 +7,9 @@ import { About } from './components/about'
 import { Community } from './components/community'
 import { Create } from './components/create'
 import { Gallery } from './components/gallery'
+import { CardDetails } from './components/partials/galleryPartials/cardDetails'
 import { Shop } from './components/shop'
 import { Login } from './components/login';
-import { SignUp } from './components/signup';
 import { Page404 } from './components/partials/page404';
 
 function App() {
@@ -20,10 +20,14 @@ function App() {
         <Route path='/about' element={<About />}/>
         <Route path='/community' element={<Community />}/>
         <Route path='/create' element={<Create />}/>
-        <Route path='/gallery' element={<Gallery />}/>
+
+        <Route path='/gallery' element={<Gallery />}>
+          {/* route parameter for CardDetails => id */}
+          <Route path=":id" element={<CardDetails />} />
+        </Route>
+
         <Route path='/shop' element={<Shop />}/>
         <Route path='/login' element={<Login />}/>
-        <Route path='/signup' element={<SignUp />}/>
         <Route path='*' element={<Page404 />}/>
       </Routes>
     </BrowserRouter>
