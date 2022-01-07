@@ -1,7 +1,5 @@
 import React from "react"
 
-// back to here once learned DOM more
-
 // set start/end points 
 interface setPoints {
     target : number
@@ -24,4 +22,3 @@ export const IncreaseToTarget = (param: setPoints):void => {
 const Wrapper = (param : setPoints) => {
     IncreaseToTarget(param)
 }
-
