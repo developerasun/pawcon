@@ -10,6 +10,7 @@ import { Gallery } from './components/gallery'
 import { CardDetails } from './components/partials/galleryPartials/cardDetails'
 import { Shop } from './components/shop'
 import { Login } from './components/login';
+import { SignUp } from './components/signup';
 import { Page404 } from './components/partials/page404';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
         <Route path='/shop' element={<Shop />}/>
         <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<SignUp />}/>
         <Route path='*' element={<Page404 />}/>
       </Routes>
     </BrowserRouter>
