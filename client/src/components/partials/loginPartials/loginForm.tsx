@@ -6,10 +6,7 @@ import { Link } from 'react-router-dom';
 // 2) Logout get
 // 3) Signup get
 
-export interface  LoginFormProps {
-}
-
-export function LoginForm (props:  LoginFormProps) {
+export function LoginForm () {
   // const [submit, setSubmit] = React.useState(false)
   const [click, setClick] = React.useState(false)
   
@@ -44,7 +41,7 @@ export function LoginForm (props:  LoginFormProps) {
   return (
     <div>
       <h2>Join PawCon today!</h2>
-      <p>Be the one of the coolest NFT art maker in seconds</p>
+      <p>Be the one of the coolest NFT trend setters in seconds.</p>
       <Link to={`/signup`}>LINK : Not signed up yet?</Link>
       <form onSubmit={handleSubmit}>
           <label htmlFor="email">
