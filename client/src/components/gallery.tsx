@@ -1,72 +1,53 @@
 import * as React from 'react';
 import { Navbar } from './partials/nav';
-import { fetchItem } from './apis/fetchItem' 
+import { Footer } from './partials/footer';
 import { GalleryCards } from './partials/galleryPartials/galleryCards'
-import { IncreaseToTarget } from './partials/homePartials/counter'
+import { GalleryCardContainerStyle, GalleryCardPaginationStyle } from '../components/containers/styleContainer'
 
 // Presume backend data here
+export const tempImg = "https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 export const artworks = [ 
-  {id : 1, title: "Fresh loaf chunk", author:"Jake", date:"2021.10.10" },
-  {id : 2, title: "Wildness", author:"Elly", date:"2017.06.30" },
-  {id : 3, title: "Goodbye World", author:"Smith", date:"2020.10.07" },
-  {id : 4, title: "Cat next door", author:"Brian", date:"2019.07.24" },
-  {id : 5, title: "Best paw", author:"Paul", date:"2015.02.22" },
+  {id : 1, title: "Fresh loaf chunk", description : "very cool", author:"Jake", date:"2021.10.10", image : tempImg},
+  {id : 2, title: "wow hello", description : "very hot", author:"Jake", date:"2011.03.22", image : tempImg},
+  {id : 3, title: "duumy", description : "very asdf", author:"Jake", date:"2015.09.22", image : tempImg},
+  {id : 4, title: "itarasdf", description : "ddodood", author:"Jake", date:"2033.02.16", image : tempImg},
+  {id : 5, title: "loerem", description : "66565", author:"Jake", date:"2000.10.10", image : tempImg},
 ]
 
-export interface IGalleryProps {
-}
-
-export const tempImg = "https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-
-export function Gallery (props: IGalleryProps) {
-
-  const [trigger, setTrigger] = React.useState<boolean>(false) // button status
-  const [testData, setTestData] = React.useState<string>("") // fetched data
-  const abortController = new AbortController() // for useEffect cleanup 
-
-  const handleClick = () => { setTrigger(!trigger) } // button click handler
-
-  React.useEffect( ()=> {
-
-    // counter
-    const counter = document.querySelector(".counter") as HTMLParagraphElement
-    IncreaseToTarget( { target : 201, count : 0, speed : 10, display: counter})
-
-    // fetch data if button clicked
-    if (trigger) {
-      // IIFE : asynchronous anonymous function
-      (async ()=> {
-        const data = await fetchItem( "https://jsonplaceholder.typicode.com/users/1", abortController)
-        console.log("thisis : ", data)
-        setTestData(`Welcome back, ${data.name}`)
-      })()
-    }
-
-    // execute clean up function
-    return () => abortController.abort()
-  }, [trigger]) // dependency
-
+export function Gallery () {
+  const [page, setPage] = React.useState(1)
   return (
     <div>
       <Navbar />
-    
-        <h2>gallery route</h2>
+      <main style={{"display" : "flex", "flexFlow": "column nowrap", "justifyContent": "center", "alignItems":"center"}}>
+        <h1>Weekly Tops on PawCon</h1>
+        <div
+          className='galleryCardContainer' 
+          style={GalleryCardContainerStyle}>
+          {artworks.map((item) => {
+            return <GalleryCards 
+                    title={item.title}
+                    description={item.description}
+                    author={item.author}
+                    image={item.image}
+                    date={item.date}
+                    id={item.id} /> })}
+        </div>
 
-        <article className="counterContainer">
-            <h3>The number of artworks made with PawCon!</h3>
-            <p className="counter"></p>
-        </article>
+        <div 
+          className="galleryCardPagination"
+          style={GalleryCardPaginationStyle}>
+          <button 
+            style={{"fontSize" : "1.5rem", "padding":"0 0.2rem"}}
+            onClick={()=>setPage(Math.max(page - 1, 1))}>&#8249;</button>
+          <p>{page}</p>
+          <button 
+            style={{"fontSize" : "1.5rem", "padding":"0 0.2rem"}}
+            onClick={()=>setPage(page + 1)}>&#8250;</button>
+        </div>
 
-        <button onClick={handleClick}>Get Data</button>
-        <p>fetched data : {testData}</p>
-
-        <main>
-            <h1>Weekly Tops</h1>
-
-            {/* map items to render gallery cards  */}
-            {/* <GalleryCards author='Jake' date="2022.01.06" image={tempImg} title='testing'/> */}
-        </main>
-
+      </main>
+      <Footer />
     </div>
   );
 }
