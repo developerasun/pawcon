@@ -1,5 +1,5 @@
 import React from 'react';
-import './sass/css/reset.css'
+import './App.css'
 // React router v6
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './components/home'

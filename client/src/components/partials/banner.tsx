@@ -16,20 +16,20 @@ export function EmailSubscribeBanner ( { title }: BannerProps) {
 
       <form onSubmit={handleSubmit}>
           <input type="email" name="" id="" placeholder="enter your email" required/>
-          <button>Submit</button>
+          <button type={'submit'}>Submit</button>
       </form>
     </article>
   );
 }
 
 export type ImgBannerProps = {
-  src : string
+  img : string
 }
 
-export function ImgBanner ({ src } : ImgBannerProps) { 
+export function ImgBanner ({ img } : ImgBannerProps) { 
   return ( 
-    <article>
-      <img src={src} alt="image banner" style={ImgBannerStyle}/>
-    </article>
+    <section>
+      <img src={img} alt="banner" loading='lazy' style={ImgBannerStyle}/>
+    </section>
   )
 }
