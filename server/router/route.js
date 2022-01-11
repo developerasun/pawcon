@@ -7,11 +7,9 @@ router.get('/login', controller.login_get)
 router.post('/login', controller.login_post)
 
 // handle signup route
-router.get('/signup', controller.signup_get)
 router.post('/signup', controller.signup_post)
 
-// handle google Oauth
-// activate passport google auth when the endpoint hit
+// handle google Oauth : activate passport google auth when the endpoint hit
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']    
 }))

@@ -30,6 +30,6 @@ userSchema.post('save', ()=> {
     
 })
 
-const pawConUser = mongoose.model('pawConUser', userSchema)
+const PawConUser = mongoose.model('PawConUser', userSchema)
 
-module.exports = { pawConUser }
+module.exports = PawConUser 
