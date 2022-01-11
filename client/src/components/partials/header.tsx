@@ -8,7 +8,8 @@ export function Header() {
       <img id="logo" 
            src={logo} 
            loading='lazy'
-           alt="pawcon logo" />
+           alt="pawcon logo" 
+           style={{ "width" : 50, "height" : 50 }}/>
       <Navbar />
     </div>
   );
