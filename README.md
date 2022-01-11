@@ -1,7 +1,7 @@
 ## Heads-up
 ### *This is a ongoing project that is actively being updated*
 
-- [See Beta](https://meowcanvas.netlify.app/)
+- [See Beta](https://bit.ly/hello_visitor)
 
 https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
 
