@@ -1,20 +1,19 @@
 import * as React from 'react';
+import { v4 as uuidV4 } from 'uuid';
 import { Navbar } from './partials/nav';
-import { ImgBanner } from './partials/banner'
-import { tempImg } from './gallery'
-import { IncreaseToTarget } from './partials/homePartials/counter'
 import { Footer } from './partials/footer';
-import devBanner from '../assets/img/banner/salute-devs.png'
-import creatorBanner from '../assets/img/banner/help-creators.jpg'
+import { ImgBanner } from './partials/banner'
+
+import { IncreaseToTarget } from './partials/homePartials/counter'
+import { InstructionCards } from './partials/homePartials/instructionCards'
+
+// images
+import { IMG_INSTRUCTION } from './containers/imgContainer'
+import { IMG_BANNER } from './containers/imgContainer'
 
 
-export interface HomeProps {
-}
-
-export function Home (props:  HomeProps) {
+export function Home () {
   const abortController = new AbortController()
-  // Import counter and use it in useEffect hook. 
-  // The useEffect is used to 1) fetching data 2) manipulating DOM in React.
   React.useEffect(()=> {
     const counters = document.querySelectorAll(".counter") as NodeListOf<HTMLParagraphElement>
     IncreaseToTarget( { target : 101, count : 0, speed : 10, display: counters[0]})
@@ -26,12 +25,14 @@ export function Home (props:  HomeProps) {
   }, [])
   
   return (
-    <div>
+    <>
       <Navbar />
       <main>
       <h1>Best Start For Lazy NFT Creators</h1>
       below image will be changed.
-      <ImgBanner img={devBanner}/>
+      <ImgBanner img={IMG_BANNER.helpCreator} 
+                title={"We help creators"}
+                description={"Spread your artistic talent and Make them NFTs"}/>
 
       counter card component here
       <section className="counterContainer">
@@ -40,10 +41,17 @@ export function Home (props:  HomeProps) {
           <p className='counter'></p>
       </section>
 
+      {IMG_INSTRUCTION.map((item) =>{
+        return <InstructionCards 
+                  key={uuidV4()}
+                  description={item.description} 
+                  image={item.image} /> 
+      })}
+
       </main>
-      dev banner here
-      <ImgBanner img={devBanner}/>
+
+      <ImgBanner img={IMG_BANNER.saluteDev}/>
       <Footer />
-    </div>
+    </>
   );
 }
