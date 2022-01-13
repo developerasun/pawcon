@@ -24,12 +24,16 @@ export function EmailSubscribeBanner ( { title }: BannerProps) {
 
 export type ImgBannerProps = {
   img : string
+  title? : string
+  description? : string
 }
 
-export function ImgBanner ({ img } : ImgBannerProps) { 
+export function ImgBanner ({ img, title, description } : ImgBannerProps) { 
   return ( 
     <section>
+      <h3>{title}</h3>
       <img src={img} alt="banner" loading='lazy' style={ImgBannerStyle}/>
+      <p>{description}</p>
     </section>
   )
 }
