@@ -64,6 +64,6 @@ export const GalleryCardPaginationStyle = {
 } as React.CSSProperties
 
 export const ImgBannerStyle = {
-    "width":"100%", 
+    "maxWidth":"100%", 
     "height":"auto"
 } as React.CSSProperties

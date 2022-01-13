@@ -6,9 +6,9 @@ export type ProfileProps = {
 }
 
 // Setting repeatedly used card style
-type BasicCardDetailsProps = { 
-    date : string
-    title : string
+export type BasicCardDetailsProps = { 
+    date? : string
+    title? : string
     description : string
     image : string
 }
