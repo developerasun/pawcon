@@ -1,16 +1,14 @@
-import * as React from 'react';
-import { v4 as uuidV4 } from 'uuid';
-import { Navbar } from './partials/nav';
-import { Footer } from './partials/footer';
-import { ImgBanner } from './partials/banner'
+import * as React from 'react'
+import { v4 as uuidV4 } from 'uuid'
+import { Navbar } from '../subComponents/navbar'
+import { Footer } from '../subComponents/footer'
+import { ImgBanner } from '../subComponents/banner'
 
-import { IncreaseToTarget } from './partials/homePartials/counter'
-import { InstructionCards } from './partials/homePartials/instructionCards'
+import { IncreaseToTarget } from './counter'
+import { InstructionCards } from './instructionCards'
 
 // images
-import { IMG_INSTRUCTION } from './containers/imgContainer'
-import { IMG_BANNER } from './containers/imgContainer'
-
+import { IMG_INSTRUCTION, IMG_BANNER } from '../containers/imgContainer'
 
 export function Home () {
   const abortController = new AbortController()

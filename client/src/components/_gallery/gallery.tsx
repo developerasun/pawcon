@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Navbar } from './partials/nav';
-import { Footer } from './partials/footer';
-import { GalleryCards } from './partials/galleryPartials/galleryCards'
-import { GalleryCardContainerStyle, GalleryCardPaginationStyle } from '../components/containers/styleContainer'
+import * as React from 'react'
+import { Navbar } from '../subComponents/navbar'
+import { Footer } from '../subComponents/footer'
+import { GalleryCards } from './galleryCards'
+import { GalleryCardContainerStyle, GalleryCardPaginationStyle } from '../containers/styleContainer'
 
 // Presume backend data here
 export const tempImg = "https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -17,7 +17,7 @@ export const artworks = [
 export function Gallery () {
   const [page, setPage] = React.useState(1)
   return (
-    <div>
+    <>
       <Navbar />
       <main style={{"display" : "flex", "flexFlow": "column nowrap", "justifyContent": "center", "alignItems":"center"}}>
         <h1>Weekly Tops on PawCon</h1>
@@ -48,6 +48,6 @@ export function Gallery () {
 
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { GalleryCardsStyle } from '../../containers/styleContainer'
-import { GalleryCardsProps } from '../../containers/propContatiner'
+import { GalleryCardsStyle } from '../containers/styleContainer'
+import { GalleryCardsProps } from '../containers/propContatiner'
 
 export function GalleryCards ( { title, description, author, date, image, id }:  GalleryCardsProps) {
   return (

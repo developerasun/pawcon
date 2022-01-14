@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar } from './nav';
+import { Navbar } from './navbar';
 import logo from '../../assets/img/logo/pawcon-logo.png';
 
 export function Header() {

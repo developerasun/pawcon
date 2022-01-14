@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar } from './partials/nav';
+import { Navbar } from '../subComponents/navbar';
 
 export interface IShopProps {
 }

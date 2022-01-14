@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BasicCardDetailsProps } from '../../containers/propContatiner';
+import { BasicCardDetailsProps } from '../containers/propContatiner';
 
 {/* <ButtonLinks btnText={btnText} url={url} /> */}
 // interface ButtonLinksProps { 

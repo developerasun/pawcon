@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { ProfileProps } from './containers/propContatiner';
-import { LoginForm } from './partials/loginPartials/loginForm'
-import { Profile } from './partials/loginPartials/profile'
-import { Navbar } from './partials/nav';
+import * as React from 'react'
+import { ProfileProps } from '../containers/propContatiner'
+import { LoginForm } from './loginForm'
+import { Profile } from './profile'
+import { Navbar } from '../subComponents/navbar';
 
 // conditional rendering based on login status
 export function Login() {

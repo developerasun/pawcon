@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { AboutCardsProps } from './containers/propContatiner';
-import { Footer } from './partials/footer';
-import { Navbar } from './partials/nav';
+import { AboutCardsProps } from '../containers/propContatiner';
+import { Footer } from '../subComponents/footer';
+import { Navbar } from '../subComponents/navbar';
 
 const AboutCards = ({ date, title, description, image }: AboutCardsProps) => {
 
