@@ -2,16 +2,16 @@ import React from 'react';
 import './App.css'
 // React router v6
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './components/home'
-import { About } from './components/about'
-import { Community } from './components/community'
-import { Create } from './components/create'
-import { Gallery } from './components/gallery'
-import { CardDetails } from './components/partials/galleryPartials/cardDetails'
-import { Shop } from './components/shop'
-import { Login } from './components/login';
-import { SignUp } from './components/signup';
-import { Page404 } from './components/partials/page404';
+import { Home } from './components/_home/home'
+import { About } from './components/_about/about'
+import { Community } from './components/_community/community'
+import { Create } from './components/_create/create'
+import { Gallery } from './components/_gallery/gallery'
+import { CardDetails } from './components/_gallery/cardDetails'
+import { Shop } from './components/_shop/shop'
+import { Login } from './components/_login/login';
+import { SignUp } from './components/_signup/signup';
+import { Page404 } from './components/subComponents/page404';
 
 function App() {
   return (
