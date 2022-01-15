@@ -1,36 +1,49 @@
-## Heads-up
-### *This is a ongoing project that is actively being updated*
+[![MAIN_BUILD_TEST](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml)
 
+**This is a ongoing project that is actively being updated**
 - [See Beta](https://bit.ly/hello_visitor)
 
 https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
 
 # What is PawCon?
+- **Since September 2021**
 - One click graphic art generation service. 
-- Make tech and art public-friendly.
+- Create a NFT marketplace from the bottom. 
 
-## Features
+- By from the bottom, what I mean is, **learn something and then apply it to project right away**.
+- This is a project that started that I had **no knowledge of HTML, CSS, JS and evolved up to this point**. 
+
+## Architecture, Feature, and Implementation
+
+<details>
+<summary>📐Architecture</summary>
+
+|Type|Before|After|
+|:-----:|:----:|:---:|
+|Front End|HTML, CSS, JS|HTML, CSS, React/TS|
+|Backend|X              |Express/JS => Express/TS or Koa/TS|
+|Database|X             |MongoDB or PostgreDB|
+|Test|X                 |Mocha, Jest|
+|Deployment|Netlify     |Netlify functions|
+|CI, CD|X               |Github Actions|
+</details>
+
+<details>
+<summary>🛠Features</summary>
+
 |Main                 |Plan          |Sub                                          |
 |:-------------------:|:------------:|:-------------------------------------------:|
 |Drawing              |free          |Login/sign up, Shopping cart, Payment, Search|
 |Pixelation effect    |free          |Filter effects like Photoshop                | 
 |Artwork generation   |paid          |(will be added)                              | 
+</details>
 
-## Architecture
-|Type|Before|After|
-|:-----:|:----:|:---:|
-|Front End|HTML, CSS, JS|HTML, CSS, React/TS|
-|Backend|X              |Express/JS => Express/TS|
-|Database|X             |MongoDB/PostgreDB|
-|Test|X                 |Mocha, Jest|
-|Deployment|Netlify     |Netlify functions|
-|CI, CD|X               |Github Actions|
+<details>
+<summary>✅Implementation</summary>
 
-### Implementation
 - O : fully applied
 - △ : partially applied yet
 - X : not adopted yet
-
 |Unit                                    |Developed|Applied|Learned|
 |:--------------------------------------:|:-------:|:-----:|:-----:|
 |Responsive web design                   |O        |O      |O      |
@@ -40,7 +53,7 @@ https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-
 |Google Oauth                            |△        |△      |△      |
 |Real time chat                          |△        |△      |O      |
 |Smart contract                          |X        |X      |X      |
-
+</details>
 
 ## Roles 
 |100% contribution|
