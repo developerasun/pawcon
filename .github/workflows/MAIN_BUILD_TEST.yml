@@ -2,9 +2,9 @@ name : MAIN_BUILD_TEST
 
 on : 
     push : 
-        branches : [ $default-branch ]
+        branches : [ main ]
     pull_request :
-        branches : [ $default-branch ]
+        branches : [ main ]
 
 jobs : 
     # npm build
