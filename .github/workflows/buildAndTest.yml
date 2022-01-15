@@ -17,7 +17,7 @@ jobs :
         steps : 
             - uses : actions/checkout@v2
             - name : npm install and build
-            - run : | 
+              run : | 
                 npm install
                 npm build
     # npm test
@@ -30,6 +30,6 @@ jobs :
         steps : 
             - uses : actions/checkout@v2
             - name : npm install and test
-            - run : | 
+              run : | 
                 npm install
                 npm test
