@@ -1,9 +1,14 @@
 [![MAIN_BUILD_TEST](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml)
 
 **This is a ongoing project that is actively being updated**
-- [See Beta](https://bit.ly/hello_visitor)
+- [See Live Demo](https://bit.ly/hello_visitor)
 
-https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
+<details>
+  <summary>See Video Demo</summary>
+
+  https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
+  
+</details>
 
 # What is PawCon?
 - **Since September 2021**
@@ -28,6 +33,8 @@ https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-
 |CI, CD|X               |Github Actions|
 </details>
 
+<br/>
+
 <details>
 <summary>🛠Features</summary>
 
@@ -38,12 +45,15 @@ https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-
 |Artwork generation   |paid          |(will be added)                              | 
 </details>
 
+<br/>
+
 <details>
 <summary>✅Implementation</summary>
 
 - O : fully applied
 - △ : partially applied yet
 - X : not adopted yet
+  
 |Unit                                    |Developed|Applied|Learned|
 |:--------------------------------------:|:-------:|:-----:|:-----:|
 |Responsive web design                   |O        |O      |O      |
@@ -53,6 +63,25 @@ https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-
 |Google Oauth                            |△        |△      |△      |
 |Real time chat                          |△        |△      |O      |
 |Smart contract                          |X        |X      |X      |
+</details>
+
+## Conventions and Characteristics
+<details>
+<summary>📝Convetions</summary>
+
+- content here 
+- content here 
+- content here 
+- content here 
+</details>
+
+<details>
+<summary>🔥Characteristics</summary>
+
+- content here 
+- content here 
+- content here 
+- content here 
 </details>
 
 ## Roles 
