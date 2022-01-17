@@ -1,0 +1,66 @@
+.signupComponent,
+.signupForm,
+.oAuthContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.signupForm {
+  gap: 0.5rem;
+  background-color: #418794;
+}
+
+.signupForm .signupBtn {
+  width: 100%;
+}
+
+.oAuthContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.oAuthContainer .oAuths {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.oAuthContainer .oAuths #googleLogo,
+.oAuthContainer .oAuths #githubLogo {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.oAuthContainer .oAuths #githubLogo {
+  background-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .loginComponent {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
