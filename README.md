@@ -75,14 +75,19 @@
 - content here 
 </details>
 
+<br/>
+
 <details>
 <summary>🔥Characteristics</summary>
 
-- content here 
-- content here 
-- content here 
-- content here 
+- [ ] Accessible URL 
+- [ ] Test codes with Jest and Mocha
+- [ ] Auto deployment with Github Actions
+- [ ] Design pattern applied
+- [ ] Support communities
 </details>
+
+
 
 ## Roles 
 |100% contribution|
