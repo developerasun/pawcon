@@ -1,0 +1,35 @@
+name : MAIN_BUILD_TEST
+
+on : 
+    push : 
+        branches : [ main ]
+    pull_request :
+        branches : [ main ]
+
+jobs : 
+    # npm build
+    build : 
+        runs-on : ubuntu-latest
+        strategy : 
+            matrix : 
+                os : [ macos-latest, ubuntu-latest, window-2020 ]
+                node-version : [ 12.x, 14.x ]
+        steps : 
+            - uses : actions/checkout@v2
+            - name : npm install and build
+              run : | 
+                npm install
+                npm build
+    # npm test
+    test : 
+        runs-on : ubuntu-latest
+        strategy : 
+            matrix : 
+                os : [ macos-latest, ubuntu-latest, window-2020 ]
+                node-version : [ 12.x, 14.x ]
+        steps : 
+            - uses : actions/checkout@v2
+            - name : npm install and test
+              run : | 
+                npm install
+                npm test
