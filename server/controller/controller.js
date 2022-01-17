@@ -12,41 +12,44 @@ const template = fs.readFileSync(path.join(__dirname, '../data', 'template.hbs')
 // 2) Login post
 // 3) Logout get 
 
-// Get PawCon user info from database and compare with enrolled JWT
-const login_post = (req, res) => {}
-
-// TESTED : client-server communication
-const login_get = (req, res) => {
-    res.json( {message : "hello react" } )
+// NOT TESTED : Get PawCon user info from database and compare with enrolled JWT
+const login_post = (req, res) => {
+    const { email, password } = req.body
+    // PawConUser.findOne( { email } ).then()
 }
 
-
-// NOT TESTED : Create JSON web token for authorization
+// TESTED : Create JSON web token for authorization
 const createJWT = (DB_ID) => { 
-    return jsonWebToken.sign( { DB_ID } , config.AUTH.JSONWEBTOKEN_SECRET, {
+    return jsonWebToken.sign( { DB_ID } , config.AUTH.JSONWEBTOKEN.SECRET, {
         expiresIn: config.AUTH.JSONWEBTOKEN.EXPIRATION
     } )
 }
 
-// NOT TESTED : Create a new PawCon User and save it in database 
+// TESTED : Create a new PawCon User and save it in database 
 const signup_post = async (req, res) => {
-    const { email, password } = req.body
-    console.log("data from front end : ", email, password)
+    try { 
+        const { email, password } = req.body
+        console.log("data from front end : ", email, password)
 
-    PawConUser.findOne( { email } )
-              .then( async (isSignedUp) => {
-                  if (isSignedUp) { res.json( { message : "already signed up" } ) } 
-                  else {
-                      const user = await PawConUser.create( { email, password } )
-                      const token = createJWT(user._id)
-                      res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
-                          httpOnly : true, 
-                          maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
-                      })
-                      res.status(201).json(user)
-                    }
-                  })
-              .catch((err) => console.log(err))
+        PawConUser.findOne( { email } )
+        .then( async (isSignedUp) => {
+            if (isSignedUp) { res.json( { message : "already signed up" } ) } 
+            else {
+                const user = await PawConUser.create( { email, password } )
+                const token = createJWT(user._id)
+                res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
+                    httpOnly : true, 
+                    maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
+                })
+                res.status(201).json(user)
+              }
+            })
+        .catch((err) => console.log(err))
+    } catch(err) { 
+        console.log("error type : ", err)
+    }
+
+
 }
 
 // NOT TESTED : Reset JWT cookie expiration for logout
@@ -65,7 +68,6 @@ const apis_get = (req, res) => {
 
 module.exports = {
     login_post,
-    login_get,
     signup_post, 
     apis_get
 }
