@@ -1,0 +1,15 @@
+@import '../../partials/variable';
+
+.galleryCard {
+    display : flex; 
+    flex-flow :column nowrap;
+    justify-content :center;
+    align-items :center;
+    border : 2px solid $brandColor;
+    gap: $unit; 
+    
+    .galleryCardImage {
+        width: 100%;
+
+    }
+}

@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-export interface  CardDetailsProps {
-}
-
-export function CardDetails (props:  CardDetailsProps) {
+export function CardDetails () {
+  
   return (
     <div>
       I am card details
