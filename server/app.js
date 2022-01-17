@@ -32,9 +32,9 @@ app.use((req, res, next)=> { // request loggers
         next()
 })
 
+app.use(express.json()) // parsing request url
 app.use(router) // routing handlers
 app.use(express.static(path.join(__dirname, '../client/build'))) // serve client build files
-app.use(express.json()) // parsing request url
 app.use(cookieParser()) // setting cookie with JWT
 
 // if client routing is used in React, any requests off the client routes
