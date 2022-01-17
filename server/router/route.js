@@ -3,7 +3,6 @@ const passport = require('passport')
 const controller = require('../controller/controller')
 
 // handle login route
-router.get('/login', controller.login_get)
 router.post('/login', controller.login_post)
 
 // handle signup route
