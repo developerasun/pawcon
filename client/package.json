@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "pawcon-client",
+  "version": "1.1.0",
   "author": "Jake Sung",
   "description": "One click NFT generation service",
   "private": true,
