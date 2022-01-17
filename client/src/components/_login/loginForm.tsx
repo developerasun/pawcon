@@ -1,5 +1,9 @@
 import * as React from 'react';
+import './sass/css/loginForm.css'
 import { Link } from 'react-router-dom';
+import googleLogo from '../../assets/img/logo/google-logo.webp'
+import githubLogo from '../../assets/img/logo/github-logo.webp'
+import { ImgBanner } from '../subComponents/banner';
 
 // login form flow for React Router
 // 1) Login get
@@ -7,60 +11,89 @@ import { Link } from 'react-router-dom';
 // 3) Signup get
 
 export function LoginForm () {
-  // const [submit, setSubmit] = React.useState(false)
-  const [click, setClick] = React.useState(false)
-  
-  const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+
+  const [submit, setSubmit] = React.useState(false)
+  const handleSubmit = (event : React.FormEvent) => { 
     event.preventDefault()
-    setClick(true)
-    console.log(click)
+    setSubmit(true)
+    console.log("tempasdfasdf")
   }
 
-  // TEST :React to Node Js testing
+  // // User login up logic
   React.useEffect(()=> {
-    fetch('/login').then((res)=> { res.json() })
-    // FIX : something wrong here => data logged undefined
-                   .then((data) => console.log(data))
-                   .catch((err) => console.log(err))
-  }, [click])
+    const email = document.getElementById("email") as HTMLInputElement
+    const password = document.getElementById("password") as HTMLInputElement
+    if (submit) { 
+      fetch('/login', {
+        method: 'POST', 
+        body: JSON.stringify({
+          email : email.value, 
+          password : password.value
+        }), 
+        headers : { 'Content-Type' : 'application/json' }
+      }).then((res) => {
+        if (res.ok) { return res.json()}
+      }).then((data)=>console.log(data))
+    }
 
-  // // User sign up logic
-  // React.useEffect(()=> {
-  //   const email = document.querySelector("#email") as HTMLInputElement
-  //   const password = document.querySelector("#password") as HTMLInputElement
-  //   fetch('/signup', {
-  //     method: 'POST', 
-  //     body: JSON.stringify({
-  //       email : email, 
-  //       password : password
-  //     }), 
-  //     headers : { 'Content-Type' : 'application/json' }
-  //   })
-  // }, [ ]) // add dependency here
+  }, [submit]) // add dependency here
 
   return (
-    <div>
-      <h2>Join PawCon today!</h2>
-      <p>Be the one of the coolest NFT trend setters in seconds.</p>
-      <Link to={`/signup`}>LINK : Not signed up yet?</Link>
-      <form onSubmit={handleSubmit}>
+    <div className='loginComponent'>
+  
+      <div className="loginPromotionContainer">
+        <h2>Welcome back, Paw-ioneer!</h2>
+        <p>Be the one of the coolest NFT trend setters in seconds.</p>
+      </div>
+
+      <div className="loginContainer">
+        <form 
+            className='loginForm'
+            onSubmit={handleSubmit}>
           <label htmlFor="email">
             <input 
                 type='email' 
                 name='email'
                 id='email'      
-                placeholder='Enter your eamil'
+                placeholder='Eamil address'
                 required />
-          </label> <br />
+          </label>
           <label htmlFor="password">
             <input type='password'  
                 name='password'
                 id='password'      
-                placeholder='Enter your password'
+                placeholder='Password'
                 required />
-         </label> <br />
-         <button type='submit'>Login</button>
-      </form>
+          </label> 
+          <button className='loginBtn' type='submit'>Login</button>
+        </form>
+
+
+        <ul className="oAuthContainer">
+          <li className='title'>Login with</li>
+          <ul className='oAuths'>
+            <li>
+              <a href="" className='googleLogin'>
+                <img  src={googleLogo} 
+                      alt="google logo" 
+                      id='googleLogo'
+                      loading='lazy' />
+              </a>
+            </li>
+            <li>
+              <a href="" className='githubLogin'>
+                <img  src={githubLogo} 
+                      alt="github logo" 
+                      id='githubLogo'
+                      loading='lazy' />
+              </a>
+            </li>
+          </ul>
+        </ul>
+        <Link to={`/signup`} className='signupLink'><i><u>Not signed up yet?</u></i></Link>
+
+      </div>
+
     </div>
   );
 }
