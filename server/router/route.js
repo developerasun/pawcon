@@ -18,4 +18,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res)=>{
     res.send('do something here')
 })
 
+// api routes 
+router.get('/apis', controller.apis_get)
+
 module.exports = router
