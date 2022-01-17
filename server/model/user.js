@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
-// npm install : 1) bcrypt 2) validator
+const bcrypt = require('bcrypt')
 
 const userSchema = new Schema({
     email : {
@@ -15,18 +14,23 @@ const userSchema = new Schema({
     }
 }, { timestamps: true })
 
-
 // Hashing password before saving it in database
-userSchema.pre('save', ()=> {
-    // bcrypt here
+// Do NOT use arrow function for mongoose methods.
+userSchema.pre('save', async function() {
+    try { 
+        const saltRounds = 10
+        this.password = await bcrypt.hash(this.password, saltRounds)
+    } catch(err) {
+        console.log("error types : ", err)
+    }
 })
 
-userSchema.pre('save', ()=> {
+userSchema.pre('save', function() {
     // bcrypt here
 })
 
 // post hook : status checking 
-userSchema.post('save', ()=> {
+userSchema.post('save', function() {
     
 })
 
