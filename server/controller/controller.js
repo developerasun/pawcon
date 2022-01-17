@@ -1,6 +1,11 @@
 const PawConUser  = require('../model/user')
 const jsonWebToken = require('jsonwebtoken')
 const config = require('../config/config')
+const path = require('path')
+
+const fs = require('fs')
+const dummyjson = require('dummy-json')
+const template = fs.readFileSync(path.join(__dirname, '../data', 'template.hbs'), { encoding: 'utf8' });
 
 // login form flow NodeJs Router
 // 1) Signup post 
@@ -51,9 +56,16 @@ const logout_get = (req, res) => {
     { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT } )
 }
 
+// TESTED : send a dummy json template
+const apis_get = (req, res) => {
+    res.set('Content-Type', 'application/json')
+    res.status(200).send(dummyjson.parse(template))
+}
+
 
 module.exports = {
     login_post,
     login_get,
-    signup_post
+    signup_post, 
+    apis_get
 }
