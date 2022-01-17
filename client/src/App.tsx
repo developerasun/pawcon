@@ -12,26 +12,30 @@ import { Shop } from './components/_shop/shop'
 import { Login } from './components/_login/login';
 import { SignUp } from './components/_signup/signup';
 import { Page404 } from './components/subComponents/page404';
+import { Footer } from './components/subComponents/footer';
+import { Navbar } from './components/subComponents/navbar';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/community' element={<Community />}/>
-        <Route path='/create' element={<Create />}/>
+      <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/about' element={<About />}/>
+          <Route path='/community' element={<Community />}/>
+          <Route path='/create' element={<Create />}/>
 
-        <Route path='/gallery' element={<Gallery />}>
-          {/* route parameter for CardDetails => id */}
-          <Route path=":id" element={<CardDetails />} />
-        </Route>
+          <Route path='/gallery' element={<Gallery />}>
+            {/* route parameter for CardDetails => id */}
+            <Route path=":title" element={<CardDetails />} />
+          </Route>
 
-        <Route path='/shop' element={<Shop />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/signup' element={<SignUp />}/>
-        <Route path='*' element={<Page404 />}/>
-      </Routes>
+          <Route path='/shop' element={<Shop />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/signup' element={<SignUp />}/>
+          <Route path='*' element={<Page404 />}/>
+        </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
