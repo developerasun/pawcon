@@ -1,5 +1,3 @@
-[![MAIN_BUILD_TEST](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/developerasun/pawcon/actions/workflows/MAIN_BUILD_TEST.yml)
-
 **This is a ongoing project that is actively being updated**
 - [See Live Demo](https://bit.ly/hello_visitor)
 
