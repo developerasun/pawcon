@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import {themeContext} from '../containers/contextContainer'
 /////////////////////////////
 // add themeReducer here/////
 /////////////////////////////
@@ -20,7 +20,7 @@ interface themeContextProps {
     setTheme(event:React.MouseEvent<HTMLButtonElement>):void
 }
 
-export const ThemeContext = React.createContext<themeContextProps | null>(null)
+export const ThemeContext = React.createContext(themeContext)
 
 export interface IThemeContextProviderProps {
     children : React.ReactNode
