@@ -18,10 +18,10 @@ const initialState = {
 const reducer = (state : SliderPageState, action : SliderButtonAction) => { 
   switch (action.type) {
     case "prev" : 
-      return state.page -1 
+      return { page : state.page -1 }
       
     case "next" :
-      return state.page +1 
+      return { page : state.page +1 }
       
     default : 
       return state

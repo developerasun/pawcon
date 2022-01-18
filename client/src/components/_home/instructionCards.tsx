@@ -1,23 +1,20 @@
 import * as React from 'react';
 import { BasicCardDetailsProps } from '../containers/propContatiner';
+import { Button } from '../subComponents/button';
 
-{/* <ButtonLinks btnText={btnText} url={url} /> */}
-// interface ButtonLinksProps { 
-//     btnText : string
-//     url? : string
-// }
-// const ButtonLinks = ( { btnText, url } : ButtonLinksProps ) => {
-//     return <a href={url} target={"_blank"}><button>{btnText}</button></a> 
-// }
-
-// emmet : tsrpfc
-export function InstructionCards (
-    { description, image }: BasicCardDetailsProps ) 
+export function InstructionCards ( { description, image } : BasicCardDetailsProps ) 
 {
+  const shouldHaveButton = true
   return (
-    <>
-        <img src={image} alt='instruction card' loading='lazy'/>
-        <p>{description}</p>
-    </>
+    <div className='instructionCardContainer'>
+        <img src={image} 
+            className='icon'
+            alt='instruction card' 
+            loading='lazy'/>
+        <div className="texts" style={{"width" : "200px"}}>
+          <p>{description}</p>
+        </div>
+        { shouldHaveButton && <Button btnText={"test"}/> }
+    </div>
   );
 }
