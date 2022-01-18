@@ -9,7 +9,7 @@ import { Community } from './components/_community/community'
 import { Create } from './components/_create/create'
 import { Gallery } from './components/_gallery/gallery'
 import { Details } from './components/_gallery/details'
-import { CardDetails } from './components/_gallery/cardDetails'
+import { RenderDetails } from './components/_gallery/renderDetails'
 import { Shop } from './components/_shop/shop'
 import { Login } from './components/_login/login';
 import { SignUp } from './components/_signup/signup';
@@ -30,9 +30,9 @@ function App() {
           <Route path='/gallery' element={<Gallery />} />
 
           { /* Add <Outlet /> component in root route component <Details> 
-          to render child component <CardDetails>*/ }
+          to render child component <RenderDetails>*/ }
           <Route path='/details' element={<Details />}>
-              <Route path=':title' element={<CardDetails />} />
+              <Route path=':title' element={<RenderDetails />} />
           </Route>
 
           <Route path='/shop' element={<Shop />}/>
