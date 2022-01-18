@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css'
 // React router v6
+// Outlet : Renders the child route's element, if there is one.
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './components/_home/home'
 import { About } from './components/_about/about'
 import { Community } from './components/_community/community'
 import { Create } from './components/_create/create'
 import { Gallery } from './components/_gallery/gallery'
+import { Details } from './components/_gallery/details'
 import { CardDetails } from './components/_gallery/cardDetails'
 import { Shop } from './components/_shop/shop'
 import { Login } from './components/_login/login';
@@ -25,9 +27,12 @@ function App() {
           <Route path='/community' element={<Community />}/>
           <Route path='/create' element={<Create />}/>
 
-          <Route path='/gallery' element={<Gallery />}>
-            {/* route parameter for CardDetails => id */}
-            <Route path=":title" element={<CardDetails />} />
+          <Route path='/gallery' element={<Gallery />} />
+
+          { /* Add <Outlet /> component in root route component <Details> 
+          to render child component <CardDetails>*/ }
+          <Route path='/details' element={<Details />}>
+              <Route path=':title' element={<CardDetails />} />
           </Route>
 
           <Route path='/shop' element={<Shop />}/>
