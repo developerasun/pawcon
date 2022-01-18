@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { Navbar } from '../subComponents/navbar'
-import { Footer } from '../subComponents/footer'
 import { v4 as uuidV4 } from 'uuid'
 import { GalleryCards } from './galleryCards'
 import { GalleryCardContainerStyle, GalleryCardPaginationStyle } from '../containers/styleContainer'
