@@ -1,0 +1,20 @@
+@mixin flexColumnNowrap { 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin instruction-icon { 
+    width: 200px;
+    height: 200px;
+}
+
+.instructionCardContainer {
+    @include flexColumnNowrap();
+
+    .icon {
+        @include instruction-icon();
+    }
+}
