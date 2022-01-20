@@ -54,13 +54,13 @@ export function Navbar () {
         </ul>
 
         <ul id='menu' style={toggle ? NavbarStyle.toggleBar.toggle : NavbarStyle.toggleBar.notToggle}>
-            <Link to={'/'}><li>Main</li></Link>
-            <DropDown mainTitle="Create" subTitle={["Draw", "Pixelate", "Generate"]} routing="/create"/>
-            <Link to={'/gallery'}><li>Gallery</li></Link>
-            <Link to={'/shop'}><li>Shop</li></Link>
-            <DropDown mainTitle="Community" subTitle={["Feedback", "Chatting"]} routing="/community"/>
-            <DropDown mainTitle="About" subTitle={["PawCon", "Creator"]} routing="/about"/>
-            <Link to={'/login'}><li>Login/SignUp</li></Link>
+            <li><Link to={'/'}>Main</Link></li>
+            <li><DropDown mainTitle="Create" subTitle={["Draw", "Pixelate", "Generate"]} routing="/create"/></li>
+            <li><Link to={'/gallery'}>Gallery</Link></li>
+            <li><Link to={'/shop'}>Shop</Link></li>
+            <li><DropDown mainTitle="Community" subTitle={["Feedback", "Chatting"]} routing="/community"/></li>
+            <li><DropDown mainTitle="About" subTitle={["PawCon", "Creator"]} routing="/about"/></li>
+            <li><Link to={'/login'}>Login/SignUp</Link></li>
         </ul>
     </nav>
   );
