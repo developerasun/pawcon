@@ -1,0 +1,7 @@
+.visible {
+  display: block;
+}
+
+.hidden {
+  opacity: 0.25;
+}
