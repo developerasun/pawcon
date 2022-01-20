@@ -1,3 +1,9 @@
+@import '../../partials/variable';
+
+.dropdownSub {
+    color: $subBgColor;
+}
+
 .active {
     display: block;
 }

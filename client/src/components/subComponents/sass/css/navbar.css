@@ -1,3 +1,7 @@
+.dropdownSub {
+  color: #575757;
+}
+
 .active {
   display: block;
 }

@@ -1,0 +1,50 @@
+.buttonComponent {
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: white;
+  -o-border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+     border-image: -webkit-gradient(linear, left top, right top, from(#01c9ca), to(#3886FF));
+     border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+  border-image-slice: 4;
+  border-image-width: 0.2rem;
+  cursor: pointer;
+}
+
+.buttonComponent a {
+  color: black;
+}
+
+.buttonComponent:hover {
+  -webkit-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: translateY(-2px) rotate(-5deg) scale(1.1);
+            transform: translateY(-2px) rotate(-5deg) scale(1.1);
+  }
+  50% {
+    -webkit-transform: translateY(-2px) rotate(5deg);
+            transform: translateY(-2px) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(-5deg);
+            transform: translateY(0) rotate(-5deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: translateY(-2px) rotate(-5deg) scale(1.1);
+            transform: translateY(-2px) rotate(-5deg) scale(1.1);
+  }
+  50% {
+    -webkit-transform: translateY(-2px) rotate(5deg);
+            transform: translateY(-2px) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(-5deg);
+            transform: translateY(0) rotate(-5deg);
+  }
+}
