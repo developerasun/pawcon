@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { Navbar } from '../subComponents/navbar';
+import { MenuTabs } from '../_community/community';
 
-export interface ICreateProps {
-}
-
-export function Create (props: ICreateProps) {
+export function Create () {
   return (
     <div>
-      <Navbar />
       <h1>create page</h1>
+      <MenuTabs />
     </div>
   );
 }
