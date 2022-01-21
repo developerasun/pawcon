@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Feedback } from './feedback';
 import './sass/css/community.css';
 
 // MenuTabs should take component as argument 
@@ -21,6 +22,7 @@ export const MenuTabs = () => {
         <li style={{"backgroundColor" : "lightblue"}}>component 2 here</li>
         <li style={{"backgroundColor" : "tomato"}}>component 3 here</li>
 
+   
     </div>
   )
 }
@@ -32,7 +34,8 @@ export function Community () {
       <h1>community route</h1>
       {/* component args : 1) blog 2) chat 3) feedback */}
       <MenuTabs />
-
+      editor js here
+      {/* <Feedback /> */}
     </div>
   );
 }

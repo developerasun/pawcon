@@ -1,15 +1,24 @@
 import * as React from 'react';
+// As of 2022 Jan, Typescript only support editor js and its header.
+import EditorJS from '@editorjs/editorjs';
+import EditorJSHeader from '@editorjs/header';
 
-export interface  FeedbackProps {
-}
-
-export function Feedback (props:  FeedbackProps) {
+export function Feedback () {
+    const editor = new EditorJS({
+        holder : 'editorjs',
+        tools : {
+            header : {
+                class : EditorJSHeader
+            }
+        }
+    })
   return (
     <div>
 
     <div className="web-editor">
         <h2>Tell Us What You Felt</h2>
-        <div id="editorjs"></div>
+        {/* fix bugs that editor js renders twice. */}
+        <div id="editorjs">asdfasdf</div>
         <button className="submitBtn">Submit</button>
     </div>
     
