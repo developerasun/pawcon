@@ -1,10 +1,6 @@
 import * as React from 'react';
 import './sass/css/button.css'
-
-export interface IButtonProps {
-    btnText : string
-    url? : string
-}
+import { IButtonProps } from '../containers/propContatiner'
 
 export function Button ({ btnText, url }: IButtonProps) {
     return (
