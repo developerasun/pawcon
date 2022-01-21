@@ -9,13 +9,13 @@ export type ProfileProps = {
 export type BasicCardDetailsProps = { 
     date? : string
     title? : string
-    description : string
+    description : string | string[]
     image : string
 }
 
 export type GalleryCardsProps = {
     author : string
-    id : number
+    id : string
 } & BasicCardDetailsProps
 
 export type AboutCardsProps = BasicCardDetailsProps
@@ -24,4 +24,9 @@ export type DropDownProps = {
     mainTitle : string
     subTitle : string[]
     routing: string
+}
+
+export interface IButtonProps {
+    btnText : string
+    url? : string
 }

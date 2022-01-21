@@ -11,17 +11,16 @@ import helpCreator from '../../assets/img/banner/help-creators.webp'
 export const IMG_INSTRUCTION = [
     { description : "Create Your NFTs With Ease. Pick the mode you like and enjoy it.", 
       image : womanDrawing,
-      btnText : "button 1"
     },
     { description : "Save It To Wallet. Protect the asset safely.", 
       image : paperBag,
-      btnText : "button 2" },
+    },
     { description : "List It In Marketplace. Do Marketing And Make Sales.", 
-      image : phoneMoney, 
-      btnText : "button 3" },
+      image : phoneMoney,
+    },
     { description : "Donate And Support. Buy Me A Coffee ", 
       image : starBox, 
-      btnText : "button 4" },
+    },
 ]
 
 export const IMG_BANNER = {
