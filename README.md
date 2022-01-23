@@ -57,24 +57,48 @@
 |Responsive web design                   |O        |O      |O      |
 |Ajax: Fetch                             |O        |△      |O      |
 |Web bundling : Parcel/Webpack           |O        |△      |△      |
-|Login(JWT)                              |△        |△      |△      |
-|Google Oauth                            |△        |△      |△      |
+|Login(JWT)                              |O        |O      |O      |
+|Google Oauth                            |△        |△      |O      |
 |Real time chat                          |△        |△      |O      |
 |Smart contract                          |X        |X      |X      |
 </details>
 
-## Conventions and Characteristics
+## Conventions
 <details>
 <summary>📝Convetions</summary>
 
-- content here 
-- content here 
-- content here 
-- content here 
+### Commit
+- feat: functionality added
+- fix: bug fixed, minor changes
+- chore: installing npms and other chores
+- refactor: refactoring existing codes
+- docs: readme and other markdowns
+
+### Name and component
+#### Name
+  - English, 
+  - CamelCase
+  - Uppercase for constant variables
+
+#### React Component
+- default : React/TS Stateless function component + interface props
+
+```ts
+interface AppProps { 
+  name : string
+}
+const App = ( { name } : AppProps) => {
+  return <div></div>;
+};
+
+export default App;
+```
+
 </details>
 
 <br/>
 
+## Characteristics
 <details>
 <summary>🔥Characteristics</summary>
 
@@ -84,8 +108,6 @@
 - [ ] Design pattern applied
 - [ ] Support communities
 </details>
-
-
 
 ## Roles 
 |100% contribution|
