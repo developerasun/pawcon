@@ -7,10 +7,10 @@ export const SampleStyleProps = {
 
 export const NavbarStyle = { 
     main : {
-        'position' : 'absolute', 
+        'position' : 'fixed', 
         'right' : '0', 
         'width' : 'fit-content', 
-        'height' : '100%' 
+        'height' : '100vh' 
     } as React.CSSProperties, 
     toggleBar : {
         toggle : {
