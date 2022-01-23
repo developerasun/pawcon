@@ -1,7 +1,7 @@
 .visible {
-  display: block;
+  display: 1;
 }
 
 .hidden {
-  opacity: 0.25;
+  display: none;
 }

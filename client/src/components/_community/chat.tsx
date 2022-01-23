@@ -6,7 +6,7 @@ export interface IChatProps {
 export function Chat (props: IChatProps) {
   return (
     <div>
-      Chat component
+      Chat component here
     </div>
   );
 }
