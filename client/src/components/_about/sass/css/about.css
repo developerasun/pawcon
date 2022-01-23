@@ -1,3 +1,31 @@
-.test {
-  background-color: green;
+.creator .career {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 0.2rem solid #16b1d4;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.creator .career .title {
+  font-size: 1.5rem;
+  border-bottom: 0.2rem solid #16b1d4;
+}
+
+.creator .career .title img {
+  padding: 1rem;
+  max-width: 25%;
+  height: auto;
+}
+
+.creator .career .title .date {
+  font-size: 1rem;
+}
+
+.creator .career .description {
+  padding: 1rem;
+  font-size: 1.3rem;
 }

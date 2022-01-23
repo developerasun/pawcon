@@ -1,3 +1,28 @@
-.test {
-    background-color: green;
+@import '../../partials/variable';
+
+.creator { 
+    .career { 
+        width: fit-content;
+        height: fit-content;
+        border: $unit*0.2 solid #16b1d4;
+        text-align: center;
+        line-height: $unit*2.5;
+        .title { 
+            font-size: $unit*1.5;
+            border-bottom: $unit*0.2 solid $brandColor;
+            img { 
+                padding: $unit;
+                max-width: 25%;
+                height: auto;
+            }
+            .date {
+                font-size: $unit;
+            }
+        }
+        .description { 
+            padding: $unit;
+            font-size: $unit*1.3;
+        }
+    }
+
 }
