@@ -25,9 +25,26 @@ userSchema.pre('save', async function() {
     }
 })
 
-userSchema.pre('save', function() {
-    // bcrypt here
-})
+// password checking static method
+userSchema.statics.checkPassword = async function( email, password ) {
+    try { 
+        // check user exists
+        const user = await this.findOne({email})
+        if (user) {
+            const isMatched = await bcrypt.compareSync(password, user.password)
+
+            // userSchema will be stored in _doc key.
+            if (isMatched) { return( {...user, success : true} ) } 
+            else { return { errorMessage : 'Incorrect password', success : false } }
+        }
+
+        // if not exists, send error object
+        return { errorMessage : 'Incorrect email', success : false }
+    } catch(err) { 
+        console.error(err)
+        throw err
+    }
+}
 
 // post hook : status checking 
 userSchema.post('save', function() {
