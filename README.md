@@ -1,10 +1,10 @@
 **This is a ongoing project that is actively being updated**
-- [See Live Demo](https://bit.ly/hello_visitor)
+- [See Live Demo(legacy)](https://bit.ly/hello_visitor)
 
 <details>
   <summary>See Video Demo</summary>
 
-  https://user-images.githubusercontent.com/83855174/147561670-0625a139-82e7-48e6-bb8b-d868ad2cb395.mp4
+https://user-images.githubusercontent.com/83855174/150664660-1b654cea-00f3-4261-8eb5-b950086948b1.mp4
   
 </details>
 
