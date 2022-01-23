@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './sass/css/banner.css';
 import { Button } from './button';
 import { ImgBannerStyle } from '../containers/styleContainer'
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ export function EmailSubscribeBanner ( { title }: BasicBannerProps) {
 
   }
   return (
-    <article>
+    <div className='emailBanner'>
       <span>Join {title} Today!</span>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, animi?</p>
 
@@ -22,7 +23,7 @@ export function EmailSubscribeBanner ( { title }: BasicBannerProps) {
           </label>
           <button type='submit'>Submit</button>
       </form>
-    </article>
+    </div>
   );
 }
 
@@ -30,14 +31,19 @@ export type ImgBannerProps = {
   img : string
   title? : string
   description? : string
+  shouldBeGrid : boolean
 }
 
-export function ImgBanner ({ img, title, description } : ImgBannerProps) { 
+export function ImgBanner ({ img, title, description, shouldBeGrid } : ImgBannerProps) { 
   return ( 
-    <section>
-      <h3>{title}</h3>
-      <img src={img} alt="banner" loading='lazy' style={ImgBannerStyle}/>
-      <p>{description}</p>
+    <section className={shouldBeGrid ? 'grid' : 'horizontal'}>
+      <div className="texts">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+      <div className="image">
+        <img src={img} alt="banner" loading='lazy' style={ImgBannerStyle}/>
+      </div>
     </section>
   )
 }
@@ -49,7 +55,7 @@ export type VideoBannerProps = {
 
 export function VideoBanner( { buttonText, linkTo, title } :VideoBannerProps) {
   return ( 
-    <div>
+    <div className='videoBanner'>
       <span>{title}</span><br/>
       video here <br/>
       {buttonText && linkTo && 
