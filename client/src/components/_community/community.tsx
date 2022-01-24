@@ -10,13 +10,25 @@ interface MenuTabsProps {
 // MenuTabs should take component as argument 
 // this component will be imported and used in '/create' as well. 
 export const MenuTabs = ( { component } : MenuTabsProps ) => {
-  const [visibility, setVisibility] = React.useState(true)
-
-  React.useEffect(()=> {
-    
-  }, [ ])
-  const handleClick = () => setVisibility(!visibility)
   
+  // should be moved to useEffect hook later since it is side-effect
+  const handleClick = (tabName : string) => {
+    const tabContents = document.getElementsByClassName("tabContent")
+    Array.from(tabContents).map((content, index) => {
+      tabContents[index].classList.add("hidden")
+
+      if (content.id === tabName) {
+        console.log(content.id)
+        content.classList.remove("hidden")
+        content.classList.add("visible")
+      }
+    })
+  }
+
+  React.useEffect(()=>{
+
+}, [])
+
   return (
     <div>
       <span>create switchable tabs based on click</span>
@@ -24,18 +36,18 @@ export const MenuTabs = ( { component } : MenuTabsProps ) => {
       <table>
         <thead>
           <tr>
-            <th onClick={handleClick} >Component 111</th>
-            <th >Component 222</th>
-            <th >Component 333</th>
+            <th className='tabLink' onClick={()=>handleClick('tabA')}>Tab A</th>
+            <th className='tabLink' onClick={()=>handleClick('tabB')}>Tab B</th>
+            <th className='tabLink' onClick={()=>handleClick('tabC')}>Tab C</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className={visibility ? `visible` : 'hidden' } style={{"backgroundColor" : "pink"}}>
+            <td id='tabA' className={`tabContent hidden`} style={{"backgroundColor" : "pink"}} >
               {component}
             </td>
-            <td className={visibility ? `visible` : 'hidden' } style={{"backgroundColor" : "lightblue"}}>ss</td>
-            <td className={visibility ? `visible` : 'hidden' } style={{"backgroundColor" : "tomato"}}>ff</td>
+            <td id='tabB' className={ `tabContent hidden` } style={{"backgroundColor" : "lightblue"}}>ss</td>
+            <td id='tabC' className={ `tabContent hidden` } style={{"backgroundColor" : "tomato"}}>ff</td>
           </tr>
         </tbody>
       </table>
@@ -47,6 +59,12 @@ export const MenuTabs = ( { component } : MenuTabsProps ) => {
 const Dummy = () => {
   return <>hello I'm dummy component</>
 }
+const Dummy2 = () => {
+  return <>cool dummy</>
+}
+const Dummy3 = () => {
+  return <>hot dummy</>
+}
 
 export function Community () {
   return (
@@ -55,6 +73,8 @@ export function Community () {
       <h1>community route</h1>
       {/* component args : 1) blog 2) chat 3) feedback */}
       <MenuTabs component={<Dummy />}/>
+
+
       editor js here
       {/* <Feedback /> */}
     </div>
