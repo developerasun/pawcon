@@ -1,29 +1,26 @@
 import * as React from 'react';
 import './sass/css/loginForm.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import googleLogo from '../../assets/img/logo/google-logo.webp'
 import githubLogo from '../../assets/img/logo/github-logo.webp'
-import { ImgBanner } from '../subComponents/banner';
-
-// login form flow for React Router
-// 1) Login get
-// 2) Logout get
-// 3) Signup get
 
 export function LoginForm () {
-
+  const navigate = useNavigate()
   const [submit, setSubmit] = React.useState(false)
   const handleSubmit = (event : React.FormEvent) => { 
     event.preventDefault()
     setSubmit(true)
-    console.log("tempasdfasdf")
+    console.log("submitted")
   }
 
   // // User login up logic
   React.useEffect(()=> {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
+    
     if (submit) { 
+
+      // replace this part with Axios
       fetch('/login', {
         method: 'POST', 
         body: JSON.stringify({
@@ -32,8 +29,13 @@ export function LoginForm () {
         }), 
         headers : { 'Content-Type' : 'application/json' }
       }).then((res) => {
-        if (res.ok) { return res.json()}
-      }).then((data)=>console.log(data))
+        if (res.ok) { return res.json() }
+        else console.log(res.json()) // log server error response
+      }).then((data)=> {
+        console.log(data)
+        alert("login success")  
+        navigate('/')
+      })
     }
 
   }, [submit]) // add dependency here
