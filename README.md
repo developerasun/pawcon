@@ -2,9 +2,11 @@
 - [See Live Demo(legacy)](https://bit.ly/hello_visitor)
 
 <details>
-  <summary>See Video Demo</summary>
+  <summary>See Current Refactoring</summary>
 
-https://user-images.githubusercontent.com/83855174/150664660-1b654cea-00f3-4261-8eb5-b950086948b1.mp4
+- Client(React/TS) + Server(NodeJs/Express)
+  
+https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-b5b0-beaa6acf6d35.mp4
   
 </details>
 
