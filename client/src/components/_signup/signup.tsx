@@ -1,16 +1,15 @@
 import * as React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import pawconLogo from '../../assets/img/logo/pawcon-logo.webp'
 import './sass/css/signupForm.css'
 
-export interface  SignUpProps {
-}
-
-export function SignUp (props:  SignUpProps) {
-
+export function SignUp () {
+  const navigate = useNavigate()
   const [submit, setSubmit] = React.useState(false)
   const handleSubmit = (event : React.FormEvent) => { 
     event.preventDefault()
     setSubmit(true)
-    console.log("tempasdfasdf")
+    console.log("submitted")
   }
 
   // // User signup up logic
@@ -19,6 +18,7 @@ export function SignUp (props:  SignUpProps) {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
 
+    // replace this part with Axios
     if (submit) { 
       fetch('/signup', {
         method: 'POST', 
@@ -30,7 +30,11 @@ export function SignUp (props:  SignUpProps) {
         signal : abortController.signal
       }).then((res) => {
         if (res.ok) { return res.json()}
-      }).then((data)=>console.log(data))
+      }).then((data)=>{
+        console.log(data)
+        alert("sign up success")  
+        navigate('/')
+      })
     }
 
     // cleanup
@@ -42,7 +46,8 @@ export function SignUp (props:  SignUpProps) {
   
   <div className="signupPromotionContainer">
     <h2>Join PawCon today!</h2>
-    <p>Be the one of the coolest NFT trend setters in seconds.</p>
+    <p>Be the one of the coolest paw-oneers in seconds.</p>
+    <img src={pawconLogo} width='200' alt='pawcon logo'/>
   </div>
 
   <div className="signupContainer">
@@ -66,6 +71,7 @@ export function SignUp (props:  SignUpProps) {
       </label> 
       <button className='signupBtn' type='submit'>Sign up</button>
     </form>
+    <Link to={`/login`} className='loginLink'><i><u>Already got account?</u></i></Link>
   </div>
 
 </div>
