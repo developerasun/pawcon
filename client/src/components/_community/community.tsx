@@ -10,41 +10,39 @@ interface MenuTabsProps {
 // MenuTabs should take component as argument 
 // this component will be imported and used in '/create' as well. 
 export const MenuTabs = ( { component } : MenuTabsProps ) => {
-  
-  // should be moved to useEffect hook later since it is side-effect
-  const handleClick = (tabName : string) => {
+  const [tabId, setTabId] = React.useState("tabA")
+  const handleClick = (event : React.MouseEvent) => {
+    setTabId(event.currentTarget.className)
+  }
+
+  // filter a clicked tab to match tab content
+  React.useEffect(()=>{
     const tabContents = document.getElementsByClassName("tabContent")
     Array.from(tabContents).map((content, index) => {
       tabContents[index].classList.add("hidden")
-
-      if (content.id === tabName) {
-        console.log(content.id)
+      if (content.id === tabId) { 
         content.classList.remove("hidden")
         content.classList.add("visible")
-      }
-    })
-  }
-
-  React.useEffect(()=>{
-
-}, [])
+      } })
+    }, [tabId])
 
   return (
     <div>
       <span>create switchable tabs based on click</span>
 
-      <table>
+      <table style={{"border" : "1px solid white", "borderCollapse" : "collapse"}}>
         <thead>
           <tr>
-            <th className='tabLink' onClick={()=>handleClick('tabA')}>Tab A</th>
-            <th className='tabLink' onClick={()=>handleClick('tabB')}>Tab B</th>
-            <th className='tabLink' onClick={()=>handleClick('tabC')}>Tab C</th>
+            {/* onClick : dispatch(clickTab()) here */}
+            <th className='tabA' onClick={(event) => handleClick(event)}>Tab A</th>
+            <th className='tabB' onClick={(event) => handleClick(event)}>Tab B</th>
+            <th className='tabC' onClick={(event) => handleClick(event)}>Tab C</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td id='tabA' className={`tabContent hidden`} style={{"backgroundColor" : "pink"}} >
-              {component}
+              { component }
             </td>
             <td id='tabB' className={ `tabContent hidden` } style={{"backgroundColor" : "lightblue"}}>ss</td>
             <td id='tabC' className={ `tabContent hidden` } style={{"backgroundColor" : "tomato"}}>ff</td>
