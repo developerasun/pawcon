@@ -3,7 +3,7 @@ import './sass/css/gallery.css'
 import { Link } from 'react-router-dom';
 import { GalleryCardsProps } from '../containers/propContatiner'
 
-export function GalleryCards ( { title, description, author, date, image, id }:  GalleryCardsProps) {
+export function GalleryCards ( { title, description, author, date, image }:  GalleryCardsProps) {
   
   return (
     <div className='galleryCard' >
