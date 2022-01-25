@@ -24,11 +24,12 @@ https://user-images.githubusercontent.com/83855174/150664660-1b654cea-00f3-4261-
 |Type|Before|After|
 |:-----:|:----:|:---:|
 |Front End|HTML, CSS, JS|HTML, CSS, React/TS|
-|Backend|X              |Express/JS => Express/TS or Koa/TS|
-|Database|X             |MongoDB or PostgreDB|
-|Test|X                 |Mocha, Jest|
+|Backend|X              |Express/JS => Express/TS, C#/Unity|
+|Database|X             |MongoDB or PostgreSQL|
+|Test|X                 |Jest, Mocha|
 |Deployment|Netlify     |Netlify functions|
 |CI, CD|X               |Github Actions|
+|Protocols|HTTP         |HTTP, Web socket, Web RTC, JSON-RPC|
 </details>
 
 <br/>
@@ -48,19 +49,41 @@ https://user-images.githubusercontent.com/83855174/150664660-1b654cea-00f3-4261-
 <details>
 <summary>✅Implementation</summary>
 
-- O : fully applied
-- △ : partially applied yet
-- X : not adopted yet
-  
-|Unit                                    |Developed|Applied|Learned|
-|:--------------------------------------:|:-------:|:-----:|:-----:|
-|Responsive web design                   |O        |O      |O      |
-|Ajax: Fetch                             |O        |△      |O      |
-|Web bundling : Parcel/Webpack           |O        |△      |△      |
-|Login(JWT)                              |O        |O      |O      |
-|Google Oauth                            |△        |△      |O      |
-|Real time chat                          |△        |△      |O      |
-|Smart contract                          |X        |X      |X      |
+<div align="center">
+<table>
+<thead>
+  <tr>
+    <th>
+      <div>
+        <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Sign up and Login
+    </th>
+    <th>
+      <div>
+        <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Chat realtime in text and video
+    </th>
+  </tr>
+</thead>
+  <tr>
+    <th>
+      <div>
+        <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Create and issue NFT
+    </th>
+    <th>
+      <div>
+       <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Shop and display your NFT 
+    </th>
+  </tr>
+</tbody>
+</table>
+
 </details>
 
 ## Conventions
