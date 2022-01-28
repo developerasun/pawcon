@@ -4,6 +4,11 @@ const app = express()
 const path = require('path') // don't use slash since it is platform-dependent.
 const config = require('./config/config')
 const router = require('./router/route')
+const cors = require('cors')
+const corsOptions = {
+        origin: 'localhost',
+        optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 // Parser for cookie and request body
 const cookieParser = require('cookie-parser')
@@ -36,7 +41,8 @@ app.use((req, res, next)=> { // request loggers
 
 app.use(express.json()) // parsing request url
 app.use(router) // routing handlers
-app.use('/apis/', apiRouter)
+app.use(cors(corsOptions)) // cross origin resource sharing
+app.use('/apis', apiRouter)
 app.use(loginRouter)
 app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files
 app.use(cookieParser()) // setting cookie with JWT
