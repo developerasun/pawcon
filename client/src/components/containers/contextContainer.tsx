@@ -1,8 +1,8 @@
 // Artwork images
-import one from '../../assets/img/slider/1.gif'
-import two from '../../assets/img/slider/2.gif'
-import three from '../../assets/img/slider/3.gif'
-import four from '../../assets/img/slider/4.gif'
+import one from '../../assets/img/slider/1.webp'
+import two from '../../assets/img/slider/2.webp'
+import three from '../../assets/img/slider/3.webp'
+import four from '../../assets/img/slider/4.webp'
 
 import { v4 as uuidV4 } from 'uuid'
 
