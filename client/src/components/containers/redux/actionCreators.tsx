@@ -1,13 +1,19 @@
-import { LOGIN, LOGOUT, ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes"
+import { 
+    LOGIN, LOGOUT, 
+    ADD_TO_CART, REMOVE_FROM_CART,
+    INCREASE_QTY, DECREASE_QTY
+} from "./actionTypes"
 
 // action type setting for login reducer
-export type setLoginAction = ReturnType<typeof login>
-export type setLogoutAction = ReturnType<typeof logout>
+export type LoginActionPayload = LoggedInActionPayload | LoggedOutActionPayload
+type LoggedInActionPayload = ReturnType<typeof login>
+type LoggedOutActionPayload = ReturnType<typeof logout>
 
 // action creators for login
 export const login = () => {
     return { 
         type : LOGIN
+        
     }
 }
 
@@ -17,18 +23,38 @@ export const logout = () => {
     }
 }
 
+// action type setting for cart reducer
+export type CartActionPayload = CartFormActionPayload | CartListActionPayload
+type CartFormActionPayload = ReturnType<typeof addToCart>
+type CartListActionPayload = ReturnType<typeof removeFromCart>
 
-// NOT DONE : action type setting for cart reducer
-// action creators for cart
-export const addToCart = () => {
+// action creators for cart form
+export const addToCart = ( id : string | number ) => {
     return { 
-        type : ADD_TO_CART
+        type : ADD_TO_CART,
+        payload : id
     }
 }
 
-export const removeFromCart = () => {
+// action creators for cart items
+export const removeFromCart = ( id : string | number ) => {
     return { 
-        type : REMOVE_FROM_CART
+        type : REMOVE_FROM_CART, 
+        payload : id
     }
 }
 
+// cart item list id is either string(uuid) or number
+export const increaseQuantity = ( id : string | number ) => {
+    return {
+        type : INCREASE_QTY, 
+        payload : id
+    }
+}
+
+export const decreaseQuantity = (id : string | number) => {
+    return {
+        type : DECREASE_QTY,
+        payload : id
+    }
+}
