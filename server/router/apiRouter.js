@@ -2,6 +2,7 @@
 const apiController = require('../controller/apiController')
 const apiRouter = require('express').Router()
 
-apiRouter.get('/apis/', apiController.apis_get)
+apiRouter.get('/users', apiController.getUsers)
+apiRouter.get('/artworks', apiController.getArtworks)
 
 module.exports = apiRouter
