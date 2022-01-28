@@ -5,3 +5,7 @@
 .hidden {
   display: none;
 }
+
+.codex-editor:nth-child(2) {
+  display: none;
+}

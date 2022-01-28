@@ -5,3 +5,8 @@
 .hidden { 
     display: none;
 }
+
+// hide unknown second editor js(bug fix) 
+.codex-editor:nth-child(2) {
+    display: none;
+}
