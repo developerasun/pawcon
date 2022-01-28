@@ -1,15 +1,23 @@
-// api controller here
 const path = require('path')
-
 const fs = require('fs')
-const dummyjson = require('dummy-json')
-const template = fs.readFileSync(path.join(__dirname, '..', 'data', 'template.hbs'), { encoding: 'utf8' });
 
-// TESTED : send a dummy json template
-const apis_get = (req, res) => {
+// setting files
+const users = fs.readFileSync(path.join(__dirname, '..', 'apis', 'users.json', ))
+const artworks = fs.readFileSync(path.join(__dirname, '..', 'apis', 'artworks.json', ))
+
+const getUsers = (req, res) => {
     res.set('Content-Type', 'application/json')
-    res.status(200).send(dummyjson.parse(template))
+
+    // convert buffer to string
+    res.status(200).send(users.toString())
 }
+
+const getArtworks = (req, res) => {
+    res.set('Content-Type', 'application/json')
+    res.status(200).send(artworks.toString())
+}
+
 module.exports = { 
-    apis_get
+    getUsers, 
+    getArtworks
 }
