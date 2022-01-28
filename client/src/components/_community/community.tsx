@@ -7,8 +7,7 @@ interface MenuTabsProps {
   component : React.ComponentProps<React.ComponentType> | React.ComponentProps<React.ComponentType>[]
 }
 
-// MenuTabs should take component as argument 
-// this component will be imported and used in '/create' as well. 
+// import this where needed
 export const MenuTabs = ( { component } : MenuTabsProps ) => {
   const [tabId, setTabId] = React.useState("tabA")
   const handleClick = (event : React.MouseEvent) => {
@@ -74,7 +73,31 @@ export function Community () {
 
 
       editor js here
-      {/* <Feedback /> */}
+      <Feedback />
+
+    <div className="notice">
+        <h2 className="title">See Reviews Here</h2>
+        <div className="searchBox">Search bar here</div>
+        <table className="table">
+            <thead>
+                <tr>
+                    <td>Number</td>
+                    <td>Title</td>
+                    <td>UserId</td>
+                    <td>Posted</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        
+        <div className="pagination">Pagination here</div>
+        <div className="buttons">
+            <button className="getBtn">Get JSON API</button>
+            <button className="saveBtn">Save JSON</button>
+        </div>
+    </div>
     </div>
   );
 }

@@ -15,10 +15,10 @@ export function Feedback () {
   return (
     <div>
 
-    <div className="web-editor">
+    <div className="web-editor" style={{"maxWidth" : "50%", "margin":"0 auto"}}>
         <h2>Tell Us What You Felt</h2>
         {/* fix bugs that editor js renders twice. */}
-        <div id="editorjs">asdfasdf</div>
+        <div id="editorjs"></div>
         <button className="submitBtn">Submit</button>
     </div>
     
