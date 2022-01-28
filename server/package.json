@@ -16,7 +16,6 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "dummy-json": "^3.0.4",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^9.1.3",
