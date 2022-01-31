@@ -15,13 +15,8 @@ https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-
 </details>
 
 ## What is PawCon?
-<!--  **Since September 2021** -->
 - One-Click Graphic Art generation service. 
 - Create a NFT marketplace as a complete Beginner/Amateur. 
-<!-- - By from the bottom, what I mean is, **learn something and then apply it to project right away**. -->
-
-<!-- - This is a project that started that I had **no knowledge of HTML, CSS, JS and evolved up to this point**.  --> 
-<!-- I think displaying one's weak areas is not good since clients would be viewing this Repository.   ~ @AlphVS-76 -->
 
 ## Architecture, Features, and Implementation
 
@@ -139,17 +134,11 @@ export default App;
 - Supporting communities
 </details>
 
-## Roles 
-|100% contribution|
-|:-------:|
-|<img src="https://github.com/developerasun.png?size=200" alt="Jake Sung"/>|
-|<a href="https://github.com/developerasun">Jake Sung</a>|
-<!-- 
-|10% contribution|
-|:-------:|
-|<img src="https://avatars.githubusercontent.com/u/76773190?v=4" width="40%" alt="Vaibhav Sharma"/>|
-|<a href="https://github.com/AlphaVS-76">AlphaVS-76</a>| --> 
-<!-- Maybe :)...? -->
+## Contributors
+ <div style="display : flex">
+   <img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
+   <img src="https://avatars.githubusercontent.com/u/76773190?v=4&size=75" alt="Vaibhav Sharma"/>
+ </div>
 
 ## Inspiration
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
@@ -160,7 +149,6 @@ export default App;
 [![GMail: Jake Sung](https://img.shields.io/badge/-designerasun@gmail.com-black?style=flat-square&logo=GMail&logoColor=White&link=designerasun@gmail.com)](designerasun@gmail.com)
 [![Linkedin: Jake Sung](https://img.shields.io/badge/-Jake_Sung-darkblue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jakesung/)](https://www.linkedin.com/in/jakesung/)
 [![Instagram: Jake Sung](https://img.shields.io/badge/-Jake_Sung-lightblue?style=flat-square&logo=Instagram&logoColor=black&link=https://www.instagram.com/designerasun/)](https://www.instagram.com/designerasun/)
-<!-- [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:designerasun@gmail.com)](mailto:designerasun@gmail.com) -->
 
 ## License 
 - This project is Apache-licensed.
