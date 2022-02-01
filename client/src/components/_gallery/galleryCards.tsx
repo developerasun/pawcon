@@ -18,7 +18,7 @@ export function GalleryCards ( { title, description, author, date, image }:  Gal
         <h3>{title}</h3>
         <span>{author}</span>
         <p>{description}</p>
-        <Link to={`/details/${title}`} > See Details </Link>
+        <Link to={`/details/${title}`} > <u><i>See Details</i></u> </Link>
       </div>
     </div>
   );

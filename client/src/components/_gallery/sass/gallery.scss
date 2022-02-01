@@ -1,15 +1,40 @@
 @import '../../partials/variable';
 
-.galleryCard {
-    display : flex; 
-    flex-flow :column nowrap;
-    justify-content :center;
-    align-items :center;
-    border : 2px solid $brandColor;
-    gap: $unit; 
-    
-    .galleryCardImage {
-        width: 100%;
+.galleryMain {
+    display : flex;
+    flex-flow: column nowrap; 
+    justify-content: center;
+    align-items:center;
 
+    .galleryCardContainer {
+        display : grid; 
+        grid-template-columns:repeat(2, 1fr);
+        gap : 1rem ;
+        padding : 1rem;
+    }
+    .galleryCard {
+        display : flex; 
+        flex-flow :column nowrap;
+        justify-content :center;
+        align-items :center;
+        border : 2px solid $brandColor;
+        gap: $unit; 
+        
+        .galleryCardImage {
+            // make a responsive image 
+            max-width: 100%;
+            height: auto;
+        }  
+    }
+    .galleryCardPagination {
+        display : flex ;
+        flex-flow : row nowrap ;
+        gap: 1rem;
+        padding : 1rem;
+        font-size:1.5rem ;
+        button { 
+            font-size : 1.5rem; 
+            padding:0 0.2rem;
+        }
     }
 }
