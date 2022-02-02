@@ -18,8 +18,7 @@ https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-
 - One-Click Graphic Art generation service. 
 - Create a NFT marketplace as a complete Beginner/Amateur. 
 
-## Architecture, Features, and Implementation
-
+## Architecture, 
 <details>
 <summary>📐Architecture</summary>
 
@@ -30,12 +29,13 @@ https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-
 |Database|X             |MongoDB or PostgreSQL|
 |Test|X                 |Jest, Mocha|
 |Deployment|Netlify     |Netlify functions|
+|Hosting                |[imgbb.com](https://imgbb.com/), [JSONBIN.io](https://jsonbin.io/)|
 |CI, CD|X               |Github Actions|
 |Protocols|HTTP         |HTTP, Web socket, Web RTC, JSON-RPC|
+
 </details>
 
-<br/>
-
+## Features, and Implementation
 <details>
 <summary>🛠Features</summary>
 
