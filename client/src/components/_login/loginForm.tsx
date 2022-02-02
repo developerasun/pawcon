@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './sass/css/loginForm.css'
 import { Link, useNavigate } from 'react-router-dom';
+import pawconLogo from '../../assets/img/logo/pawcon-logo.webp'
 import googleLogo from '../../assets/img/logo/google-logo.webp'
 import githubLogo from '../../assets/img/logo/github-logo.webp'
 
@@ -17,7 +18,7 @@ export function LoginForm () {
   React.useEffect(()=> {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
-    
+    const abortController = new AbortController()
     if (submit) { 
 
       // replace this part with Axios
@@ -27,7 +28,8 @@ export function LoginForm () {
           email : email.value, 
           password : password.value
         }), 
-        headers : { 'Content-Type' : 'application/json' }
+        headers : { 'Content-Type' : 'application/json' },
+        signal : abortController.signal
       }).then((res) => {
         if (res.ok) { return res.json() }
         else console.log(res.json()) // log server error response
@@ -38,14 +40,17 @@ export function LoginForm () {
       })
     }
 
-  }, [submit]) // add dependency here
+  // cleanup
+  return () => abortController.abort()
+  }, [submit, navigate]) // add dependency here
 
   return (
     <div className='loginComponent'>
   
       <div className="loginPromotionContainer">
-        <h2>Welcome back, Paw-ioneer!</h2>
-        <p>Be the one of the coolest NFT trend setters in seconds.</p>
+        <h2>Welcome back!</h2>
+        <p>Come pat my paw. Twice.</p>
+        <img src={pawconLogo} width='200' alt='pawcon logo'/>
       </div>
 
       <div className="loginContainer">
@@ -69,7 +74,6 @@ export function LoginForm () {
           </label> 
           <button className='loginBtn' type='submit'>Login</button>
         </form>
-
 
         <ul className="oAuthContainer">
           <li className='title'>Login with</li>
