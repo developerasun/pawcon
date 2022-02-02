@@ -5,10 +5,31 @@ import { GalleryCards } from './galleryCards'
 import { ArtworkContext } from '../contexts/artworkContext'
 import { ImgBanner } from '../subComponents/banner'
 import { IMG_BANNER } from '../containers/imgContainer'
+import axios from 'axios'
+import { API_URL } from '../apis/api'
+import { ArtworkList } from '../apis/useFetch'
+
+// Set initial state for useState/Typescript
+const defaultProps :ArtworkList = []
 
 export function Gallery () {
   const artworks =  React.useContext(ArtworkContext);
   const [page, setPage] = React.useState(1)
+  const [test, setTest] = React.useState(defaultProps);
+
+  // fetching data
+  React.useEffect(()=> {
+    const data = fetch(API_URL.artworks)
+    data.then((res)=>res.json()).then((result)=> {
+      console.log(result)
+      setTest(result)
+    }).catch((err)=>console.log(err))
+    // (async () => {
+    //   const response = await fetchArtwork(API_URL.artworks)
+    //   console.log(response.data)
+    //   setTest(response.data)
+    // })()
+  }, [ page ])
 
   return (
     <>
@@ -36,7 +57,11 @@ export function Gallery () {
 
         {/* NOT DONE : fetched data test here */}
         <div className="apiTest">
-            {/* {Object.entries(final?)} */}
+          <p>Fetch data below</p>
+            {/* convert fetched data to Array */}
+            {Array.from(test).map((item)=>{
+              return item.details.identity.author
+            })}
         </div>
         
         <div 
