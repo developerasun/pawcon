@@ -1,12 +1,6 @@
 import * as React from 'react';
-import axios, { AxiosRequestConfig, AxiosResponseHeaders } from 'axios'
+import axios from 'axios'
 
-export interface AxiosResponse {
-  data: any;
-  status: number;
-  headers: AxiosResponseHeaders;
-  config: AxiosRequestConfig<any>;
-}
 type title = string
 type image = {
   width : number
@@ -24,14 +18,14 @@ type details = {
   identity : identity, 
   image : image 
 }
-interface Artwork {
+
+export interface Artwork {
   title : title,
   details : details, 
 }
 
 export type ArtworkList = Artwork[]
 
-// NOT TESTED
 export async function fetchArtwork (url : string) {
   const response = await axios.get<ArtworkList>(url)
   return response;
