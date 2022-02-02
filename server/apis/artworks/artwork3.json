@@ -1,0 +1,36 @@
+[
+    {
+        "title": "Ms.Cuty",
+        "details": {
+            "identity" : {
+            "id" : "20220101", 
+            "title" : "20220101", 
+            "description" : "We are twins, you see that?", 
+            "author" : "Smith", 
+            "date" : "2002.01.30" 
+            }, 
+            "image": {
+            "width": 600,
+            "height": 446,
+            "url": "https://i.ibb.co/xGP3G4L/Ms-cuty.webp"
+            }
+        }
+    }, 
+    {
+        "title": "Zeus",
+        "details": {
+            "identity" : {
+            "id" : "20220101", 
+            "title" : "20220101", 
+            "description" : "We are twins, you see that?", 
+            "author" : "Smith", 
+            "date" : "2002.01.30" 
+            }, 
+            "image": {
+            "width": 600,
+            "height": 446,
+            "url": "https://i.ibb.co/JHYf36H/zeus.webp"
+            }
+        }
+    }
+]
