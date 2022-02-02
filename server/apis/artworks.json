@@ -1,5 +1,4 @@
-{ 
-"0" : [
+[
     {
     "title": "Cat The Chimney",
     "details": {
@@ -84,9 +83,7 @@
         "url": "https://i.ibb.co/vjpSd32/5.webp"
         }
     }
-    }
-],
-"1" : [
+    },
     {
         "title": "Lazer",
         "details": {
@@ -172,11 +169,4 @@
             }
         }
     }
-], 
-"2" : [
-
-], 
-"3" : [
-
 ]
-}
