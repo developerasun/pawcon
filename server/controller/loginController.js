@@ -2,10 +2,9 @@ const PawConUser  = require('../model/user')
 const jsonWebToken = require('jsonwebtoken')
 const config = require('../config/config')
 
-// NOT TESTED : Get PawCon user info from database and compare with enrolled JWT
+// TESTED : Get PawCon user info from database and compare with enrolled JWT
 const login_post = async (req, res) => {
     try {
-
         // parsing email and password from user request
         const { email, password } = req.body
 
@@ -63,15 +62,18 @@ const signup_post = async (req, res) => {
     }
 }
 
-// NOT TESTED : Reset JWT cookie expiration for logout
-const logout_post = (req, res) => { 
+// Reset JWT cookie expiration for logout
+const logout_get = (req, res) => { 
     // response.cookie(cookie name, cookie value, cookie option)
-    res.cookie( config.AUTH.JSONWEBTOKEN.NAME, '', 
-    { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT } )
+    res.cookie( 
+        config.AUTH.JSONWEBTOKEN.NAME,
+        '', 
+        { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT }
+    )
 }
 
 module.exports = { 
     login_post, 
     signup_post, 
-    logout_post
+    logout_get
 }
