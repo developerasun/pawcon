@@ -3,7 +3,7 @@ const loginRouter = require('express').Router()
 const loginController = require('../controller/loginController')
 
 loginRouter.post('/login', loginController.login_post)
-loginRouter.post('/logout', loginController.logout_post)
+loginRouter.get('/logout', loginController.logout_get)
 
 loginRouter.post('/signup', loginController.signup_post)
 
