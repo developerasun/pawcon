@@ -5,21 +5,23 @@ import {
 } from "./actionTypes"
 
 // action type setting for login reducer
+// LoginActionPayload will only show duplicated properties
 export type LoginActionPayload = LoggedInActionPayload | LoggedOutActionPayload
 type LoggedInActionPayload = ReturnType<typeof login>
 type LoggedOutActionPayload = ReturnType<typeof logout>
 
 // action creators for login
-export const login = () => {
+export const login = (email : string) => {
     return { 
-        type : LOGIN
-        
+        type : LOGIN,
+        payload : email
     }
 }
 
 export const logout = () => {
     return { 
-        type : LOGOUT
+        type : LOGOUT, 
+        payload : "" // for union type property consistency 
     }
 }
 
