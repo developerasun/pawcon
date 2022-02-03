@@ -1,22 +1,29 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { $CombinedState } from 'redux';
 import { ProfileProps } from '../containers/propContatiner';
+import { useAppSelector } from '../containers/redux/store.hooks';
 
-export function Profile ({ name, email, isLoggedIn }: ProfileProps) {
+export function Profile () {
   const [submit, setSubmit] = React.useState(false);
   const navigate = useNavigate()
+
+  // Get user email from Redux store
+  const username = useAppSelector((state)=>state.login.email)
+
   React.useEffect(()=>{
     if (submit) {
-      fetch('/logout')
+      fetch('/logout') // Delete JWT for logout
 
       alert('logout success')
-      navigate('/')
+      navigate('/') // client redirect
     }
   }, [submit, navigate])
+
   return (
+    // add some style here : user avatar // dashboard
       <ul>
-        <li>Hello, {name}. Welcome back!</li>
-        <li>ID : {email}</li>
+        <li>Hello, {username}. Welcome back!</li>
         <button type="submit" onClick={()=>setSubmit(true)}>Logout</button>
       </ul> 
   );
