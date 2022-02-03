@@ -1,10 +1,4 @@
 // Declare and export component type here
-export type ProfileProps = {
-    name : string
-    email : string
-    isLoggedIn : boolean 
-}
-
 // Setting repeatedly used card style
 export type BasicCardDetailsProps = { 
     date? : string

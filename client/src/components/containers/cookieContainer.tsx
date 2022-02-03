@@ -1,3 +1,3 @@
 export const cookieList = {
-    LOGIN : 'pawconJsonwebtoken'
+    LOGIN : 'pawconJsonwebtoken' // login jwt cookie
 }

@@ -38,31 +38,6 @@ export const FooterStyle = {
     'marginTop' : '1rem'
 } as React.CSSProperties
 
-export const GalleryCardsStyle = { 
-    'display' : 'flex', 
-    'flexFlow':'column nowrap',
-    'justifyContent':'center', 
-    'alignItems':'center',
-    'border' : "2px solid green", 
-    'padding': '1rem',
-    'gap': '10'           
-} as React.CSSProperties
-
-export const GalleryCardContainerStyle = {
-    "display" : "grid", 
-    "gridTemplateColumns":"repeat(2, 1fr)", 
-    "gap" : "1rem", 
-    "padding" : "1rem"
-} as React.CSSProperties
-
-export const GalleryCardPaginationStyle = { 
-    "display" : "flex", 
-    "flexFlow" : "row nowrap", 
-    "gap": "1rem", 
-    "padding" : "1rem", 
-    "fontSize":"1.5rem", 
-} as React.CSSProperties
-
 export const ImgBannerStyle = {
     "maxWidth":"100%", 
     "height":"auto"
