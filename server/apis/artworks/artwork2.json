@@ -3,64 +3,64 @@
         "title": "Twinkle twin",
         "details": {
             "identity" : {
-            "title" : "Twinkle twin", 
-            "description" : "We are twins, you see that?", 
-            "author" : "Smith", 
-            "date" : "2002.01.30" 
-            }, 
+                "title" : "Twinkle twin", 
+                "description" : "We are twins, you see that?", 
+                "author" : "Smith", 
+                "date" : "2002.01.30" 
+                }, 
             "image": {
-            "width": 480,
-            "height": 480,
-            "url": "https://i.ibb.co/vjpSd32/5.webp"
-            }
+                "width": 480,
+                "height": 480,
+                "url": "https://i.ibb.co/vjpSd32/5.webp"
+                }
         }
         },
         {
             "title": "Lazer",
             "details": {
                 "identity" : {
-                "title" : "Lazer", 
-                "description" : "Watch out, this is real", 
-                "author" : "Anonymous", 
-                "date" : "2002.01.30" 
-                }, 
+                    "title" : "Lazer", 
+                    "description" : "Watch out, this is real", 
+                    "author" : "Anonymous", 
+                    "date" : "2002.01.30" 
+                    }, 
                 "image": {
-                "width": 512,
-                "height": 512,
-                "url": "https://i.ibb.co/qYPDgRm/lazer.webp"
-                }
+                    "width": 512,
+                    "height": 512,
+                    "url": "https://i.ibb.co/qYPDgRm/lazer.webp"
+                    }
             }
         }, 
         {
             "title": "Catster",
             "details": {
                 "identity" : {
-                "title" : "Catster", 
-                "description" : "Don't get in the way, we are busy getting treats here", 
-                "author" : "The Cat Goat", 
-                "date" : "2021.12.25" 
-                }, 
+                    "title" : "Catster", 
+                    "description" : "Don't get in the way, we are busy getting treats here", 
+                    "author" : "The Cat Goat", 
+                    "date" : "2021.12.25" 
+                    }, 
                 "image": {
-                "width": 500,
-                "height": 218,
-                "url": "https://i.ibb.co/QKYMmkM/catster.webp"
-                }
+                    "width": 500,
+                    "height": 218,
+                    "url": "https://i.ibb.co/QKYMmkM/catster.webp"
+                    }
             }
         }, 
         {
             "title": "Smoker",
             "details": {
                 "identity" : {
-                "title" : "Smoker", 
-                "description" : "This one tastes good", 
-                "author" : "Tom", 
-                "date" : "2018.06.30" 
-                }, 
+                    "title" : "Smoker", 
+                    "description" : "This one tastes good", 
+                    "author" : "Tom", 
+                    "date" : "2018.06.30" 
+                    }, 
                 "image": {
-                "width": 400,
-                "height": 250,
-                "url": "https://i.ibb.co/kJfGdxB/smoker.webp"
-                }
+                    "width": 400,
+                    "height": 250,
+                    "url": "https://i.ibb.co/kJfGdxB/smoker.webp"
+                    }
             }
         }
 ]
