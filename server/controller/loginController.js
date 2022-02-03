@@ -17,7 +17,10 @@ const login_post = async (req, res) => {
         // set cookie name, value, and option with jswon web token
         res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, { 
             maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION, 
-            httpOnly : true
+
+            // httpOnly should be false so that React-Cookie can access
+            // to jwt cookie
+            httpOnly : false
         })
 
         // send json response and end request-response cycle
@@ -50,7 +53,9 @@ const signup_post = async (req, res) => {
                 const user = await PawConUser.create( { email, password } )
                 const token = createJWT(user._id)
                 res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
-                    httpOnly : true, 
+                    // httpOnly should be false so that React-Cookie can access
+                    // to jwt cookie
+                    httpOnly : false, 
                     maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
                 })
                 res.status(201).json(user)
@@ -70,6 +75,9 @@ const logout_get = (req, res) => {
         '', 
         { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT }
     )
+    // jwt got reset here. if server redirect not presented, 
+    // jwt still there not being deleted
+    res.redirect('/') 
 }
 
 module.exports = { 
