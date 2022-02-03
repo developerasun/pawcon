@@ -6,27 +6,34 @@
     justify-content: center;
     align-items:center;
 
-    .galleryCardContainer {
+    .cardContainer {
         display : grid; 
         grid-template-columns:repeat(2, 1fr);
         gap : 1rem ;
         padding : 1rem;
     }
-    .galleryCard {
+    .card {
         display : flex; 
         flex-flow :column nowrap;
-        justify-content :center;
+        justify-content :flex-end;
         align-items :center;
         border : 2px solid $brandColor;
         gap: $unit; 
         
-        .galleryCardImage {
+        .cardImage {
             // make a responsive image 
             max-width: 100%;
             height: auto;
-        }  
+        } 
+
+        .cardDetails {
+            width: 100%;
+            background-color:rgb(43, 147, 189);
+            text-align: left;
+            padding: $unit;
+        }
     }
-    .galleryCardPagination {
+    .pagination {
         display : flex ;
         flex-flow : row nowrap ;
         gap: 1rem;

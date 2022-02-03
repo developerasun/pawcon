@@ -14,7 +14,7 @@
           align-items: center;
 }
 
-.galleryMain .galleryCardContainer {
+.galleryMain .cardContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -23,7 +23,7 @@
   padding: 1rem;
 }
 
-.galleryMain .galleryCard {
+.galleryMain .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,9 +31,9 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -41,12 +41,19 @@
   gap: 1rem;
 }
 
-.galleryMain .galleryCard .galleryCardImage {
+.galleryMain .card .cardImage {
   max-width: 100%;
   height: auto;
 }
 
-.galleryMain .galleryCardPagination {
+.galleryMain .card .cardDetails {
+  width: 100%;
+  background-color: #2b93bd;
+  text-align: left;
+  padding: 1rem;
+}
+
+.galleryMain .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +66,7 @@
   font-size: 1.5rem;
 }
 
-.galleryMain .galleryCardPagination button {
+.galleryMain .pagination button {
   font-size: 1.5rem;
   padding: 0 0.2rem;
 }
