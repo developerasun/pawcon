@@ -5,12 +5,15 @@ import { LoginActionPayload, CartActionPayload  } from "./actionCreators"
 export const loginReducer = ( state = initialLoginState, action : LoginActionPayload ) => { 
     switch (action.type) { 
         case LOGIN : 
+            // returned object should have the same properties as initial state
             return { 
-                isLogin : !state.isLogin
+                isLogin : !state.isLogin, 
+                email : action.payload
             }
         case LOGOUT : 
             return { 
-                isLogin : !state.isLogin
+                isLogin : !state.isLogin,
+                email : ""
             }
         default : 
             return state
