@@ -15,10 +15,14 @@ https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-
 </details>
 
 ## What is PawCon?
-- One-Click Graphic Art generation service. 
-- Create a NFT marketplace as a complete Beginner/Amateur. 
+PawCon is an open source NFT marketplace project with below features. 
 
-## Architecture, 
+- One-Click graphic art generation. 
+- Creating and listing NFT in marketplace
+- Displaying the NFT in virtual gallery
+- Selling and buying the NFT in communities
+
+## Architecture
 <details>
 <summary>📐Architecture</summary>
 
@@ -29,25 +33,13 @@ https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-
 |Database|X             |MongoDB or PostgreSQL|
 |Test|X                 |Jest, Mocha|
 |Deployment|Netlify     |Netlify functions|
-|Hosting                |[imgbb.com](https://imgbb.com/), [JSONBIN.io](https://jsonbin.io/)|
+|Hosting|X              |[imgbb.com](https://imgbb.com/), [JSONBIN.io](https://jsonbin.io/)|
 |CI, CD|X               |Github Actions|
 |Protocols|HTTP         |HTTP, Web socket, Web RTC, JSON-RPC|
 
 </details>
 
-## Features, and Implementation
-<details>
-<summary>🛠Features</summary>
-
-|Main                 |Plan          |Sub                                          |
-|:-------------------:|:------------:|:-------------------------------------------:|
-|Drawing              |free          |Login/sign up, Shopping cart, Payment, Search|
-|Pixelation effect    |free          |Filter effects like Photoshop                | 
-|Artwork generation   |paid          |(will be added)                              | 
-</details>
-
-<br/>
-
+## Implementation
 <details>
 <summary>✅Implementation</summary>
 
