@@ -2,16 +2,15 @@
     {
         "title": "Ms.Cuty",
         "details": {
-            "identity" : {
-            "id" : "20220101", 
-            "title" : "20220101", 
-            "description" : "We are twins, you see that?", 
-            "author" : "Smith", 
-            "date" : "2002.01.30" 
+            "identity" : { 
+            "title" : "Ms.Cuty", 
+            "description" : "I'm the most adorable among these cats.", 
+            "author" : "Princess", 
+            "date" : "1999.01.30" 
             }, 
             "image": {
-            "width": 600,
-            "height": 446,
+            "width": 150,
+            "height": 150,
             "url": "https://i.ibb.co/xGP3G4L/Ms-cuty.webp"
             }
         }
@@ -19,18 +18,49 @@
     {
         "title": "Zeus",
         "details": {
-            "identity" : {
-            "id" : "20220101", 
-            "title" : "20220101", 
-            "description" : "We are twins, you see that?", 
-            "author" : "Smith", 
-            "date" : "2002.01.30" 
+            "identity" : { 
+            "title" : "Zeus", 
+            "description" : "Behold, this is the thunder!", 
+            "author" : "Thor", 
+            "date" : "2018.11.01" 
             }, 
             "image": {
-            "width": 600,
-            "height": 446,
+            "width": 400,
+            "height": 400,
             "url": "https://i.ibb.co/JHYf36H/zeus.webp"
             }
         }
-    }
+    },
+    {
+        "title": "Neon cat",
+        "details": {
+            "identity" : { 
+            "title" : "Neon cat", 
+            "description" : "Look, mom, I'm this shining", 
+            "author" : "Ladybug", 
+            "date" : "2020.11.11" 
+            }, 
+            "image": {
+            "width": 422,
+            "height": 412,
+            "url": "https://i.ibb.co/X7W5BSD/neon-cat.webp"
+            }
+        }
+    },
+    {
+        "title": "Sword cat",
+        "details": {
+            "identity" : { 
+            "title" : "Sword cat", 
+            "description" : "Real warrior doesn't fear nothing... only dogs.", 
+            "author" : "Majesty", 
+            "date" : "2015.03.20" 
+            }, 
+            "image": {
+            "width": 300,
+            "height": 188,
+            "url": "https://i.ibb.co/k19ZDLK/sword-cat.webp"
+            }
+        }
+    },
 ]

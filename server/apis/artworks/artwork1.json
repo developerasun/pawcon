@@ -2,16 +2,15 @@
     {
     "title": "Cat The Chimney",
     "details": {
-        "identity" : {
-        "id" : "20220101", 
+        "identity" : { 
         "title" : "Cat The Chimney", 
         "description" : "No cat more adorable than me.", 
         "author" : "Jake", 
         "date" : "2021.11.15" 
         }, 
         "image": {
-        "width": 600,
-        "height": 446,
+        "width": 480,
+        "height": 480,
         "url": "https://i.ibb.co/5WxWg0x/1.webp"
         }
     }
@@ -19,16 +18,15 @@
     {
     "title": "Mr.Gentle",
     "details": {
-        "identity" : {
-        "id" : "20220101", 
+        "identity" : { 
         "title" : "Mr.Gentle", 
         "description" : "Come see my paws here", 
         "author" : "Angela", 
         "date" : "2011.03.22" 
         }, 
         "image": {
-        "width": 600,
-        "height": 446,
+        "width": 480,
+        "height": 480,
         "url": "https://i.ibb.co/hdf4sRg/2.webp"
         }
     }
@@ -36,16 +34,15 @@
     {
     "title": "The Cat Meme",
     "details": {
-        "identity" : {
-        "id" : "20220101", 
+        "identity" : { 
         "title" : "The Cat Meme", 
         "description" : "Yeah, I'm that cat meme.", 
         "author" : "Brian", 
         "date" : "2015.09.22" 
         }, 
         "image": {
-        "width": 600,
-        "height": 446,
+        "width": 400,
+        "height": 234,
         "url": "https://i.ibb.co/wSJK8BK/3.webp"
         }
     }
@@ -53,16 +50,15 @@
     {
     "title": "Quiet Pranky",
     "details": {
-        "identity" : {
-        "id" : "20220101", 
+        "identity" : { 
         "title" : "20220101", 
         "description" : "Shhh, everybody quiet here", 
         "author" : "Paul", 
         "date" : "2033.02.16" 
         }, 
         "image": {
-        "width": 600,
-        "height": 446,
+        "width": 480,
+        "height": 480,
         "url": "https://i.ibb.co/JBdRrZ5/4.webp"
         }
     }
