@@ -10,13 +10,17 @@ const corsOptions = {
         optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-// Parser for cookie and request body
+// Parser for cookie
 const cookieParser = require('cookie-parser')
 
 // Database
 const mongoose = require('mongoose')
+
+// Router and middleware
 const loginRouter = require('./router/loginRouter')
 const apiRouter = require('./router/apiRouter')
+const { checkAuth } = require('./middlewares/checkAuth')
+const { checkUser } = require('./middlewares/checkUser')
 
 // Connect mongoDB 
 mongoose.connect( config.MONGO_URI, {})
@@ -40,12 +44,17 @@ app.use((req, res, next)=> { // request loggers
 })
 
 app.use(express.json()) // parsing request url
-app.use(router) // routing handlers
 app.use(cors(corsOptions)) // cross origin resource sharing
+app.use(router) // routing handlers
 app.use('/apis', apiRouter)
 app.use(loginRouter)
 app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files
 app.use(cookieParser()) // setting cookie with JWT
+
+// protect shop/checkout router with checkAuth
+app.get('/shop/checkout', checkAuth, (req, res) => {
+        res.json( { message : "auth checking works! "})
+})
 
 // if client routing is used in React, any requests off the client routes
 // will be redirected to index.html by server
