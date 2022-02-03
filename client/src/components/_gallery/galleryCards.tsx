@@ -6,18 +6,18 @@ import { GalleryCardsProps } from '../containers/propContatiner'
 export function GalleryCards ( { title, description, author, date, image }:  GalleryCardsProps) {
   
   return (
-    <div className='galleryCard' >
+    <div className='card' >
       <img 
-        className='galleryCardImage'
+        className='cardImage'
         src={image} 
         alt="gallery card" 
         loading='lazy'
       />
-      <div className="galleryCardDetails">
-        <span>{date}</span>
-        <h3>{title}</h3>
-        <span>{author}</span>
-        <p>{description}</p>
+      <div className="cardDetails">
+        <span className='date'>{date}</span>
+        <h3 className='title'>{title}</h3>
+        <span className='author'>{author}</span>
+        <p className='description'>{description}</p>
         <Link to={`/details/${title}`} > <u><i>See Details</i></u> </Link>
       </div>
     </div>
