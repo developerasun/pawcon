@@ -1,0 +1,12 @@
+{
+  "name": "pawcon-blockchain",
+  "author": "Jake Sung",
+  "version": "0.1",
+  "description": "One click NFT generation service",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2"
+  }
+}
