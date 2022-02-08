@@ -1,18 +1,8 @@
-# PawCon (Ongoing Project)
+# PawCon Architecture
 
-#### [Live Demo (Legacy)](https://bit.ly/hello_visitor)
-
-## Current Refactoring
-
-<details>
-  <summary>See</summary>
-  <br></br>
-
-- Client (React / TS) + Server (NodeJs / Express)<br></br>
-
-https://user-images.githubusercontent.com/83855174/151012249-eccf7792-6d44-435b-b5b0-beaa6acf6d35.mp4
-
-</details>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/83855174/152946367-ce30a572-8779-4cac-bec7-0084f89197e5.png" width="800" height="600" alt="project architecture" />
+</div>
 
 ## What is PawCon?
 PawCon is an open source NFT marketplace project with below features. 
@@ -21,23 +11,6 @@ PawCon is an open source NFT marketplace project with below features.
 - Creating and listing NFT in marketplace
 - Displaying the NFT in virtual gallery
 - Selling and buying the NFT in communities
-
-## Architecture
-<details>
-<summary>📐Architecture</summary>
-
-|Type|Before|After|
-|:-----:|:----:|:---:|
-|Front End|HTML, CSS, JS|HTML, CSS, React/TS|
-|Backend|X              |Express/JS => Express/TS, C#/Unity|
-|Database|X             |MongoDB or PostgreSQL|
-|Test|X                 |Jest, Mocha|
-|Deployment|Netlify     |Netlify functions|
-|Hosting|X              |[imgbb.com](https://imgbb.com/), [JSONBIN.io](https://jsonbin.io/)|
-|CI, CD|X               |Github Actions|
-|Protocols|HTTP         |HTTP, Web socket, Web RTC, JSON-RPC|
-
-</details>
 
 ## Implementation
 <details>
@@ -57,7 +30,7 @@ PawCon is an open source NFT marketplace project with below features.
       <div>
         <img src="https://github.com/developerasun.png" width="300" height="180">
       </div>
-      Chat realtime in text and video
+      Interact with community in realtime
     </th>
   </tr>
 </thead>
@@ -66,71 +39,40 @@ PawCon is an open source NFT marketplace project with below features.
       <div>
         <img src="https://github.com/developerasun.png" width="300" height="180">
       </div>
-      Create and issue NFT
+      Generate your artworks
     </th>
     <th>
       <div>
        <img src="https://github.com/developerasun.png" width="300" height="180">
       </div>
-      Shop and display your NFT 
+      Mint your NFTs 
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <div>
+        <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Interact with others in 3D world 
+    </th>
+    <th>
+      <div>
+       <img src="https://github.com/developerasun.png" width="300" height="180">
+      </div>
+      Display your NFT in 3D world
     </th>
   </tr>
 </tbody>
 </table>
+</div>
 
 </details>
 
-## Conventions
-<details>
-<summary>📝Conventions</summary>
+## Creator
+<img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
 
-  #### Commits:
-  
-- feat: functionality added
-- fix: bug fixed, minor changes
-- chore: installing npms and other chores
-- refactor: refactoring existing codes
-- docs: readme and other markdowns
-
-#### Name:
-  - English 
-  - CamelCase
-  - Uppercase for constant variables
-
-#### React Components:
-- default : React/TS Stateless function component + interface props
-
-```ts
-interface AppProps { 
-  name : string
-}
-const App = ( { name } : AppProps) => {
-  return <div></div>;
-};
-
-export default App;
-```
-
-</details>
-
-<br/>
-
-## Characteristics
-<details>
-<summary>🔥Characteristics</summary>
-
-- Accessible URL 
-- Test codes with Jest and Mocha
-- Auto deployment with Github Actions
-- Design pattern applied
-- Supporting communities
-</details>
-
-## Contributors
- <div style="display : flex">
-   <img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
-   <img src="https://avatars.githubusercontent.com/u/76773190?v=4&size=75" alt="Vaibhav Sharma"/>
- </div>
+## Contributor & role
+- [Vaibhav Sharma - improving Readme](https://github.com/AlphaVS-76)
 
 ## Inspiration
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
