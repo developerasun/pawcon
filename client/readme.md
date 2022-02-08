@@ -1,29 +1,48 @@
 # PawCon Client Side
-Main teck stack for PawCon is React with Typescript. 
+Install dependency. 
 
-<details>
-<summary>Depedency</summary>
+```shell
+$npm install
+```
 
-- content here
-- content here
-- content here
+Run npm start for local development.
 
-</details>
+```shell
+$npm start
+```
+
+Run npm build for optimized production. 
+
+```shell
+$npm run build
+```
 
 <details>
 <summary>Characteristics</summary>
 
-- content here
-- content here
-- content here
-
+- meta tags are added in public/index.html
+- interface and props are managed in container.tsx
+- sass modules are managed in partials directory
+- fetch data from localhost server and render
+- redux store manages application state : e.g login user email, cart 
+- react router takes most of user requests except login, signup, api, improving perfomance
 </details>
 
 <summary>Conventions</summary>
 
-- content here
-- content here
-- content here
+## React Components:
+- default : React/TS Stateless function component + interface props
+
+```ts
+interface AppProps { 
+  name : string
+}
+const App = ( { name } : AppProps) => {
+  return <div></div>;
+};
+
+export default App;
+```
 
 </details>
 
