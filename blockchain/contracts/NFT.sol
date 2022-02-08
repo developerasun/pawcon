@@ -1,8 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "./constant/Container.sol";
+
+/// @dev adding lifecycle to token(e.g : halving mintable supply)
+struct lifecycle { 
+    uint256 birth;
+    uint256 halfLife;
+}
 
 // add natspac to contract
 /// @title A title that should describe the contract/interface
@@ -11,6 +18,26 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @dev Explain to a developer any extra details
 contract NFT is ERC721Enumerable, Ownable { 
     
+    uint256 price = 0.03 ether; 
+    uint256 totalSupply = 1000;
+    uint256 mintableSupply = 1000;
+    uint256 dynamicPrice;
+
+    function getDynamicPrice() public returns(uint256) {
+        if (mintableSupply > 500) {
+            return 0.03 ether;
+        }
+        if (mintableSupply > 250) {
+            return 0.06 ether;
+        }
+        if (mintableSupply > 125) {
+            return 0.09 ether;
+        }
+        if (mintableSupply > 62) {
+            return 0.12 ether;
+        }
+    }
+
     // PawCon NFT
     struct PawSibleToken { 
         bytes32 title;
@@ -42,7 +69,7 @@ contract NFT is ERC721Enumerable, Ownable {
     }
 
     // Withdraw contract's balance
-    function withdraw(address _user) public payable onlyOwner {
+    function withdraw(address payable _user) public payable onlyOwner {
         // address.call returns two values : success condition, bytes memory
         (bool isSent, ) = _user.call{ value : address(this).balance }("");
         require(isSent, "Withdrawl failed");
