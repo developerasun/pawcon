@@ -1,5 +1,8 @@
 // api router here
-const apiController = require('../controller/apiController')
+const path = require('path')
+const apiPath = path.join('..', 'controller', 'apiController')
+
+const apiController = require(apiPath)
 const apiRouter = require('express').Router()
 
 apiRouter.get('/users', apiController.getUsers)

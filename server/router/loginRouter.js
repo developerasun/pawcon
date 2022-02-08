@@ -1,6 +1,9 @@
 // login/logout router here
+const path = require('path')
+const loginPath = path.join('..', 'controller', 'loginController')
+
 const loginRouter = require('express').Router()
-const loginController = require('../controller/loginController')
+const loginController = require(loginPath)
 
 loginRouter.post('/login', loginController.login_post)
 loginRouter.get('/logout', loginController.logout_get)
