@@ -9,7 +9,7 @@ const getUsers = (req, res) => {
 
 // dynamic routes for artworks
 const getArtworks = (req, res) => {
-    const artworks = fs.readFileSync(path.join(__dirname, '..', 'apis', 'artworks', `artwork${req.params.page}.json`))
+    const artworks = fs.readFileSync(path.join(__dirname, '..', 'apis', 'artworks', 'json',`artwork${req.params.page}.json`))
     res.set('Content-Type', 'application/json')
     res.status(200).send(artworks.toString()) // send string data
 }
