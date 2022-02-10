@@ -2,20 +2,11 @@ const mongoose = require('mongoose')
 
 // Create a schema for web editor posting
 const postSchema = mongoose.Schema({
-    title : {
-        type : String, 
-        required : true, 
-        minlength : 6
-    },
-    body : {
+    // editor js paragraphs
+    description : {
         type : String, 
         required : true
     },
-    author : {
-        type : String, 
-        required : true
-    },
-    
 }, { timestamps: { createdAt: "created_At", updatedAt: "edited_At" } })
 
 
@@ -40,4 +31,4 @@ postSchema.post('save', (doc, next)=>{
 const Post = mongoose.model('Post', postSchema)
 
 // Export the model as module
-module.exports = { Post }
+module.exports = Post
