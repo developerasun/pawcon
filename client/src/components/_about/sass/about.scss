@@ -1,18 +1,26 @@
 @import '../../partials/variable';
 
-.creator { 
+#creator { 
+    #profile {
+        img { 
+            border-radius: 50%;
+            max-width: 50%;
+            height: auto;
+        }
+    }
     .career { 
-        width: fit-content;
-        height: fit-content;
-        border: $unit*0.2 solid #16b1d4;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: $unit;
+        border: 1px solid $subBgColor;
         text-align: center;
-        line-height: $unit*2.5;
+        line-height: $unit*2.5;;
         .title { 
             font-size: $unit*1.5;
-            border-bottom: $unit*0.2 solid $brandColor;
+            border-bottom: $unit*0.2 solid $subBgColor;
             img { 
                 padding: $unit;
-                max-width: 25%;
+                max-width: 50%;
                 height: auto;
             }
             .date {
