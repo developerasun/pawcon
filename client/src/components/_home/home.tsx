@@ -1,49 +1,62 @@
 import * as React from 'react'
-import { v4 as uuidV4 } from 'uuid'
 import './sass/css/home.css'
 import { ImgBanner, VideoBanner } from '../subComponents/banner'
-
-import { IncreaseToTarget } from './counter'
+import { CounterCard } from './counter'
 import { InstructionCards } from './instructionCards'
 
 // images
-import { IMG_INSTRUCTION, IMG_BANNER } from '../containers/imgContainer'
+import { IMG_BANNER } from '../containers/imgContainer'
 
 export function Home () {
-
-  React.useEffect(()=> {
-    const abortController = new AbortController()
-    const counter = document.getElementById("counter") as HTMLElement
-    IncreaseToTarget( { target : 100, count : 0, speed : 10, display: counter})
-    
-    // cleanup here
-    return () => abortController.abort()
-  }, [])
-  
   return (
-    <div>
-
+    <div id='home'>
       <div>
         <h1>Best Start For Lazy NFT Creators</h1>
-        <ImgBanner img={IMG_BANNER.helpCreator} 
-                  title={"We help creators"}
-                  description={"Spread your artistic talent and Make them NFTs"}/>
+        <ImgBanner 
+          shouldBeGrid={true}
+          img={IMG_BANNER.helpCreator} 
+          title={"We help creators"}
+          description={"Spread your artistic talent and Make them NFTs"}/>
 
-          <section>
-            <div className="pawconUserCount">
-              <span>icon here</span>
-              <h3># PawCon Users So Far</h3>
-              <span id='counter'></span>
-            </div>
-            {/* add more counters */}
+          <section id='counterContainer'>
+            <CounterCard 
+              hasButton={false}
+              image='https://i.ibb.co/DfG593X/pawcon-user.png'
+              description={'Users'} />
+            <CounterCard 
+              hasButton={false}
+              image='https://i.ibb.co/JsRx70X/pawcon-contributor.png'
+              description={'Contributors'} />
+            <CounterCard 
+              hasButton={false}
+              image='https://i.ibb.co/6RCtZJG/pawcon-star.png'
+              description={'Github stars'} />
           </section>
+      </div>
 
-        {IMG_INSTRUCTION.map((item) =>{
-          return <InstructionCards 
-                    key={uuidV4()}
-                    description={item.description} 
-                    image={item.image} /> 
-        })}
+      <div id="instructionCards">
+        <InstructionCards 
+          hasButton={false}
+          description={`Create Your NFTs With Ease.`}
+          image={'https://i.ibb.co/5RMVbRS/woman-drawing.webp'}
+        />
+        <InstructionCards 
+          hasButton={false}
+          description={["Save It To Wallet.", "Protect the asset safely."]}
+          image={'https://i.ibb.co/TMtMV0S/phone-money.webp'}
+        />
+        <InstructionCards 
+          description={["List It In Marketplace.", "Do Marketing And Make Sales."]}
+          image={'https://i.ibb.co/FsRQLdR/paper-bag.webp'}
+          hasButton={true}
+          buttonText={'Explore'}
+        />
+        <InstructionCards 
+          description={["Donate And Support.", "Buy Me A Coffee."]}
+          image={'https://i.ibb.co/cTtgkpg/star-box.webp'}
+          hasButton={true}
+          buttonText={'Donate'}
+        />
       </div>
 
       <VideoBanner 
@@ -51,7 +64,9 @@ export function Home () {
         buttonText='Explore Gallery' 
         linkTo='/gallery'/>
 
-      <ImgBanner img={IMG_BANNER.saluteDev}/>
+      <ImgBanner 
+        shouldBeGrid={false}
+        img={IMG_BANNER.saluteDev}/>
 
     </div>
   );
