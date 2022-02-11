@@ -16,7 +16,7 @@ export function Feedback () {
     const [submit, setSubmit] = React.useState(false)
     const [save, setSave] = React.useState(false)
     const [fetchEditor, setFetchEditor] = React.useState(false)
-    
+
     const fetchEditorJs = () => {
         setFetchEditor(true)
     }
@@ -38,45 +38,52 @@ export function Feedback () {
             document.location.reload()
         } 
         
-        if (save) {
+        if (submit) {
             fetchEditorJsButton.disabled = true
-            // // To get all entry's data from Editor.js, call the save() method on the class instance. 
+            // To get all entry's data from Editor.js, call the save() method on the class instance. 
             // It will return a Promise that resolves with clean data.
-            editor.save().then((result) => {
-                // editorjs.blocks : object containing arrays
-                // console.log(result.blocks[0].data.text) // one block in editor js
-                const texts = [ ]
-                for (let i=0; i < Object.keys(result.blocks).length; i++) {
-                    // get each block's text
-                    texts.push(result.blocks[i].data.text)
-                }
-                const onePost = texts.join(" ")
-                console.log(onePost) // combined paragraphs
 
-                // NOT DONE 
-                // save feedbacks to database
-                // fetch('/blog', {
-                //     method: 'POST', 
-                //     body: JSON.stringify({feedbacks}), 
-                //     headers: { 'Content-Type' : 'application/json' }
-                // })
-            }).catch((err ) => console.log(err))
+            if(window.confirm("Save and submit this feedback?")) {
+                editor.save().then((result) => {
+                    // editorjs.blocks : object containing arrays
+                    // console.log(result.blocks[0].data.text) // one block in editor js
+                    const texts = [ ]
+                    for (let i=0; i < Object.keys(result.blocks).length; i++) {
+                        // get each block's text
+                        texts.push(result.blocks[i].data.text)
+                    }
+                    const onePost = texts.join(" ")
+                    console.log(onePost) // combined paragraphs
+    
+                    // save feedbacks to database
+                    fetch('/community', {
+                        method: 'POST', 
+                        body: JSON.stringify({onePost}), 
+                        headers: { 'Content-Type' : 'application/json' }
+                    })
+                    .then((res) => { return res.json })
+                    .then((data) => {
+                        console.log(JSON.stringify(data))
+                    })
+                }).catch((err) => console.log(err))
+
+            }
         }
-    }, [ save, fetchEditor ])
+    }, [ submit, fetchEditor ])
 
   return (
     // form submission should be done in form tag, not button
     <form className="web-editor" onSubmit={(event) => handleSubmit(event)}>
         <h2>Tell Us What You Felt</h2>
-        <button
+        <span
             id='fetchEditorJsButton'
-            onClick={fetchEditorJs}>&#9660;</button>
-        <h3>Use tab key for Heading</h3>
+            onClick={fetchEditorJs}>&#9660;</span>
+        <h3>Use tab key for Toolbox</h3>
         <div id='editorjs'></div>
         <button 
             disabled ={editor ? false : true }
             className="saveButton" 
-            onClick={handleClick}>Save</button>
+            onClick={handleClick}>Exit edit</button>
         <button 
             disabled={save ? false : true }
             className="submitButton" 
