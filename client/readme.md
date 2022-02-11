@@ -17,6 +17,24 @@ Run npm build for optimized production.
 $npm run build
 ```
 
+Check container/apiUrlContainer to change api url from dev to production. 
+
+```ts
+// Production API url
+export const API_PROD = { 
+    artworks : { 
+        baseUrl :"deployed/base/api/url/here" 
+    },
+}
+
+// Dev API url
+export const API_DEV = { 
+    artworks : {
+        baseUrl : `localhost/apis/artworks/` 
+    },
+}
+```
+
 <details>
 <summary>Characteristics</summary>
 
@@ -30,7 +48,8 @@ $npm run build
 
 <summary>Conventions</summary>
 
-## React Components:
+## React 
+### Component
 - default : React/TS Stateless function component + interface props
 
 ```ts
@@ -44,6 +63,10 @@ const App = ( { name } : AppProps) => {
 export default App;
 ```
 
+### Props
+props should be named in a clear way what it is supposed to do. For example, 
+- shouldBeGrid
+- hasButton
 </details>
 
 
