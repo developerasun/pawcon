@@ -1,5 +1,6 @@
-import React, { useEffect } from "react"
+import * as React from 'react';
 
+import { BasicCardDetailsProps } from '../containers/propContatiner'
 // set start/end points 
 interface setting {
     target : number
@@ -23,21 +24,24 @@ const Wrapper = (param : setting) => {
     IncreaseToTarget(param)
 }
 
-// NOT FINISHED : Counter component here
-// export const Counter = <T extends setting>(adjust : T) => {
-//     useEffect(()=>{
-//         const counter = document.getElementById("counter") as HTMLElement
-//         IncreaseToTarget(
-//             {
-//                 target : adjust.target,
-//                 count : adjust.count, 
-//                 speed : adjust.speed, 
-//                 display : adjust.display
-//             })
-//     })
-//     return (
+export const CounterCard = ({ description, image } : BasicCardDetailsProps) => {
+    React.useEffect(()=> {
+        const counters = document.getElementsByClassName("counter") as HTMLCollectionOf<HTMLSpanElement>
+
+        // convert to Array to get HTMLElement(having innerText attribute)
+        const spans = Array.from(counters).map((val)=> {
+            return val
+        })
         
-//         <span id="counter"></span>
-        
-//     )
-// }
+        IncreaseToTarget( { target : 100, count : 0, speed : 30, display: spans[0]}) // user
+        IncreaseToTarget( { target : 200, count : 0, speed : 20, display: spans[1]}) // contributor
+        IncreaseToTarget( { target : 300, count : 0, speed : 10, display: spans[2]}) // github star
+    }, [])
+    return (
+        <div id="counterCard">
+            <img src={image} alt="counter icon" loading='lazy'/>
+            <span className='counter'></span>
+            <p>{description}</p>
+        </div>
+    )
+}
