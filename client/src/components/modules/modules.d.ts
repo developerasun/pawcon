@@ -3,7 +3,7 @@
 declare module '@editorjs/header' {
     import { BlockTool } from '@editorjs/editorjs'
 
-    export default class EditorJSHeader implements BlockTool {
+    export default class Header implements BlockTool {
         save(block: HTMLElement);
         render(): HTMLElement;
     }

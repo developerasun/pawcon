@@ -46,11 +46,6 @@ userSchema.statics.checkPassword = async function( email, password ) {
     }
 }
 
-// post hook : status checking 
-userSchema.post('save', function() {
-    
-})
-
 const PawConUser = mongoose.model('PawConUser', userSchema)
 
 module.exports = PawConUser 

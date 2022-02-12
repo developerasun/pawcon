@@ -5,6 +5,8 @@ import { GalleryCards } from './galleryCards'
 import { ImgBanner } from '../subComponents/banner'
 import { IMG_BANNER } from '../containers/imgContainer'
 import { ArtworkList } from '../apis/useFetch'
+import { API_DEV } from '../containers/apiUrlContainer'
+
 
 // Set initial state for useState/Typescript
 const defaultProps :ArtworkList = []
@@ -15,7 +17,7 @@ export function Gallery () {
 
   React.useEffect(()=> {    
     // fetching data with dynamic route(decided in server side)
-    const data = fetch(`/apis/artworks/${page}`)
+    const data = fetch(API_DEV.artworks.baseUrl + `${page}`)
     data.then((res)=>res.json())
         .then((result)=> {
           console.log(result)
@@ -40,6 +42,7 @@ export function Gallery () {
           { !data && <p>No gallery items for now..</p>}
           { data && Array.from(data).map((item)=>{
                 return <GalleryCards 
+                        hasButton={false}
                         key={uuidV4()}
                         title={item.title}
                         description={item.details.identity.description}

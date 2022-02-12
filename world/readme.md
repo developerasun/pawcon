@@ -1,10 +1,14 @@
 # PawCon World
-Main teck stack for PawCon world side is Unity with C#. 
+Teck requirements for PawCon world is as follows : 
+
+- Unity
+- C#
+- Web3.cs 
+- Chainsafe SDK(ver 1.2.2) 
 
 <details>
 <summary>Depedency</summary>
 
-- Chainsafe SDK ver 1.2.2 
 - content here 
 - content here 
 - content here 

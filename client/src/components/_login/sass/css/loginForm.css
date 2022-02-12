@@ -21,7 +21,7 @@
 
 .loginForm {
   gap: 0.5rem;
-  background-color: #418794;
+  background-color: #16b1d4;
 }
 
 .loginForm .loginBtn {
@@ -54,13 +54,4 @@
 
 .oAuthContainer .oAuths #githubLogo {
   background-color: white;
-}
-
-@media screen and (min-width: 1024px) {
-  .loginComponent {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
 }

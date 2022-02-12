@@ -1,9 +1,26 @@
+/*
+       /$$                               /$$                                                                               
+      | $$                              | $$                                                                               
+  /$$$$$$$  /$$$$$$  /$$    /$$ /$$$$$$ | $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$ /$$   /$$ /$$$$$$$ 
+ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$| $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$|____  $$ /$$_____/| $$  | $$| $$__  $$
+| $$  | $$| $$$$$$$$ \  $$/$$/| $$$$$$$$| $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \__/ /$$$$$$$|  $$$$$$ | $$  | $$| $$  \ $$
+| $$  | $$| $$_____/  \  $$$/ | $$_____/| $$| $$  | $$| $$  | $$| $$_____/| $$      /$$__  $$ \____  $$| $$  | $$| $$  | $$
+|  $$$$$$$|  $$$$$$$   \  $/  |  $$$$$$$| $$|  $$$$$$/| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$ /$$$$$$$/|  $$$$$$/| $$  | $$
+ \_______/ \_______/    \_/    \_______/|__/ \______/ | $$____/  \_______/|__/      \_______/|_______/  \______/ |__/  |__/
+                                                      | $$                                                                 
+                                                      | $$                                                                 
+                                                      |__/                                                                 
+*/
+
 // Express app setting
 const express = require('express')
 const app = express()
+const http = require('http')
+const { Server } = require('socket.io')
+const io = new Server(http.createServer(app))
 const path = require('path') // don't use slash since it is platform-dependent.
 const config = require('./config/config')
-const router = require('./router/route')
+const rootRouter = require('./router/rootRouter')
 const cors = require('cors')
 const corsOptions = {
         origin: 'localhost',
@@ -19,8 +36,8 @@ const mongoose = require('mongoose')
 // Router and middleware
 const loginRouter = require('./router/loginRouter')
 const apiRouter = require('./router/apiRouter')
+const feedbackRouter = require('./router/feedbackRouter')
 const { checkAuth } = require('./middlewares/checkAuth')
-const { checkUser } = require('./middlewares/checkUser')
 
 // Connect mongoDB 
 mongoose.connect( config.MONGO_URI, {})
@@ -31,34 +48,38 @@ mongoose.connect( config.MONGO_URI, {})
         })
         .catch((err)=>{ console.log(err)} )
 
-// setting middlewares
-app.use((req, res, next)=> { // request loggers
-        console.group('<<<<< logging requests >>>>>')
-        console.log(
-                `method : ${req.method},
-                url : ${req.url}, 
-                host name : ${req.hostname}
-                path : ${req.path}`)
-        console.groupEnd()
-        next()
-})
-
 app.use(express.json()) // parsing request url
 app.use(cors(corsOptions)) // cross origin resource sharing
-app.use(router) // routing handlers
-app.use('/apis', apiRouter)
-app.use(loginRouter)
-app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files
+app.use(rootRouter) // combine multiple routers
+app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files, socket io connected here
 app.use(cookieParser()) // setting cookie with JWT
+
 
 // protect shop/checkout router with checkAuth
 app.get('/shop/checkout', checkAuth, (req, res) => {
         res.json( { message : "auth checking works! "})
 })
 
+
+// ===================== socket io ===================== // 
+io.on('connection', (socket) => {
+        console.log("a user connected", socket.id)
+
+        socket.on('chat', (data) => {
+                io.sockets.emit('chat', data)
+                console.log(data.userName, data.message)
+        })
+        socket.on('disconnect', ()=> console.log("disconnected"))
+})
+
+// ===================== socket io ===================== // 
+
+
+// ===================== page404(server) ===================== // 
 // if client routing is used in React, any requests off the client routes
 // will be redirected to index.html by server
 // logic : user sends unmeaningful url request => server sends index.html => react router redirects page 404
 app.get('/*', (req, res)=> {
         res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
 })
+// ===================== page404(server) ===================== // 

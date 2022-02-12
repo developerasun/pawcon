@@ -1,9 +1,33 @@
+@import '../../partials/variable';
+
 .visible {
     display: 1;
 }
 
 .hidden { 
     display: none;
+}
+
+.pagination {
+    display : flex ;
+    flex-flow : row nowrap ;
+    gap: 1rem;
+    padding : 1rem;
+    font-size:1.5rem ;
+    button { 
+        font-size : 1.5rem; 
+        padding:0 0.2rem;
+    }
+}
+
+.web-editor { 
+    width: 75%;
+    margin: 0 auto;
+
+    #editorjs { 
+        background-color: $subBgColor;
+        height: fit-content;
+    }
 }
 
 // hide unknown second editor js(bug fix) 

@@ -5,19 +5,14 @@ import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721En
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "./constant/Container.sol";
 
-/// @dev adding lifecycle to token(e.g : halving mintable supply)
-struct lifecycle { 
-    uint256 birth;
-    uint256 halfLife;
-}
-
 // add natspac to contract
 /// @title A title that should describe the contract/interface
 /// @author The name of the author
 /// @notice Explain to an end user what this does
 /// @dev Explain to a developer any extra details
 contract NFT is ERC721Enumerable, Ownable { 
-    
+    using Strings for uint256; 
+
     uint256 price = 0.03 ether; 
     uint256 totalSupply = 1000;
     uint256 mintableSupply = 1000;
@@ -54,7 +49,7 @@ contract NFT is ERC721Enumerable, Ownable {
     PawSibleToken[] public PawSibleTokenList;
 
     // ERC721 inheritance
-    constructor() ERC721("PawCon NFT", "ASUN") {}
+    constructor() ERC721("Curious Pawoneer", "CP") {}
     
     // read token
     function getPawSibleToken(uint256 _index) public view returns(PawSibleToken memory){

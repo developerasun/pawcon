@@ -1,3 +1,17 @@
+/*
+       /$$                               /$$                                                                               
+      | $$                              | $$                                                                               
+  /$$$$$$$  /$$$$$$  /$$    /$$ /$$$$$$ | $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$ /$$   /$$ /$$$$$$$ 
+ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$| $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$|____  $$ /$$_____/| $$  | $$| $$__  $$
+| $$  | $$| $$$$$$$$ \  $$/$$/| $$$$$$$$| $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \__/ /$$$$$$$|  $$$$$$ | $$  | $$| $$  \ $$
+| $$  | $$| $$_____/  \  $$$/ | $$_____/| $$| $$  | $$| $$  | $$| $$_____/| $$      /$$__  $$ \____  $$| $$  | $$| $$  | $$
+|  $$$$$$$|  $$$$$$$   \  $/  |  $$$$$$$| $$|  $$$$$$/| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$ /$$$$$$$/|  $$$$$$/| $$  | $$
+ \_______/ \_______/    \_/    \_______/|__/ \______/ | $$____/  \_______/|__/      \_______/|_______/  \______/ |__/  |__/
+                                                      | $$                                                                 
+                                                      | $$                                                                 
+                                                      |__/                                                                 
+*/
+
 import React from 'react';
 import './App.css'
 // React router v6
@@ -23,6 +37,7 @@ function App() {
   return (
     // react-redux store
     <Provider store={store}>
+      {/* context api */}
       {/* react-router */}
       <BrowserRouter>
         <Navbar />
@@ -31,9 +46,8 @@ function App() {
             <Route path='/about' element={<About />}/>
             <Route path='/community' element={<Community />}/>
             <Route path='/create' element={<Create />}/>
-
             <Route path='/gallery' element={<Gallery />} />
-
+  
             { /* Add <Outlet /> component in root route component <Details> 
             to render child component <RenderDetails>*/ }
             <Route path='/details' element={<Details />}>
@@ -47,6 +61,7 @@ function App() {
           </Routes>
         <Footer/>
       </BrowserRouter>
+
     </Provider>
   );
 }

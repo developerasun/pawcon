@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { $CombinedState } from 'redux';
-import { ProfileProps } from '../containers/propContatiner';
 import { useAppSelector } from '../containers/redux/store.hooks';
 
 export function Profile () {
