@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { Chat } from './chat';
 import { Feedback } from './feedback';
 import './sass/css/community.css';
 
 interface MenuTabsProps {
-  // MenuTabs props : a component or Array of components 
-  component : React.ComponentProps<React.ComponentType> | React.ComponentProps<React.ComponentType>[]
+  // MenuTabs props : an array of components 
+  components : React.ComponentProps<React.ComponentType>[]
 }
 
 // import this where needed
-export const MenuTabs = ( { component } : MenuTabsProps ) => {
+export const MenuTabs = ( { components } : MenuTabsProps ) => {
   const [tabId, setTabId] = React.useState("tabA")
   const handleClick = (event : React.MouseEvent) => {
     setTabId(event.currentTarget.className)
@@ -22,33 +23,35 @@ export const MenuTabs = ( { component } : MenuTabsProps ) => {
       if (content.id === tabId) { 
         content.classList.remove("hidden")
         content.classList.add("visible")
-      } })
+      } 
+      return "" })
     }, [tabId])
 
   return (
-    <div>
-      <span>create switchable tabs based on click</span>
-
-      <table style={{"border" : "1px solid white", "borderCollapse" : "collapse"}}>
+    <div id='tabContainer'>
+      <table id='tabTable'>
         <thead>
           <tr>
             {/* onClick : dispatch(clickTab()) here */}
-            <th className='tabA' onClick={(event) => handleClick(event)}>Tab A</th>
-            <th className='tabB' onClick={(event) => handleClick(event)}>Tab B</th>
-            <th className='tabC' onClick={(event) => handleClick(event)}>Tab C</th>
+            <th className='tabA' onClick={(event) => handleClick(event)}>Feedback</th>
+            <th className='tabB' onClick={(event) => handleClick(event)}>Chat</th>
+            <th className='tabC' onClick={(event) => handleClick(event)}>Blog</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td id='tabA' className={`tabContent hidden`} style={{"backgroundColor" : "pink"}} >
-              { component }
+            <td id='tabA' className={`tabContent hidden`} >
+            { components[0] }
             </td>
-            <td id='tabB' className={ `tabContent hidden` } style={{"backgroundColor" : "lightblue"}}>ss</td>
-            <td id='tabC' className={ `tabContent hidden` } style={{"backgroundColor" : "tomato"}}>ff</td>
+            <td id='tabB' className={ `tabContent hidden` } >
+            { components[1] }
+            </td>
+            <td id='tabC' className={ `tabContent hidden` }>
+            { components[2] }
+            </td>
           </tr>
         </tbody>
       </table>
-
     </div>
   )
 }
@@ -59,45 +62,52 @@ const Dummy = () => {
 const Dummy2 = () => {
   return <>cool dummy</>
 }
-const Dummy3 = () => {
-  return <>hot dummy</>
-}
 
 export function Community () {
+  const [page, setPage] = React.useState(1)
+  
+  React.useEffect(() => {
+
+  }, [ ])
+
   return (
     <div>
-      
       <h1>community route</h1>
-      {/* component args : 1) blog 2) chat 3) feedback */}
-      <MenuTabs component={<Dummy />}/>
+      {/* component args : 1) feedback 2) chat 3) blog  */}
+      <MenuTabs components={[<Feedback />, <Dummy />, <Dummy2 />]}/>
 
-
-      editor js here
-      <Feedback />
-
-    <div className="notice">
-        <h2 className="title">See Reviews Here</h2>
-        <div className="searchBox">Search bar here</div>
-        <table className="table">
-            <thead>
-                <tr>
-                    <td>Number</td>
-                    <td>Title</td>
-                    <td>UserId</td>
-                    <td>Posted</td>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-        
-        <div className="pagination">Pagination here</div>
-        <div className="buttons">
-            <button className="getBtn">Get JSON API</button>
-            <button className="saveBtn">Save JSON</button>
+      <div className="notice">
+          <h2 className="title">See Reviews Here</h2>
+          <div className="searchBox">Search bar here</div>
+          <table className="table">
+              <thead>
+                  <tr>
+                      <td>Number</td>
+                      <td>Title</td>
+                      <td>UserId</td>
+                      <td>Posted</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  
+              </tbody>
+          </table>
+          
+          <div 
+          className="pagination">
+          <button 
+          // fix the hardcoded page later with react-query
+          disabled={page<=1}
+          onClick={()=>setPage(Math.max(page - 1, 1))}>&#8249;</button>
+          <p>{page}</p>
+          <button
+          // fix the hardcoded page later with react-query
+          disabled={page>=3}
+          onClick={()=>setPage(page + 1)}>&#8250;</button>
         </div>
-    </div>
+      </div>
+
+      <Chat />
     </div>
   );
 }
