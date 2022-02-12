@@ -1,4 +1,4 @@
-# Pawoneer Engine
+# PawClaw Engine
 Pawoneer is **one click art generator engine** for NFT creators. The engine is **folked from HashLips art engine** and tuned it more for PawCon. Note that Pawoneer is under **Apache 2.0** license while HashLip art engine is under **MIT**. 
 
 - [HashLips - hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)

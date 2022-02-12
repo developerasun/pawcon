@@ -5,7 +5,9 @@ export function Create () {
   return (
     <div>
       <h1>create page</h1>
-      <MenuTabs />
+
+      {/* MenuTabs take componenet as props */}
+      {/* <MenuTabs /> */}
     </div>
   );
 }

@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
+/// @dev adding lifecycle to token(e.g : halving mintable supply)
+struct lifecycle { 
+    uint256 birth;
+    uint256 halfLife;
+}
+
 enum Rarity { 
     QUARTER_LOAF,
     HALF_LOAF,

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import  { io }  from 'socket.io-client';
 
-const socket = io()
-
 // NOT TESTED
 export function Chat () {
   const [submit, setSubmit] = React.useState(false)
@@ -13,6 +11,8 @@ export function Chat () {
   }
 
   React.useEffect(() => {
+    
+    const socket = io()
     if (submit) {
       const message = document.getElementById('message') as HTMLInputElement
       const userName = document.getElementById('userName') as HTMLInputElement
@@ -27,7 +27,6 @@ export function Chat () {
         setSubmit(false) // reinitialize form submission check value
       }
     }
-
   }, [ submit ])
   
   return (

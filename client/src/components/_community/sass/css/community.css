@@ -6,6 +6,36 @@
   display: none;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.pagination button {
+  font-size: 1.5rem;
+  padding: 0 0.2rem;
+}
+
+.web-editor {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.web-editor #editorjs {
+  background-color: #575757;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .codex-editor:nth-child(2) {
   display: none;
 }

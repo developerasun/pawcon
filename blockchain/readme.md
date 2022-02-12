@@ -1,21 +1,45 @@
 # PawCon Blockchain
-Main teck stack for PawCon blockchain is Solidity and Remix. 
+Teck requirements for PawCon blockchain is as follows : 
 
-<details>
-<summary>Depedency</summary>
-
-- content here
-- content here
-- content here
-
-</details>
+- Solidity
+- Remix
+- Truffle
+- Web3.js 
 
 <details>
 <summary>Characteristics</summary>
 
-- content here
-- content here
-- content here
+- constants are managed under constant directory
+- contracts secured with openzeppelin extensions
+- contracts verified in Etherscan(testnet)
+- tips and tricks to lower gas fee : (list here)
+</details>
+
+<details>
+<summary>Implementation</summary>
+
+<ul>
+    <li> Basics
+        <ul>
+            <li>Sending/Receiving Ether</li>
+            <li>Whitelist</li>
+            <li>Reveal</li>
+            <li>Presale for whitelist</li>
+        </ul>
+    </li>
+    <li> Further
+        <ul>
+            <li>Payment split </li>
+            <li>Ticketing</li>
+            <li>Voting </li>
+            <li>Royalty</li>
+            <li>Dynamic price</li>
+            <li>Dynamic minting</li>
+            <li>Free minting</li>
+            <li>First come first mint</li>
+        </ul>
+    </li>
+</ul>
 
 </details>
 
@@ -24,7 +48,6 @@ Main teck stack for PawCon blockchain is Solidity and Remix.
 - content here
 - content here
 - content here
-
 </details>
 
 

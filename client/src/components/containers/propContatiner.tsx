@@ -5,6 +5,9 @@ export type BasicCardDetailsProps = {
     title? : string
     description : string | string[]
     image : string
+    hasButton : boolean
+    buttonText? : string
+    buttonUrl? : string
 }
 
 export type GalleryCardsProps = {
@@ -21,6 +24,6 @@ export type DropDownProps = {
 }
 
 export interface IButtonProps {
-    btnText : string
+    btnText? : string
     url? : string
 }

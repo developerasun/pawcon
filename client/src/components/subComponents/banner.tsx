@@ -59,9 +59,7 @@ export function VideoBanner( { buttonText, linkTo, title } :VideoBannerProps) {
       <span>{title}</span><br/>
       video here <br/>
       {buttonText && linkTo && 
-        <Link to={linkTo}>
-          <Button btnText={buttonText}/>
-        </Link>}
+        <Button btnText={buttonText} url={linkTo}/> }
     </div>
   )
 }

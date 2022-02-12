@@ -5,8 +5,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "PawCon";
+const description = "PawCon engine test";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -26,13 +26,17 @@ const layerConfigurations = [
   {
     growEditionSizeTo: 5,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "background", opacity : 0.5 },
+      { name: "edge" },
+      { name: "paw" , blend : MODE.hue },
+    ],
+  },
+  {
+    growEditionSizeTo: 10,
+    layersOrder: [
+      { name: "background", opacity : 0.5 },
+      { name: "edge" },
+      { name: "paw", blend : MODE.brightness },
     ],
   },
 ];
@@ -68,7 +72,7 @@ const text = {
 };
 
 const pixelFormat = {
-  ratio: 2 / 128,
+  ratio: 16 / 128,
 };
 
 const background = {

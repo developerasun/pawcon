@@ -1,6 +1,6 @@
 import { initialLoginState, initialCartItemState } from "./initialStates"
 import { DECREASE_QTY, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
-import { LoginActionPayload, CartActionPayload  } from "./actionCreators"
+import { LoginActionPayload, CartActionPayload } from "./actionCreators"
 
 export const loginReducer = ( state = initialLoginState, action : LoginActionPayload ) => { 
     switch (action.type) { 
@@ -41,4 +41,3 @@ export const cartReducer = ( state = initialCartItemState, action : CartActionPa
             return state
     }
 }
-

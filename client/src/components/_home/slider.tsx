@@ -30,20 +30,20 @@ const reducer = (state : SliderPageState, action : SliderButtonAction) => {
 
 // image slider here
 export function Slider (props:  SliderProps) {
-  const [page, setPage] = React.useState<number>(1)
+  const [page, setPage] = React.useState(1)
   // const [ state, dispatch ] = React.useReducer(reducer, initialState)
 
   return (
     <div className='slider'>
       {/* img slider here */}
-      <div className="imgContainer">
+      <div className="images">
         <img src="" alt="" />
         <img src="" alt="" />
         <img src="" alt="" />
       </div>
-      <div className="sliderButtonContainer">
-        <button className='sliderBtn left'  >&#8249;</button>
-        <button className='sliderBtn right' >&#8250;</button>
+      <div className="buttons">
+        <button className='left'  >&#8249;</button>
+        <button className='right' >&#8250;</button>
       </div>
     </div>
   );

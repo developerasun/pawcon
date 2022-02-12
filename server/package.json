@@ -1,7 +1,7 @@
 {
   "name": "pawcon-server",
   "author": "Jake Sung",
-  "version": "1.1.0",
+  "version": "0.1.1",
   "description": "One click NFT generation service",
   "main": "app.js",
   "directories": {
@@ -23,6 +23,7 @@
     "netlify-cli": "^8.8.1",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "socket.io": "^4.4.1"
   }
 }

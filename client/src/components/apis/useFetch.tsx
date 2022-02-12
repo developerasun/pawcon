@@ -8,7 +8,6 @@ type image = {
   url : string
 }
 type identity = {
-  id : string,
   title : string, 
   description : string,
   author : string,

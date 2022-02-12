@@ -73,8 +73,8 @@ export function CartList () {
             <label htmlFor="terms">
               <input type="checkbox" name="terms" id="terms" /> I agree to Terms & Conditions
             </label>
+            <button type="submit" onClick={()=>console.log()}>CHECKOUT</button>
             <Button btnText='CHECKOUT' />
-            <Button btnText='Paypal'/>
         </div>
       </div>
 

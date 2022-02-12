@@ -1,3 +1,4 @@
+// use this module when lost _metadata.json for some reason
 const fs = require("fs");
 const path = require("path");
 const { createCanvas, loadImage } = require("canvas");

@@ -8,7 +8,7 @@ const middlewares = [thunk, logger]
 
 const rootReducer = Redux.combineReducers({
     login : loginReducer, 
-    cart : cartReducer
+    cart : cartReducer, 
 }) 
 
 export const store = createStore(rootReducer, Redux.applyMiddleware(...middlewares))

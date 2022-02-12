@@ -1,6 +1,6 @@
 {
   "name": "pawoneer-engine",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "develop art generator engine for pawcon",
   "main": "index.js",
   "bin": "index.js",

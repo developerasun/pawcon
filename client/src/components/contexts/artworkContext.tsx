@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { artworkContext } from '../containers/contextContainer'
 
-
 export const ArtworkContext = React.createContext(artworkContext)
 
 export interface  ArtworkContextProviderProps {

@@ -4,6 +4,9 @@ build
 # memo 
 reminder.md
 
+# Web3 keys
+web3Container.tsx
+
 # Logs
 logs
 *.log

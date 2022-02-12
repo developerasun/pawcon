@@ -2,6 +2,7 @@ node_modules
 reminder.md
 .env
 config
+playground
 
 # Logs
 logs
