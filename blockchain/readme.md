@@ -5,6 +5,7 @@ Teck requirements for PawCon blockchain is as follows :
 - Remix
 - Truffle
 - Web3.js 
+- openzeppelin
 
 <details>
 <summary>Characteristics</summary>
@@ -18,29 +19,18 @@ Teck requirements for PawCon blockchain is as follows :
 <details>
 <summary>Implementation</summary>
 
-<ul>
-    <li> Basics
-        <ul>
-            <li>Sending/Receiving Ether</li>
-            <li>Whitelist</li>
-            <li>Reveal</li>
-            <li>Presale for whitelist</li>
-        </ul>
-    </li>
-    <li> Further
-        <ul>
-            <li>Payment split </li>
-            <li>Ticketing</li>
-            <li>Voting </li>
-            <li>Royalty</li>
-            <li>Dynamic price</li>
-            <li>Dynamic minting</li>
-            <li>Free minting</li>
-            <li>First come first mint</li>
-        </ul>
-    </li>
-</ul>
+## Token
+- ERC20 Churu
+- ERC721 Curious Pawoneer
 
+## Contract
+- Report
+- Certificate
+- Reveal
+- Presale(Free minting)
+- Ticketing
+- Dynamic cost
+- Dynamic mint
 </details>
 
 <summary>Conventions</summary>
