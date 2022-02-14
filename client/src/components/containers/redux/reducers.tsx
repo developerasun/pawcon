@@ -1,5 +1,5 @@
-import { initialLoginState, initialCartItemState } from "./initialStates"
-import { DECREASE_QTY, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
+import { initialLoginState, initialCartItemState, initialCartItemStateProps } from "./initialStates"
+import { ADD_TO_CART, DECREASE_QTY, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
 import { LoginActionPayload, CartActionPayload } from "./actionCreators"
 
 export const loginReducer = ( state = initialLoginState, action : LoginActionPayload ) => { 
@@ -22,6 +22,7 @@ export const loginReducer = ( state = initialLoginState, action : LoginActionPay
 
 export const cartReducer = ( state = initialCartItemState, action : CartActionPayload ) => {
     switch (action.type) {
+        // quantity control
         case INCREASE_QTY : 
             const increasedState = state.map((item) => {
                 if (item.id === action.payload){ item.quantity += 1 }
@@ -34,6 +35,21 @@ export const cartReducer = ( state = initialCartItemState, action : CartActionPa
                 return item 
             })
             return decreasedState
+
+        // NOT TESTED : add/remove items
+        case ADD_TO_CART : 
+            const newlyAdded :initialCartItemStateProps = { 
+                image : action.payload.image, 
+                price : action.payload.price, 
+                quantity : action.payload.quantity, 
+                id : action.payload.id
+            }
+            return [
+                ...state, 
+                newlyAdded
+            ]
+        
+        // NOT DONE : add/remove items
         case REMOVE_FROM_CART : 
             return state
         // should return initial state for default case
