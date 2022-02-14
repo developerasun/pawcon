@@ -16,7 +16,7 @@ export interface initialCartItemStateProps {
     image : string
     price : number
     quantity : number
-    id : string | number
+    id : string
 }
 
 export const initialCartItemState : initialCartItemStateProps[] = [
