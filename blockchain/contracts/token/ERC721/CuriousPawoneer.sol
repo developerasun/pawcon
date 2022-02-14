@@ -19,34 +19,44 @@ import "../../../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../../../node_modules/@openzeppelin/contracts/security/Pausable.sol";
 import "../../../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "../../constant/Container.sol";
 import "../ERC20/Churu.sol";
+import "../../constant/Container.sol";
 
 contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     // import libraries
     using Strings for uint256; 
     using Counters for Counters.Counter;
 
-    Churu public churu;
-
-    // initialize ERC721 and ERC20
-    constructor(address _address)ERC721("Curious Pawoneer", "CP"){ 
-        churu = Churu(_address);
+    // 0, 1, 2, 3, 4
+    enum Rarity { 
+        COMMON,
+        RARE,
+        EPIC, 
+        LEGENDARY
     }
 
     /// @dev set token detail
-    uint256 cost = 0.03 ether;
-    uint256 freeMintingPerWhitelist = 10;
-    uint256 mintPerAccount = 3;
-    uint256 totalSupply = 1000; // adjust amount later
-    uint256 requiredChuru = 100; // hold 100 churu to min curious pawoneer
+    bytes32 public constant creator = "Jake Sung"; 
+    uint256 public cost = 0.03 ether;
+    uint256 public giveaway = 10;
+    uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
+    uint256 public totalSupply = 1000; // adjust amount later
+    uint256 nonce; // for random number
+    Rarity public rarity = Rarity.COMMON;
+    mapping(address=>bool) public whiltelist; // set whitelist
+    mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
+
     Counters.Counter mintCount;
+    Churu public churu;
 
-    // set whitelist
-    mapping(address=>bool) public whiltelist;
-
+    // initialize ERC721 and ERC20
+    constructor(address _churu, uint256 _nonce)ERC721("Curious Pawoneer", "CP"){ 
+        churu = Churu(_churu);
+        nonce = _nonce; // nonce added when deployed
+    }
+    
     /// @dev set dynamic cost based on total supply
-    function setCost() public onlyOwner {
+    modifier setCost() {
         if (mintCount.current() < 300) { 
             cost = 0.03 ether;
         }
@@ -59,31 +69,31 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         if (mintCount.current() >= 700) {
             cost *= 2;
         }
+        _;
     }
+    
 
+    // ======================== Minting zone : NOT TESTED ================== // 
     // set minting condition
-    function mint(address to, uint256 tokenId, uint256 amount) public payable whenNotPaused { 
+    function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
         // minting requires to have 100 churu
         require(churu.getChuruAmount(to) > requiredChuru, "You have to have more than 100 Churu");
-
+        
         // non-whitelist mint costs 0.03 ether
         if (!whiltelist[to]) {
             require(msg.value > cost, "Enter a proper ether amount."); 
-            require(amount < mintPerAccount, "Can mint up to 3.");
             // choose _safeMint over _mint whenever possible
             // (recommended practice by openzeppelin)
             _safeMint(to, tokenId);
-            mintCount.increment();
-            setCost();
-        }
-
-        // whitelist mint free up to 10
-        if (whiltelist[to]) {
-            require(amount < freeMintingPerWhitelist, "Can mint up to 10.");
+            tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
+        } else { 
+            // whitelist mint giveway up to 10
+            require(giveaway > 0, "Giveaway out of stock");
             _safeMint(to, tokenId);
-            mintCount.increment();
-            setCost();
+            tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
+            giveaway--;
         }
+        mintCount.increment();
     }
 
     // set burning condition
@@ -91,21 +101,39 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         _burn(tokenId); // delete nft
     }
 
+    // set random rarity
+    function getRandomNumber() internal returns(uint256) { 
+        uint256 rand = uint256(keccak256(abi.encodePacked(
+            nonce, block.difficulty, msg.sender
+        ))) % 4; // Rarity ranges from 0 ~ 3
+        nonce++; // increase nonce
+        return rand;
+    }
+
+    function resetRarity(uint256 tokenId) public payable returns(uint256) {
+        require(msg.value > cost, "Reset rarity cost 0.03 ether");
+        uint256 rand = getRandomNumber();
+        tokenRarity[tokenId] = rand;
+        return rand;
+    }
+    // ======================== Minting zone ================== // 
+    
+
+
 
     // ======================== Finance zone ================== // 
     // withdraw ether. Ownable.sol sets owner as one deploying contract by default(can be changed)
     function withdraw() public payable onlyOwner nonReentrant {
-        (bool isSent, ) = payable(msg.sender).call{ value : address(this).balance }("");
+        (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
         require(isSent);
     }
-
-    
-
     // ======================== Finance zone ================== // 
     
+
+
+
     // ======================== Change zone ================== // 
     // tokenURI : url where json file is hosted
-    
     // overriding _baseURI from ERC721 
     function _baseURI() internal view virtual override returns (string memory) {
         return "testing";
@@ -115,6 +143,5 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         // concat base URI and token URI 
         return abi.encodePacked("some http url", _baseURI()); 
     }
-
     // ======================== Change zone ================== // 
 }
