@@ -21,32 +21,27 @@ export const loginReducer = ( state = initialLoginState, action : LoginActionPay
 }
 
 export const cartReducer = ( state = initialCartItemState, action : CartActionPayload ) => {
+    // tip : deliver action.payload consistently in reducer logic
+    // varies actual payload value in each component
     switch (action.type) {
         // quantity control
         case INCREASE_QTY : 
             const increasedState = state.map((item) => {
-                if (item.id === action.payload){ item.quantity += 1 }
+                if (item.title === action.payload){ item.quantity += 1 }
                 return item
             })
             return increasedState
         case DECREASE_QTY : 
             const decreasedState = state.map((item) => {
-                if (item.id === action.payload && item.quantity > 0) { item.quantity -= 1}
+                if (item.title === action.payload && item.quantity > 0) { item.quantity -= 1}
                 return item 
             })
             return decreasedState
 
-        // NOT TESTED : add/remove items
         case ADD_TO_CART : 
-            const newlyAdded :initialCartItemStateProps = { 
-                image : action.payload.image, 
-                price : action.payload.price, 
-                quantity : action.payload.quantity, 
-                id : action.payload.id
-            }
             return [
                 ...state, 
-                newlyAdded
+                action.payload
             ]
         
         // NOT DONE : add/remove items
