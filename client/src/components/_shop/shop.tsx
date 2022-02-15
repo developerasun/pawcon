@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { CartForm } from './cartForm';
-import { CartList } from './cartList';
+import { CartForm } from './cart/cartForm';
+import { Payment } from './payment/payment';
 
 export function Shop () {
   return (
@@ -16,6 +16,7 @@ export function Shop () {
         5. when payment clicks, web3 metamask pops up
       */}
       <CartForm />
+      <Payment />
     </div>
   );
 }
