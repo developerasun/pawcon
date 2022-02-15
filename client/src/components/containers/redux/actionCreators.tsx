@@ -27,7 +27,7 @@ export const logout = () => {
 }
 
 // action type setting for cart reducer
-export type CartActionPayload = CartFormActionPayload & CartListActionPayload
+export type CartActionPayload = CartFormActionPayload | CartListActionPayload
 type CartFormActionPayload = ReturnType<typeof increaseQuantity>
 type CartListActionPayload = ReturnType<typeof addToCart>
 
