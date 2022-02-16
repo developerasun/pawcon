@@ -20,6 +20,12 @@ const { Server } = require('socket.io')
 const io = new Server(http.createServer(app))
 const path = require('path') // don't use slash since it is platform-dependent.
 const config = require('./config/config')
+
+// passport setting : 1) passport setup(importing passport middleware) 2) passport initalization
+const passportSetup = require('./middlewares/passport')
+const passport = require('passport')
+const session = require('express-session') // save session id
+
 const rootRouter = require('./router/rootRouter')
 const cors = require('cors')
 const corsOptions = {
@@ -34,9 +40,6 @@ const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 
 // Router and middleware
-const loginRouter = require('./router/loginRouter')
-const apiRouter = require('./router/apiRouter')
-const feedbackRouter = require('./router/feedbackRouter')
 const { checkAuth } = require('./middlewares/checkAuth')
 
 // Connect mongoDB 
@@ -54,6 +57,14 @@ app.use(rootRouter) // combine multiple routers
 app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files, socket io connected here
 app.use(cookieParser()) // setting cookie with JWT
 
+// set session for passport oauth login
+app.use(session({
+        resave: false, 
+        saveUninitialized: false,
+        secret : config.AUTH.SESSION.SECRET
+}))
+app.use(passport.initialize()) // passport initalization
+app.use(passport.session())
 
 // protect shop/checkout router with checkAuth
 app.get('/shop/checkout', checkAuth, (req, res) => {
