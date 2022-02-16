@@ -29,7 +29,9 @@ const session = require('express-session') // save session id
 const rootRouter = require('./router/rootRouter')
 const cors = require('cors')
 const corsOptions = {
-        origin: 'localhost',
+        origin: '*', // set Access-Control-Allow-Origin header
+        methods: 'GET, POST, DELETE', // set Access-Control-Allow-Method header
+        preflightContinue: false, // disable initial options for complex cors request(e.g DELETE)
         optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
@@ -40,7 +42,8 @@ const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 
 // Router and middleware
-const { checkAuth } = require('./middlewares/checkAuth')
+const checkAuth = require('./middlewares/checkAuth')
+const setCache = require('./middlewares/cache')
 
 // Connect mongoDB 
 mongoose.connect( config.MONGO_URI, {})
@@ -53,6 +56,7 @@ mongoose.connect( config.MONGO_URI, {})
 
 app.use(express.json()) // parsing request url
 app.use(cors(corsOptions)) // cross origin resource sharing
+app.use(setCache()) // server side cache
 app.use(rootRouter) // combine multiple routers
 app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files, socket io connected here
 app.use(cookieParser()) // setting cookie with JWT
