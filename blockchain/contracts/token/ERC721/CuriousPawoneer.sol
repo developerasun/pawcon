@@ -41,6 +41,7 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
     uint256 public totalSupply = 1000; // adjust amount later
     uint256 nonce; // for random number
+    string baseURI;
     Rarity public rarity = Rarity.COMMON;
     mapping(address=>bool) public whiltelist; // set whitelist
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
@@ -52,6 +53,7 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     constructor(address _churu, uint256 _nonce)ERC721("Curious Pawoneer", "CP"){ 
         churu = Churu(_churu);
         nonce = _nonce; // nonce added when deployed
+        setBaseURI(); // set IPFS URI when deployed
     }
     
     /// @dev set dynamic cost based on total supply
@@ -71,7 +73,6 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         _;
     }
     
-
     // ======================== Minting zone : NOT TESTED ================== // 
     // set minting condition
     function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
@@ -97,6 +98,8 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
 
     // set burning condition
     function burn(uint256 tokenId) public { 
+        // set Legendary rarity can't be deleted
+        require(tokenRarity[tokenId] != 3, "Legendary Pawoneer can't be deleted");
         _burn(tokenId); // delete nft
     }
 
@@ -115,24 +118,16 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         tokenRarity[tokenId] = rand;
         return rand;
     }
-
-
     // ======================== Minting zone ================== // 
     
-
-
-
     // ======================== Finance zone ================== // 
     // withdraw ether. Ownable.sol sets owner as one deploying contract by default(can be changed)
     function withdraw() public payable onlyOwner nonReentrant {
         (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
-        require(isSent);
+        require(isSent, "Only owner.");
     }
     // ======================== Finance zone ================== // 
     
-
-
-
     // ======================== Change zone ================== // 
     // how it works : tokenURI : baseURI + tokenId
     // 1. set _baseURI
@@ -142,13 +137,20 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     // 5. front end displays the token 
     // tokenURI : url where json file is hosted
     // overriding _baseURI from ERC721 
-    function _baseURI() internal view virtual override returns (string memory) {
-        return "testing";
-    }
     
-    function setTokenURI() public view returns(bytes memory){
-        // concat base URI and token URI 
-        return abi.encodePacked("some http url", _baseURI()); 
+    function _baseURI() internal view virtual override returns (string memory) {
+        return "ipfs:someIPFSAddressHere/"; // FIX : change this later
+    }
+
+    /// @dev call setBaseURI in constructor
+    function setBaseURI() internal { 
+        baseURI = _baseURI(); 
+    }
+
+    // front end will invoke this to get tokenURI
+    function getTokenURI(uint256 tokenId) public view returns(string memory){
+        // combine baseURI with tokenId and  returns a string         
+        return tokenURI(tokenId);
     }
     // ======================== Change zone ================== // 
 }
