@@ -7,13 +7,13 @@ import { cookieList } from '../containers/cookieContainer'
 export function Login() {
   const cookie = new Cookies()
   console.log(cookie.get(cookieList.LOGIN)) // undefined if not logged in
-  const loginCookie = cookie.get(cookieList.LOGIN) // use cookie for conditional rendering
-
+  const loginCookie = cookie.get(cookieList.LOGIN) // jwt login
+  const oauthCookie = cookie.get(cookieList.OAUTH) // oauth login
   return (
     <>  
-      {/* if user exists(jwt cookie exists), render Profile component */}
+      {/* if user exists(login with jwt or oauth), render Profile component */}
       {/* if not, render LoginForm component */}
-      {loginCookie!==undefined 
+      {loginCookie!==undefined || oauthCookie !==undefined
                 ? <Profile/> 
                 : <LoginForm />}
     </>
