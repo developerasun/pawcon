@@ -1,13 +1,13 @@
 import * as React from 'react';
+import '../sass/css/cart.css';
 import { CartList } from './cartList';
 import { Product } from '../../containers/propContatiner';
 import { RootState, useAppDispatch, useAppSelector } from '../../containers/redux/store.hooks';
 import { addToCart } from '../../containers/redux/actionCreators';
-import { v4 } from 'uuid';
 
 export function CartForm () {
-  const [cartItems, setCartItems] = React.useState<Product[]>([])
   const [oneItem, setOneItem] = React.useState<Product>({
+    image: '',
     title : '', 
     price : 0, 
     quantity : 0
@@ -17,26 +17,13 @@ export function CartForm () {
   const getCartItems = useAppSelector((state:RootState)=>state.cart)
   const dispatch = useAppDispatch()
 
-
   const handleSubmit = (event : React.FormEvent) => {
     event.preventDefault()
     const form = document.forms[0] as HTMLFormElement
     // add cart item logic here
     const title = form.elements.namedItem('title') as HTMLInputElement // type cast to HTMLInputElement
-    
-    // convert this part to Redux
-    setCartItems(prev => {
-      return [
-        ...prev, 
-        {
-          title : title.value, 
-          price : form.price.value, 
-          quantity : form.quantity.value
-        } 
-      ]
-    })
 
-    // add Redux logic
+    // add cart item with Redux
     dispatch(addToCart({
       image : '',
       title : title.value, 
@@ -46,6 +33,7 @@ export function CartForm () {
 
     // reset form inputs
     setOneItem({
+      image: '',
       title : '', 
       price : 0, 
       quantity : 0
@@ -61,8 +49,8 @@ export function CartForm () {
   }
 
   return (
-    <div >        
-      <form onSubmit={(event) => handleSubmit(event)} className="CartForm">
+    <div id="cartContainer">        
+      <form onSubmit={(event) => handleSubmit(event)} id="cartForm">
         <input 
           type="text" name='title' id='title' 
           value={oneItem.title} required placeholder='Enter title' 
@@ -78,16 +66,10 @@ export function CartForm () {
         <button type='submit'>Add to Cart</button>
       </form>
 
-      {/* method 1 : render cart items by delivering props */}
-      {cartItems.length !== 0
-        ? <CartList cartItems={cartItems}/>
-        : "No item for now"
-      }
-
-      {/* method 2 : render cart items with redux */}
+      {/* render cart items with Redux */}
       {getCartItems.length !== 0 
-        ? getCartItems.map((item) => <p key={v4()}>{item.title}</p>) 
-        : "redux fail"}
+        ? <CartList cartItems={getCartItems}/> 
+        : "No item for now"}
     </div>
   );
 }

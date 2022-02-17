@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { RenderCartItemsProps } from '../../containers/propContatiner'
+import { removeFromCart } from '../../containers/redux/actionCreators';
+import { useAppDispatch } from '../../containers/redux/store.hooks';
 
 export const CartItem = ( {image, price, quantity, title } : RenderCartItemsProps) => {
+    const dispatch = useAppDispatch()
     return (
         <tr id='cartItemTableRow'>
             <td>
@@ -23,8 +26,13 @@ export const CartItem = ( {image, price, quantity, title } : RenderCartItemsProp
             <td>
                 {price * quantity}
             </td>
-            <td>
-                <input type={'checkbox'}  id={title} />
+            <td 
+                // delete cart item with Redux
+                onClick={() => dispatch(removeFromCart(title))}
+                className='deleteButton'
+                style={{"cursor":"pointer", "fontSize" : "1.2rem", "color":"tomato",  "padding" : "0 1.5rem"}}
+                id={title}>
+                &#128465;
             </td>
         </tr>
     )
