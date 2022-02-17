@@ -1,8 +1,7 @@
 # build
 build
-
-# config
-config
+reference
+mnemonic.js
 
 # memo 
 reminder.md
