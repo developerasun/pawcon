@@ -40,23 +40,23 @@ export const addToCart = ( product : initialCartItemStateProps ) => {
 }
 
 // action creators for cart list component
-export const removeFromCart = ( product : initialCartItemStateProps ) => {
+export const removeFromCart = ( title : string ) => {
     return { 
         type : REMOVE_FROM_CART, 
-        payload : product
+        payload : title
     }
 }
 
-export const increaseQuantity = ( id : string ) => {
+export const increaseQuantity = ( title : string ) => {
     return {
         type : INCREASE_QTY, 
-        payload : id
+        payload : title
     }
 }
 
-export const decreaseQuantity = (id : string) => {
+export const decreaseQuantity = (title : string) => {
     return {
         type : DECREASE_QTY,
-        payload : id
+        payload : title
     }
 }
