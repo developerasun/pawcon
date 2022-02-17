@@ -20,7 +20,6 @@ import "../../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../../../node_modules/@openzeppelin/contracts/security/Pausable.sol";
 import "../../../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "../ERC20/Churu.sol";
-import "../../constant/Container.sol";
 
 contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     // import libraries
@@ -116,6 +115,8 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         tokenRarity[tokenId] = rand;
         return rand;
     }
+
+
     // ======================== Minting zone ================== // 
     
 
@@ -133,6 +134,12 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
 
 
     // ======================== Change zone ================== // 
+    // how it works : tokenURI : baseURI + tokenId
+    // 1. set _baseURI
+    // 2. user mint a NFT and the token id is created
+    // 3. set tokenURI by combining _baseURI and tokenId
+    // 4. front end will instantiate a contract and get the token URI
+    // 5. front end displays the token 
     // tokenURI : url where json file is hosted
     // overriding _baseURI from ERC721 
     function _baseURI() internal view virtual override returns (string memory) {
