@@ -1,5 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { initialCartItemStateProps, initialLoginStateProps } from './initialStates';
+import { initialLoginStateProps } from './initialStates';
+import { Product } from '../propContatiner';
 import { store } from './store';
 
 // Define RootState : 1) Login 2) User 3) Product
@@ -7,7 +8,7 @@ import { store } from './store';
 // Method 1 
 export interface RootState  {
     login : initialLoginStateProps
-    cart : initialCartItemStateProps[]
+    cart : Product[]
 }
 
 // method 2
