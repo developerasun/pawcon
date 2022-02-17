@@ -1,3 +1,5 @@
+// upload image files to imgbb.com and get img src url
+
 // Banner images 
 import saluteDev from '../../assets/img/banner/salute-devs.webp'
 import helpCreator from '../../assets/img/banner/help-creators.webp'
@@ -64,9 +66,6 @@ const imgContainer = () => {
       <a href="https://ibb.co/ZzHWBys"><img src="https://i.ibb.co/DfG593X/pawcon-user.png" alt="pawcon-user" /></a>
       <a href="https://ibb.co/mcCvq1Q"><img src="https://i.ibb.co/JsRx70X/pawcon-contributor.png" alt="pawcon-contributor" /></a>
       <a href="https://ibb.co/gMKW7FQ"><img src="https://i.ibb.co/6RCtZJG/pawcon-star.png" alt="pawcon-star" /></a>
-
-
-
       <img src="https://i.ibb.co/0KZhFjp/camera.webp" alt="camera" />
       <img src="https://i.ibb.co/h8vffjZ/cat-running.webp" alt="cat-running" />
       <img src="https://i.ibb.co/GnKjWKK/draw-cat.webp" alt="draw-cat" />

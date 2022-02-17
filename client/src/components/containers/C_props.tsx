@@ -27,8 +27,10 @@ export interface IButtonProps {
     btnText? : string
     url? : string
 }
+
 // cart related props
 export interface Product { 
+    image : string
     title : string
     price : number
     quantity : number

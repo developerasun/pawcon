@@ -1,3 +1,5 @@
+// delete this container
+
 // Artwork images
 import one from '../../assets/img/slider/1.webp'
 import two from '../../assets/img/slider/2.webp'
