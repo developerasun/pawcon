@@ -5,22 +5,20 @@ pragma solidity ^0.8.10;
 /// @author The name of the author
 /// @notice Explain to an end user what this does
 /// @dev Explain to a developer any extra details
-contract ICertificate {
-
-    // restricted function only can be called by DeveloperAsun
-    modifier onlyIssuer() {
-        require(msg.sender == address(this));
-        _;
+interface ICertificate {
+    // A certificate has expiration date
+    enum expiration { 
+        SHORT, 
+        MIDDLE, 
+        LONG
     }
 
-    // issue certificate
-    function issueOne(address _holder) public payable{}
-
-    // NOT DONE : set expiration date to certificate 
-    function setExpiration(uint256 _date) public onlyIssuer {}
-    function getExpiration(uint256 _date) public view returns (uint256){}
-    
-    // extend certificate expiration date from _prev to _to.
-    function extendExpiration(uint256 _prev, uint256 _to) public {}
-    function expiresCert(uint256 _date) internal {}
+    // 1. issue certificate 
+    function issueOne(address _holder) external payable;
+    // 2. expire certificate
+    function expireOne(uint256 _date) external ;
+    // 3. extends certificate expiration date from _prev to _to. requires a fee
+    function extendExpiration(uint256 _prev, uint256 _to) external ;
+    // 4. set expiration
+    function setExpiration(uint256 _date) external ;
 }
