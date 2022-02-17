@@ -1,4 +1,4 @@
-import { v4 } from "uuid"
+import { Product } from "../propContatiner"
 
 // Set login state
 export interface initialLoginStateProps { 
@@ -12,13 +12,4 @@ export const initialLoginState : initialLoginStateProps = {
 }
 
 // Set cart item state
-export interface initialCartItemStateProps {
-    image : string
-    price : number
-    quantity : number
-    title :string
-}
-
-export const initialCartItemState : initialCartItemStateProps[] = [
-    { image : '' , price : 1, quantity : 1, title : '' }
-]
+export const initialCartItemState : Product[] = [ ]
