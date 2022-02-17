@@ -1,11 +1,9 @@
 // set server-side cache 
 const setCache = (req, res, next) => {
-    const cacheTime = 60 * 5 // cache stored for 5 mins
-    // Note that no-cache does not mean "don't cache". 
-    // no-cache allows caches to store a response, 
-    // but requires them to revalidate it before reuse.
-    if (req.method == 'GET') res.set('Cache-control', `no-cache, max-age=${cacheTime}`) 
-    else res.set('Cache-control', 'no-store')
+    // aggressive cache for React index.html
+    const cacheTime = 31536000 // cache stored for 1 years
+    if (req.method === 'GET') res.set('Cache-control', `max-age=${cacheTime}`) 
+    else res.set('Cache-control', 'no-cache')
     next()
 }
 
