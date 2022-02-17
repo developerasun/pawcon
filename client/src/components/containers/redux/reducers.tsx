@@ -1,4 +1,4 @@
-import { initialLoginState, initialCartItemState, initialCartItemStateProps } from "./initialStates"
+import { initialLoginState, initialCartItemState } from "./initialStates"
 import { ADD_TO_CART, DECREASE_QTY, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
 import { LoginActionPayload, CartActionPayload } from "./actionCreators"
 
@@ -27,26 +27,29 @@ export const cartReducer = ( state = initialCartItemState, action : CartActionPa
         // quantity control
         case INCREASE_QTY : 
             const increasedState = state.map((item) => {
-                if (item.title === action.payload){ item.quantity += 1 }
+                if (item.title === action.payload && item.quantity < 999){ 
+                    item.quantity++
+                }
                 return item
             })
             return increasedState
         case DECREASE_QTY : 
             const decreasedState = state.map((item) => {
-                if (item.title === action.payload && item.quantity > 0) { item.quantity -= 1}
+                if (item.title === action.payload && item.quantity > 0) { item.quantity-- }
                 return item 
             })
             return decreasedState
-
+        // item control
         case ADD_TO_CART : 
             return [
                 ...state, 
                 action.payload
             ]
-        
-        // NOT DONE : add/remove items
         case REMOVE_FROM_CART : 
-            return state
+            const remainedCart = state.filter((item) => {
+                return item.title !== action.payload
+            })
+            return remainedCart
         // should return initial state for default case
         default : 
             return state
