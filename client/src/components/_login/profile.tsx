@@ -9,8 +9,12 @@ export function Profile () {
   // Get user email from Redux store
   const username = useAppSelector((state)=>state.login.email)
 
+  // add oauth Redux logic here
+  const oauthUsername = "something"
+
   React.useEffect(()=>{
     if (submit) {
+      // add oauth logout logic at this route(server)
       fetch('/logout') // Delete JWT for logout
 
       alert('logout success')
