@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { initialLoginStateProps } from './initialStates';
-import { Product } from '../propContatiner';
+import { Product } from '../C_props';
 import { store } from './store';
 
 // Define RootState : 1) Login 2) User 3) Product

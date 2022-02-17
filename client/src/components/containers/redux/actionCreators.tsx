@@ -3,7 +3,7 @@ import {
     ADD_TO_CART, REMOVE_FROM_CART,
     INCREASE_QTY, DECREASE_QTY
 } from "./actionTypes"
-import { initialCartItemStateProps } from "./initialStates"
+import { Product } from "../C_props"
 
 // action type setting for login reducer
 // LoginActionPayload will only show duplicated properties
@@ -32,7 +32,7 @@ type CartFormActionPayload = ReturnType<typeof increaseQuantity>
 type CartListActionPayload = ReturnType<typeof addToCart>
 
 // action creators for cart form
-export const addToCart = ( product : initialCartItemStateProps ) => {
+export const addToCart = ( product : Product ) => {
     return { 
         type : ADD_TO_CART,
         payload : product
@@ -54,7 +54,7 @@ export const increaseQuantity = ( title : string ) => {
     }
 }
 
-export const decreaseQuantity = (title : string) => {
+export const decreaseQuantity = ( title : string ) => {
     return {
         type : DECREASE_QTY,
         payload : title

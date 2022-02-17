@@ -1,4 +1,4 @@
-import { Product } from "../propContatiner"
+import { Product } from "../C_props"
 
 // Set login state
 export interface initialLoginStateProps { 
