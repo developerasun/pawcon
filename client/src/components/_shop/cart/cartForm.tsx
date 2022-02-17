@@ -56,11 +56,11 @@ export function CartForm () {
           value={oneItem.title} required placeholder='Enter title' 
           onChange={handleChange} />
         <input 
-          type="number" name='price' id='price' 
+          type="number" name='price' id='price' min={'1'}
           value={oneItem.price} required placeholder='Enter price' 
           onChange={handleChange} />
         <input 
-          type="number" name='quantity' id='quantity' 
+          type="number" name='quantity' id='quantity' min={'1'}
           value={oneItem.quantity} required placeholder='Enter quantity' 
           onChange={handleChange} />
         <button type='submit'>Add to Cart</button>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RenderCartItemsProps } from '../../containers/propContatiner'
-import { removeFromCart } from '../../containers/redux/actionCreators';
+import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../containers/redux/actionCreators';
 import { useAppDispatch } from '../../containers/redux/store.hooks';
 
 export const CartItem = ( {image, price, quantity, title } : RenderCartItemsProps) => {
@@ -16,12 +16,14 @@ export const CartItem = ( {image, price, quantity, title } : RenderCartItemsProp
             </td>
             <td style={{"display" : "grid"}}>
                 <span 
-                    id='minus' 
-                    style={{"fontWeight" : "bold", "color" : "#16b1d4"}}>&#8722;</span>
+                    id='decrease' 
+                    onClick={()=>dispatch(decreaseQuantity(title))}
+                    style={{"fontWeight" : "bold", "color" : "#16b1d4", "cursor" : "pointer"}}>&#8722;</span>
                 { quantity }
                 <span 
-                    id='plus' 
-                    style={{"fontWeight" : "bold" , "color" : "#16b1d4"}}>&#43;</span>
+                    id='increase' 
+                    onClick={()=>dispatch(increaseQuantity(title))}
+                    style={{"fontWeight" : "bold" , "color" : "#16b1d4", "cursor" : "pointer"}}>&#43;</span>
             </td>
             <td>
                 {price * quantity}
