@@ -14,12 +14,12 @@
 */
 
 pragma solidity ^0.8.10;
-import "../../../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "../../../node_modules/@openzeppelin/contracts/access/Ownable.sol";
-import "../../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
-import "../../../node_modules/@openzeppelin/contracts/security/Pausable.sol";
-import "../../../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "../ERC20/Churu.sol";
+import "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "node_modules/@openzeppelin/contracts/utils/Counters.sol";
+import "node_modules/@openzeppelin/contracts/security/Pausable.sol";
+import "'node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "ERC20/Churu.sol";
 
 contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
     // import libraries
