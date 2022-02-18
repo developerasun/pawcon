@@ -1,58 +1,5 @@
 // upload image files to imgbb.com and get img src url
-
-// Banner images 
-import saluteDev from '../../assets/img/banner/salute-devs.webp'
-import helpCreator from '../../assets/img/banner/help-creators.webp'
-
-// About icons
-import etsy from '../../assets/img/icons/etsy.webp'
-import graphicDesigner from '../../assets/img/icons/graphic-designer.webp'
-import laptop from '../../assets/img/icons/laptop.webp'
-import socialMedia from '../../assets/img/icons/social-media.webp'
-
-// Single profile image
-import jake from '../../assets/img/banner/jake.webp'
-
-// Feature icons
-import pencilCat from '../../assets/img/icons/draw-cat.webp'
-import rightClick from '../../assets/img/icons/right-click.webp'
-import camera from '../../assets/img/icons/camera.webp'
-
-export const IMG_FEATURE = [
-    { 
-      image : pencilCat,
-      title : "Premade Templates",
-      description : "Pick template and draw on it.", 
-    },
-    { 
-      image : rightClick,
-      title : "One-click Drawing",
-      description : "One-click and Your artwork is ready.", 
-    },
-    { 
-      image : camera,
-      title : "One-click Art Filter",
-      description : "One-click and Filter your images", 
-    },
-]
-
-export const IMG_BANNER = {
-    helpCreator , 
-    saluteDev 
-} 
-
-export const IMG_ABOUT_ICON = {
-  etsy, 
-  graphicDesigner, 
-  laptop, 
-  socialMedia
-}
-
-export const IMG_PROFILE = {
-  jake
-}
-
-const imgContainer = () => {
+export const imgContainer = () => {
   return ( 
     <div>
 
@@ -74,6 +21,16 @@ const imgContainer = () => {
       <img src="https://i.ibb.co/zFYRjPz/laptop.webp" alt="laptop" />
       <img src="https://i.ibb.co/tDhzD3f/right-click.webp" alt="right-click" />
       <img src="https://i.ibb.co/P5Dj9gC/social-media.webp" alt="social-media" />
+
+      {/* banners */}
+      <img src="https://i.ibb.co/JmFhpYY/help-creators.webp" alt="help-creators" />
+      <img src="https://i.ibb.co/X4dN67P/jake.webp" alt="jake" />
+      <img src="https://i.ibb.co/tbfyGZw/salute-devs.webp" alt="salute-devs" />
+
+      {/* login component */}
+      <img src="https://i.ibb.co/Qdmbd0y/pawcon-logo.webp" alt="pawcon-logo" />
+      <img src="https://i.ibb.co/jzGQ70Z/github-logo.webp" alt="github-logo" />
+      <img src="https://i.ibb.co/m997sdM/google-logo.webp" alt="google-logo" />
     </div>
   )
 }
