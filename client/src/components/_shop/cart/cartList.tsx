@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { v4 } from 'uuid';
-import { CartListProps } from '../../containers/propContatiner';
+import { CartListProps } from '../../containers/C_props';
 import { CartItem } from './cartItem'
 
 export function CartList ({cartItems} : CartListProps) {
@@ -33,6 +33,8 @@ export function CartList ({cartItems} : CartListProps) {
           </tbody>
         </table>
       </div>
+      {/* add the total sum of cart item prices */}
+      <p className="total"> CART TOTAL : Total price here </p>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RenderCartItemsProps } from '../../containers/propContatiner'
+import { RenderCartItemsProps } from '../../containers/C_props'
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../containers/redux/actionCreators';
 import { useAppDispatch } from '../../containers/redux/store.hooks';
 
