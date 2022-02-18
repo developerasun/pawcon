@@ -12,21 +12,38 @@
                                                       |__/                                                                 
 */
 
-// Express app setting
+// ===================== Express app setting ===================== // 
 const express = require('express')
 const app = express()
-const http = require('http')
-const { Server } = require('socket.io')
-const io = new Server(http.createServer(app))
-const path = require('path') // don't use slash since it is platform-dependent.
 const config = require('./config/config')
+const path = require('path') // don't use slash since it is platform-dependent.
+// ===================== Express app setting ===================== // 
 
-// passport setting : 1) passport setup(importing passport middleware) 2) passport initalization
+
+// ===================== socket io setting ===================== // 
+const { createServer } = require('http')
+const { Server } = require('socket.io')
+const httpServer = createServer(app)
+const io = new Server(httpServer)
+// ===================== socket io setting ===================== // 
+
+
+// ===================== passport setting ===================== // 
 const passportSetup = require('./middlewares/passport')
 const passport = require('passport')
 const session = require('express-session') // save session id
+// ===================== passport setting ===================== // 
 
+
+// ===================== router and middleware setting ===================== // 
 const rootRouter = require('./router/rootRouter')
+const cookieParser = require('cookie-parser') // populate req.cookie => used in checkAuth middleware
+const checkAuth = require('./middlewares/checkAuth')
+const setCache = require('./middlewares/cache')
+// ===================== router and middleware setting ===================== // 
+
+
+// ===================== CORS setting ===================== // 
 const cors = require('cors')
 const corsOptions = {
         origin: '*', // set Access-Control-Allow-Origin header
@@ -34,29 +51,25 @@ const corsOptions = {
         preflightContinue: false, // disable initial options for complex cors request(e.g DELETE)
         optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
+// ===================== CORS setting ===================== // 
 
-// Parser for cookie
-const cookieParser = require('cookie-parser')
 
-// Database
+// ===================== database setting ===================== // 
 const mongoose = require('mongoose')
-
-// Router and middleware
-const checkAuth = require('./middlewares/checkAuth')
-const setCache = require('./middlewares/cache')
-
-// Connect mongoDB 
 mongoose.connect( config.MONGO_URI, {})
-        .then(()=>{ 
-                console.log("db connected") 
+.then(()=>{ 
+        console.log("db connected") 
                 // and then start Express app
-                app.listen(config.PORT_SERVER || 8080, ()=> console.log(`app executed at ${config.PORT_SERVER || 8080}`))
+                httpServer.listen(config.PORT.SERVER, ()=> console.log(`app executed at ${config.PORT.SERVER}`))
         })
         .catch((err)=>{ console.log(err)} )
+// ===================== database setting ===================== // 
 
+
+// ===================== middleware execution ===================== //  
 app.use(express.json()) // parsing request url
 app.use(cors(corsOptions)) // cross origin resource sharing
-app.use(setCache()) // server side cache
+app.use(setCache) // server side cache
 app.use(rootRouter) // combine multiple routers
 app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files, socket io connected here
 app.use(cookieParser()) // setting cookie with JWT
@@ -69,25 +82,30 @@ app.use(session({
 }))
 app.use(passport.initialize()) // passport initalization
 app.use(passport.session())
+// ===================== middleware execution ===================== //  
 
+
+
+// ===================== change zone ===================== //  
 // protect shop/checkout router with checkAuth
 app.get('/shop/checkout', checkAuth, (req, res) => {
         res.json( { message : "auth checking works! "})
 })
+// ===================== change zone ===================== //  
 
 
-// ===================== socket io ===================== // 
+// ===================== socket io execution ===================== // 
+// socket is connected when user visits /community
+// since socket io client is initiated in the route. 
 io.on('connection', (socket) => {
         console.log("a user connected", socket.id)
-
         socket.on('chat', (data) => {
-                io.sockets.emit('chat', data)
+                io.sockets.emit('chat', data) // update and spread the client data to other sockets
                 console.log(data.userName, data.message)
         })
         socket.on('disconnect', ()=> console.log("disconnected"))
 })
-
-// ===================== socket io ===================== // 
+// ===================== socket io execution ===================== // 
 
 
 // ===================== page404(server) ===================== // 
