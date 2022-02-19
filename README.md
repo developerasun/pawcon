@@ -1,5 +1,4 @@
 # PawCon Architecture
-
 <div align="center">
   <img src="https://user-images.githubusercontent.com/83855174/152946367-ce30a572-8779-4cac-bec7-0084f89197e5.png" width="800" height="600" alt="project architecture" />
 </div>
@@ -11,6 +10,9 @@ PawCon is an open source NFT marketplace project with below features.
 - Creating and listing NFT in marketplace
 - Displaying the NFT in virtual gallery
 - Selling and buying the NFT in communities
+
+## Installation
+Whole application source file will be available [here]() as docker image, hosted in IPFS.
 
 ## Implementation
 <details>
