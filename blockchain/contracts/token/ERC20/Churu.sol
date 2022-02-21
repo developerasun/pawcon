@@ -14,11 +14,12 @@
 */
 pragma solidity ^0.8.10;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract Churu is ERC20 {
+contract Churu is ERC20, AccessControl {
     // add role-based access control : admin, minter, burner
     bytes32 public constant creator = "Jake Sung"; 
-    uint256 initialSupply = 1000;
+    uint256 initialSupply = 10^9; // initial supply is 10 billion Churu
     uint256 cost = 0.03 ether;
 
     mapping(address=>uint256) public churuAmountPerHolder;
@@ -28,15 +29,28 @@ contract Churu is ERC20 {
         _mint(msg.sender, initialSupply);
     }
 
+    // ======================== Mint zone ======================== // 
+    // 1. Minter : mint Churu 
+    // 2. Burner : burn Churu 
+    // 3. Admin : set roles
+    function mint(address _to, uint256 _amount) public payable {
+        // FIX logic here : set Minter, mint amount limit
+        // require(msg.sender == "MINTER", "Only minter can mint Churu.");
+        _mint(_to, _amount);
+        churuAmountPerHolder[_to] = _amount; 
+    }
+    // ======================== Mint zone ======================== //
+
+
+
     // get current Churu amount 
     function getChuruAmount(address _address) public view returns(uint256) {
         return churuAmountPerHolder[_address];
     }
 
-    // mint Churu
-    function mint(address _to, uint256 _amount) public payable {
-        require(msg.value >= cost, "Minting Churu cost 0.03 ether");
-        _mint(_to, _amount);
-        churuAmountPerHolder[_to] = _amount; 
-    }
+
+    // ======================== Finance zone ======================== // 
+    // 1. transfer Churu to another account
+    // 2. withdraw Churu in this contract(admin)
+    // ======================== Finance zone ======================== // 
 }
