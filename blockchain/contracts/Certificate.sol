@@ -1,24 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
-
 import "./interface/ICertificate.sol";
 
-// FIX this : create certificate object
-struct MyCert { 
-    bytes32 holder;
-    string expire;
-    bytes32 issuer; 
-}
-
-/// @title A title that should describe the contract/interface
-/// @author The name of the author
-/// @notice Explain to an end user what this does
-/// @dev Explain to a developer any extra details
+/// @author Jake Sung
+/// @dev Certificate is granted to legendary Curious Pawoneers. 2 year period.
 contract Certificate is ICertificate { 
     address issuer; 
-    uint256 inYear = 1 days * 365;
+    // expiration date
+    uint256 public short = 180;
+    uint256 public middle = 365;
+    uint256 public long = middle * 2; 
     uint256 public issueCost = 0.05 ether;
-
+    expiration exp; // FIX this later
+    
     // set issuer to contract invoker
     constructor () {
         issuer = msg.sender;
@@ -27,16 +21,25 @@ contract Certificate is ICertificate {
     /// @dev certificate holder and amount of certificates
     mapping(address => uint256) public certificateHolders;
 
+    // =============== ICertificate implementation =============== //
     // issue one certificate
     function issueOne(address _holder) public payable override {
         require(msg.value > issueCost, "Certificate costs 0.05 ether");
         certificateHolders[_holder] = certificateHolders[_holder] + 1;
     }
-
-    // NOT TESTED
-    function expiresCert(uint256 _date) internal override { 
-        // expire the certificate in one year from issurance
+    
+    function expireOne(uint256 _date) public override {
+        // add logic here
     }
+    function extendExpiration(uint256 _prev, uint256 _to) public override {
+        // add logic here
+    }
+
+    function setExpiration(uint256 _date) public override {
+        // add logic here
+    }
+    // =============== ICertificate implementation =============== //
+    
 
 
     //===================================================//
@@ -48,7 +51,8 @@ contract Certificate is ICertificate {
     }
 
     // check contract balance
-    function getBalance() public view onlyIssuer returns (uint256) {
+    function getBalance() public view returns (uint256) {
+        require(issuer == msg.sender, "Only owner");
         return address(this).balance;
     }
 }
