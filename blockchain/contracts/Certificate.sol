@@ -3,13 +3,17 @@ pragma solidity ^0.8.10;
 
 import "./interface/ICertificate.sol";
 
-// create certificate object
+// FIX this : create certificate object
 struct MyCert { 
     bytes32 holder;
     string expire;
     bytes32 issuer; 
 }
 
+/// @title A title that should describe the contract/interface
+/// @author The name of the author
+/// @notice Explain to an end user what this does
+/// @dev Explain to a developer any extra details
 contract Certificate is ICertificate { 
     address issuer; 
     uint256 inYear = 1 days * 365;
@@ -44,7 +48,7 @@ contract Certificate is ICertificate {
     }
 
     // check contract balance
-    function getBalance() public onlyIssuer returns (uint256) {
+    function getBalance() public view onlyIssuer returns (uint256) {
         return address(this).balance;
     }
 }

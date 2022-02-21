@@ -13,9 +13,11 @@
                                                       |__/                                                                 
 */
 pragma solidity ^0.8.10;
-import "../../../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Churu is ERC20 {
+    // add role-based access control : admin, minter, burner
+    bytes32 public constant creator = "Jake Sung"; 
     uint256 initialSupply = 1000;
     uint256 cost = 0.03 ether;
 

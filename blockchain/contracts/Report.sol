@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-import "./constant/Container.sol";
-
 /// @title PawCon Project Overview
 /// @author Jake Sung
 /// @notice Read PawCon Project overviews
 /// @dev Suggest what should be included as project milestone
-contract Report is Container {
+contract Report {
     // set project milestone
     struct Milestone { 
         uint256 contributors;
@@ -20,7 +18,7 @@ contract Report is Container {
 
     // getters : creator, genesis, milestone
     function getCreator() public pure returns(bytes32) {
-        return Container.creator; // return bytes
+        return bytes32("Jake Sung"); // return bytes
     }
 
     function getGenesis() public view returns(Milestone memory) {
