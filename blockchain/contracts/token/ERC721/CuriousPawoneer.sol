@@ -21,10 +21,20 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "../ERC20/Churu.sol";
 
-contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
+/// @title ERC721 implementation of CuriousPawoneer NFT
+/// @author DeveloperAsun(Jake Sung)
+contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
     // import libraries
     using Strings for uint256; 
     using Counters for Counters.Counter;
+
+    // ======================== token detail setting : NOT TESTED ================== //
+    bytes32 public constant creator = "Jake Sung"; 
+    uint256 public cost = 0.03 ether;
+    uint256 public giveaway = 10;
+    uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
+    uint256 public totalSupply = 1000; // adjust amount later
+    uint256 nonce; // for random number
 
     // 0, 1, 2, 3, 4
     enum Rarity { 
@@ -33,29 +43,36 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         EPIC, 
         LEGENDARY
     }
-
-    /// @dev set token detail
-    bytes32 public constant creator = "Jake Sung"; 
-    uint256 public cost = 0.03 ether;
-    uint256 public giveaway = 10;
-    uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
-    uint256 public totalSupply = 1000; // adjust amount later
-    uint256 nonce; // for random number
-    string baseURI;
     Rarity public rarity = Rarity.COMMON;
+    // ======================== token detail : NOT TESTED ================== //
+    
+    // ======================== IPFS setting : NOT TESTED ================== //
+    string public baseURI; // IPFS CID
+    string public baseImageURI; 
+    string public baseMetadataURI; 
+    string baseImageExtension = ".png"; 
+    string baseMetadataExtension = ".json"; 
+    string ipfsPrefix = 'ipfs://';
+    // ======================== IPFS setting : NOT TESTED ================== //
+
+    // ======================== Mapping setting : NOT TESTED ================== //
     mapping(address=>bool) public whiltelist; // set whitelist
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
+    // ======================== Mapping setting : NOT TESTED ================== //
 
     Counters.Counter mintCount;
     Churu public churu;
 
+    // ======================== Token inheritance setting : NOT TESTED ================== //
     // initialize ERC721 and ERC20
-    constructor(address _churu, uint256 _nonce)ERC721("Curious Pawoneer", "CP"){ 
+    constructor(address _churu, uint256 _nonce, string memory ipfsCid)ERC721("Curious Pawoneer", "CP"){ 
         churu = Churu(_churu);
         nonce = _nonce; // nonce added when deployed
-        setBaseURI(); // set IPFS URI when deployed
+        setBaseURI(ipfsCid); // set IPFS URI when deployed
     }
+    // ======================== Token inheritance setting : NOT TESTED ================== //
     
+    // ======================== Modifier setting : NOT TESTED ================== //
     /// @dev set dynamic cost based on total supply
     modifier setCost() {
         if (mintCount.current() < 300) { 
@@ -72,8 +89,18 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         }
         _;
     }
+    // ======================== Modifier setting : NOT TESTED ================== //
     
     // ======================== Minting zone : NOT TESTED ================== // 
+    function mintNFT(address to, uint256 tokenId) private { 
+        // choose _safeMint over _mint whenever possible
+        _safeMint(to, tokenId);
+        tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
+        // token URI is set to : 'ipfs://cid/tokenId' 
+        setTokenImageURI(tokenId); // 'ipfs://cid/tokenId.png'
+        setTokenMetadataURI(tokenId); // 'ipfs://cid/tokenId.json'
+    }
+
     // set minting condition
     function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
         // minting requires to have 100 churu
@@ -82,17 +109,18 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         // non-whitelist mint costs 0.03 ether
         if (!whiltelist[to]) {
             require(msg.value > cost, "Enter a proper ether amount."); 
-            // choose _safeMint over _mint whenever possible
-            // (recommended practice by openzeppelin)
-            _safeMint(to, tokenId);
-            tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
-        } else { 
-            // whitelist mint giveway up to 10
-            require(giveaway > 0, "Giveaway out of stock");
-            _safeMint(to, tokenId);
-            tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
+            mintNFT(to, tokenId);
+        } 
+        // whitelist can mint free for up to 10 giveaways(total)
+        else if (whiltelist[to] && giveaway > 0) { 
+            mintNFT(to, tokenId);
             giveaway--;
+        } 
+        else { 
+            require(msg.value > cost, "Enter a proper ether amount");
+            mintNFT(to, tokenId);
         }
+        // increase mint amount for dynamic cost
         mintCount.increment();
     }
 
@@ -118,39 +146,71 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard{
         tokenRarity[tokenId] = rand;
         return rand;
     }
-    // ======================== Minting zone ================== // 
-    
-    // ======================== Finance zone ================== // 
-    // withdraw ether. Ownable.sol sets owner as one deploying contract by default(can be changed)
-    function withdraw() public payable onlyOwner nonReentrant {
-        (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
-        require(isSent, "Only owner.");
-    }
-    // ======================== Finance zone ================== // 
-    
-    // ======================== Change zone ================== // 
-    // how it works : tokenURI : baseURI + tokenId
+    // ======================== Minting zone : NOT TESTED ======================== // 
+
+    // ======================== IPFS & Token URI zone : NOT TESTED ======================== // 
+    // how Token URI works : tokenURI : baseURI + tokenId
     // 1. set _baseURI
     // 2. user mint a NFT and the token id is created
     // 3. set tokenURI by combining _baseURI and tokenId
     // 4. front end will instantiate a contract and get the token URI
     // 5. front end displays the token 
-    // tokenURI : url where json file is hosted
-    // overriding _baseURI from ERC721 
     
-    function _baseURI() internal view virtual override returns (string memory) {
-        return "ipfs:someIPFSAddressHere/"; // FIX : change this later
+    // how IPFS works : gateway + CID + file name(token + file extension)
+    // 1. upload NFT media to Pinata or IPFS desktop to get CID
+    // 2. concatenate prefix 'ipfs://' with the CID for opensea metadata standard
+    // 3. set it as baseURI in during deploy (in constructor)
+    // 4. metadata should be in .json, NFT image should be in .png <=> communicate this with front end
+
+    // 1. set baseURI first with IPFS CID
+    // 2. set baseImageURI / baseMetadataURI
+    // 3. get baseImageURI / baseMetadataURI
+    function _baseURI(string memory ipfsCid) internal view virtual returns (string memory) {
+        // ipfs:// => opensea metadata standard
+        // baseURI result =>  ipfs://cid/
+        return string(abi.encodePacked(ipfsPrefix, ipfsCid, "/"));
     }
 
-    /// @dev call setBaseURI in constructor
-    function setBaseURI() internal { 
-        baseURI = _baseURI(); 
+    /// @dev set baseURI with IPFS CID(content identifier, hash)
+    function setBaseURI(string memory ipfsCid) internal { 
+        baseURI = _baseURI(ipfsCid); 
     }
 
+    // change to new baseURI. Without this method, baseURI will be never changed once deployed. 
+    function resetNewBaseURI(string memory ipfsCid) public {
+        setBaseURI(ipfsCid);
+    }
+
+    function getBaseURI() public view returns(string memory) {
+        return baseURI;
+    }
+
+    /// @dev set NFT metadataURI
+    function setTokenMetadataURI(uint256 tokenId) public {
+        // tokenURI should be : 'ipfs://cid/tokenId.json'
+        baseMetadataURI = string(abi.encodePacked(tokenURI(tokenId), baseMetadataExtension));
+    }
+
+    /// @dev set NFT imageURI
+    function setTokenImageURI(uint256 tokenId) public {
+        // tokenURI should be : 'ipfs://cid/tokenId.png' 
+        baseImageURI = string(abi.encodePacked(tokenURI(tokenId), baseImageExtension));
+    }
+    
     // front end will invoke this to get tokenURI
-    function getTokenURI(uint256 tokenId) public view returns(string memory){
+    function getTokenURIs() public view returns(string[2] memory){
         // combine baseURI with tokenId and  returns a string         
-        return tokenURI(tokenId);
+        return [baseImageURI, baseMetadataURI];
     }
-    // ======================== Change zone ================== // 
+    // ======================== IPFS & Token URI zone : NOT TESTED ================== // 
+
+
+    // ======================== Balance zone : NOT TESTED ================== // 
+    // 1. withdraw ether
+    // 2. set 5% contract loyalty 
+    function withdraw() public payable onlyOwner nonReentrant {
+        (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
+        require(isSent, "Only owner.");
+    }
+    // ======================== Balance zone : NOT TESTED ================== // 
 }
