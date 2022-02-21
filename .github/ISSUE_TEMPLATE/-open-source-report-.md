@@ -1,7 +1,7 @@
 ---
-name: "[Open Source Suggestion]"
-about: something isn't working
-title: "[Open Source Suggestion] main topic/sub topic"
+name: "[Open Source Report]"
+about: bug fix | feature suggestion by open source contributors
+title: "[Open Source Report] main topic/sub topic"
 labels: openSource
 assignees: ''
 
@@ -18,3 +18,5 @@ Suggested Changes:
 
 Assignee (Optional):
 <[The person who wants to be assigned this issue]>
+
+- This template is here thanks to [AlphaVS-76](https://github.com/AlphaVS-76)
