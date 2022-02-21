@@ -74,7 +74,7 @@ Whole application source file will be available [here]() as docker image, hosted
 <img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
 
 ## Contributor & role
-- [Vaibhav Sharma - improving Readme](https://github.com/AlphaVS-76)
+- [Vaibhav Sharma - readme, smart contract, issue template](https://github.com/AlphaVS-76)
 
 ## Inspiration
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
