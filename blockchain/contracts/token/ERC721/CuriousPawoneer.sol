@@ -15,7 +15,7 @@
 
 pragma solidity ^0.8.10;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
@@ -23,13 +23,14 @@ import "../ERC20/Churu.sol";
 
 /// @title ERC721 implementation of CuriousPawoneer NFT
 /// @author DeveloperAsun(Jake Sung)
-contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
+contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // import libraries
     using Strings for uint256; 
     using Counters for Counters.Counter;
-
+    
     // ======================== token detail setting : NOT TESTED ================== //
     bytes32 public constant creator = "Jake Sung"; 
+    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     uint256 public cost = 0.03 ether;
     uint256 public giveaway = 10;
     uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
@@ -54,7 +55,7 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
     string baseMetadataExtension = ".json"; 
     string ipfsPrefix = 'ipfs://';
     // ======================== IPFS setting : NOT TESTED ================== //
-
+    
     // ======================== Mapping setting : NOT TESTED ================== //
     mapping(address=>bool) public whiltelist; // set whitelist
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
@@ -65,13 +66,22 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
 
     // ======================== Token inheritance setting : NOT TESTED ================== //
     // initialize ERC721 and ERC20
-    constructor(address _churu, uint256 _nonce, string memory ipfsCid)ERC721("Curious Pawoneer", "CP"){ 
+    constructor(address _churu, address pauser, uint256 _nonce, string memory ipfsCid)ERC721("Curious Pawoneer", "CP"){ 
         churu = Churu(_churu);
         nonce = _nonce; // nonce added when deployed
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set admin
+        _grantRole(PAUSER_ROLE, pauser); // set contract disabler
         setBaseURI(ipfsCid); // set IPFS URI when deployed
     }
     // ======================== Token inheritance setting : NOT TESTED ================== //
     
+    // ======================== AccessControl setting : NOT TESTED ================== //
+    // Should inherite supportsInterface
+    function supportsInterface(bytes4 interfaceId) public view virtual override(AccessControl, ERC721) whenNotPaused returns (bool) {
+        return interfaceId == type(IAccessControl).interfaceId || super.supportsInterface(interfaceId);
+    }
+    // ======================== AccessControl setting : NOT TESTED ================== //
+
     // ======================== Modifier setting : NOT TESTED ================== //
     /// @dev set dynamic cost based on total supply
     modifier setCost() {
@@ -125,14 +135,14 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
     }
 
     // set burning condition
-    function burn(uint256 tokenId) public { 
+    function burn(uint256 tokenId) public whenNotPaused { 
         // set Legendary rarity can't be deleted
         require(tokenRarity[tokenId] != 3, "Legendary Pawoneer can't be deleted");
         _burn(tokenId); // delete nft
     }
 
     // set random rarity
-    function getRandomNumber() internal returns(uint256) { 
+    function getRandomNumber() internal whenNotPaused returns(uint256) { 
         uint256 rand = uint256(keccak256(abi.encodePacked(
             nonce, block.difficulty, msg.sender
         ))) % 4; // Rarity ranges from 0 ~ 3
@@ -140,7 +150,7 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
         return rand;
     }
 
-    function resetRarity(uint256 tokenId) public payable returns(uint256) {
+    function resetRarity(uint256 tokenId) public payable whenNotPaused returns(uint256) {
         require(msg.value > cost, "Reset rarity cost 0.03 ether");
         uint256 rand = getRandomNumber();
         tokenRarity[tokenId] = rand;
@@ -165,40 +175,40 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
     // 1. set baseURI first with IPFS CID
     // 2. set baseImageURI / baseMetadataURI
     // 3. get baseImageURI / baseMetadataURI
-    function _baseURI(string memory ipfsCid) internal view virtual returns (string memory) {
+    function _baseURI(string memory ipfsCid) internal view virtual whenNotPaused returns (string memory) {
         // ipfs:// => opensea metadata standard
         // baseURI result =>  ipfs://cid/
         return string(abi.encodePacked(ipfsPrefix, ipfsCid, "/"));
     }
 
     /// @dev set baseURI with IPFS CID(content identifier, hash)
-    function setBaseURI(string memory ipfsCid) internal { 
+    function setBaseURI(string memory ipfsCid) internal whenNotPaused { 
         baseURI = _baseURI(ipfsCid); 
     }
 
     // change to new baseURI. Without this method, baseURI will be never changed once deployed. 
-    function resetNewBaseURI(string memory ipfsCid) public {
+    function resetNewBaseURI(string memory ipfsCid) public whenNotPaused {
         setBaseURI(ipfsCid);
     }
 
-    function getBaseURI() public view returns(string memory) {
+    function getBaseURI() public view whenNotPaused returns(string memory) {
         return baseURI;
     }
 
     /// @dev set NFT metadataURI
-    function setTokenMetadataURI(uint256 tokenId) public {
+    function setTokenMetadataURI(uint256 tokenId) public whenNotPaused {
         // tokenURI should be : 'ipfs://cid/tokenId.json'
         baseMetadataURI = string(abi.encodePacked(tokenURI(tokenId), baseMetadataExtension));
     }
 
     /// @dev set NFT imageURI
-    function setTokenImageURI(uint256 tokenId) public {
+    function setTokenImageURI(uint256 tokenId) public whenNotPaused {
         // tokenURI should be : 'ipfs://cid/tokenId.png' 
         baseImageURI = string(abi.encodePacked(tokenURI(tokenId), baseImageExtension));
     }
     
     // front end will invoke this to get tokenURI
-    function getTokenURIs() public view returns(string[2] memory){
+    function getTokenURIs() public view whenNotPaused returns(string[2] memory){
         // combine baseURI with tokenId and  returns a string         
         return [baseImageURI, baseMetadataURI];
     }
@@ -208,9 +218,17 @@ contract CuriousPawoneer is ERC721, Ownable, Pausable, ReentrancyGuard {
     // ======================== Balance zone : NOT TESTED ================== // 
     // 1. withdraw ether
     // 2. set 5% contract loyalty 
-    function withdraw() public payable onlyOwner nonReentrant {
+    function withdraw() public payable onlyRole(DEFAULT_ADMIN_ROLE) nonReentrant {
         (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
         require(isSent, "Only owner.");
     }
     // ======================== Balance zone : NOT TESTED ================== // 
+
+    
+    // ======================== Danger zone : NOT TESTED ================== // 
+    // disable all functions in contract
+    function disableCuriousPawoneer() public onlyRole(PAUSER_ROLE) {
+        _pause(); // change pause state from false to true
+    }
+    // ======================== Danger zone : NOT TESTED ================== // 
 }
