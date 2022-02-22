@@ -1,5 +1,4 @@
-// Declare and export component type here
-// Setting repeatedly used card style
+// ========================== Card types ========================== // 
 export type BasicCardDetailsProps = { 
     date? : string
     title? : string
@@ -27,8 +26,9 @@ export interface IButtonProps {
     btnText? : string
     url? : string
 }
+// ========================== Card types ========================== // 
 
-// cart related props
+// ========================== Cart types ========================== // 
 export interface Product { 
     image : string
     title : string
@@ -46,3 +46,30 @@ export interface RenderCartItemsProps {
     price : number
     quantity : number
 }
+// ========================== Cart types ========================== // 
+
+// ========================== API types ========================== // 
+type title = string
+type image = {
+    width : number
+    height : number
+    url : string
+}
+type identity = {
+    title : string, 
+    description : string,
+    author : string,
+    date : string
+}
+type details = { 
+    identity : identity, 
+    image : image 
+}
+
+export interface Artwork {
+    title : title,
+    details : details, 
+}
+
+export type ArtworkList = Artwork[]
+// ========================== API types ========================== // 
