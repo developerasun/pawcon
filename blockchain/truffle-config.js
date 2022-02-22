@@ -1,9 +1,13 @@
 
 // ====================== Wallet setting ====================== //
 // adjust here based on config later
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync('mnemonic.js');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const fs = require('fs');
+const key = require('./config/key')
+const mnemonic = key.mnemonic;
+const infuraTestnet = key.provider.INFURA.TESTNET;
+const infuraMainnet = key.provider.INFURA.MAINNET;
+
 // ====================== Wallet setting ====================== //
 
 module.exports = {  
@@ -29,15 +33,19 @@ module.exports = {
     // },
     
     // ====================== Public network setting ====================== //
+    // FIX : deploy finished contracts to Ropsten testnet.
     // NB: It's important to wrap the provider as a function.
-    // ropsten: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-    // network_id: 3,       // Ropsten's id
-    // gas: 5500000,        // Ropsten has a lower block limit than mainnet
-    // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    // },
+    ropsten: {
+      provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
+      network_id: 3,       // Ropsten's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true,      // Skip dry run before migrations? (default: false for public nets )
+      ipfs : { 
+          address: 'https://ipfs.infura.io:5001'
+      }
+    },
     // ====================== Public network setting ====================== //
     
 
@@ -51,13 +59,17 @@ module.exports = {
     // ====================== Private network setting ====================== //
   },
   
+  // ====================== Testing setting ====================== //
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // timeout: 100000
+    useColors: true, 
+    timeout: 100000
   },
+  // ====================== Testing setting ====================== //
 
   // ====================== Compiler setting ====================== //
   compilers: {
+
     solc: {
       version: "^0.8.10",    
       // docker: true,        
