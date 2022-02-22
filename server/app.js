@@ -24,7 +24,12 @@ const path = require('path') // don't use slash since it is platform-dependent.
 const { createServer } = require('http')
 const { Server } = require('socket.io')
 const httpServer = createServer(app)
-const io = new Server(httpServer)
+const io = new Server(httpServer, { 
+        cors  : {
+                credentials : true, 
+                origin : '*'
+        }
+})
 // ===================== socket io setting ===================== // 
 
 
@@ -49,7 +54,8 @@ const corsOptions = {
         origin: '*', // set Access-Control-Allow-Origin header
         methods: 'GET, POST, DELETE', // set Access-Control-Allow-Method header
         preflightContinue: false, // disable initial options for complex cors request(e.g DELETE)
-        optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+        optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+        credential : true
 }
 // ===================== CORS setting ===================== // 
 
