@@ -4,9 +4,11 @@
   "version": "0.1",
   "description": "One click NFT generation service",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha /test/*.test.js"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.4.2"
-  }
+    "@openzeppelin/contracts": "^4.4.2",
+    "@truffle/hdwallet-provider": "^2.0.3"
+  },
+  "type": "commonjs"
 }
