@@ -1,5 +1,6 @@
 import * as React from 'react';
 import  { io }  from 'socket.io-client';
+import { v4 } from 'uuid';
 
 const socket = io('http://localhost:3001')
 socket.on('connect', ()=>console.log(socket.id))
@@ -12,16 +13,36 @@ interface ChatMessageProps {
 
 export function Chat () {
   const [submit, setSubmit] = React.useState(false)
-  const [chat, setChat] = React.useState<ChatMessageProps>()
+  const [chat, setChat] = React.useState<ChatMessageProps[]>([])
 
-  const handleSubmit = (event : React.FormEvent) => {
-    event.preventDefault()
-    setSubmit(true)
-    
+  // fix infinite render bug
+  React.useEffect(() => {
+    if (submit) {
+      const messages = document.getElementById('messages') as HTMLUListElement
+      socket.on('chat', (data:ChatMessageProps) => {
+        if (messages) { // type guard
+          setChat(prev => {
+            return [...prev, { 
+              userName : data.userName,
+              message : data.message 
+            }]
+          })
+          // const li = messages.appendChild(document.createElement('li'))
+          // li.innerText = `${data.userName} : ${data.message}`
+          // messages.innerHTML += `<li><p>${data.userName} : ${data.message}</p></li>`
+        }
+      })
+    }
+
+    window.addEventListener('unload', () => { 
+      // disconnect socket when user leaves page
+      socket.disconnect()
+    })
+  }, [submit])
+
+  React.useEffect(() => {
     const message = document.getElementById('message') as HTMLInputElement
     const userName = document.getElementById('userName') as HTMLInputElement
-    const messages = document.getElementById('messages') as HTMLUListElement
-
     if (message && userName) { // type guard
         // socket.emit(event name, event value) => event value can be anything. no limit.
         socket.emit('chat', { // this event name should be the same in server side
@@ -29,29 +50,25 @@ export function Chat () {
           message : message.value 
         })
       }
-    
-    // DELETE this : render chat in front end (can't render other sockets)
-    setChat({
-      userName : userName.value,
-      message : message.value
-    })
-    messages.innerHTML += `<li><p>${userName.value} : ${message.value}</p></li>`
-    
-    // FIX this : render chat messages from server data
-    // socket.on('chat', (data : ChatMessageProps) => {
-    //   messages.innerHTML += `<li><p>${data.userName} : ${data.message}</p></li>`
-    // })
-    // reinitialize input value
-    message.value = "" 
-  }  
+    message.value = "" // reinitialize input value
+  })
+
+  const handleSubmit = (event : React.FormEvent) => {
+    event.preventDefault()
+    setSubmit(!submit)
+  }    
+
   return (
     <div>
-      {submit ? <ul id="messages"></ul> : "No chat for now"}
+      <ul id="messages">{chat.map((item) => {
+        return <li key={v4()}>{item.userName} : {item.message}</li>
+      })}</ul>
+
+      {/* {chat} */}
       
       <form id="form" onSubmit={(event) => handleSubmit(event)}>
         {/* add functionality that disalbes user name input once decided */}
         <input 
-          disabled={submit ? true : false}
           required
           id="userName" 
           type={'text'} 
