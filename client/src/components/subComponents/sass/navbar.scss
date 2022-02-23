@@ -1,13 +1,75 @@
 @import '../../partials/variable';
 
+#navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;  
+    position: relative;
+    background-color: rgb(232, 250, 255);
+    width: 100%;
+    #title { 
+        color: black;
+        font-size: $unit * 1.5;
+    }
+    #logo {        
+        margin-left: $unit*2;
+        // logo image is responsive
+        max-width: 25%;
+        height: auto;
+    }
+    #menu { 
+        font-weight: bold;
+        top: 100%;
+        right: 0;
+        position: absolute;
+        #lists { 
+            background-color: $brandColor;
+            padding: $unit;
+        }
+    }
+}
+
+.buttons {
+    #trigger, 
+    #close { 
+        font-size: $unit * 1.5;
+        margin-right: $unit*2;
+        max-height: 100%;
+        padding: $unit;
+        color: black;
+    }
+}
+
+.fold { 
+    display: none;
+    cursor: none;
+}
+.unfold {
+    display: block;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    color: white;
+}
 .dropdownSub {
     color: $subBgColor;
 }
-
 .active {
     display: block;
 }
-
 .deactive { 
     display: none;
+}
+
+@media screen and (min-width : $tablet) {
+    #navigation {
+        background-color: pink;
+    }
+}
+
+@media screen and (min-width : $desktop) {
+    #navigation { 
+        background-color: green;
+    }
 }

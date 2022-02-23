@@ -1,3 +1,67 @@
+#navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #e8faff;
+  width: 100%;
+}
+
+#navigation #title {
+  color: black;
+  font-size: 1.5rem;
+}
+
+#navigation #logo {
+  margin-left: 2rem;
+  max-width: 25%;
+  height: auto;
+}
+
+#navigation #menu {
+  font-weight: bold;
+  top: 100%;
+  right: 0;
+  position: absolute;
+}
+
+#navigation #menu #lists {
+  background-color: #16b1d4;
+  padding: 1rem;
+}
+
+.buttons #trigger,
+.buttons #close {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  max-height: 100%;
+  padding: 1rem;
+  color: black;
+}
+
+.fold {
+  display: none;
+  cursor: none;
+}
+
+.unfold {
+  display: block;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  color: white;
+}
+
 .dropdownSub {
   color: #575757;
 }
@@ -8,4 +72,16 @@
 
 .deactive {
   display: none;
+}
+
+@media screen and (min-width: 758px) {
+  #navigation {
+    background-color: pink;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #navigation {
+    background-color: green;
+  }
 }
