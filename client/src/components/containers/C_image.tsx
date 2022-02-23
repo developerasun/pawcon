@@ -29,8 +29,10 @@ export const imgContainer = () => {
 
       {/* login component */}
       <img src="https://i.ibb.co/Qdmbd0y/pawcon-logo.webp" alt="pawcon-logo" />
+      <img src="https://i.ibb.co/2tfRH08/pawcon-logo.png" alt="pawcon-logo-pirate" />
       <img src="https://i.ibb.co/jzGQ70Z/github-logo.webp" alt="github-logo" />
       <img src="https://i.ibb.co/m997sdM/google-logo.webp" alt="google-logo" />
+
     </div>
   )
 }

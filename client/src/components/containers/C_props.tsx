@@ -73,3 +73,8 @@ export interface Artwork {
 
 export type ArtworkList = Artwork[]
 // ========================== API types ========================== // 
+
+export interface FooterSectionProps { 
+    sectionTitle : string  
+    contents : string[]
+}
