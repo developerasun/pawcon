@@ -1,8 +1,6 @@
 import * as React from 'react';
 import './sass/css/banner.css';
 import { Button } from './button';
-import { ImgBannerStyle } from '../containers/styleContainer'
-import { Link } from 'react-router-dom';
 
 export type BasicBannerProps = {
   title : string
@@ -42,7 +40,7 @@ export function ImgBanner ({ img, title, description, shouldBeGrid } : ImgBanner
         <p>{description}</p>
       </div>
       <div className="image">
-        <img src={img} alt="banner" loading='lazy' style={ImgBannerStyle}/>
+        <img src={img} alt="banner" loading='lazy' style={{'maxWidth' : '100%', 'height': 'auto'}}/>
       </div>
     </section>
   )
