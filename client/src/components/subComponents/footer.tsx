@@ -1,20 +1,11 @@
 import * as React from 'react';
 import { v4 as uuidV4 } from 'uuid';
-import { FooterStyle } from '../containers/styleContainer'
-
-type FooterSectionProps = { 
-  sectionTitle : string  
-  contents : string[]
-}
-
-const FooterSectionStyle = {
-  "display" : "flex", 
-  "flexFlow" : "column nowrap", 
-} as React.CSSProperties
+import { FooterSectionProps } from '../containers/C_props';
+import './sass/css/footer.css'
 
 const FooterSection = ({ sectionTitle, contents }: FooterSectionProps) => { 
   return (
-    <li style={FooterSectionStyle}>
+    <li id='section' >
       <span style={{'fontWeight':'bold'}}>{sectionTitle}</span>
       <ul style={{'color':'gray'}}>
         {contents.map((item)=><li key={uuidV4()}>{item}</li>)}
@@ -25,7 +16,7 @@ const FooterSection = ({ sectionTitle, contents }: FooterSectionProps) => {
 
 export function Footer () {
   return (
-    <footer style={FooterStyle}>
+    <footer id='footer'>
       <FooterSection 
         sectionTitle='Social' 
         contents={['Linkedin', 'Instagram', 'Tiktok', 'Youtube', 'Pinterest' ]}/>
