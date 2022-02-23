@@ -3,10 +3,16 @@ import './sass/css/gallery.css'
 import { v4 as uuidV4 } from 'uuid'
 import { GalleryCards } from './galleryCards'
 import { ImgBanner } from '../subComponents/banner'
-import { IMG_BANNER } from '../containers/imgContainer'
-import { ArtworkList } from '../apis/useFetch'
-import { API_DEV } from '../containers/apiUrlContainer'
+import { ArtworkList } from '../containers/C_props'
+import { API_DEV } from '../containers/C_apiUrl'
 
+// add status code for backend data fetching.
+// fetching condition will prevent unnecessary multiple calls from backend.
+enum fetchingStatusCode { 
+  notFetching, 
+  loading, 
+  fetched
+}
 
 // Set initial state for useState/Typescript
 const defaultProps :ArtworkList = []
@@ -16,21 +22,29 @@ export function Gallery () {
   const [data, setData] = React.useState(defaultProps);
 
   React.useEffect(()=> {    
+    // add fetching logic here with Redux thunk 
+    // add fetchingStatusCode base on fetch result
     // fetching data with dynamic route(decided in server side)
     const data = fetch(API_DEV.artworks.baseUrl + `${page}`)
     data.then((res)=>res.json())
         .then((result)=> {
           console.log(result)
-          setData(result)
-        }).catch((err)=>console.log(err))
+          setData(result) })
+        .catch((err)=> {
+          // logging detailed error object with more context
+          console.log({ 
+            type : err, 
+            url : API_DEV.artworks.baseUrl,
+            param : page })
+        })
   }, [ page ])
 
   return (
     <>
-      <main className='galleryMain'>
+      <div className='galleryMain'>
         <h1>PawCon Gallery</h1>
         ======== slider here ========
-        <ImgBanner img={IMG_BANNER.saluteDev} shouldBeGrid={false}/>
+        <ImgBanner img={'https://i.ibb.co/tbfyGZw/salute-devs.webp'} shouldBeGrid={false}/>
         ======== slider here ========
         
         <h2>Weekly Tops</h2>
@@ -38,7 +52,7 @@ export function Gallery () {
         <span>search bar here</span>
 
         <div className="cardContainer">
-          {/* convert fetched data to Array */}
+          {/* FIX : change conditional render based on fetchingStatusCode */}
           { !data && <p>No gallery items for now..</p>}
           { data && Array.from(data).map((item)=>{
                 return <GalleryCards 
@@ -55,17 +69,17 @@ export function Gallery () {
         <div 
           className="pagination">
           <button 
-            // fix the hardcoded page later with react-query
+            // fix the hardcoded page later
             disabled={page<=1}
             onClick={()=>setPage(Math.max(page - 1, 1))}>&#8249;</button>
           <p>{page}</p>
           <button
-            // fix the hardcoded page later with react-query
+            // fix the hardcoded page later
             disabled={page>=3}
             onClick={()=>setPage(page + 1)}>&#8250;</button>
         </div>
 
-      </main>
+      </div>
 
     </>
   );
