@@ -7,17 +7,21 @@ const key = require('./config/key')
 const mnemonic = key.mnemonic;
 const infuraTestnet = key.provider.INFURA.TESTNET;
 const infuraMainnet = key.provider.INFURA.MAINNET;
+const ipfs = key.ipfs;
 
 // ====================== Wallet setting ====================== //
 
 module.exports = {  
+  contracts_directory: "./contracts",
+  contracts_build_directory: "./build",
+  migrations_directory:"./migrations",
   networks: {
     // ====================== Local network setting ====================== //
     // development network requires 1) host 2) port 3) network_id properties
     // truffle pre-defined network
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
     // ====================== Local network setting ====================== //
@@ -36,14 +40,14 @@ module.exports = {
     // FIX : deploy finished contracts to Ropsten testnet.
     // NB: It's important to wrap the provider as a function.
     ropsten: {
-      provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
+      provider: () => new HDWalletProvider(mnemonic, key.provider.INFURA.TESTNET),
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true,      // Skip dry run before migrations? (default: false for public nets )
       ipfs : { 
-          address: 'https://ipfs.infura.io:5001'
+          address: ipfs
       }
     },
     // ====================== Public network setting ====================== //
@@ -78,7 +82,7 @@ module.exports = {
           enabled: true,
           runs: 200
         },
-        evmVersion: "byzantium"
+        evmVersion: "london" // latest EVM version
       }
     }
   }
