@@ -1,9 +1,8 @@
 import * as React from 'react'
 import './sass/css/navbar.css'
 import { Link } from 'react-router-dom'
-import { NavbarStyle } from '../containers/styleContainer'
 import { v4 as uuidV4 } from 'uuid'
-import { DropDownProps } from '../containers/propContatiner'
+import { DropDownProps } from '../containers/C_props'
 
 const DropDown = ( {mainTitle, subTitle, routing}:DropDownProps ) => {
     return (
@@ -19,9 +18,9 @@ const DropDown = ( {mainTitle, subTitle, routing}:DropDownProps ) => {
 }
 
 export function Navbar () {
-  const [toggle, setToggle] = React.useState<boolean>(false)
-  const handleClick = () => setToggle(!toggle)
-  
+    const [toggle, setToggle] = React.useState<boolean>(false)
+    const handleClick = () => setToggle(!toggle)
+
     // useEffect to add dropdown effect
     React.useEffect(()=>{
         const navbarMenu = document.getElementById("menu") as HTMLElement
@@ -31,6 +30,7 @@ export function Navbar () {
             Array.from(dropdownSubs).map((item)=>{
                 item.classList.remove("deactive")
                 item.classList.add("active")
+                return ""
             })
         })
 
@@ -38,30 +38,38 @@ export function Navbar () {
             Array.from(dropdownSubs).map((item)=>{
                 item.classList.remove("active")
                 item.classList.add("deactive")
+                return ""
             })
         })
 
     }, [])
     
   return (
-    <nav id='navigation' 
-         style={NavbarStyle.main}>
-        <ul className='navBtns'>
-            <li id='closeBtn'   onClick={handleClick} 
-                                style={toggle ? NavbarStyle.toggleBar.toggle : NavbarStyle.toggleBar.notToggle}> &times; </li>
-            <li id='triggerBtn' onClick={handleClick}
-                                style={toggle ? NavbarStyle.toggleBar.notToggle : NavbarStyle.toggleBar.toggle}> &#8801; </li>
+    <div id='navigation'>
+        <Link to={'/'} className='logoContainer' > 
+            <img src="https://i.ibb.co/2tfRH08/pawcon-logo.png" alt="pawcon pirate cat" id='logo'/>
+        </Link>
+        <ul className='buttons'>
+            <li id='close'   
+                className={toggle ? 'unfold' : 'fold'}
+                onClick={handleClick}> &times; </li>
+            <li id='trigger' 
+                className={toggle ? 'fold' : 'unfold'}
+                onClick={handleClick}> &#8801; </li>
         </ul>
-
-        <ul id='menu' style={toggle ? NavbarStyle.toggleBar.toggle : NavbarStyle.toggleBar.notToggle}>
-            <li><Link to={'/'}>Main</Link></li>
-            <li><DropDown mainTitle="Create" subTitle={["Draw", "Pixelate", "Generate"]} routing="/create"/></li>
-            <li><Link to={'/gallery'}>Gallery</Link></li>
-            <li><Link to={'/shop'}>Shop</Link></li>
-            <li><DropDown mainTitle="Community" subTitle={["Feedback", "Chatting"]} routing="/community"/></li>
-            <li><DropDown mainTitle="About" subTitle={["PawCon", "Creator"]} routing="/about"/></li>
-            <li><Link to={'/login'}>Login/SignUp</Link></li>
-        </ul>
-    </nav>
+        <div id='menu' >
+            <ul 
+                id='lists'
+                className={toggle ? 'unfold' : 'fold'}>
+                <li><Link to={'/'}>Main</Link></li>
+                <li><DropDown mainTitle="Create" subTitle={["Draw", "Pixelate", "Generate"]} routing="/create"/></li>
+                <li><Link to={'/gallery'}>Gallery</Link></li>
+                <li><Link to={'/shop'}>Shop</Link></li>
+                <li><DropDown mainTitle="Community" subTitle={["Feedback", "Chatting"]} routing="/community"/></li>
+                <li><DropDown mainTitle="About" subTitle={["PawCon", "Creator"]} routing="/about"/></li>
+                <li><Link to={'/login'}>Login/SignUp</Link></li>
+            </ul>
+        </div>
+    </div>
   );
 }
