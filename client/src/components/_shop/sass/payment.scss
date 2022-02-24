@@ -1,0 +1,62 @@
+@import '../../partials/variable';
+
+.flexNowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@mixin responsiveLogo {
+    max-width: 50%;
+    height: auto;  
+} 
+
+#payment {
+    @extend .flexNowrap;
+    flex-direction: column;
+    gap: $unit;
+    align-items: center;
+    text-align: center;
+    #texts { 
+        span { 
+            font-size: $unit * 1.5;
+        }
+    }
+    #methods { 
+        @extend .flexNowrap;
+        flex-direction: row;
+        .labels { 
+            @extend .flexNowrap;
+            flex-direction: column;
+            align-items: center;
+        }
+        #metamaskLogo {
+            @include responsiveLogo();
+        }
+        #metamaskLogo:hover { 
+            animation: backlight_M 1s ease-in-out infinite;
+        }
+        #paypalLogo {
+            @include responsiveLogo();
+        }
+        #paypalLogo:hover {
+            animation:  backlight_P 1s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes backlight_M {
+    0% {
+        background-color: lightyellow;
+    }
+    100% {
+        background-color: whitesmoke;
+    }
+}
+@keyframes backlight_P {
+    0% {
+        background-color: lightskyblue;
+    }
+    100% {
+        background-color: whitesmoke;
+    }
+}
