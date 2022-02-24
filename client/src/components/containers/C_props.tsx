@@ -21,12 +21,19 @@ export type DropDownProps = {
     subTitle : string[]
     routing: string
 }
+// ========================== Card types ========================== // 
 
+
+// ========================== Sub component types ========================== // 
 export interface IButtonProps {
     btnText? : string
     url? : string
+    children? : React.ReactNode
+    callback? : any
 }
-// ========================== Card types ========================== // 
+// ========================== Sub component types ========================== // 
+
+
 
 // ========================== Cart types ========================== // 
 export interface Product { 
