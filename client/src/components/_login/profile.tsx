@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from '../containers/redux/store.hooks';
+import { useAppDispatch, useAppSelector } from '../containers/redux/store.hooks';
 import { MenuTabs } from '../_community/community';
+import Avatar, { genConfig,  } from 'react-nice-avatar'; 
 import './sass/css/profile.css';
+import { logout } from '../containers/redux/actionCreators';
+
 
 
 const Dummy = () => {
@@ -17,6 +20,9 @@ const Dummy3 = () => {
 
 export function Profile () {
   const [submit, setSubmit] = React.useState(false);
+  const config = genConfig() // react-nice-avatar package
+  
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   // Get user email from Redux store
@@ -29,20 +35,19 @@ export function Profile () {
     if (submit) {
       // add oauth logout logic at this route(server)
       fetch('/logout') // Delete JWT for logout
+      dispatch(logout()) // set login status to false
+      console.log("logout clicked")
       alert('logout success')
       navigate('/') // client redirect
     }
-  }, [submit, navigate])
-
-  React.useEffect(() => {
-
-  }, [])
+  }, [submit, navigate, dispatch])
   
   return (
     <div id='profile'>
-
       <div id="user">
-        <img src="https://i.ibb.co/X4dN67P/jake.webp" alt="profile" width={50}/>
+      <Avatar  
+        sex='man'
+        style={{width : '3rem', height : '3rem'}} />
         <span>Hello, {username}! Welcome back!</span>
         {/* FIX :user setting here */}
         <div id='setting'>
