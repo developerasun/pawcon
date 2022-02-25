@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { LoginForm } from './loginForm'
 import { Profile } from './profile'
-import { Cookies } from 'react-cookie';
-import { cookieList } from '../containers/cookieContainer'
+import { RootState, useAppSelector } from '../containers/redux/store.hooks';
 
 export function Login() {
-  const cookie = new Cookies()
-  console.log(cookie.get(cookieList.LOGIN)) // undefined if not logged in
-  const loginCookie = cookie.get(cookieList.LOGIN) // jwt login
-  const oauthCookie = cookie.get(cookieList.OAUTH) // oauth login
+  const isLogin = useAppSelector((state:RootState) => state.login.isLogin)
+
+  // FIX : check oauth status
+  React.useEffect(() => {
+    console.log('value of isLogin is : ', isLogin)
+  }, [isLogin])
+
   return (
     <>  
       {/* if user exists(login with jwt or oauth), render Profile component */}
       {/* if not, render LoginForm component */}
-      {loginCookie!==undefined || oauthCookie !==undefined
+      {isLogin
                 ? <Profile/> 
                 : <LoginForm />}
     </>
