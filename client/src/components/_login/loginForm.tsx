@@ -1,9 +1,6 @@
 import * as React from 'react';
 import './sass/css/loginForm.css'
 import { Link, useNavigate } from 'react-router-dom';
-import pawconLogo from '../../assets/img/logo/pawcon-logo.webp'
-import googleLogo from '../../assets/img/logo/google-logo.webp'
-import githubLogo from '../../assets/img/logo/github-logo.webp'
 import { useAppDispatch } from '../containers/redux/store.hooks';
 import { login } from '../containers/redux/actionCreators';
 
@@ -18,6 +15,7 @@ export function LoginForm () {
     console.log("submitted")
   }
 
+  // JWT login logic
   React.useEffect(()=> {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
@@ -45,6 +43,7 @@ export function LoginForm () {
 
       // Redirect user
       }).then((data)=> {
+        // FIX : add email & password validation here 
         console.log(data)
         alert("login success")  
         navigate('/')
@@ -60,8 +59,8 @@ export function LoginForm () {
   
       <div className="loginPromotionContainer">
         <h2>Welcome back!</h2>
-        <p>Come pat my paw. Twice.</p>
-        <img src={pawconLogo} width='200' alt='pawcon logo'/>
+        <p>Find your paw-sibility here.</p>
+        <img src={"https://i.ibb.co/bvCbscp/paw-login.webp"} width='200' alt='pawcon logo'/>
       </div>
 
       <div className="loginContainer">
@@ -90,9 +89,10 @@ export function LoginForm () {
           <li className='title'>Login with</li>
           <ul className='oAuths'>
             <li>
-              {/* fix link later */}
-              <a href="www.google.com" className='googleLogin'>
-                <img  src={googleLogo} 
+              {/* FIX : add redux login status logic here, 
+              NOTE : should redirect to Google Oauth */}
+              <a href="http://localhost:3001/oauth/google" className='googleLogin'>
+                <img  src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
                       alt="google logo" 
                       id='googleLogo'
                       loading='lazy' />
@@ -101,7 +101,7 @@ export function LoginForm () {
             <li>
               {/* fix link later */}
               <a href="www.github.com" className='githubLogin'>
-                <img  src={githubLogo} 
+                <img  src={"https://i.ibb.co/jzGQ70Z/github-logo.webp"} 
                       alt="github logo" 
                       id='githubLogo'
                       loading='lazy' />
