@@ -11,7 +11,7 @@ const getUsers = (req, res) => {
 const getArtworks = (req, res) => {
     const artworks = fs.readFileSync(path.join(__dirname, '..', 'apis', 'artworks', 'json',`artwork${req.params.page}.json`))
     res.set('Content-Type', 'application/json')
-    res.status(200).send(artworks.toString()) // send string data
+    res.status(200).send(artworks.toString()) // send string data and set HTTP 200 OK success status
 }
 
 module.exports = { 

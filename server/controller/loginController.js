@@ -10,7 +10,12 @@ const login_post = async (req, res) => {
 
         // compare the password in database password
         const user = await PawConUser.checkPassword(email, password)
+        // user object contains success property, which lets you know password comparison result
+        console.log(user.success)
 
+        // FIX : add success/failure logic based on user.success
+        // success => return user to client, failure => return user to error message
+        
         // if correct, create json web token for authorization
         const token = createJWT(user._id)
 
@@ -25,8 +30,8 @@ const login_post = async (req, res) => {
     } catch(err) { 
         console.error(err)
         
-        // if error occurs, send 400 status to client
-        res.status(400).json( { success : false, errorMessage : "login failed for some reason" })
+        // if error occurs, send 500 status code to client
+        res.status(500).json( { success : false, errorMessage : "Internal sever error" })
     }
 }
 
@@ -53,7 +58,7 @@ const signup_post = async (req, res) => {
                     httpOnly : true, 
                     maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
                 })
-                res.status(201).json(user)
+                res.status(201).json(user) // status 201 code often used with POST request
                 }
             })
         .catch((err) => console.log(err))
