@@ -6,15 +6,16 @@ import './sass/css/community.css';
 interface MenuTabsProps {
   // MenuTabs props : an array of components 
   components : React.ComponentProps<React.ComponentType>[]
+  names : string[]
 }
 
 // import this where needed
-export const MenuTabs = ( { components } : MenuTabsProps ) => {
+export const MenuTabs = ( { components, names } : MenuTabsProps ) => {
   const [tabId, setTabId] = React.useState("tabA")
   const handleClick = (event : React.MouseEvent) => {
     setTabId(event.currentTarget.className)
   }
-
+  
   // filter a clicked tab to match tab content
   React.useEffect(()=>{
     const tabContents = document.getElementsByClassName("tabContent")
@@ -33,9 +34,9 @@ export const MenuTabs = ( { components } : MenuTabsProps ) => {
         <thead>
           <tr>
             {/* onClick : dispatch(clickTab()) here */}
-            <th className='tabA' onClick={(event) => handleClick(event)}>Feedback</th>
-            <th className='tabB' onClick={(event) => handleClick(event)}>Chat</th>
-            <th className='tabC' onClick={(event) => handleClick(event)}>Blog</th>
+            <th className='tabA' onClick={(event) => handleClick(event)}>{names[0]}</th>
+            <th className='tabB' onClick={(event) => handleClick(event)}>{names[1]}</th>
+            <th className='tabC' onClick={(event) => handleClick(event)}>{names[2]}</th>
           </tr>
         </thead>
         <tbody>
@@ -73,8 +74,13 @@ export function Community () {
   return (
     <div>
       <h1>community route</h1>
-      {/* component args : 1) feedback 2) chat 3) blog  */}
-      <MenuTabs components={[<Feedback />, <Dummy />, <Dummy2 />]}/>
+
+      <div className="menuTabs">
+        {/* component args : 1) feedback 2) chat 3) blog  */}
+        <MenuTabs 
+          components={[<Feedback />, <Dummy />, <Dummy2 />]}
+          names={["Feedback", "Chat", "Blog"]} />
+      </div>
 
       <div className="notice">
           <h2 className="title">See Reviews Here</h2>
@@ -94,17 +100,17 @@ export function Community () {
           </table>
           
           <div 
-          className="pagination">
-          <button 
-          // fix the hardcoded page later with react-query
-          disabled={page<=1}
-          onClick={()=>setPage(Math.max(page - 1, 1))}>&#8249;</button>
-          <p>{page}</p>
-          <button
-          // fix the hardcoded page later with react-query
-          disabled={page>=3}
-          onClick={()=>setPage(page + 1)}>&#8250;</button>
-        </div>
+            className="pagination">
+            <button 
+            // fix the hardcoded page later with react-query
+              disabled={page<=1}
+              onClick={()=>setPage(Math.max(page - 1, 1))}>&#8249;</button>
+            <p>{page}</p>
+            <button
+            // fix the hardcoded page later with react-query
+              disabled={page>=3}
+              onClick={()=>setPage(page + 1)}>&#8250;</button>
+          </div>
       </div>
 
       <Chat />
