@@ -1,0 +1,17 @@
+@import '../../partials/variable';
+
+#chatContainer {
+    #messages {
+        #avatar { 
+            background-color: none;
+        }
+        .chatMessage {
+            width: fit-content;
+            background-color: rgb(44, 135, 255);
+            padding: 0.5*$unit;
+        }
+    }
+    #form {
+
+    }
+}

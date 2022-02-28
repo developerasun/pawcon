@@ -8,6 +8,10 @@
     display: none;
 }
 
+.menuTabs {
+    background-color: $subBgColor;
+}
+
 .pagination {
     display : flex ;
     flex-flow : row nowrap ;
@@ -25,7 +29,7 @@
     margin: 0 auto;
 
     #editorjs { 
-        background-color: $subBgColor;
+        background-color:rgb(153, 153, 153);
         height: fit-content;
     }
 }

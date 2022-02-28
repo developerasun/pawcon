@@ -6,6 +6,10 @@
   display: none;
 }
 
+.menuTabs {
+  background-color: #575757;
+}
+
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,7 +34,7 @@
 }
 
 .web-editor #editorjs {
-  background-color: #575757;
+  background-color: #999999;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

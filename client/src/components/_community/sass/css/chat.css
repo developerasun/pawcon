@@ -1,0 +1,11 @@
+#chatContainer #messages #avatar {
+  background-color: none;
+}
+
+#chatContainer #messages .chatMessage {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #2c87ff;
+  padding: 0.5rem;
+}
