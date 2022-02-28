@@ -28,13 +28,22 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     using Strings for uint256; 
     using Counters for Counters.Counter;
     
+    // ERC721 provides four mappings
+    // 1) owner/tokenId
+    // 2) owner/balance
+    // 3) tokenId/approved address 
+    // 4) owner/operator approval
+
+    address owner; // contract owner
+
     // ======================== token detail setting : NOT TESTED ================== //
     bytes32 public constant creator = "Jake Sung"; 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    bytes32 public constant DESTRUCTOR_ROLE = keccak256("DESTRUCTOR_ROLE");
+
     uint256 public cost = 0.03 ether;
     uint256 public giveaway = 10;
     uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
-    uint256 public totalSupply = 1000; // adjust amount later
     uint256 nonce; // for random number
 
     // 0, 1, 2, 3, 4
@@ -66,11 +75,16 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
 
     // ======================== Token inheritance setting : NOT TESTED ================== //
     // initialize ERC721 and ERC20
-    constructor(address _churu, address pauser, uint256 _nonce, string memory ipfsCid)ERC721("Curious Pawoneer", "CP"){ 
+    constructor(
+        address _churu, 
+        uint256 _nonce, 
+        string memory ipfsCid
+    ) ERC721("Curious Pawoneer", "CP")
+    { 
+        owner = msg.sender;
         churu = Churu(_churu);
         nonce = _nonce; // nonce added when deployed
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set admin
-        _grantRole(PAUSER_ROLE, pauser); // set contract disabler
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set invoker to role setter
         setBaseURI(ipfsCid); // set IPFS URI when deployed
     }
     // ======================== Token inheritance setting : NOT TESTED ================== //
@@ -114,7 +128,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // set minting condition
     function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
         // minting requires to have 100 churu
-        require(churu.getChuruAmount(to) > requiredChuru, "You have to have more than 100 Churu");
+        require(churu.balanceOf(to) > requiredChuru, "You have to have more than 100 Churu");
         
         // non-whitelist mint costs 0.03 ether
         if (!whiltelist[to]) {
@@ -218,7 +232,8 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // ======================== Balance zone : NOT TESTED ================== // 
     // 1. withdraw ether
     // 2. set 5% contract loyalty 
-    function withdraw() public payable onlyRole(DEFAULT_ADMIN_ROLE) nonReentrant {
+    function withdraw() public payable nonReentrant {
+        require(msg.sender == owner, "Only owner");
         (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
         require(isSent, "Only owner.");
     }
@@ -227,8 +242,13 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     
     // ======================== Danger zone : NOT TESTED ================== // 
     // disable all functions in contract
-    function disableCuriousPawoneer() public onlyRole(PAUSER_ROLE) {
+    // 
+    function pauseCuriousPawoneer() public onlyRole(PAUSER_ROLE) {
         _pause(); // change pause state from false to true
+    }
+
+    function destructCuriousPawoneer(address _address) public onlyRole(DESTRUCTOR_ROLE) {
+        selfdestruct(payable(_address)); // move ether to _address and destroy contract
     }
     // ======================== Danger zone : NOT TESTED ================== // 
 }
