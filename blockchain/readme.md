@@ -3,7 +3,7 @@ Teck requirements for PawCon blockchain is as follows :
 
 - Solidity
 - Remix
-- Truffle
+- Truffle => will migrate to Hardhat
 - Web3.js 
 - openzeppelin
 
@@ -12,7 +12,8 @@ Teck requirements for PawCon blockchain is as follows :
 
 - constants are managed under constant directory
 - contracts secured with openzeppelin extensions
-- contracts verified in Etherscan(testnet)
+- contracts deployed and verified in Etherscan(testnet)
+- Role-based access control
 - tips and tricks to lower gas fee : (list here)
 </details>
 
@@ -24,21 +25,9 @@ Teck requirements for PawCon blockchain is as follows :
 - ERC721 Curious Pawoneer
 
 ## Contract
-- Report
 - Certificate
 - Reveal
 - Presale(Free minting)
 - Ticketing
-- Dynamic cost
-- Dynamic mint
+- Dynamic cost/minting
 </details>
-
-<summary>Conventions</summary>
-
-- content here
-- content here
-- content here
-</details>
-
-
-
