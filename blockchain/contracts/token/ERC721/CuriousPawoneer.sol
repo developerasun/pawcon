@@ -20,6 +20,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "../ERC20/Churu.sol";
+import "hardhat/console.sol";
 
 /// @title ERC721 implementation of CuriousPawoneer NFT
 /// @author DeveloperAsun(Jake Sung)
@@ -62,7 +63,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     string public baseMetadataURI; 
     string baseImageExtension = ".png"; 
     string baseMetadataExtension = ".json"; 
-    string ipfsPrefix = 'ipfs://';
+    string ipfsPrefix = "ipfs://";
     // ======================== IPFS setting : NOT TESTED ================== //
     
     // ======================== Mapping setting : NOT TESTED ================== //

@@ -5,13 +5,13 @@ import "./interface/ICertificate.sol";
 /// @author Jake Sung
 /// @dev Certificate is granted to legendary Curious Pawoneers. 2 year period.
 contract Certificate is ICertificate { 
-    address issuer; 
+    address private issuer; 
     // expiration date
     uint256 public short = 180;
     uint256 public middle = 365;
     uint256 public long = middle * 2; 
     uint256 public issueCost = 0.05 ether;
-    expiration exp; // FIX this later
+    expiration public exp; // FIX this later
     
     // set issuer to contract invoker
     constructor () {

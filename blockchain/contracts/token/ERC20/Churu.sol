@@ -17,6 +17,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "hardhat/console.sol";
 
 contract Churu is ERC20, AccessControl, Pausable {
     // ERC20 provides two mappings for balance and allowance. 
