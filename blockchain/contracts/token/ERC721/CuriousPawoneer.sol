@@ -35,17 +35,17 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // 3) tokenId/approved address 
     // 4) owner/operator approval
 
-    address owner; // contract owner
+    address private owner; // contract owner
 
     // ======================== token detail setting : NOT TESTED ================== //
-    bytes32 public constant creator = "Jake Sung"; 
+    bytes32 public constant CREATOR = "Jake Sung"; 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant DESTRUCTOR_ROLE = keccak256("DESTRUCTOR_ROLE");
 
     uint256 public cost = 0.03 ether;
     uint256 public giveaway = 10;
     uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
-    uint256 nonce; // for random number
+    uint256 private nonce; // for random number
 
     // 0, 1, 2, 3, 4
     enum Rarity { 
@@ -61,9 +61,9 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     string public baseURI; // IPFS CID
     string public baseImageURI; 
     string public baseMetadataURI; 
-    string baseImageExtension = ".png"; 
-    string baseMetadataExtension = ".json"; 
-    string ipfsPrefix = "ipfs://";
+    string public baseImageExtension = ".png"; 
+    string public baseMetadataExtension = ".json"; 
+    string public ipfsPrefix = "ipfs://";
     // ======================== IPFS setting : NOT TESTED ================== //
     
     // ======================== Mapping setting : NOT TESTED ================== //
@@ -71,7 +71,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
     // ======================== Mapping setting : NOT TESTED ================== //
 
-    Counters.Counter mintCount;
+    Counters.Counter public mintCount;
     Churu public churu;
 
     // ======================== Token inheritance setting : NOT TESTED ================== //
@@ -129,7 +129,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // set minting condition
     function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
         // minting requires to have 100 churu
-        require(churu.balanceOf(to) > requiredChuru, "You have to have more than 100 Churu");
+        require(churu.balanceOf(to) > requiredChuru, "Should own 100+ Churu");
         
         // non-whitelist mint costs 0.03 ether
         if (!whiltelist[to]) {
@@ -152,7 +152,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // set burning condition
     function burn(uint256 tokenId) public whenNotPaused { 
         // set Legendary rarity can't be deleted
-        require(tokenRarity[tokenId] != 3, "Legendary Pawoneer can't be deleted");
+        require(tokenRarity[tokenId] != 3, "Legendary can't be deleted");
         _burn(tokenId); // delete nft
     }
 
@@ -243,7 +243,6 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     
     // ======================== Danger zone : NOT TESTED ================== // 
     // disable all functions in contract
-    // 
     function pauseCuriousPawoneer() public onlyRole(PAUSER_ROLE) {
         _pause(); // change pause state from false to true
     }

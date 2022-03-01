@@ -23,15 +23,15 @@ contract Churu is ERC20, AccessControl, Pausable {
     // ERC20 provides two mappings for balance and allowance. 
     // Each time _mint from ERC20 executes, balance and total supply increases. 
 
-    address owner;
+    address private owner;
 
     uint256 public constant initialSupply = 1000000000;     // initial supply is 10 billion Churu
-    uint256 cost = 0.03 ether;
-    uint256 mintLimit = 10000;
+    uint256 public cost = 0.03 ether;
+    uint256 public mintLimit = 10000;
     
     // ======================== AccessControl zone ======================== // 
     // add role-based access control : admin, minter, burner, destructor
-    bytes32 public constant creator = "Jake Sung";
+    bytes32 public constant CREATOR = "Jake Sung";
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
