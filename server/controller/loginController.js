@@ -11,22 +11,25 @@ const login_post = async (req, res) => {
         // compare the password in database password
         const user = await PawConUser.checkPassword(email, password)
         // user object contains success property, which lets you know password comparison result
-        console.log(user.success)
+        console.log("user login status: ", user.success)
 
-        // FIX : add success/failure logic based on user.success
-        // success => return user to client, failure => return user to error message
-        
-        // if correct, create json web token for authorization
-        const token = createJWT(user._id)
+        // success => return user to client, failure => return user to error message        
+        if (user.success) { 
+            // if correct, create json web token for authorization
+            const token = createJWT(user._id)
 
-        // set cookie name, value, and option with jswon web token
-        res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, { 
-            maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION, 
-            httpOnly : true // prevent client-JS approach to cookie
-        })
+            // set cookie name, value, and option with jswon web token
+            res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, { 
+                maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION, 
+                httpOnly : true // prevent client-JS approach to cookie
+            })
 
-        // send json response and end request-response cycle
-        res.status(200).json(user)
+            // send json response and end request-response cycle
+            res.status(200).json(user)
+        } else { 
+            res.status(401).json(user) // contains error message
+        }
+
     } catch(err) { 
         console.error(err)
         
