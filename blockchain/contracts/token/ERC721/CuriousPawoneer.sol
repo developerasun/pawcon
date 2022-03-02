@@ -29,13 +29,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     using Strings for uint256; 
     using Counters for Counters.Counter;
     
-    // ERC721 provides four mappings
-    // 1) owner/tokenId
-    // 2) owner/balance
-    // 3) tokenId/approved address 
-    // 4) owner/operator approval
-
-    address private owner; // contract owner
+    address private owner;// contract owner
 
     // ======================== token detail setting : NOT TESTED ================== //
     bytes32 public constant CREATOR = "Jake Sung"; 
@@ -58,16 +52,16 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // ======================== token detail : NOT TESTED ================== //
     
     // ======================== IPFS setting : NOT TESTED ================== //
-    string public baseURI; // IPFS CID
     string public baseImageURI; 
     string public baseMetadataURI; 
+    string public baseURI; // pinata cid
     string public baseImageExtension = ".png"; 
     string public baseMetadataExtension = ".json"; 
-    string public ipfsPrefix = "ipfs://";
+    string public gateway = "https://gateway.pinata.cloud/ipfs/";
     // ======================== IPFS setting : NOT TESTED ================== //
     
     // ======================== Mapping setting : NOT TESTED ================== //
-    mapping(address=>bool) public whiltelist; // set whitelist
+    mapping(address=>bool) public whitelist; // set whitelist
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
     // ======================== Mapping setting : NOT TESTED ================== //
 
@@ -77,16 +71,16 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // ======================== Token inheritance setting : NOT TESTED ================== //
     // initialize ERC721 and ERC20
     constructor(
-        address _churu, 
+        address _churu,
         uint256 _nonce, 
-        string memory ipfsCid
+        string memory cid
     ) ERC721("Curious Pawoneer", "CP")
     { 
         owner = msg.sender;
         churu = Churu(_churu);
         nonce = _nonce; // nonce added when deployed
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set invoker to role setter
-        setBaseURI(ipfsCid); // set IPFS URI when deployed
+        setBaseURI(cid); // set pinata IPFS URI when deployed
     }
     // ======================== Token inheritance setting : NOT TESTED ================== //
     
@@ -121,23 +115,22 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         // choose _safeMint over _mint whenever possible
         _safeMint(to, tokenId);
         tokenRarity[tokenId] = uint256(rarity); // default rarity is common(0)
-        // token URI is set to : 'ipfs://cid/tokenId' 
-        setTokenImageURI(tokenId); // 'ipfs://cid/tokenId.png'
-        setTokenMetadataURI(tokenId); // 'ipfs://cid/tokenId.json'
+        // token URI is set to : 'ipfs://cid/tokenId.png(.json)'
+        setTokenURI(tokenId); 
     }
 
     // set minting condition
     function mint(address to, uint256 tokenId) public payable whenNotPaused setCost{ 
-        // minting requires to have 100 churu
+        // minting requires 1) to have 100 churu 2) msg.value > cost
         require(churu.balanceOf(to) > requiredChuru, "Should own 100+ Churu");
         
         // non-whitelist mint costs 0.03 ether
-        if (!whiltelist[to]) {
+        if (!whitelist[to]) {
             require(msg.value > cost, "Enter a proper ether amount."); 
             mintNFT(to, tokenId);
         } 
         // whitelist can mint free for up to 10 giveaways(total)
-        else if (whiltelist[to] && giveaway > 0) { 
+        else if (whitelist[to] && giveaway > 0) { 
             mintNFT(to, tokenId);
             giveaway--;
         } 
@@ -171,54 +164,48 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         tokenRarity[tokenId] = rand;
         return rand;
     }
+
+    // TO DO : test whitelist setter
+    function setWhitelist(address _address) public whenNotPaused {
+        require(msg.sender == owner, "only owner");
+        whitelist[_address] = true;
+    }
     // ======================== Minting zone : NOT TESTED ======================== // 
 
     // ======================== IPFS & Token URI zone : NOT TESTED ======================== // 
-    // how Token URI works : tokenURI : baseURI + tokenId
-    // 1. set _baseURI
-    // 2. user mint a NFT and the token id is created
-    // 3. set tokenURI by combining _baseURI and tokenId
-    // 4. front end will instantiate a contract and get the token URI
-    // 5. front end displays the token 
-    
-    // how IPFS works : gateway + CID + file name(token + file extension)
-    // 1. upload NFT media to Pinata or IPFS desktop to get CID
-    // 2. concatenate prefix 'ipfs://' with the CID for opensea metadata standard
-    // 3. set it as baseURI in during deploy (in constructor)
-    // 4. metadata should be in .json, NFT image should be in .png <=> communicate this with front end
-
-    // 1. set baseURI first with IPFS CID
-    // 2. set baseImageURI / baseMetadataURI
-    // 3. get baseImageURI / baseMetadataURI
-    function _baseURI(string memory ipfsCid) internal view virtual whenNotPaused returns (string memory) {
-        // ipfs:// => opensea metadata standard
+    // NOT TESTED : _baseURI only returns and takes no parameters. should override from ERC721
+    function _baseURI() internal view virtual override whenNotPaused returns (string memory) {
         // baseURI result =>  ipfs://cid/
-        return string(abi.encodePacked(ipfsPrefix, ipfsCid, "/"));
+        return string(abi.encodePacked(gateway, baseURI, "/"));
     }
 
-    /// @dev set baseURI with IPFS CID(content identifier, hash)
-    function setBaseURI(string memory ipfsCid) internal whenNotPaused { 
-        baseURI = _baseURI(ipfsCid); 
+    // NOT TESTED
+    function setBaseURI(string memory _baseURI_) internal whenNotPaused  { 
+        baseURI = _baseURI_;
+    } 
+
+    // NOT TESTED : change to new baseURI. Without this method, baseURI will be never changed once deployed. 
+    function resetNewBaseURI(string memory newURI) public whenNotPaused {
+        require(msg.sender == owner, "only owner");
+        setBaseURI(newURI);
     }
 
-    // change to new baseURI. Without this method, baseURI will be never changed once deployed. 
-    function resetNewBaseURI(string memory ipfsCid) public whenNotPaused {
-        setBaseURI(ipfsCid);
+    // NOT TESTED
+    function resetGateway(string memory newGateway) public whenNotPaused {
+        require(msg.sender == owner, "only owner");
+        gateway = newGateway;
     }
 
+    // NOT TESTED
     function getBaseURI() public view whenNotPaused returns(string memory) {
-        return baseURI;
-    }
-
-    /// @dev set NFT metadataURI
-    function setTokenMetadataURI(uint256 tokenId) public whenNotPaused {
-        // tokenURI should be : 'ipfs://cid/tokenId.json'
-        baseMetadataURI = string(abi.encodePacked(tokenURI(tokenId), baseMetadataExtension));
+        return _baseURI();
     }
 
     /// @dev set NFT imageURI
-    function setTokenImageURI(uint256 tokenId) public whenNotPaused {
+    // TO DO : should test 
+    function setTokenURI(uint256 tokenId) public whenNotPaused {
         // tokenURI should be : 'ipfs://cid/tokenId.png' 
+        baseMetadataURI = string(abi.encodePacked(tokenURI(tokenId), baseMetadataExtension));
         baseImageURI = string(abi.encodePacked(tokenURI(tokenId), baseImageExtension));
     }
     
