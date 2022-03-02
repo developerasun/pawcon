@@ -38,7 +38,7 @@ export function Chat () {
       socket.emit('chat:send', { // this event name should be the same in server side
         userName : userName.value,
         message : message.value, 
-        senderId : 'clientSender'
+        senderId : socket.id
       })
     }
     message.value = "" // reinitialize input value
@@ -46,24 +46,26 @@ export function Chat () {
 
   React.useEffect(() => {
     socket.on('chat:receive', ({userName, message, senderId}:ChatMessageProps) => {
-      // prevent duplicated render
-      if (senderId === 'serverSender') {
-        console.log(message)
+      // listen to socket event and render it
         setChat((prev) => ([
           ...prev, 
           {userName, message, senderId}
         ]))
-      }
     })
   }, [])
 
   return (
     <div id='chatContainer'>
 
-      <ul id="messages">
         <li id='avatar'>{avatar.current}</li>
+      <ul id="messages">
         {chat.map((item) => {
-          return ( <li key={v4()} className='chatMessage'> {item.userName} : {item.message} </li> ) })}
+          return ( 
+          // change color to distinguish sockets
+          <li key={v4()} 
+            className={item.senderId === socket.id ? 'chatMessage' : 'others'} > 
+            {item.userName} : {item.message} 
+          </li> ) })}
       </ul>
 
       <form id="form" onSubmit={handleSubmit}>
@@ -81,7 +83,7 @@ export function Chat () {
           type={'text'} 
           placeholder={'Write something ...'}
           autoComplete='off' />
-        <button>Send</button>
+        <button>&#9993;</button>
       </form>
     </div>
   );
