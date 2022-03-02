@@ -7,13 +7,13 @@ export const loginReducer = ( state = initialLoginState, action : LoginActionPay
         case LOGIN : 
             // returned object should have the same properties as initial state
             return { 
-                isLogin : !state.isLogin, 
+                isLogin : true, 
                 email : action.payload
             }
         case LOGOUT : 
             return { 
-                isLogin : !state.isLogin,
-                email : ""
+                isLogin : false,
+                email : action.payload
             }
         default : 
             return state

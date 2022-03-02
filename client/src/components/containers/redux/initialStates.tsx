@@ -1,4 +1,4 @@
-import { Product } from "../C_props"
+import { ArtworkList, Product } from "../C_props"
 
 // Set login state
 export interface initialLoginStateProps { 
@@ -13,3 +13,6 @@ export const initialLoginState : initialLoginStateProps = {
 
 // Set cart item state
 export const initialCartItemState : Product[] = [ ]
+
+// set artwork item state 
+export const initialArtworkItemState : ArtworkList = []

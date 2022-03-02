@@ -14,5 +14,7 @@ export interface RootState  {
 // method 2
 // export type RootState = ReturnType<typeof store.getState> 
 export type AppDispatch = typeof store.dispatch
+
+// type casting for redux selector & dispatch
 export const useAppSelector : TypedUseSelectorHook<RootState> = useSelector
 export const useAppDispatch = () => useDispatch<AppDispatch>()
