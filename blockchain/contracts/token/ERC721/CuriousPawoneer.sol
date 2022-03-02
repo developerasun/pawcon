@@ -28,20 +28,20 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     // import libraries
     using Strings for uint256; 
     using Counters for Counters.Counter;
-    
-    address private owner;// contract owner
 
-    // ======================== token detail setting : NOT TESTED ================== //
+    address public owner;// contract owner
+
+    // ======================== token detail setting ================== //
     bytes32 public constant CREATOR = "Jake Sung"; 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant DESTRUCTOR_ROLE = keccak256("DESTRUCTOR_ROLE");
-
+    
     uint256 public cost = 0.03 ether;
     uint256 public giveaway = 10;
     uint256 public requiredChuru = 100; // hold 100 churu to mint curious pawoneer
     uint256 private nonce; // for random number
-
-    // 0, 1, 2, 3, 4
+    
+    // 0, 1, 2, 3
     enum Rarity { 
         COMMON,
         RARE,
@@ -49,26 +49,26 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         LEGENDARY
     }
     Rarity public rarity = Rarity.COMMON;
-    // ======================== token detail : NOT TESTED ================== //
+    // ======================== token detail ================== //
     
-    // ======================== IPFS setting : NOT TESTED ================== //
+    // ======================== IPFS setting ================== //
     string public baseImageURI; 
     string public baseMetadataURI; 
     string public baseURI; // pinata cid
     string public baseImageExtension = ".png"; 
     string public baseMetadataExtension = ".json"; 
     string public gateway = "https://gateway.pinata.cloud/ipfs/";
-    // ======================== IPFS setting : NOT TESTED ================== //
+    // ======================== IPFS setting ================== //
     
-    // ======================== Mapping setting : NOT TESTED ================== //
+    // ======================== Mapping setting ================== //
     mapping(address=>bool) public whitelist; // set whitelist
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
-    // ======================== Mapping setting : NOT TESTED ================== //
+    // ======================== Mapping setting ================== //
 
     Counters.Counter public mintCount;
     Churu public churu;
 
-    // ======================== Token inheritance setting : NOT TESTED ================== //
+    // ======================== Token inheritance setting ================== //
     // initialize ERC721 and ERC20
     constructor(
         address _churu,
@@ -82,16 +82,16 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set invoker to role setter
         setBaseURI(cid); // set pinata IPFS URI when deployed
     }
-    // ======================== Token inheritance setting : NOT TESTED ================== //
+    // ======================== Token inheritance setting ================== //
     
-    // ======================== AccessControl setting : NOT TESTED ================== //
+    // ======================== AccessControl setting ================== //
     // Should inherite supportsInterface
     function supportsInterface(bytes4 interfaceId) public view virtual override(AccessControl, ERC721) whenNotPaused returns (bool) {
         return interfaceId == type(IAccessControl).interfaceId || super.supportsInterface(interfaceId);
     }
-    // ======================== AccessControl setting : NOT TESTED ================== //
-
-    // ======================== Modifier setting : NOT TESTED ================== //
+    // ======================== AccessControl setting ================== //
+    
+    // ======================== Modifier setting ================== //
     /// @dev set dynamic cost based on total supply
     modifier setCost() {
         if (mintCount.current() < 300) { 
@@ -108,9 +108,9 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         }
         _;
     }
-    // ======================== Modifier setting : NOT TESTED ================== //
+    // ======================== Modifier setting ================== //
     
-    // ======================== Minting zone : NOT TESTED ================== // 
+    // ======================== Minting zone ================== // 
     function mintNFT(address to, uint256 tokenId) private { 
         // choose _safeMint over _mint whenever possible
         _safeMint(to, tokenId);
@@ -158,9 +158,14 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         return rand;
     }
 
+    function getTokenRarity(uint256 tokenId) public view whenNotPaused returns(uint256) {
+        return tokenRarity[tokenId];
+    }
+
     function resetRarity(uint256 tokenId) public payable whenNotPaused returns(uint256) {
         require(msg.value > cost, "Reset rarity cost 0.03 ether");
         uint256 rand = getRandomNumber();
+        console.log(rand); // check random number
         tokenRarity[tokenId] = rand;
         return rand;
     }
@@ -170,9 +175,9 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         require(msg.sender == owner, "only owner");
         whitelist[_address] = true;
     }
-    // ======================== Minting zone : NOT TESTED ======================== // 
+    // ======================== Minting zone ======================== // 
 
-    // ======================== IPFS & Token URI zone : NOT TESTED ======================== // 
+    // ======================== IPFS & Token URI zone ======================== // 
     // NOT TESTED : _baseURI only returns and takes no parameters. should override from ERC721
     function _baseURI() internal view virtual override whenNotPaused returns (string memory) {
         // baseURI result =>  ipfs://cid/
@@ -189,7 +194,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         require(msg.sender == owner, "only owner");
         setBaseURI(newURI);
     }
-
+    
     // NOT TESTED
     function resetGateway(string memory newGateway) public whenNotPaused {
         require(msg.sender == owner, "only owner");
@@ -208,16 +213,18 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         baseMetadataURI = string(abi.encodePacked(tokenURI(tokenId), baseMetadataExtension));
         baseImageURI = string(abi.encodePacked(tokenURI(tokenId), baseImageExtension));
     }
-    
+
     // front end will invoke this to get tokenURI
     function getTokenURIs() public view whenNotPaused returns(string[2] memory){
+        console.log(baseImageURI);
+        console.log(baseMetadataURI);
         // combine baseURI with tokenId and  returns a string         
         return [baseImageURI, baseMetadataURI];
     }
-    // ======================== IPFS & Token URI zone : NOT TESTED ================== // 
+    // ======================== IPFS & Token URI zone ================== // 
 
 
-    // ======================== Balance zone : NOT TESTED ================== // 
+    // ======================== Balance zone ================== // 
     // 1. withdraw ether
     // 2. set 5% contract loyalty 
     function withdraw() public payable nonReentrant {
@@ -225,10 +232,10 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
         require(isSent, "Only owner.");
     }
-    // ======================== Balance zone : NOT TESTED ================== // 
+    // ======================== Balance zone ================== // 
 
     
-    // ======================== Danger zone : NOT TESTED ================== // 
+    // ======================== Danger zone ================== // 
     // disable all functions in contract
     function pauseCuriousPawoneer() public onlyRole(PAUSER_ROLE) {
         _pause(); // change pause state from false to true
@@ -237,5 +244,5 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     function destructCuriousPawoneer(address _address) public onlyRole(DESTRUCTOR_ROLE) {
         selfdestruct(payable(_address)); // move ether to _address and destroy contract
     }
-    // ======================== Danger zone : NOT TESTED ================== // 
+    // ======================== Danger zone ================== // 
 }

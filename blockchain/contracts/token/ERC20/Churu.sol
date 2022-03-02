@@ -22,8 +22,8 @@ import "hardhat/console.sol";
 contract Churu is ERC20, AccessControl, Pausable {
     // ERC20 provides two mappings for balance and allowance. 
     // Each time _mint from ERC20 executes, balance and total supply increases. 
-
-    address private owner;
+    
+    address public owner;
 
     uint256 public constant initialSupply = 1000000000;     // initial supply is 10 billion Churu
     uint256 public cost = 0.03 ether;
@@ -64,7 +64,6 @@ contract Churu is ERC20, AccessControl, Pausable {
     }
     // ======================== Mint zone ======================== //
 
-
     // ======================== Balance zone ======================== // 
     // only owner can withdraw
     function withdraw() public payable {
@@ -74,13 +73,12 @@ contract Churu is ERC20, AccessControl, Pausable {
     }
     // ======================== Balance zone ======================== // 
 
-
     // ======================== Danger zone : NOT TESTED ================== // 
     // only pauser can pause
     function pauseChuru() public onlyRole(PAUSER_ROLE) {
         _pause(); // change pause state from false to true
     }
-
+    
     // only destructor can destruct
     function destructChuru(address _address) public onlyRole(DESTRUCTOR_ROLE) {
         selfdestruct(payable(_address)); // move ether to owner and destroy contract
