@@ -1,17 +1,41 @@
 @import '../../partials/variable';
 
 #chatContainer {
+    border: 1px solid rgb(209, 209, 209);
+    #avatar { 
+        background-color: none;
+    }
     #messages {
-        #avatar { 
-            background-color: none;
-        }
+        position: relative;
         .chatMessage {
             width: fit-content;
             background-color: rgb(44, 135, 255);
             padding: 0.5*$unit;
         }
+        .others {
+            // position: absolute;
+            // right: 0;
+            width: fit-content;
+            background-color: rgb(165, 56, 255);
+            padding: 0.5*$unit;
+        }
     }
     #form {
-
+        background-color: cadetblue;
+        input[name=userName] {
+            width: 15%;
+        }
+        input[name=message] {
+            width: 60%;
+        }
+        button {
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(44, 135, 255);
+            width: 10%;
+            padding: $unit * 0.2;
+            cursor: pointer;
+        } 
     }
 }
