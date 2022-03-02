@@ -21,7 +21,11 @@ const Dummy3 = () => {
 export function Profile () {
   const [submit, setSubmit] = React.useState(false);
   const config = genConfig() // react-nice-avatar package
-  
+  const avatar = React.useRef(
+  <Avatar  
+    sex='man'
+    style={{width : '3rem', height : '3rem'}} />)
+
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -41,13 +45,12 @@ export function Profile () {
       navigate('/') // client redirect
     }
   }, [submit, navigate, dispatch])
-  
+
   return (
     <div id='profile'>
       <div id="user">
-      <Avatar  
-        sex='man'
-        style={{width : '3rem', height : '3rem'}} />
+        {/* avatar should not change during logout */}
+      <span>{avatar.current}</span> 
         <span>Hello, {username}! Welcome back!</span>
         {/* FIX :user setting here */}
         <div id='setting'>
