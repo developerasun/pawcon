@@ -13,9 +13,10 @@ export const API_PROD = {
 // Dev API url
 export const API_DEV = { 
     artworks : {
-        baseUrl : `/apis/artworks/` 
+        baseUrl : `http://localhost:3001/apis/artworks/` 
     },
     users : {
-        baseUrl : `localhost/apis/users/` 
-    } 
+        baseUrl : `http://localhost:3001/apis/users/` 
+    }, 
+    login : "http://localhost:3001/login"
 }

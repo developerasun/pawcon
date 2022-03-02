@@ -28,8 +28,8 @@ export const imgContainer = () => {
       <img src="https://i.ibb.co/tbfyGZw/salute-devs.webp" alt="salute-devs" />
 
       {/* logo */}
-      <img src="https://i.ibb.co/Qdmbd0y/pawcon-logo.webp" alt="pawcon-logo" />
       <img src="https://i.ibb.co/2tfRH08/pawcon-logo.png" alt="pawcon-logo-pirate" />
+      <img src="https://i.ibb.co/bvCbscp/paw-login.webp" alt="paw-login"></img>
       <img src="https://i.ibb.co/jzGQ70Z/github-logo.webp" alt="github-logo" />
       <img src="https://i.ibb.co/m997sdM/google-logo.webp" alt="google-logo" />
       <img src="https://i.ibb.co/Qchvsh4/metamask-logo.webp" alt="metamask-logo" />
