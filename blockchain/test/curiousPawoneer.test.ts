@@ -1,18 +1,19 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-
-// FIX : Should provide a deploeyd Churu contract address 
-const churuAddress = ""
-const nounce = 0
-const ipfsCid = ""
+import key from "../config/key";
 
 describe("CuriousPawoneer.sol", function () {
-  it.skip("Should return a contract name", async function () {
+  it("Should return a contract name", async function () {
     const CuriousPawoneer = await ethers.getContractFactory("CuriousPawoneer");
-    const curiousPawoneer = await CuriousPawoneer.deploy(churuAddress, nounce, ipfsCid);
+    const curiousPawoneer = await CuriousPawoneer.deploy(
+      key.CONSTRUCTOR.CURIOUSPAWONEER.churuAddr.HARDHAT, 
+      key.CONSTRUCTOR.CURIOUSPAWONEER.nonce,
+      key.CONSTRUCTOR.CURIOUSPAWONEER.cid
+    );
     await curiousPawoneer.deployed();
 
     // get contract name
-    expect(await curiousPawoneer.name()).to.equal("CuriousPawoneer");
+    expect(await curiousPawoneer.name()).to.equal("Curious Pawoneer");
   });
 });
+

@@ -4,6 +4,8 @@ import { keccak256 } from "ethers/lib/utils";
 import hre from 'hardhat'
 import key from "../config/key";
 
+// NOTE : private state variables in contract not accessible in test code
+
 // What should be test
 // 1. minter : mint
 // 1. burner : burn 
@@ -56,7 +58,7 @@ describe("Burner role", function() {
 })
 
 describe("Pauser role", function() {
-  it.skip("Only Pauser can pause", async function() {
+  it("Only Pauser can pause", async function() {
     const Churu = await ethers.getContractFactory("Churu");
     const churu = await Churu.deploy();
     await churu.deployed();
@@ -80,6 +82,19 @@ describe("Destructor role", function() {
 
      // FIX : chai not throwing err
     expect(await churu.balanceOf(account2)).to.throw() // should have ethers
+  })
+})
+
+describe("Withdrawl zone", function() {
+  it.skip("Should withdraw eth from contract", async function() {
+    const Churu = await ethers.getContractFactory("Churu");
+    const churu = await Churu.deploy();
+    const deployedChuru = churu as any;
+    await churu.deployed();
+
+    // FIX : Only owner VM Exception
+    await churu.withdraw();
+    expect(await churu.balanceOf(deployedChuru.address)).equal(0)
   })
 })
 
