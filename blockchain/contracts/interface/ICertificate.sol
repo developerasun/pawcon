@@ -14,11 +14,11 @@ interface ICertificate {
     }
 
     // 1. issue certificate 
-    function issueOne(address _holder) external payable;
+    function issueOne(address _holder, uint256 _tokenId, uint256 _date) external payable;
     // 2. expire certificate
-    function expireOne(uint256 _date) external ;
+    function expireOne(address _holder, uint256 _tokenId) external ;
     // 3. extends certificate expiration date from _prev to _to. requires a fee
     function extendExpiration(uint256 _prev, uint256 _to) external ;
     // 4. set expiration
-    function setExpiration(uint256 _date) external ;
+    function setExpiration(uint256 _date, uint256 _tokenId) external ;
 }
