@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import key from './config/key';
 import { HardhatUserConfig, task } from "hardhat/config";
-import "@nomiclabs/hardhat-etherscan";
+import "@nomiclabs/hardhat-etherscan"; // for etherscan contract verification
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
@@ -24,7 +24,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "development", // dev network is ganache
+  defaultNetwork: "hardhat", // dev network is hardhat
   solidity: {
     version : "0.8.10",
     settings: {
@@ -45,31 +45,22 @@ const config: HardhatUserConfig = {
     // JSON-RPC based network
     ropsten: {
       url: key.PROVIDER.INFURA.TESTNET,
-      // HD wallet config
-      accounts: {
-        mnemonic: key.HDWALLET.MNEMONIC, 
-        path: "m/44'/60'/0'/0", // default 
-        initialIndex: 0,  // default
-        count: 20, // default
-      }
-        // process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: key.ROPSTENNETWORK !== undefined ? [key.ROPSTENNETWORK.ACCOUNT[1].privateKey] : []
     },
-    development: {
+    ganache: {
       url: key.PROVIDER.GANACHE.URL,
       chainId: key.PROVIDER.GANACHE.CHAINID, // ganache chain id
       gas: "auto", 
       gasPrice: "auto",
       timeout: 40000 // default value is 40000
     }, 
-    // hardhat network
-    hardhat: { }
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
     currency: "USD",
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: key.ETHERSCANAPI,
   },
   mocha: {
     timeout: 40000,
