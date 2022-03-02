@@ -3,13 +3,13 @@ import { ethers } from "hardhat";
 
 async function main() {
 
-  const Churu = await ethers.getContractFactory("Churu");
-  const churu = await Churu.deploy();
-  const deployedChuru = churu as any; // to find contract address
-  await churu.deployed();
+  const Certificate = await ethers.getContractFactory("Certificate");
+  const certificate = await Certificate.deploy();
+  const deployedCertificate = certificate as any; // to find contract address
+  await certificate.deployed();
 
   // deployed address : 0x5FbDB2315678afecb367f032d93F642f64180aa3
-  console.log("Churu deployed to:", deployedChuru.address);
+  console.log("Certificate deployed to:", deployedCertificate.address);
 }
 
 // Hardhat recommend this pattern to be able to use async/await everywhere

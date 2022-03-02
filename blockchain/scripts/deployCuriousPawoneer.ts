@@ -1,15 +1,22 @@
 import "@nomiclabs/hardhat-ethers";
 import { ethers } from "hardhat";
+import key from "../config/key";
 
 async function main() {
 
-  const Churu = await ethers.getContractFactory("Churu");
-  const churu = await Churu.deploy();
+  const CuriousPawoneer = await ethers.getContractFactory("CuriousPawoneer");
+  const curiousPawoneer = await CuriousPawoneer.deploy(
+    // should change based on network selection
+    key.CONSTRUCTOR.CURIOUSPAWONEER.churuAddr.HARDHAT, 
+    key.CONSTRUCTOR.CURIOUSPAWONEER.nonce,
+    key.CONSTRUCTOR.CURIOUSPAWONEER.cid
+  );
 
-  await churu.deployed();
+  const deployedCuriousPawoneer = curiousPawoneer as any;
+  await curiousPawoneer.deployed();
 
-  // FIX : property address does not exist on type 'Churu'
-  console.log("Churu deployed to:", "something here to find address");
+  // deployed address : 0x5FbDB2315678afecb367f032d93F642f64180aa3
+  console.log("Curious Pawoneer deployed to:", deployedCuriousPawoneer.address);
 }
 
 // Hardhat recommend this pattern to be able to use async/await everywhere
