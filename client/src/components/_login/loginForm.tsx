@@ -3,9 +3,17 @@ import './sass/css/loginForm.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../containers/redux/store.hooks';
 import { login } from '../containers/redux/actionCreators';
+import { API_DEV } from '../containers/C_apiUrl';
+import { json } from 'stream/consumers';
+
+interface LoginValidationError { 
+  errorMessage : string
+  success : boolean
+}
 
 export function LoginForm () {
   const [submit, setSubmit] = React.useState(false)
+  const [validationErr, setValidationErr] = React.useState<LoginValidationError>()
   const navigate = useNavigate()
   const dispatch = useAppDispatch() // typed dispatch 
 
@@ -20,10 +28,10 @@ export function LoginForm () {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
     const abortController = new AbortController()
-  
+
     if (submit) { 
       // HTTP POST request
-      fetch('/login', {
+      fetch(API_DEV.login, {
         method: 'POST', 
         body: JSON.stringify({
           email : email.value, 
@@ -33,20 +41,21 @@ export function LoginForm () {
         signal : abortController.signal
 
       // Get server response, set login Redux state
-      }).then((res) => {
-        if (res.ok) { 
-          // if login success, dispatch user email to Redux store
-          dispatch(login(email.value))
-          return res.json() 
+      }).then(async (res) => {
+        if (res.status === 200) {return res.json()}
+        if (res.status === 401) {
+          const error = await res.json() // get error object from server
+          setValidationErr(error) 
         }
-        else console.log(res.json()) // log server error response
-
-      // Redirect user
       }).then((data)=> {
-        // FIX : add email & password validation here 
-        console.log(data)
-        alert("login success")  
-        navigate('/')
+        console.log(data) // data object includes success property(set by server)
+        if (data.success) {
+          alert("login success")  
+          dispatch(login(data._doc.email)) // server response object when success
+          navigate('/')
+        }
+      }).catch((err) => {
+        console.log(err)
       })
     }
 
@@ -81,7 +90,8 @@ export function LoginForm () {
                 id='password'      
                 placeholder='Password'
                 required />
-          </label> 
+          </label>
+          <span>{validationErr ? validationErr.errorMessage : "Please login first"}</span>
           <button className='loginBtn' type='submit'>Login</button>
         </form>
 
