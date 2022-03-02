@@ -3,9 +3,7 @@ import Web3 from 'web3';
 import { Button } from '../../subComponents/button';
 import { getWeb3 } from './getWeb3';
 
-// import compiled smart contracts
-import CuriousPawoneer from '../../../../../blockchain/build/contracts/CuriousPawoneer.json'
-import Churu from '../../../../../blockchain/build/contracts/Churu.json'
+// should import contracts here
 
 export function RenderContract () {
   const [web3State, setWeb3State] = React.useState<Web3>()
