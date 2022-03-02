@@ -105,8 +105,13 @@ app.get('/shop/checkout', checkAuth, (req, res) => {
 // since socket io client is initiated in the route. 
 io.on('connection', (socket) => {
         console.log("a user connected", socket.id)
-        socket.on('chat', (data) => {
-                io.sockets.emit('chat', data) // update and spread the client data to other sockets
+        socket.on('chat:send', (data) => {
+                // update and spread the client data to other sockets
+                io.sockets.emit('chat:receive', {
+                        userName : data.userName, 
+                        message : data.message, 
+                        senderId : data.senderId
+                })
                 console.log(data.userName, data.message)
         })
         socket.on('disconnect', ()=> console.log("disconnected"))
