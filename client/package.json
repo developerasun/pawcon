@@ -2,7 +2,8 @@
   "name": "pawcon-client",
   "version": "0.1.1",
   "author": "Jake Sung",
-  "description": "One click NFT generation service",
+  "license": "Apache-2.0",
+  "description": "Building open source NFT market place",
   "private": true,
   "dependencies": {
     "@editorjs/editorjs": "^2.23.2",

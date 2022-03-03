@@ -21,7 +21,5 @@
     "jsx": "react-jsx",
     "types": ["jest"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
