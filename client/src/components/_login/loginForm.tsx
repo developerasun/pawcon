@@ -4,9 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../containers/redux/store.hooks';
 import { login } from '../containers/redux/actionCreators';
 import { API_DEV } from '../containers/C_apiUrl';
-import { json } from 'stream/consumers';
 
-interface LoginValidationError { 
+export interface LoginValidationError { 
   errorMessage : string
   success : boolean
 }
@@ -21,6 +20,12 @@ export function LoginForm () {
     event.preventDefault()
     setSubmit(true)
     console.log("submitted")
+  }
+
+  const handleGoogleOauth = (event : React.MouseEvent) => {
+    // NOT DONE
+    event.preventDefault()
+    window.location.replace(API_DEV.oauth.google.url)
   }
 
   // JWT login logic
@@ -39,11 +44,9 @@ export function LoginForm () {
         }), 
         headers : { 'Content-Type' : 'application/json' },
         signal : abortController.signal
-
-      // Get server response, set login Redux state
       }).then(async (res) => {
-        if (res.status === 200) {return res.json()}
-        if (res.status === 401) {
+        if (res.status === 201) {return res.json()} // password correct, login success
+        if (res.status === 401) { // password incorrect
           const error = await res.json() // get error object from server
           setValidationErr(error) 
         }
@@ -51,6 +54,7 @@ export function LoginForm () {
         console.log(data) // data object includes success property(set by server)
         if (data.success) {
           alert("login success")  
+          // Get server response, set login Redux state
           dispatch(login(data._doc.email)) // server response object when success
           navigate('/')
         }
@@ -77,21 +81,37 @@ export function LoginForm () {
             className='loginForm'
             onSubmit={handleSubmit}>
           <label htmlFor="email">
+            {/* add validaiton failure style */}
             <input 
-                type='email' 
-                name='email'
-                id='email'      
-                placeholder='Eamil address'
-                required />
+              className={
+                validationErr 
+                  ? validationErr.errorMessage.includes("email")
+                  ? 'emailError' : ''
+                  : '' }
+              type='email' 
+              name='email'
+              id='email'      
+              placeholder='Eamil address'
+              required />
           </label>
           <label htmlFor="password">
-            <input type='password'  
-                name='password'
-                id='password'      
-                placeholder='Password'
-                required />
+            <input 
+              className={
+                validationErr 
+                  ? validationErr.errorMessage.includes("password")
+                  ? 'passwordError' : ''
+                  : '' }
+              type='password'  
+              name='password'
+              id='password'      
+              placeholder='Password'
+              required />
           </label>
-          <span>{validationErr ? validationErr.errorMessage : "Please login first"}</span>
+          {/* validation message */}
+          <span style={validationErr && {"color": "darkred" , "fontWeight" : "bold"}}>
+            {validationErr ? validationErr.errorMessage : "Please login first"}
+          </span>
+          {/* FIX : once form submitted, resubmission not possible e */}
           <button className='loginBtn' type='submit'>Login</button>
         </form>
 
@@ -101,12 +121,12 @@ export function LoginForm () {
             <li>
               {/* FIX : add redux login status logic here, 
               NOTE : should redirect to Google Oauth */}
-              <a href="http://localhost:3001/oauth/google" className='googleLogin'>
-                <img  src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
-                      alt="google logo" 
-                      id='googleLogo'
-                      loading='lazy' />
-              </a>
+              <img
+                onClick={handleGoogleOauth}  
+                src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
+                alt="google logo" 
+                id='googleLogo'
+                loading='lazy' />
             </li>
             <li>
               {/* fix link later */}
