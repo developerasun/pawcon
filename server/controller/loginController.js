@@ -7,7 +7,6 @@ const login_post = async (req, res) => {
     try {
         // parsing email and password from user request
         const { email, password } = req.body
-
         // compare the password in database password
         const user = await PawConUser.checkPassword(email, password)
         // user object contains success property, which lets you know password comparison result
@@ -16,7 +15,7 @@ const login_post = async (req, res) => {
         // success => return user to client, failure => return user to error message        
         if (user.success) { 
             // if correct, create json web token for authorization
-            const token = createJWT(user._id)
+            const token = createJWT(user._id) // _id field created by MongoDB
 
             // set cookie name, value, and option with jswon web token
             res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, { 
@@ -27,7 +26,7 @@ const login_post = async (req, res) => {
             // send json response and end request-response cycle
             res.status(200).json(user)
         } else { 
-            res.status(401).json(user) // contains error message
+            res.status(401).json(user) // 401 unauthorized, contains error message
         }
 
     } catch(err) { 
@@ -53,16 +52,28 @@ const signup_post = async (req, res) => {
 
         PawConUser.findOne( { email } )
         .then( async (isSignedUp) => {
-            if (isSignedUp) { res.json( { message : "already signed up" } ) } 
+            if (isSignedUp) { 
+                // 400 bad request, contains error message
+                res.status(400).json( { success : false, errorMessage : "The email already used" } ) 
+            } 
             else {
-                const user = await PawConUser.create( { email, password } )
-                const token = createJWT(user._id)
-                res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
-                    httpOnly : true, 
-                    maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
-                })
-                res.status(201).json(user) // status 201 code often used with POST request
+                const validation = await PawConUser.validatePassword(email, password)
+                if (validation.success) {
+                    console.log("Password validation passed")
+                    const user = await PawConUser.create( { email, password } )
+                    const token = createJWT(user._id)
+                    res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
+                        httpOnly : true, 
+                        maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
+                    })
+                    res.status(201).json({
+                        ...user,
+                        success : true
+                    }) // 201 created, often used with POST request
+                } else {
+                    res.status(400).json(validation) // 400 bad request, contains password error message
                 }
+            }
             })
         .catch((err) => console.log(err))
     } catch(err) { 
