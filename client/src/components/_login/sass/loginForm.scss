@@ -1,4 +1,3 @@
-// @import './variables';
 @import '../../partials/variable';
 
 @mixin flexRowNowrap {
@@ -6,7 +5,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: $unit;
 }
 
 // mobile
@@ -18,11 +17,22 @@
     text-align: center;
 }
 
-.loginForm {
+.loginForm,
+.signupForm {
+    position: relative;
     gap: $unit*0.5;
     background-color: $brandColor;
-    .loginBtn {
-        width: 100%;
+    .loginBtn,
+    .signupBtn {
+        width: 50%;
+    }
+    .emailError { 
+        border: 3px solid red;
+        color: tomato;
+    }
+    .passwordError { 
+        border: 3px solid red;
+        color: tomato;
     }
 }
 
