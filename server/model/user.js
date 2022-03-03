@@ -10,7 +10,8 @@ const userSchema = new Schema({
     }, 
     password : {
         type: String, 
-        required: true
+        required: true,
+        minlength: [6, "Password should be at least 6 characters."]
     }
 }, { timestamps: true })
 
@@ -25,7 +26,7 @@ userSchema.pre('save', async function() {
     }
 })
 
-// password checking static method
+// NOTE: used in /login POST request => password checking static method
 userSchema.statics.checkPassword = async function( email, password ) {
     try { 
         // check user exists
@@ -43,6 +44,26 @@ userSchema.statics.checkPassword = async function( email, password ) {
     } catch(err) { 
         console.error(err)
         throw err
+    }
+}
+
+// NOTE : used in /signup POST request => password validation checking static method
+userSchema.statics.validatePassword = async function(email, password) {
+    try { 
+        // password should be at least 6 characters. 
+        if (password.length >= 6) {
+            return { 
+                success : true, 
+                email : email,
+                password : password, 
+            }
+        }
+        return { 
+            success : false, 
+            errorMessage : "Password should be at least 6 characters."
+        }
+    } catch(err) {
+        console.log(err)
     }
 }
 
