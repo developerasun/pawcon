@@ -18,5 +18,13 @@ export const API_DEV = {
     users : {
         baseUrl : `http://localhost:3001/apis/users/` 
     }, 
-    login : "http://localhost:3001/login"
+    login : "http://localhost:3001/login",
+    oauth : { 
+        google : { 
+            url : "http://localhost:3001/oauth/google", 
+            user : "http://localhost:3001/oauth/google/user"
+        }, 
+        github : ""
+    },
+    signup : "http://localhost:3001/signup"
 }
