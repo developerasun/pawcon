@@ -1,9 +1,10 @@
 const config = require('../config/config')
-const pawconGoogleOauthUser = require('../model/googleOauthUser')
+const pawconGoogleUser = require('../model/googleOauthUser')
 
-// FIX : find a way to deliver req.user to client
+let googleUser = null // set initial google login user
+
 const googleOauthRedirect_get = (req, res, next) => {
-    // set cookie for client
+    // set login cookie
     res.cookie(
     config.AUTH.GOOGLE.COOKIE.NAME, 
     config.AUTH.GOOGLE.COOKIE.VALUE, 
@@ -15,26 +16,30 @@ const googleOauthRedirect_get = (req, res, next) => {
     if (req.user !== null) { 
         console.log("user created by passport : ",req.user) // passport save user info into request.user(Express.user)
         console.log("checking passport session : ", req.session.passport.user)
+        googleUser = req.user // set google user from passport
     }
-    next()
-    // res.status(200).redirect('/') // should be configured with client(react router)
+    res.status(200).redirect('/') // should be configured with client(react router)
 }
 
-// send user by token
-const googleOauthUser_get = (req, res, next) => {
-    // 1. get google access token from db
-    // 1. if exists, send response, if not, send error
-    if (req.user) {
-        const token = pawconGoogleOauthUser.findOne({googleId : req.user.googleId})
-        console.log("current google user : ", req.user)
-        console.log(token)
-    } else { 
-        console.log(" not working ")
+// send user to client if exists
+const googleOauthUser_get = async (req, res) => {
+    try {
+        // not logged out and user info saved in googleUser variable
+        if (googleUser !== null) {
+            const user = await pawconGoogleUser.findOne({googleId : googleUser.googleId})
+            res.json({ success : true, username : user.username, thumnail : user.thumnail })
+        } else { 
+            console.log("no google user in req object")
+            res.status(401).json( { success : false, user : null } )
+        }
+    } catch(err) {
+        console.log(err)
     }
 }
 
 const googleOauthUserLogout_get = (req, res) => {
-    req.logOut() // logout method is provided by passport
+    req.logOut() // delete req.user property and clear login session
+    googleUser = null // reset google user info
     res.redirect('/')
 }
 
