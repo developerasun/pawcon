@@ -4,11 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../containers/redux/store.hooks';
 import { login } from '../containers/redux/actionCreators';
 import { API_DEV } from '../containers/C_apiUrl';
-
-export interface LoginValidationError { 
-  errorMessage : string
-  success : boolean
-}
+import { LoginValidationError } from '../containers/C_props';
 
 export function LoginForm () {
   const [submit, setSubmit] = React.useState(false)
@@ -22,19 +18,26 @@ export function LoginForm () {
     console.log("submitted")
   }
 
-  const handleGoogleOauth = (event : React.MouseEvent) => {
-    // NOT DONE
-    event.preventDefault()
-    window.location.replace(API_DEV.oauth.google.url)
+  const isValidated = () => {
+    let result = ''
+    if (validationErr) {
+      if (validationErr.errorMessage.includes("email")) {
+        result = 'emailError';
+      }
+      if (validationErr.errorMessage.includes("password")) {
+        result = 'passwordError';
+      }
+    }
+    return result
   }
 
   // JWT login logic
   React.useEffect(()=> {
     const email = document.getElementById("email") as HTMLInputElement
     const password = document.getElementById("password") as HTMLInputElement
-    const abortController = new AbortController()
 
     if (submit) { 
+      setSubmit(false) // make resubmission possible
       // HTTP POST request
       fetch(API_DEV.login, {
         method: 'POST', 
@@ -42,8 +45,7 @@ export function LoginForm () {
           email : email.value, 
           password : password.value
         }), 
-        headers : { 'Content-Type' : 'application/json' },
-        signal : abortController.signal
+        headers : { 'Content-Type' : 'application/json' }
       }).then(async (res) => {
         if (res.status === 201) {return res.json()} // password correct, login success
         if (res.status === 401) { // password incorrect
@@ -63,8 +65,6 @@ export function LoginForm () {
       })
     }
 
-  // cleanup
-  return () => abortController.abort()
   }, [submit, navigate, dispatch])
 
   return (
@@ -80,53 +80,57 @@ export function LoginForm () {
         <form 
             className='loginForm'
             onSubmit={handleSubmit}>
-          <label htmlFor="email">
-            {/* add validaiton failure style */}
-            <input 
-              className={
-                validationErr 
-                  ? validationErr.errorMessage.includes("email")
-                  ? 'emailError' : ''
-                  : '' }
-              type='email' 
-              name='email'
-              id='email'      
-              placeholder='Eamil address'
-              required />
-          </label>
-          <label htmlFor="password">
-            <input 
-              className={
-                validationErr 
-                  ? validationErr.errorMessage.includes("password")
-                  ? 'passwordError' : ''
-                  : '' }
-              type='password'  
-              name='password'
-              id='password'      
-              placeholder='Password'
-              required />
-          </label>
-          {/* validation message */}
-          <span style={validationErr && {"color": "darkred" , "fontWeight" : "bold"}}>
-            {validationErr ? validationErr.errorMessage : "Please login first"}
+ 
+          <span
+            className='callToAction'
+            style={validationErr && {"color": "darkred" , "fontWeight" : "bold"}}>
+              {validationErr ? '' : "Please Login First."}
           </span>
-          {/* FIX : once form submitted, resubmission not possible e */}
-          <button className='loginBtn' type='submit'>Login</button>
+          <div className="emailField">
+            <label htmlFor="email"> Email </label>
+              {/* add validaiton failure style */}
+            <input 
+              className={isValidated()}
+              type='email' name='email' id='email'      
+              placeholder='Enter your email'
+              required />
+            <span>
+              { validationErr 
+                ? validationErr.errorMessage.includes("email") 
+                ? validationErr.errorMessage : ''
+                : '' }
+            </span>
+          </div>
+
+          <div className="passwordField">
+            <label htmlFor="password"> Password </label>
+            <input 
+              className={isValidated()}
+              type='password' name='password' id='password'      
+              placeholder='Enter your password'
+              required />
+            <span>
+                { validationErr 
+                  ? validationErr.errorMessage.includes("password") 
+                  ? validationErr.errorMessage : ''
+                  : '' }
+            </span>
+          </div>
+
+          <button className='loginBtn' type='submit' name='loginButton'>Login</button>
         </form>
 
         <ul className="oAuthContainer">
           <li className='title'>Login with</li>
           <ul className='oAuths'>
             <li>
-              {/* FIX : add redux login status logic here, 
-              NOTE : should redirect to Google Oauth */}
-              <img
-                onClick={handleGoogleOauth}  
-                src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
-                alt="google logo" 
-                id='googleLogo'
-                loading='lazy' />
+              <a href={API_DEV.oauth.google.url} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
+                  alt="google logo" 
+                  id='googleLogo'
+                  loading='lazy' />
+              </a>
             </li>
             <li>
               {/* fix link later */}
