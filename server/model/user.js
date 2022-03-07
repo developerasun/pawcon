@@ -6,12 +6,13 @@ const userSchema = new Schema({
     email : {
         type: String, 
         required : true,
-        unique: true
+        unique: true // email field should not be duplicated
     }, 
     password : {
         type: String, 
         required: true,
-        minlength: [6, "Password should be at least 6 characters."]
+        minlength: [6, "Password should be at least 6 characters."],
+        unique : false // password doesn't have to be unique
     }
 }, { timestamps: true })
 
