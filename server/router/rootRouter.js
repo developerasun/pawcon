@@ -1,9 +1,9 @@
 const rootRouter = require('express').Router()
 
-const loginRouter = require('./loginRouter')
-const apiRouter = require('./apiRouter')
-const feedbackRouter = require('./feedbackRouter')
-const oAuthRouter = require('./oAuthRouter')
+const loginRouter = require('./R_login')
+const apiRouter = require('./R_api')
+const feedbackRouter = require('./R_feedback')
+const oAuthRouter = require('./R_oAuth')
 
 // combine multiple routers
 rootRouter.use('/apis', apiRouter)

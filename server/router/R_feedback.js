@@ -1,6 +1,6 @@
 const extension = '.js'
 const path = require('path')
-const feedbackPath = path.join(__dirname, '..', 'controller', 'feedbackController'.concat(extension))
+const feedbackPath = path.join(__dirname, '..', 'controller', 'C_feedback'.concat(extension))
 
 const feedbackController = require(feedbackPath)
 const feedbackRouter = require('express').Router()

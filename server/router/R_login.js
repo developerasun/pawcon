@@ -1,6 +1,6 @@
 // login/logout router here
 const path = require('path')
-const loginPath = path.join('..', 'controller', 'loginController')
+const loginPath = path.join('..', 'controller', 'C_login.js')
 
 const loginRouter = require('express').Router()
 const loginController = require(loginPath)
