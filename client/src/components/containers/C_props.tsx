@@ -85,3 +85,8 @@ export interface FooterSectionProps {
     sectionTitle : string  
     contents : string[]
 }
+
+export interface LoginValidationError { 
+    errorMessage : string
+    success : boolean
+}
