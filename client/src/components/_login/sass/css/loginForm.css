@@ -13,14 +13,44 @@
 .loginForm,
 .signupForm {
   position: relative;
-  gap: 0.5rem;
+  gap: 1rem;
   background-color: #16b1d4;
 }
-.loginForm .loginBtn,
-.loginForm .signupBtn,
-.signupForm .loginBtn,
-.signupForm .signupBtn {
-  width: 50%;
+.loginForm .callToAction,
+.signupForm .callToAction {
+  font-size: 1.1rem;
+}
+.loginForm .emailField,
+.loginForm .passwordField,
+.signupForm .emailField,
+.signupForm .passwordField {
+  display: flex;
+  flex-direction: column;
+}
+.loginForm .emailField label,
+.loginForm .passwordField label,
+.signupForm .emailField label,
+.signupForm .passwordField label {
+  align-self: flex-start;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.loginForm .emailField input,
+.loginForm .passwordField input,
+.signupForm .emailField input,
+.signupForm .passwordField input {
+  text-decoration: none;
+  border: none;
+  height: 1.5rem;
+}
+.loginForm button[name=loginButton],
+.signupForm button[name=loginButton] {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0.7rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 .loginForm .emailError,
 .signupForm .emailError {

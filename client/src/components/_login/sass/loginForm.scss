@@ -20,11 +20,34 @@
 .loginForm,
 .signupForm {
     position: relative;
-    gap: $unit*0.5;
+    gap: $unit;
     background-color: $brandColor;
-    .loginBtn,
-    .signupBtn {
-        width: 50%;
+    .callToAction {
+        font-size: $unit * 1.1;
+    }
+    .emailField,
+    .passwordField {
+        display: flex;
+        flex-direction: column;
+        label {
+            align-self: flex-start;
+            font-size: $unit * 1.1;
+            font-weight:500;
+        }
+        input {
+            text-decoration: none;
+            border: none;
+            height: $unit * 1.5;
+        }
+        
+    }
+    button[name=loginButton] {
+        width: 100%;
+        background-color: #ffffff;
+        padding: $unit * 0.7;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
     }
     .emailError { 
         border: 3px solid red;
