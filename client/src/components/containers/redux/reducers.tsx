@@ -1,6 +1,6 @@
-import { initialLoginState, initialCartItemState } from "./initialStates"
-import { ADD_TO_CART, DECREASE_QTY, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
-import { LoginActionPayload, CartActionPayload } from "./actionCreators"
+import { initialLoginState, initialCartItemState, initialGoogleLoginState } from "./initialStates"
+import { ADD_TO_CART, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
+import { LoginActionPayload, CartActionPayload, GoogleLoginActionPayload } from "./actionCreators"
 
 export const loginReducer = ( state = initialLoginState, action : LoginActionPayload ) => { 
     switch (action.type) { 
@@ -51,6 +51,23 @@ export const cartReducer = ( state = initialCartItemState, action : CartActionPa
             })
             return remainedCart
         // should return initial state for default case
+        default : 
+            return state
+    }
+}
+
+export const googleLoginReducer = ( state = initialGoogleLoginState, action : GoogleLoginActionPayload ) => {
+    switch(action.type) {
+        case GOOGLE_LOGIN : 
+            return { 
+                success : true, 
+                username : action.payload
+            }
+        case GOOGLE_LOGOUT : 
+            return { 
+                success : false, 
+                username : action.payload
+            }
         default : 
             return state
     }

@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { initialLoginStateProps } from './initialStates';
+import { googleLoginStateProps, initialLoginStateProps } from './initialStates';
 import { Product } from '../C_props';
 import { store } from './store';
 
@@ -9,6 +9,7 @@ import { store } from './store';
 export interface RootState  {
     login : initialLoginStateProps
     cart : Product[]
+    googleOauthLogin : googleLoginStateProps
 }
 
 // method 2

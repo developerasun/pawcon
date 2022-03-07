@@ -2,13 +2,14 @@ import * as Redux from 'redux'
 import { createStore } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger';
-import { cartReducer, loginReducer } from './reducers';
+import { cartReducer, googleLoginReducer, loginReducer } from './reducers';
 
 const middlewares = [thunk, logger]
 
 const rootReducer = Redux.combineReducers({
     login : loginReducer, 
     cart : cartReducer, 
+    googleLogins : googleLoginReducer
 }) 
 
 export const store = createStore(rootReducer, Redux.applyMiddleware(...middlewares))
