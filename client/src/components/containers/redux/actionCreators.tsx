@@ -1,9 +1,10 @@
 import { 
     LOGIN, LOGOUT, 
     ADD_TO_CART, REMOVE_FROM_CART,
-    INCREASE_QTY, DECREASE_QTY
+    INCREASE_QTY, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT
 } from "./actionTypes"
 import { Product } from "../C_props"
+import { googleLoginStateProps } from "./initialStates"
 
 // action type setting for login reducer
 // LoginActionPayload will only show duplicated properties
@@ -58,5 +59,25 @@ export const decreaseQuantity = ( title : string ) => {
     return {
         type : DECREASE_QTY,
         payload : title
+    }
+}
+
+
+// action type setting for google login reducer
+export type GoogleLoginActionPayload = GoogleLoginType | GoogleLogoutType
+type GoogleLoginType = ReturnType<typeof googleLogin>
+type GoogleLogoutType = ReturnType<typeof googleLogout>
+// action creators for google login
+export const googleLogin = ( username : string ) => {
+    return {
+        type : GOOGLE_LOGIN, 
+        payload : username
+    }
+}
+
+export const googleLogout = () => {
+    return { 
+        type : GOOGLE_LOGOUT, 
+        payload : undefined
     }
 }
