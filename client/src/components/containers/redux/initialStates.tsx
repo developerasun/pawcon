@@ -11,6 +11,17 @@ export const initialLoginState : initialLoginStateProps = {
     email : "guest"
 }
 
+// set google login state
+export interface googleLoginStateProps { 
+    success : boolean
+    username : string | undefined
+}
+
+export const initialGoogleLoginState : googleLoginStateProps = {
+    success : false, 
+    username : undefined
+}
+
 // Set cart item state
 export const initialCartItemState : Product[] = [ ]
 
