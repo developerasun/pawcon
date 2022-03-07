@@ -41,7 +41,7 @@ passport.use(new googleStrategy({
     try { 
         // console.log(profile) // inspect profile object from Google Server
         // console.log(Object.keys(done), Object.values(done)) // inspect passport google callback function
-        // console.log(accessToken) // inspect access token
+        console.log("check token value : ", accessToken) // inspect access token
         const user = await pawconGoogleOauthUser.findOne({googleId : profile.id}) // query by id
         if (user) {
             console.log("request coming from : ", request.url)
@@ -53,7 +53,8 @@ passport.use(new googleStrategy({
             const newUser = await pawconGoogleOauthUser.create({
                 username : profile._json.name, 
                 googleId : profile.id, 
-                thumnail : profile._json.picture
+                thumnail : profile._json.picture, 
+                accessToken : accessToken
             })
             done(null, newUser)
         }
