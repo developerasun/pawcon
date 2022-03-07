@@ -3,18 +3,47 @@ import './sass/css/home.css'
 import { ImgBanner, VideoBanner } from '../subComponents/banner'
 import { CounterCard } from './counter'
 import { InstructionCards } from './instructionCards'
-
-// images
-import { IMG_BANNER } from '../containers/imgContainer'
+import { API_DEV } from '../containers/C_apiUrl'
+import { useAppDispatch } from '../containers/redux/store.hooks'
+import { googleLogin } from '../containers/redux/actionCreators'
+import { googleLoginStateProps } from '../containers/redux/initialStates'
 
 export function Home () {
+  const dispatch = useAppDispatch()
+
+  // check Oauth logined user in root(server redirect to root after getting access token)
+  React.useEffect(() => {
+    fetch(API_DEV.oauth.google.user)
+      .then((res) => {
+        if (res.status === 200) { 
+          console.log("Server approved google login")
+          return res.json()
+        }
+        if (res.status === 401) {
+          console.log("server denied google login")
+          const error = res.json()
+          return error
+        }
+      })
+      .then((data) => {
+        console.log(data)
+        // const googleLoginData = data as googleLoginStateProps
+        if (data.success) {
+          // store google username in Redux store
+          dispatch(googleLogin(data.username))
+          console.log("success")
+        }
+      })
+      .catch((err) => console.log(err))
+  }, [dispatch]) 
+  
   return (
     <div id='home'>
       <div>
         <h1>Best Start For Lazy NFT Creators</h1>
         <ImgBanner 
           shouldBeGrid={true}
-          img={IMG_BANNER.helpCreator} 
+          img={'https://i.ibb.co/JmFhpYY/help-creators.webp'} 
           title={"We help creators"}
           description={"Spread your artistic talent and Make them NFTs"}/>
 
@@ -66,7 +95,7 @@ export function Home () {
 
       <ImgBanner 
         shouldBeGrid={false}
-        img={IMG_BANNER.saluteDev}/>
+        img={'https://i.ibb.co/tbfyGZw/salute-devs.webp'}/>
 
     </div>
   );
