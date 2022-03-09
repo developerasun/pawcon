@@ -1,9 +1,6 @@
-// google, github Oauth here
 const passport = require('passport')
 const oAuthRouter = require('express').Router()
 const oAuthController = require('../controller/C_oAuth')
-const config = require('../config/config')
-
 
 // ========================= Google Ouath ========================= //
 // base route : /oauth
@@ -16,12 +13,10 @@ oAuthRouter.get(
 // registered in Google Cloud Platform. '/oauth/google/redirect',
 oAuthRouter.get(
     '/google/redirect', 
-    passport.authenticate('google'), oAuthController.googleOauthRedirect_get )
+    passport.authenticate('google'), oAuthController.googleOauthRedirect_get 
+)
 
-oAuthRouter.get('/google/user', oAuthController.googleOauthUser_get)
 oAuthRouter.get('/logout', oAuthController.googleOauthUserLogout_get)
-
-
 // ========================= Google Ouath ========================= //
 
 
