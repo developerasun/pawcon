@@ -1,11 +1,11 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { keccak256 } from "ethers/lib/utils";
 import hre from 'hardhat'
 import key from "../config/key";
+import { beforeEach } from "mocha";
+import { Churu } from "../typechain";
 
 // NOTE : private state variables in contract not accessible in test code
-
 // What should be test
 // 1. minter : mint
 // 1. burner : burn 
@@ -17,52 +17,46 @@ import key from "../config/key";
 const account = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
 const account2 = "0x70997970c51812dc3a010c7d01b50e0d17dc79c8"
 
+let churu : Churu; // type from typechain
+
+// `beforeEach` will run before each test, re-deploying the contract every
+// time. It receives a callback, which can be async.
+beforeEach(async function() {
+  const Churu = await ethers.getContractFactory("Churu");
+  churu = await Churu.deploy();
+  await churu.deployed();
+})
+
 describe("Churu.sol", function () {
-  it("Should return a contract name", async function () {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
-    await churu.deployed();
-
+  // TEST CASE 1
+  it("Should return a contract name : Churu", async function () {
     // get contract name
-    expect(await churu.name()).to.equal("Churu");
+    expect(await churu.name()).to.equal("Churu")
   });
-});
-
-describe("Minter role", function() {
+  
+  // TEST CASE 2 : PASS
   it("Only minter can mint", async function() {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
-    await churu.deployed();
-    
     // TIP : use solidityKeccak256 to hash role name(otherwise test will fail)
     await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["MINTER_ROLE"]), account) // grant minter role
     const hasMinterRole = await churu.hasRole(ethers.utils.solidityKeccak256(['string'],["MINTER_ROLE"]), account) // grant minter role
     console.log(hasMinterRole) // true
     await churu.mint(account2, 100) // mint 100 churu to account 2
-
+    
     // balance should be 100
     expect(await churu.balanceOf(account2)).equal(100, "not equal")
   })
-})
-
-describe("Burner role", function() {
+  
+  // TEST CASE 3 : PASS
   it("Only Burner can burn", async function() {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
-    await churu.deployed();
-    await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["BURNER_ROLE"]), account) // grant burner role
+    // grant burner role
+    await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["BURNER_ROLE"]), account) 
     await churu.burn(account, 100) // burn 100 churu
 
     expect(await churu.balanceOf(account)).equal(999999900, "not equal")
   })
-})
 
-describe("Pauser role", function() {
+  // TEST CASE 4 : NOT PASS => Error: VM Exception while processing transaction: reverted with reason string 'Pausable: paused'
   it("Only Pauser can pause", async function() {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
-    await churu.deployed();
-
     await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["PAUSER_ROLE"]), account)
     await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["MINTER_ROLE"]), account)
     await churu.pauseChuru() // pause contract
@@ -70,31 +64,31 @@ describe("Pauser role", function() {
     // FIX : chai not throwing err
     expect(await churu.mint(account, 100)).to.throw('Pausable: paused') // should throw error
   })
-})
 
-describe("Destructor role", function() {
-  it.skip("Only destructor can desctruct", async function() {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
-    await churu.deployed();
+  // TEST CASE 5 : NOT PASS => Error: call revert exception (method="balanceOf(address)", 
+  // errorArgs=null, errorName=null, errorSignature=null, reason=null, code=CALL_EXCEPTION, version=abi/5.5.0)
+  it("Only destructor can desctruct", async function() {
     await churu.grantRole(ethers.utils.solidityKeccak256(['string'],["DESTRUCTOR_ROLE"]), account)
     await churu.destructChuru(account2) // disable contract and move ethers to the address
 
      // FIX : chai not throwing err
     expect(await churu.balanceOf(account2)).to.throw() // should have ethers
   })
-})
 
-describe("Withdrawl zone", function() {
-  it.skip("Should withdraw eth from contract", async function() {
-    const Churu = await ethers.getContractFactory("Churu");
-    const churu = await Churu.deploy();
+  // TEST CASE 6 : NOT PASS => Error: VM Exception while processing transaction: reverted with reason string 'Only owner.'
+  it("Should withdraw eth from contract", async function() {
     const deployedChuru = churu as any;
-    await churu.deployed();
 
     // FIX : Only owner VM Exception
     await churu.withdraw();
     expect(await churu.balanceOf(deployedChuru.address)).equal(0)
   })
-})
+
+  // TO DO : add more test cases
+  // TEST CASE 7
+  // TEST CASE 8
+  // TEST CASE 9
+  // TEST CASE 10
+
+});
 
