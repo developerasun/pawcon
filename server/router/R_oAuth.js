@@ -16,11 +16,9 @@ oAuthRouter.get(
     passport.authenticate('google'), oAuthController.googleOauthRedirect_get 
 )
 
-oAuthRouter.get('/logout', oAuthController.googleOauthUserLogout_get)
+// FIX : fix internal server 500 error
+oAuthRouter.get('/google/logout', oAuthController.googleOauthUserLogout_get)
 // ========================= Google Ouath ========================= //
-
-
-
 
 
 // ========================= Github Ouath ========================= //
