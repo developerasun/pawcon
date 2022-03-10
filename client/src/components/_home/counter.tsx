@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BasicCardDetailsProps } from '../containers/propContatiner'
+import { BasicCardDetailsProps } from '../containers/C_props'
 // set start/end points 
 interface setting {
     target : number

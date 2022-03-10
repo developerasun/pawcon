@@ -1,11 +1,6 @@
 import * as React from 'react';
-import { IMG_FEATURE } from '../containers/imgContainer'
 
-
-export interface IFeatureProps {
-}
-
-export function Feature (props: IFeatureProps) {
+export function Feature () {
   return (
     <div>
       

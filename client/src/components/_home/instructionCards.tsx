@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { v4 } from 'uuid';
-import { BasicCardDetailsProps } from '../containers/propContatiner';
+import { BasicCardDetailsProps } from '../containers/C_props';
 import { Button } from '../subComponents/button';
 
 export function InstructionCards ( { description, image, hasButton, buttonText, buttonUrl } : BasicCardDetailsProps ) 
