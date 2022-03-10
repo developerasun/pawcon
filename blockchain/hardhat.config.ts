@@ -35,12 +35,6 @@ const config: HardhatUserConfig = {
       evmVersion : 'london' // default value managed by solc
     }, 
   },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts",
-  },
   networks: {
     // JSON-RPC based network
     ropsten: {
