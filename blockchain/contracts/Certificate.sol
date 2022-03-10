@@ -8,14 +8,21 @@ import "hardhat/console.sol";
 /// @dev Legendary pawoneer can have a certificate. up to 1 year period 
 contract Certificate is ICertificate { 
     address public issuer; 
+
+    uint256 public constant SHORT = 180 days;
+    uint256 public constant MIDDLE = 270 days;
+    uint256 public constant LONG = 365 days;
     uint256 public issueCost = 0.01 ether;
-    CuriousPawoneer cp;
-    expiration public exp = expiration.SHORT; // expiration date
-    
+    uint256 public extendCost = 0.02 ether;
+
+    CuriousPawoneer cp; // get CuriousPawoneer contract
+
     // set issuer to contract invoker
     constructor (address _curiousPawoneer) {
         cp = CuriousPawoneer(_curiousPawoneer);
+        console.log("Curious Pawoneer deployed at : ", _curiousPawoneer);
         issuer = msg.sender;
+        console.log("Contract owner is : ", issuer);
     }
 
     /// @dev certificate holder and if has a certificate
@@ -34,7 +41,7 @@ contract Certificate is ICertificate {
     // 1. only legendary pawoneer can have certification
     // 1. certificate expires after the period
 
-    // issue one certificate
+    // Issue a certificate
     function issueOne(address _holder, uint256 _tokenId, uint256 _date) public payable override {
         require(msg.value >= issueCost, "Certificate costs 0.01 ether");
         require(cp.getTokenRarity(_tokenId) == 3, "Only legendary Pawoneer.");
@@ -42,23 +49,34 @@ contract Certificate is ICertificate {
         setExpiration(_date, _tokenId);
     }
 
-    // set expiration date. TO DO : use expiration enum here
+    // Set an expiration date
     function setExpiration(uint256 _date, uint256 _tokenId) public override {
-        require(_date == 0 || _date == 1 || _date == 2 , "Set proper date");
-        if (_date == 0) certificateExpiration[_tokenId] = block.timestamp + 180 days; // 6 month expiration 
-        if (_date == 1) certificateExpiration[_tokenId] = block.timestamp + 270 days; // 9 month expiration 
-        if (_date == 2) certificateExpiration[_tokenId] = block.timestamp + 365 days; // 12 month expiration 
+        require(_date == SHORT || _date == MIDDLE || _date == LONG , "Set proper date");
+        if (_date == 0) certificateExpiration[_tokenId] = block.timestamp + SHORT; // 6 month expiration 
+        if (_date == 1) certificateExpiration[_tokenId] = block.timestamp + MIDDLE; // 9 month expiration 
+        if (_date == 2) certificateExpiration[_tokenId] = block.timestamp + LONG; // 12 month expiration 
     }
 
-    // expire the certificate
+    // Expire the certificate
     function expireOne(address _holder, uint256 _tokenId) public override isExpired(_tokenId) {
         if (block.timestamp > certificateExpiration[_tokenId]) {
             certificateExpiration[_tokenId] = 0; // reset expiration
             certificateHolders[_holder] = false; // reset holder
+            console.log(_tokenId, "owned by", _holder, "has expired");
         }
     }
-    function extendExpiration(uint256 _prev, uint256 _to) public override {
-        // add logic here
+
+    // Extend the ceritifcate's expiration date
+    function extendExpiration(uint256 _tokenId, uint256 _to) public payable override {
+        require(certificateExpiration[_tokenId] > 0, "Certificate for the token has expired");
+        require(msg.value > extendCost, "Enter a proper cost");
+        certificateExpiration[_tokenId] += _to;
+        console.log(_tokenId, "expiration has extended by", _to);
+    }
+
+    // Check a current expiration date
+    function getExpiration(uint256 _tokenId) public view returns(uint256) {
+        return certificateExpiration[_tokenId];
     }
     // =============== ICertificate implementation =============== //
     
@@ -67,8 +85,10 @@ contract Certificate is ICertificate {
     // =============== Finance zone =============== //
     // Withdraw ethers in contract
     function withdraw() public payable {
-        (bool isSent, ) = payable(address(msg.sender)).call { value : address(this).balance }(""); 
+        require(issuer == msg.sender, "Only issuer");
+        (bool isSent, ) = payable(address(this)).call { value : address(this).balance }(""); 
         require(isSent);
+        console.log(address(this).balance, "is transferred");
     }
     // =============== Finance zone =============== //
 
