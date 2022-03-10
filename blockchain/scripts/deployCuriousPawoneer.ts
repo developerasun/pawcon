@@ -3,7 +3,6 @@ import { ethers } from "hardhat";
 import key from "../config/key";
 
 async function main() {
-
   const CuriousPawoneer = await ethers.getContractFactory("CuriousPawoneer");
   const curiousPawoneer = await CuriousPawoneer.deploy(
     // should change based on network selection
@@ -12,11 +11,10 @@ async function main() {
     key.CONSTRUCTOR.CURIOUSPAWONEER.cid
   );
 
-  const deployedCuriousPawoneer = curiousPawoneer as any;
-  await curiousPawoneer.deployed();
+  // type casted as any to find contract address
+  await (await curiousPawoneer.deployed()).attach(key.HARDHATNETWORK.account19);
 
-  // deployed address : 0x5FbDB2315678afecb367f032d93F642f64180aa3
-  console.log("Curious Pawoneer deployed to:", deployedCuriousPawoneer.address);
+  console.log("Curious Pawoneer deployed to:", key.HARDHATNETWORK.account19);
 }
 
 // Hardhat recommend this pattern to be able to use async/await everywhere
