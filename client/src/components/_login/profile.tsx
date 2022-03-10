@@ -1,12 +1,11 @@
 import * as React from 'react';
+import './sass/css/profile.css';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../containers/redux/store.hooks';
 import { MenuTabs } from '../_community/community';
 import Avatar, { genConfig,  } from 'react-nice-avatar'; 
-import './sass/css/profile.css';
-import { logout } from '../containers/redux/actionCreators';
-
-
+import { googleLogout, logout } from '../containers/redux/actionCreators';
+import { API_DEV } from '../containers/C_apiUrl';
 
 const Dummy = () => {
   return <>hello I'm dummy component</>
@@ -19,9 +18,10 @@ const Dummy3 = () => {
 }
 
 export function Profile () {
-  const [submit, setSubmit] = React.useState(false);
+  const [submit, setSubmit] = React.useState(false)
+  const [submitGoogle, setSubmitGoogle] = React.useState(false)
   const config = genConfig() // react-nice-avatar package
-  const avatar = React.useRef(
+  const avatar = React.useRef( // FIX : change hard-coded value later
   <Avatar  
     sex='man'
     style={{width : '3rem', height : '3rem'}} />)
@@ -33,31 +33,61 @@ export function Profile () {
   const username = useAppSelector((state)=>state.login.email)
 
   // add oauth Redux logic here
-  const oauthUsername = "something"
+  const oauthUsername = useAppSelector((state)=> state.googleLogin.username)
 
+  const handleSumbit = () =>{
+    setSubmit(true)
+  }
+
+  const handleLogout = () => {
+    // JWT logout : '/logout'
+    console.log("jwt logout clicked")
+    fetch(API_DEV.logout) // Delete JWT for logout
+    dispatch(logout()) // set login status to false
+    alert('jwt logout success')
+    navigate('/')
+  }
+  
+  const handleGoogleLogout = () => {
+    // google logout : '/oauth/logout'
+    fetch(API_DEV.oauth.google.logout)
+    dispatch(googleLogout())
+    alert('google logout success')
+    navigate('/')
+  }
+  
   React.useEffect(()=>{
     if (submit) {
-      // add oauth logout logic at this route(server)
-      fetch('/logout') // Delete JWT for logout
-      dispatch(logout()) // set login status to false
-      console.log("logout clicked")
-      alert('logout success')
-      navigate('/') // client redirect
+      handleLogout()
     }
-  }, [submit, navigate, dispatch])
-
+    if (submitGoogle) {
+      handleGoogleLogout()
+    }
+  }, [submit, submitGoogle, navigate, dispatch])
+ 
   return (
     <div id='profile'>
       <div id="user">
         {/* avatar should not change during logout */}
-      <span>{avatar.current}</span> 
-        <span>Hello, {username}! Welcome back!</span>
+        <span>{avatar.current}</span> 
+        <span>Hello, { username !== "guest" ? username : oauthUsername }! Welcome back!</span>
         {/* FIX :user setting here */}
         <div id='setting'>
           <span>Personal detail</span>
           <span>Change password</span>
         </div>
-        <button id='logoutButton' type="submit" onClick={()=>setSubmit(true)}>Logout</button>
+        { 
+          username !== "guest"
+          ? <button 
+              className='logoutButton' 
+              type='submit' 
+              onClick={handleSumbit}>Logout</button>
+          : <button 
+              className='logoutButton'
+              type='submit'
+              onClick={handleGoogleLogout}>Logout</button>
+        }
+
       </div>
 
       <div id="menus">
