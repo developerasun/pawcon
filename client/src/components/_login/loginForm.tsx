@@ -18,7 +18,19 @@ export function LoginForm () {
     console.log("submitted")
   }
 
-  const isValidated = () => {
+  const handleGoogleLogin = (event: React.MouseEvent) => {
+    event.preventDefault()
+    console.log("google login clicked")
+
+    // sessionStorage is used to check if user logined by Google. 
+    // since server redirects to root once login is succeeded 
+    // and client loose its current state by the redirecting, 
+    // contains a login checkpoint in session to validate. 
+    sessionStorage.setItem("googleLogin", "true") 
+    window.location.replace(API_DEV.oauth.google.url) // redirect
+  }
+
+  const hasError = () => {
     let result = ''
     if (validationErr) {
       if (validationErr.errorMessage.includes("email")) {
@@ -47,7 +59,7 @@ export function LoginForm () {
         }), 
         headers : { 'Content-Type' : 'application/json' }
       }).then(async (res) => {
-        if (res.status === 201) {return res.json()} // password correct, login success
+        if (res.status === 200) {return res.json()} // password correct, login success
         if (res.status === 401) { // password incorrect
           const error = await res.json() // get error object from server
           setValidationErr(error) 
@@ -64,7 +76,6 @@ export function LoginForm () {
         console.log(err)
       })
     }
-
   }, [submit, navigate, dispatch])
 
   return (
@@ -90,7 +101,7 @@ export function LoginForm () {
             <label htmlFor="email"> Email </label>
               {/* add validaiton failure style */}
             <input 
-              className={isValidated()}
+              className={hasError()}
               type='email' name='email' id='email'      
               placeholder='Enter your email'
               required />
@@ -99,13 +110,13 @@ export function LoginForm () {
                 ? validationErr.errorMessage.includes("email") 
                 ? validationErr.errorMessage : ''
                 : '' }
-            </span>
+            </span> 
           </div>
 
           <div className="passwordField">
             <label htmlFor="password"> Password </label>
             <input 
-              className={isValidated()}
+              className={hasError()}
               type='password' name='password' id='password'      
               placeholder='Enter your password'
               required />
@@ -124,13 +135,13 @@ export function LoginForm () {
           <li className='title'>Login with</li>
           <ul className='oAuths'>
             <li>
-              <a href={API_DEV.oauth.google.url} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
-                  alt="google logo" 
-                  id='googleLogo'
-                  loading='lazy' />
-              </a>
+              <img
+                onClick={handleGoogleLogin}
+                style={{"cursor" : "pointer"}}
+                src={"https://i.ibb.co/m997sdM/google-logo.webp"} 
+                alt="google logo" 
+                id='googleLogo'
+                loading='lazy' />
             </li>
             <li>
               {/* fix link later */}
