@@ -40,6 +40,7 @@ contract Churu is ERC20, AccessControl, Pausable {
 
     constructor()ERC20("Churu", "CHR"){
         owner = msg.sender;
+        console.log("Churu owner :", owner);
         // mint 10 billion Churu to sender when deployed
         _mint(owner, initialSupply); // inrease msg.sender's balance and total supply
         
@@ -54,6 +55,9 @@ contract Churu is ERC20, AccessControl, Pausable {
         // FIX logic here : set Minter, mint amount limit
         require(_amount < mintLimit, "Mint up to 10000 Churu");
         _mint(_to, _amount);
+        // Hardhat support console.log, which can be checked in test codes
+        // supported data types : uint, boolean, address
+        console.log(_to, "have minted", _amount, "Churu."); 
     }
 
     // Only burner can burn
@@ -61,6 +65,7 @@ contract Churu is ERC20, AccessControl, Pausable {
         // check if there is enough token to burn
         require(balanceOf(_to) >= _amount, "Not enough token to burn");
         _burn(_to, _amount);
+        console.log(_to, "have burned", _amount, "Churu.");
     }
     // ======================== Mint zone ======================== //
 
@@ -68,6 +73,8 @@ contract Churu is ERC20, AccessControl, Pausable {
     // only owner can withdraw
     function withdraw() public payable {
         require(msg.sender == owner, "Only owner");
+        console.log("msg.sender :", msg.sender);
+        console.log("owner :", owner);
         (bool isSent, ) = payable(address(this)).call{ value : address(this).balance }("");
         require(isSent, "Only owner.");
     }
@@ -77,10 +84,13 @@ contract Churu is ERC20, AccessControl, Pausable {
     // only pauser can pause
     function pauseChuru() public onlyRole(PAUSER_ROLE) {
         _pause(); // change pause state from false to true
+        console.log("Contract paused");
     }
     
     // only destructor can destruct
     function destructChuru(address _address) public onlyRole(DESTRUCTOR_ROLE) {
+        console.log("all balances transferred to :", _address); 
+        console.log("Contract destructed");
         selfdestruct(payable(_address)); // move ether to owner and destroy contract
     }
     // ======================== Danger zone : NOT TESTED ================== // 
