@@ -5,11 +5,11 @@ import { store } from './store';
 
 // Define RootState : 1) Login 2) User 3) Product
 // Use this RootState for useSelector hook. 
-// Method 1 
+// Method 1 : property name should be the same with reducer name.
 export interface RootState  {
     login : initialLoginStateProps
     cart : Product[]
-    googleOauthLogin : googleLoginStateProps
+    googleLogin : googleLoginStateProps
 }
 
 // method 2

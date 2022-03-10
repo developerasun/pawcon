@@ -3,8 +3,8 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 
 // google login reducer
-export const GOOGLE_LOGIN = 'LOGIN'
-export const GOOGLE_LOGOUT = 'LOGOUT'
+export const GOOGLE_LOGIN = 'GOOGLE_LOGIN'
+export const GOOGLE_LOGOUT = 'GOOGLE_LOGOUT'
 
 // cart reducer
 export const INCREASE_QTY = 'INCREASE_QTY'

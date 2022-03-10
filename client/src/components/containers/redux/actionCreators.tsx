@@ -4,7 +4,6 @@ import {
     INCREASE_QTY, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT
 } from "./actionTypes"
 import { Product } from "../C_props"
-import { googleLoginStateProps } from "./initialStates"
 
 // action type setting for login reducer
 // LoginActionPayload will only show duplicated properties
@@ -23,7 +22,7 @@ export const login = (email : string) => {
 export const logout = () => {
     return { 
         type : LOGOUT, 
-        payload : "" // for union type property consistency 
+        payload : ""
     }
 }
 
@@ -78,6 +77,6 @@ export const googleLogin = ( username : string ) => {
 export const googleLogout = () => {
     return { 
         type : GOOGLE_LOGOUT, 
-        payload : undefined
+        payload : ""
     }
 }
