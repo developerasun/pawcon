@@ -4,39 +4,40 @@ import { ImgBanner, VideoBanner } from '../subComponents/banner'
 import { CounterCard } from './counter'
 import { InstructionCards } from './instructionCards'
 import { API_DEV } from '../containers/C_apiUrl'
-import { useAppDispatch } from '../containers/redux/store.hooks'
 import { googleLogin } from '../containers/redux/actionCreators'
-import { googleLoginStateProps } from '../containers/redux/initialStates'
+import { useAppDispatch } from '../containers/redux/store.hooks'
 
-export function Home () {
+export function Home () {  
   const dispatch = useAppDispatch()
 
-  // check Oauth logined user in root(server redirect to root after getting access token)
   React.useEffect(() => {
-    fetch(API_DEV.oauth.google.user)
-      .then((res) => {
-        if (res.status === 200) { 
-          console.log("Server approved google login")
-          return res.json()
-        }
-        if (res.status === 401) {
-          console.log("server denied google login")
-          const error = res.json()
-          return error
-        }
-      })
-      .then((data) => {
-        console.log(data)
-        // const googleLoginData = data as googleLoginStateProps
-        if (data.success) {
-          // store google username in Redux store
-          dispatch(googleLogin(data.username))
-          console.log("success")
-        }
-      })
-      .catch((err) => console.log(err))
-  }, [dispatch]) 
-  
+    // check if there is a google login user
+    console.log("current google login : " ,sessionStorage.getItem("googleLogin"))
+    if (sessionStorage.getItem("googleLogin")) {
+      fetch(API_DEV.oauth.google.user)
+        .then((res) => {
+          if (res.status === 200) { 
+            console.log("Server approved google login")
+            return res.json()
+          }
+          if (res.status === 401) {
+            console.log("server denied google login")
+            const error = res.json()
+            return error
+          }
+        })
+        .then((data) => {
+          console.log(data) // contains 'success' property
+          if (data.success) {
+            // store google username in Redux store
+            dispatch(googleLogin(data.username))
+            console.log("google login success")
+            sessionStorage.removeItem("googleLogin")
+          }
+        })
+        .catch((err) => console.log(err))
+    }
+  }, []) 
   return (
     <div id='home'>
       <div>
