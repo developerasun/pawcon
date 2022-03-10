@@ -6,6 +6,12 @@ Teck requirements for PawCon blockchain is as follows :
 - Hardhat for local blockchain, compile, migration, and test
 - openzeppelin
 
+## Contract verification
+You can play around Churu(ERC20) and CuriousPawoneer(ERC721) in Etherscan ropsten. 
+
+- [Churu](https://ropsten.etherscan.io/address/0x0f4d7069B9a58699D7c369F9ac97777fBDe4e8e4#code)
+- Curious Pawoneer : will be added
+
 ## How it works
 ### Dev workflow
 1. Develop contract and test it in local hardhat network with Metamask.
@@ -21,8 +27,8 @@ Remix network token/contract info for quick prototype test is as follows :
 1. baseImageExtension : .png, baseMetadataExtension: .json
 1. baseURI(Pinata) for Curious Pawoneer : https://gateway.pinata.cloud/ipfs/QmRoPsaNnP6D9VyfvCzMda9aqknoQMdDDtmC3769t9mhF7/
 1. getTokenURIs method return values : 
-https://gateway.pinata.cloud/ipfs/https://gateway.pinata.cloud/ipfs/QmRoPsaNnP6D9VyfvCzMda9aqknoQMdDDtmC3769t9mhF7/1.png,
-https://gateway.pinata.cloud/ipfs/https://gateway.pinata.cloud/ipfs/QmRoPsaNnP6D9VyfvCzMda9aqknoQMdDDtmC3769t9mhF7/1.json
+https://gateway.pinata.cloud/ipfs/QmRoPsaNnP6D9VyfvCzMda9aqknoQMdDDtmC3769t9mhF7/1.png,
+https://gateway.pinata.cloud/ipfs/QmRoPsaNnP6D9VyfvCzMda9aqknoQMdDDtmC3769t9mhF7/1.json
 
 ### Role-based access control bytes32 value
 1. default admin role : 0x0000000000000000000000000000000000000000000000000000000000000000
@@ -52,7 +58,7 @@ how Token URI works : tokenURI : baseURI + tokenId
 1. set tokenURI by combining _baseURI and tokenId
 1. front end will instantiate a contract and get the token URI
 1. front end displays the token 
-    
+
 ### How pawcon contract works
 1. set baseURI first with IPFS CID
 1. set baseImageURI / baseMetadataURI
