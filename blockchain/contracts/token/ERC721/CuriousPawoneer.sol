@@ -32,7 +32,7 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     address public owner;// contract owner
 
     // ======================== token detail setting ================== //
-    bytes32 public constant CREATOR = "Jake Sung"; 
+    bytes32 public constant CREATOR = keccak256("Jake Sung"); 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant DESTRUCTOR_ROLE = keccak256("DESTRUCTOR_ROLE");
     
@@ -65,6 +65,10 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     mapping(uint256=>uint256) public tokenRarity; // key : tokenId, value : rarity
     // ======================== Mapping setting ================== //
 
+    // ======================== Event setting ================== //
+    event LogRarity(uint256 _rarity); 
+    // ======================== Event setting ================== //
+
     Counters.Counter public mintCount;
     Churu public churu;
 
@@ -81,6 +85,8 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         nonce = _nonce; // nonce added when deployed
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // set invoker to role setter
         setBaseURI(cid); // set pinata IPFS URI when deployed
+        console.log("Churu deployed at :", _churu);
+        console.log("Contract owner :", owner);
     }
     // ======================== Token inheritance setting ================== //
     
@@ -165,7 +171,8 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
     function resetRarity(uint256 tokenId) public payable whenNotPaused returns(uint256) {
         require(msg.value > cost, "Reset rarity cost 0.03 ether");
         uint256 rand = getRandomNumber();
-        console.log(rand); // check random number
+        console.log("resetted rarity is : ",rand); // check random number
+        emit LogRarity(rand); // emit rarity as event
         tokenRarity[tokenId] = rand;
         return rand;
     }
@@ -175,6 +182,11 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
         require(msg.sender == owner, "only owner");
         whitelist[_address] = true;
     }
+
+    function isWhitelisted(address _address) public view returns(bool) {
+        return whitelist[_address];
+    }
+
     // ======================== Minting zone ======================== // 
 
     // ======================== IPFS & Token URI zone ======================== // 
@@ -216,8 +228,8 @@ contract CuriousPawoneer is ERC721, AccessControl, Pausable, ReentrancyGuard {
 
     // front end will invoke this to get tokenURI
     function getTokenURIs() public view whenNotPaused returns(string[2] memory){
-        console.log(baseImageURI);
-        console.log(baseMetadataURI);
+        console.log("URI for base image :",baseImageURI);
+        console.log("URI for base metadata :", baseMetadataURI);
         // combine baseURI with tokenId and  returns a string         
         return [baseImageURI, baseMetadataURI];
     }
