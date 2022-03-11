@@ -1,19 +1,17 @@
 import "@nomiclabs/hardhat-ethers";
 import { ethers } from "hardhat";
-import key from "../config/key";
+import key from "../../config/key";
 
 async function main() {
   const CuriousPawoneer = await ethers.getContractFactory("CuriousPawoneer");
   const curiousPawoneer = await CuriousPawoneer.deploy(
-    // should change based on network selection
     key.CONSTRUCTOR.CURIOUSPAWONEER.churuAddr.HARDHAT, 
     key.CONSTRUCTOR.CURIOUSPAWONEER.nonce,
     key.CONSTRUCTOR.CURIOUSPAWONEER.cid
   );
 
-  // type casted as any to find contract address
+  // hardhat network
   await (await curiousPawoneer.deployed()).attach(key.HARDHATNETWORK.account19);
-
   console.log("Curious Pawoneer deployed to:", key.HARDHATNETWORK.account19);
 }
 
