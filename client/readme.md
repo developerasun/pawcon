@@ -17,42 +17,37 @@ Run npm build for optimized production.
 $npm run build
 ```
 
-Check container/apiUrlContainer to change api url from dev to production. 
+## Characteristics
+PawCon client section has following characteristics. 
+
+1. meta tags are added in public/index.html
+1. redux store manages application state.
+1. interface and props are managed in C_props.tsx
+1. sub components such as navbar and footer are managed in sub components directory
+1. data are fetched from localhost server, which means you should run pawcon server section first. 
+1. react router takes most of user requests except login, signup, api, improving perfomance.
+
+Check container/C_apiUrl for APIs. 
 
 ```ts
-// Production API url
-export const API_PROD = { 
-    artworks : { 
-        baseUrl :"deployed/base/api/url/here" 
-    },
-}
-
 // Dev API url
 export const API_DEV = { 
     artworks : {
         baseUrl : `localhost/apis/artworks/` 
     },
 }
+
+// Production API url
+export const API_PROD = { 
+    artworks : { 
+        baseUrl :"deployed/base/api/url/here" 
+    },
+}
 ```
 
-<details>
-<summary>Characteristics</summary>
+React component is functional components with interface props. Props are destructured and have verb-based names. 
 
-- meta tags are added in public/index.html
-- interface and props are managed in container.tsx
-- sass modules are managed in partials directory
-- fetch data from localhost server and render
-- redux store manages application state : e.g login user email, cart 
-- react router takes most of user requests except login, signup, api, improving perfomance
-</details>
-
-<summary>Conventions</summary>
-
-## React 
-### Component
-- default : React/TS Stateless function component + interface props
-
-```ts
+```tsx
 interface AppProps { 
   name : string
 }
@@ -62,12 +57,5 @@ const App = ( { name } : AppProps) => {
 
 export default App;
 ```
-
-### Props
-props should be named in a clear way what it is supposed to do. For example, 
-- shouldBeGrid
-- hasButton
-</details>
-
 
 
