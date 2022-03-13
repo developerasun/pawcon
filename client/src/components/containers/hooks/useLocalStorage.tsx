@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 // localStorage custom hook => use it for caching purpose 
-export function useLocalStorage() {
+function useLocalStorage() {
+    // TO DO : create a list of keys and deliver to logAllLocal funciton
     const getLocalItem = ( key : string ) => localStorage.getItem(key)
     const setLocalItem = ( key : string, value: string) => localStorage.setItem(key, value)
     const removeOneLocal = ( key : string ) => localStorage.removeItem(key)
@@ -10,7 +11,7 @@ export function useLocalStorage() {
         for (let i = 0; i < localStorage.length; i++) {
             console.log(localStorage.getItem(String(localStorage.key(i))))
         }
-    }
+    } 
   return {
     getLocalItem,
     setLocalItem, 
@@ -19,3 +20,5 @@ export function useLocalStorage() {
     logAllLocal
   };
 }
+
+export default useLocalStorage
