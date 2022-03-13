@@ -1,0 +1,12 @@
+#profile #user {
+  display: flex;
+  flex-direction: column;
+}
+#profile #user #setting {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+#profile #user .logoutButton {
+  max-width: 10%;
+}

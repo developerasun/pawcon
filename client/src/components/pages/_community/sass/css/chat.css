@@ -1,0 +1,50 @@
+@use 'variable';
+#chatContainer {
+  border: 1px solid #d1d1d1;
+}
+
+#chatContainer #avatar {
+  background-color: none;
+}
+
+#chatContainer #messages {
+  position: relative;
+}
+
+#chatContainer #messages .chatMessage {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #2c87ff;
+  padding: 0.5rem;
+}
+
+#chatContainer #messages .others {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #a538ff;
+  padding: 0.5rem;
+}
+
+#chatContainer #form {
+  background-color: cadetblue;
+}
+
+#chatContainer #form input[name=userName] {
+  width: 15%;
+}
+
+#chatContainer #form input[name=message] {
+  width: 60%;
+}
+
+#chatContainer #form button {
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  background-color: #2c87ff;
+  width: 10%;
+  padding: 0.2rem;
+  cursor: pointer;
+}

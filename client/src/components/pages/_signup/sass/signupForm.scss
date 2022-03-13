@@ -1,0 +1,52 @@
+@import './variables';
+
+@mixin flexRowNowrap {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+// mobile
+.signupComponent, 
+.signupForm,
+.oAuthContainer { 
+    @include flexRowNowrap();
+    padding: $unit;
+    text-align: center;
+}
+
+.signupForm {
+    gap: $unit*0.5;
+    background-color: $brandColor;
+    .signupBtn {
+        width: 100%;
+    }
+}
+
+.oAuthContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $unit;
+    
+    .oAuths {
+        display: flex;
+        gap: $unit;
+        #googleLogo, 
+        #githubLogo {
+            width: 50px;
+            border-radius: 50%;
+        }
+        #githubLogo { 
+            background-color:white;
+        }
+    }
+}
+
+
+// tablet
+// @include tablet();
+
+// desktop
+@include desktop();

@@ -1,0 +1,15 @@
+@import '../../partials/variable';
+#profile { 
+    #user { 
+        display: flex;
+        flex-direction: column;
+        #setting {
+            display: flex;
+            flex-direction: row;
+            gap: $unit;
+        }
+        .logoutButton {
+            max-width: 10%;
+        }
+    }
+}

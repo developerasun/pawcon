@@ -1,0 +1,39 @@
+@import '../../partials/variable';
+
+#creator { 
+    #profile {
+        img { 
+            border-radius: 50%;
+            max-width: 50%;
+            height: auto;
+        }
+    }
+    #careers { 
+
+        .career { 
+            display: flex;
+            flex-flow: column nowrap;
+            padding: $unit;
+            border: 1px solid $subBgColor;
+            text-align: center;
+            line-height: $unit*2.5;;
+            .title { 
+                font-size: $unit*1.5;
+                border-bottom: $unit*0.2 solid $subBgColor;
+                img { 
+                    padding: $unit;
+                    max-width: 50%;
+                    height: auto;
+                }
+                .date {
+                    font-size: $unit;
+                }
+            }
+            .description { 
+                padding: $unit;
+                font-size: $unit*1.3;
+            }
+        }
+    }
+
+}
