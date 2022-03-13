@@ -20,6 +20,7 @@ const DropDown = ( {mainTitle, subTitle, routing}:DropDownProps ) => {
 export function Navbar () {
     const [toggle, setToggle] = React.useState<boolean>(false)
     const handleClick = () => setToggle(!toggle)
+    const handleToggle = () => setToggle(!toggle) // reset navbar once clicked
 
     // useEffect to add dropdown effect
     React.useEffect(()=>{
@@ -57,7 +58,7 @@ export function Navbar () {
                 className={toggle ? 'fold' : 'unfold'}
                 onClick={handleClick}> &#8801; </li>
         </ul>
-        <div id='menu' >
+        <div id='menu' onClick={handleToggle}>
             <ul 
                 id='lists'
                 className={toggle ? 'unfold' : 'fold'}>
