@@ -3,7 +3,7 @@
 // Production API url
 export const API_PROD = { 
     artworks : { 
-        baseUrl :"https://api.jsonbin.io/b/61fa2b59518e5f3b2ab4a6a5" 
+        baseUrl :"" 
     },
     users : {
         baseUrl : ""
