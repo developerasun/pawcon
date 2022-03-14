@@ -77,7 +77,6 @@ app.use(express.json()) // parsing request url
 app.use(cors(corsOptions)) // cross origin resource sharing
 app.use(setCache) // server side cache
 app.use(rootRouter) // combine multiple routers
-app.use(express.static(path.join(__dirname, '..', 'client', 'build'))) // serve client build files, socket io connected here
 app.use(cookieParser()) // setting cookie with JWT
 
 // set session for passport oauth login
@@ -117,13 +116,3 @@ io.on('connection', (socket) => {
         socket.on('disconnect', ()=> console.log("disconnected"))
 })
 // ===================== socket io execution ===================== // 
-
-
-// ===================== page404(server) ===================== // 
-// if client routing is used in React, any requests off the client routes
-// will be redirected to index.html by server
-// logic : user sends unmeaningful url request => server sends index.html => react router redirects page 404
-app.get('/*', (req, res)=> {
-        res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
-})
-// ===================== page404(server) ===================== // 
