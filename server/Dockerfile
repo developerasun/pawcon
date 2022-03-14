@@ -1,24 +1,20 @@
-# get latest stable version
+# get Node js stable version
 FROM node:16.14.0-alpine
 
-WORKDIR /pawcon
-RUN mkdir -p /pawcon/client
+# create a server directory and set it as working directory
 RUN mkdir -p /pawcon/server
+WORKDIR /pawcon/server
 
-# layer caching to lesson build time
-COPY package.json /server
-
-# install server dependency
+# install dependency : should install nodemon -g
+COPY ./package.json .
 RUN npm install
+RUN npm install -g nodemon 
 
 # copy all server file
-COPY . /server
+COPY . .
 
-# get React build file for Express
-COPY ../client/build/index.html /client
-
-# set container port 3001 
+# set container port 300
 EXPOSE 3001
 
-# run server at container port 3001
-CMD ["node", "app.js"]
+# run server at container port 8080
+CMD ["nodemon", "app.js"]
