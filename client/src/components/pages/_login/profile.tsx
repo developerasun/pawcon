@@ -29,42 +29,52 @@ export function Profile () {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  // Get user email from Redux store
+  // Get users from Redux store
   const username = useAppSelector((state)=>state.login.email)
-
-  // add oauth Redux logic here
   const oauthUsername = useAppSelector((state)=> state.googleLogin.username)
 
-  const handleSumbit = () =>{
+  const handleSumbit = () => {
     setSubmit(true)
   }
 
+  const handleGoogleSubmit = () => {
+    setSubmitGoogle(true)
+  }
+ 
   const handleLogout = React.useCallback(
     () => {
-      // JWT logout : '/logout'
+      // JWT logout : '/logout', Delete JWT for logout
+      // CHECK : server logging
       console.log("jwt logout clicked")
-      fetch(API_DEV.logout) // Delete JWT for logout
-      dispatch(logout()) // set login status to false
-      alert('jwt logout success')
-      navigate('/')
+      fetch(API_DEV.logout)
+        .then((res) => res.json())
+        .then((data)=> {
+          if (data.success) { 
+            console.log("jwt logout success : ",data)
+            dispatch(logout()) // set login status to false
+            alert('jwt logout success')
+            navigate('/')
+          } 
+        })
+        .catch((err)=>console.log(err))
     },
     [dispatch, navigate],
   )
   
-  // const handleLogout = 
-  
   const handleGoogleLogout = React.useCallback( () => {
     // google logout : '/oauth/logout'
-    setSubmitGoogle(true)
-    fetch(API_DEV.oauth.google.logout, {
-      method: 'DELETE'
-    }).then((res) => res.json())
-    .then((data)=>console.log(data))
-    .catch((err)=>console.log(err))
-    
-    dispatch(googleLogout())
-    alert('google logout success')
-    navigate('/')
+    // CHECK : server logging
+    fetch(API_DEV.oauth.google.logout)
+      .then((res) => res.json())
+      .then((data)=> {
+        if (data.success) { 
+          console.log("google logout success : ",data.success)
+          dispatch(googleLogout())
+          alert('google logout success')
+          navigate('/')
+        }
+      })
+      .catch((err)=>console.log(err))
   }, [dispatch, navigate]
   )
   
@@ -74,11 +84,13 @@ export function Profile () {
     }
     if (submitGoogle) {
       handleGoogleLogout()
-    }
-  }, [submit, submitGoogle, handleLogout, handleGoogleLogout])
- 
+    }  // make sure to include all dependencies, otherwise client request won't work
+  }, [submit, submitGoogle, handleLogout, handleGoogleLogout, dispatch, navigate])
+  
   return (
     <div id='profile'>
+
+      {/* TO DO : add style to Profile */}
       <div id="user">
         {/* avatar should not change during logout */}
         <span>{avatar.current}</span> 
@@ -97,9 +109,8 @@ export function Profile () {
           : <button 
               className='logoutButton'
               type='submit'
-              onClick={handleGoogleLogout}>Logout</button>
+              onClick={handleGoogleSubmit}>Logout</button>
         }
-
       </div>
 
       <div id="menus">
@@ -109,6 +120,7 @@ export function Profile () {
           components={[<Dummy />, <Dummy2 />, <Dummy3 />]}
           names={['My artworks', 'My Cart', 'My Feedback']} />
       </div>
+      
     </div> 
   );
 }
