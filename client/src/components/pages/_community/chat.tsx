@@ -16,8 +16,8 @@ interface ChatMessageProps {
 
 export function Chat () {
   const [chat, setChat] = React.useState<ChatMessageProps[]>([])
-  // create a random avatar with react-nice-avatar
-  const config = genConfig() 
+  const [renderedUsername, setRenderedUsername] = React.useState('')
+  const config = genConfig() // create a random avatar with react-nice-avatar
 
   // useRef hook preserves an initial value. 
   // should preserve this since chat renders each time. 
@@ -51,22 +51,29 @@ export function Chat () {
           ...prev, 
           {userName, message, senderId}
         ]))
+        if (socket.id === senderId) {
+          setRenderedUsername(userName) // set username by socket id
+        }
     })
   }, [])
 
   return (
     <div id='chatContainer'>
-
-        <li id='avatar'>{avatar.current}</li>
+      <div className="greetings">
+        <div id='avatar'>{avatar.current}</div>
+        <span id='title'>Hi there, {renderedUsername.length !== 0 ? renderedUsername : 'guest'}!</span>
+        <p id='text'>Talk with other NFT lovers and interact!</p>
+      </div>
       <ul id="messages">
+        {chat.length === 0 && <p id='chatCondition'>"Currently no chat"</p> }
         {chat.map((item) => {
           return ( 
-          // change color to distinguish sockets
+          // change li color to distinguish sockets
           <li key={v4()} 
             className={item.senderId === socket.id ? 'chatMessage' : 'others'} > 
             {item.userName} : {item.message} 
           </li> ) })}
-      </ul>
+      </ul> 
 
       <form id="form" onSubmit={handleSubmit}>
         {/* add functionality that disalbes user name input once decided */}
@@ -83,7 +90,7 @@ export function Chat () {
           type={'text'} 
           placeholder={'Write something ...'}
           autoComplete='off' />
-        <button>&#9993;</button>
+        <button id='sendButton'>&#9993;</button>
       </form>
     </div>
   );
