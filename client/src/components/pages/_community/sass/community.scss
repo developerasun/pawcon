@@ -1,4 +1,4 @@
-@import '../../partials/variable';
+@import '../../../subComponents/partials/variable';
 
 .visible {
     display: 1;
@@ -10,6 +10,17 @@
 
 .menuTabs {
     background-color: $subBgColor;
+    #tabContainer { 
+        #tabTable { 
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            th,td {
+                border: 0.1 * $unit solid $brandColor;
+                padding: 0.5*$unit;
+            }
+        }
+    }
 }
 
 .pagination {
@@ -24,14 +35,46 @@
     }
 }
 
-.web-editor { 
+.webEditorForm { 
     width: 75%;
     margin: 0 auto;
-
-    #editorjs { 
-        background-color:rgb(153, 153, 153);
-        height: fit-content;
+    padding: 0.5 * $unit;
+    .title { 
+        display: flex;
+        justify-content: center;
+        gap: 0.5 * $unit;
+        p {
+            font-size: 1.5*$unit;
+        }
+        #fetchEditorJsButton {
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 0.25*$unit 0.5*$unit;
+        }
+        #fetchEditorJsButton:active { 
+            color: black;
+            border-color: black;
+        }
     }
+
+    .editorContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #editorjs { 
+            width:  100%;
+            height:50%;
+            background-color:rgb(153, 153, 153);
+            .codex-editor {
+                .codex-editor__redactor {
+                    padding-bottom: 100px;
+                }
+            }
+        }
+    }
+
 }
 
 // hide unknown second editor js(bug fix) 

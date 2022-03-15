@@ -9,35 +9,64 @@
 .menuTabs {
   background-color: #575757;
 }
+.menuTabs #tabContainer #tabTable {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.menuTabs #tabContainer #tabTable th, .menuTabs #tabContainer #tabTable td {
+  border: 0.1rem solid #16b1d4;
+  padding: 0.5rem;
+}
 
 .pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   gap: 1rem;
   padding: 1rem;
   font-size: 1.5rem;
 }
-
 .pagination button {
   font-size: 1.5rem;
   padding: 0 0.2rem;
 }
 
-.web-editor {
+.webEditorForm {
   width: 75%;
   margin: 0 auto;
+  padding: 0.5rem;
 }
-
-.web-editor #editorjs {
+.webEditorForm .title {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.webEditorForm .title p {
+  font-size: 1.5rem;
+}
+.webEditorForm .title #fetchEditorJsButton {
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+}
+.webEditorForm .title #fetchEditorJsButton:active {
+  color: black;
+  border-color: black;
+}
+.webEditorForm .editorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.webEditorForm .editorContainer #editorjs {
+  width: 100%;
+  height: 50%;
   background-color: #999999;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+}
+.webEditorForm .editorContainer #editorjs .codex-editor .codex-editor__redactor {
+  padding-bottom: 100px;
 }
 
 .codex-editor:nth-child(2) {
