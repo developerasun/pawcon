@@ -1,33 +1,43 @@
-# What is PawCon?
-PawCon is an open source NFT marketplace project with below features. 
+# :paw_prints: Introducton 
 
-- Mint Churu(ERC20) and Curious Pawoneer(ERC721) token 
-- Creating and listing NFT in marketplace
-- Displaying the NFT in virtual gallery
-- Selling and buying the NFT in communities
+PawCon is an open source blockchain/metaverse project with below target features. Anyone interested in contributing is welcome.
 
-PawCon project consists of the following sections. Note that each section is actively being developed, meaning break changes might occur.
+<details>
+<summary> :dart: Target feature</summary>
 
-1. Web Client : React/Redux/Typescript
-1. Web Server : Nodejs/Express/MongoDB
-1. Blockchain : Hardhat/OpenZeppelin/Solidity
-1. 3D World : Unity/C# 
-1. Asset hosting : img.bb/Pinata/IPFS
+- Mint your Churu(ERC20) token and Curious Pawoneer(ERC721) NFT.
+- Communicate real-time with other NFT lovers.
+- Displaying your NFT in gallery.
+- Enjoy and get inspired by NFT creators' artwork.
+- Play around in 3D metaverse world.
+</details>
 
-## Architecture
-The architecture of PawCon is as follows. 
+## :hammer: Architecture
+
+The project consists of the following sections : client, server, blockchain, world, hosting. *Note that each section is actively being developed*, meaning break changes might occur.
+
+<details>
+<summary>:black_nib: Diagram </summary>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/83855174/157869877-0d84394d-c900-47e1-997c-8d5b22c1042f.png" width="800" height="600" alt="project architecture" />
 </div>
+</details>
 
-## Installation
-Each section will be available as docker image.
+<details>
+<summary>:warning: Upcoming tech changes </summary>
 
-- client : will be added
-- server : will be added
-- blockchain : will be added
-- 3d world : will be added
+|Section |Changes|
+|:-----:|:-----:|
+|Client |Redux toolkit on the way|
+|Server |TS-node on the way|
+|Blockchain|upgradable contract with proxy on the way|
+|World  |3D world with terrains on the way|
+</details>
+
+## :electric_plug: Installation
+
+Each section will be available as docker image [here](https://hub.docker.com/repository/docker/nellow1102/pawcon).
 
 Or, you can simply clone the repo.
 
@@ -40,31 +50,77 @@ Also, source file by version is available in release.
 - release : https://github.com/developerasun/pawcon/releases
 
 
-## Implementation
-<details>
-<summary>✅Implementation</summary>
+## :keyboard:	Implementation
 
-- will be added
+<details>
+<summary>:scroll:	lists</summary>
+
+<div align="center">
+  <table>
+    <thead>
+      <th>home</td>
+      <th>gallery</td>
+    </thead>
+    <tbody>
+        <td>
+          <img src="https://user-images.githubusercontent.com/83855174/158229371-178d2bac-9eb3-4888-a0fc-359770733fdb.gif" width=200 height=300 />
+        </td>
+        <td>
+         <img src="https://user-images.githubusercontent.com/83855174/158230941-13b7b1d9-be36-4c08-a1e2-3266a15d0435.gif" width=200 height=300 />
+        </td>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <th>login</td>
+      <th>shop</td>
+    </thead>
+    <tbody>
+        <td>
+        <img src="https://user-images.githubusercontent.com/83855174/158230166-2deb3e78-96c0-43c2-b9a9-034b1595946a.gif" width=200 height=300 />
+        </td>
+        <td>
+          <img src="https://user-images.githubusercontent.com/83855174/158228436-88852fa7-aff9-47ea-8ad0-ecc4d3f9f266.gif" width=200 height=300 />
+        </td>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <th>editor & chat</td>
+    </thead>
+    <tbody>
+        <td>
+          <img src="https://user-images.githubusercontent.com/83855174/158230370-0d1cd998-62cf-475f-a92b-6d43cc8f6dff.gif" width=200 height=300 />
+        </td>
+    </tbody>
+  </table>
+</div>
 
 </details>
 
-## Creator
+## :raising_hand_man:	Creator
+
 <img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
 
-## Contributor & role
+## :family_man_woman_girl_boy: Contributor & role
+
 - [Vaibhav Sharma - readme, issue/pull request template](https://github.com/AlphaVS-76)
 
-## Inspiration
+## :bulb:	Inspiration
+
 - [Cybertruck](https://bruno-simon.com/#cybertruck)
 - [Kode Sports Club](https://www.kodeclubs.com/)
 - [Prior](https://prior.co.jp/discover/en)
 
-## Contact Me
+## :mailbox: Contact Me
+
 [![GMail: Jake Sung](https://img.shields.io/badge/-designerasun@gmail.com-black?style=flat-square&logo=GMail&logoColor=White&link=designerasun@gmail.com)](designerasun@gmail.com)
 [![Linkedin: Jake Sung](https://img.shields.io/badge/-Jake_Sung-darkblue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jakesung/)](https://www.linkedin.com/in/jakesung/)
 [![Instagram: Jake Sung](https://img.shields.io/badge/-Jake_Sung-lightblue?style=flat-square&logo=Instagram&logoColor=black&link=https://www.instagram.com/designerasun/)](https://www.instagram.com/designerasun/)
 
-## License 
+## :clipboard: License 
 - This project is Apache-licensed.
 - Copyright © 2021 All right reserved [Jake Sung](https://github.com/developerasun) 
 
