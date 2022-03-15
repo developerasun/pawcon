@@ -26,8 +26,11 @@ const { Server } = require('socket.io')
 const httpServer = createServer(app)
 const io = new Server(httpServer, { 
         cors  : {
+                origin : 'http://localhost:3000',
                 credentials : true, 
-                origin : '*'
+                methods: 'GET,POST,DELETE',
+                preflightContinue: false,
+                optionsSuccessStatus:200
         }
 })
 // ===================== socket io setting ===================== // 
@@ -51,11 +54,11 @@ const setCache = require('./middlewares/cache')
 // ===================== CORS setting ===================== // 
 const cors = require('cors')
 const corsOptions = {
-        origin: '*', // set Access-Control-Allow-Origin header
+        origin: 'http://localhost:3000', // set Access-Control-Allow-Origin header
         methods: 'GET, POST, DELETE', // set Access-Control-Allow-Method header
         preflightContinue: false, // disable initial options for complex cors request(e.g DELETE)
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-        credential : true
+        credentials : true
 }
 // ===================== CORS setting ===================== // 
 
@@ -92,7 +95,7 @@ app.use(passport.session())
 
 
 // ===================== change zone ===================== //  
-// protect shop/checkout router with checkAuth
+// TO DO : protect shop/checkout router with checkAuth
 app.get('/shop/checkout', checkAuth, (req, res) => {
         res.json( { message : "auth checking works! "})
 })
