@@ -2,9 +2,10 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 import hre from 'hardhat'
 import key from "../config/key";
-import { beforeEach } from "mocha";
+import { beforeEach, it } from "mocha";
 import { Churu } from "../typechain";
 
+// TO DO : add upgrade plugin
 // NOTE : private state variables in contract not accessible in test code
 // What should be test
 // 1. minter : mint
@@ -14,8 +15,8 @@ import { Churu } from "../typechain";
 // 1. ether withdrawl : only owner
 
 // accounts from hardhat network with command 'npx hardhat node'
-const account = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
-const account2 = "0x70997970c51812dc3a010c7d01b50e0d17dc79c8"
+const account = key.HARDHATNETWORK.account0
+const account2 = key.HARDHATNETWORK.account1
 
 let churu : Churu; // type from typechain
 
@@ -85,10 +86,19 @@ describe("Churu.sol", function () {
   })
 
   // TO DO : add more test cases
+
   // TEST CASE 7
   // TEST CASE 8
   // TEST CASE 9
-  // TEST CASE 10
+
+  // TEST CASE 10 : upgradability
+  it('Should work before and after upgrading', async function() {
+    // const instance = await upgrades.deployProxy(Box, [42]);
+    // assert.strictEqual(await instance.retrieve(), 42);
+  
+    // await upgrades.upgradeProxy(instance.address, BoxV2);
+    // assert.strictEqual(await instance.retrieve(), 42);
+  })
 
 });
 
