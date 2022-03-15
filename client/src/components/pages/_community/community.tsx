@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ImgBanner } from '../../subComponents/banner';
 import { Chat } from './chat';
 import { Feedback } from './feedback';
 import './sass/css/community.css';
@@ -33,7 +34,6 @@ export const MenuTabs = ( { components, names } : MenuTabsProps ) => {
       <table id='tabTable'>
         <thead>
           <tr>
-            {/* onClick : dispatch(clickTab()) here */}
             <th className='tabA' onClick={(event) => handleClick(event)}>{names[0]}</th>
             <th className='tabB' onClick={(event) => handleClick(event)}>{names[1]}</th>
             <th className='tabC' onClick={(event) => handleClick(event)}>{names[2]}</th>
@@ -41,13 +41,14 @@ export const MenuTabs = ( { components, names } : MenuTabsProps ) => {
         </thead>
         <tbody>
           <tr>
-            <td id='tabA' className={`tabContent hidden`} >
+            {/* colSpan : merge column for a better view */}
+            <td colSpan={3} id='tabA' className={`tabContent hidden`} >
             { components[0] }
             </td>
-            <td id='tabB' className={ `tabContent hidden` } >
+            <td colSpan={3} id='tabB' className={ `tabContent hidden` } >
             { components[1] }
             </td>
-            <td id='tabC' className={ `tabContent hidden` }>
+            <td colSpan={3} id='tabC' className={ `tabContent hidden` }>
             { components[2] }
             </td>
           </tr>
@@ -73,8 +74,12 @@ export function Community () {
 
   return (
     <div>
-      <h1>community route</h1>
-
+      {/* TO DO : add style */}
+      <h1>We value user experience</h1>
+      <ImgBanner 
+        img='' // TO DO : set banner 
+        shouldBeGrid={true}/>
+        
       <div className="menuTabs">
         {/* component args : 1) feedback 2) chat 3) blog  */}
         <MenuTabs 
