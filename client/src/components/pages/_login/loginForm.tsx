@@ -10,9 +10,11 @@ import useLocalStorage from '../../containers/hooks/useLocalStorage';
 export function LoginForm () {
   const [submit, setSubmit] = React.useState(false)
   const [validationErr, setValidationErr] = React.useState<LoginValidationError>()
+
   const navigate = useNavigate()
   const dispatch = useAppDispatch() // typed dispatch 
-  const ls = useLocalStorage()
+  const ls = useLocalStorage() // custom hook
+
   const handleSubmit = (event : React.FormEvent) => { 
     event.preventDefault()
     setSubmit(true)
@@ -58,8 +60,9 @@ export function LoginForm () {
         body: JSON.stringify({
           email : email.value, 
           password : password.value
-        }), 
-        headers : { 'Content-Type' : 'application/json' }
+        }),
+        headers : { 'Content-Type' : 'application/json' },
+        credentials:'include' // A string indicating whether credentials will be sent with the request(for cookie) 
       }).then(async (res) => {
         if (res.status === 200) {return res.json()} // password correct, login success
         if (res.status === 401) { // password incorrect
@@ -93,12 +96,13 @@ export function LoginForm () {
         <form 
             className='loginForm'
             onSubmit={handleSubmit}>
- 
+
           <span
             className='callToAction'
             style={validationErr && {"color": "darkred" , "fontWeight" : "bold"}}>
               {validationErr ? '' : "Please Login First."}
           </span>
+
           <div className="emailField">
             <label htmlFor="email"> Email </label>
               {/* add validaiton failure style */}
