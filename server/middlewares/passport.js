@@ -41,10 +41,10 @@ passport.use(new googleStrategy({
     try { 
         // console.log(profile) // inspect profile object from Google Server
         // console.log(Object.keys(done), Object.values(done)) // inspect passport google callback function
-        console.log("check token value : ", accessToken) // inspect access token
+        // console.log("check token value : ", accessToken) // inspect access token
         const user = await pawconGoogleOauthUser.findOne({googleId : profile.id}) // query by id
         if (user) {
-            console.log("request coming from : ", request.url)
+            // console.log("request coming from : ", request.url)
             done(null, user)
         } else {
             // model.create returns a void when callback parameter is given
