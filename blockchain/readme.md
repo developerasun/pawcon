@@ -111,3 +111,15 @@ how Token URI works : tokenURI : baseURI + tokenId
 1. set baseURI first with IPFS CID
 1. set baseImageURI / baseMetadataURI
 1. get baseImageURI / baseMetadataURI
+
+## Upgradable contract
+
+Upcoming PawCon contracts will be upgradable with proxy pattern. This will less burden for developers to write absolutely-flawless-smart-contract.
+
+```shell
+# upgradable contracts dependency
+$npm i@openzeppelin/contracts-upgradeable
+$npm i @openzeppelin/hardhat-upgrades 
+$npm i @nomiclabs/hardhat-ethers 
+$npm i ethers
+```
