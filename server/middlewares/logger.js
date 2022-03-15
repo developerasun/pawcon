@@ -1,14 +1,31 @@
-const morgan = require('morgan')
-const path = require('path')
-const baseName = path.basename(__dirname)
-// const morgan = require('morgan') // logger dependency
+const config = require('../config/config')
 
-// FIX: fix middleware hanging error 
+// TO DO : use logOption object
+const logOption = {
+    fileOrigin : fileName, 
+    cookie : {
+        google : req.cookies[config.AUTH.GOOGLE.COOKIE.NAME],
+        jwt : req.cookies[config.AUTH.JSONWEBTOKEN.NAME]
+    }, 
+    passport : {
+        user : req.user, 
+        session : req.session
+    }, 
+    user : {
+        google : config.AUTH.GOOGLE.USER
+    }
+}
+
 // logger takes a custom parameter and wraps req,res middleware 
-const logger = (option) => {
+const logger = (fileName) => {
     return (req, res, next) => {
-        console.log(`logger dir : ${baseName}`)
-        morgan(option) // tiny, short, dev, common, combined
+        console.log("=============================")
+        console.log(`logger coming from : ${fileName}`)
+        console.log(`google cookie : ${config.AUTH.GOOGLE.COOKIE.NAME}. jsonwebtoken cookie: ${config.AUTH.JSONWEBTOKEN.NAME}`)
+        console.log(`passport user check: ${req.user}`) // passport save user info into request.user(Express.user)
+        console.log(`checking passport session : ${req.session}`)
+        console.log(`google user check : ${config.AUTH.GOOGLE.USER}`)
+        console.log("=============================")
         next() // move to next middleware
     }   
 }
