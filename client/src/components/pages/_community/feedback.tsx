@@ -40,10 +40,10 @@ export function Feedback () {
         
         if (submit) {
             fetchEditorJsButton.disabled = true
-            // To get all entry's data from Editor.js, call the save() method on the class instance. 
-            // It will return a Promise that resolves with clean data.
+            setSubmit(false) // make it resubmittable
 
             if(window.confirm("Save and submit this feedback?")) {
+                // save all entry data from Editor.js
                 editor.save().then((result) => {
                     // editorjs.blocks : object containing arrays
                     // console.log(result.blocks[0].data.text) // one block in editor js
@@ -73,21 +73,30 @@ export function Feedback () {
 
   return (
     // form submission should be done in form tag, not button
-    <form className="web-editor" onSubmit={(event) => handleSubmit(event)}>
-        <h2>Tell Us What You Felt</h2>
-        <span
-            id='fetchEditorJsButton'
-            onClick={fetchEditorJs}>&#9660;</span>
-        <h3>Use tab key for Toolbox</h3>
-        <div id='editorjs'></div>
-        <button 
-            disabled ={editor ? false : true }
-            className="saveButton" 
-            onClick={handleClick}>Exit edit</button>
-        <button 
-            disabled={save ? false : true }
-            className="submitButton" 
-            type='submit'>Submit</button>
+    <form className="webEditorForm" onSubmit={(event) => handleSubmit(event)}>
+        <div className="title">
+            <p>Tell Us What You Felt</p>
+            <span
+                id='fetchEditorJsButton'
+                onClick={fetchEditorJs}>&#9660;
+            </span>
+        </div>
+
+        <div className="editorContainer">
+            <p id='toolboxGuide'>Use tab key for Toolbox</p>
+            <div id='editorjs'></div>
+        </div>
+
+        <div className="buttons">
+            <button 
+                disabled ={editor ? false : true }
+                className="saveButton" 
+                onClick={handleClick}>Exit edit</button>
+            <button 
+                disabled={save ? false : true }
+                className="submitButton" 
+                type='submit'>Submit</button>
+        </div>
     </form>
   );
 }
