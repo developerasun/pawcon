@@ -10,7 +10,7 @@ const login_post = async (req, res) => {
         // compare the password in database password
         const user = await PawConUser.checkPassword(email, password)
         // user object contains success property, which lets you know password comparison result
-        console.log("user login status: ", user.success)
+        console.log("user jwt login status: ", user.success)
 
         // success => return user to client, failure => return user to error message        
         if (user.success) { 
@@ -86,12 +86,13 @@ const logout_get = (req, res) => {
     // response.cookie(cookie name, cookie value, cookie option)
     res.cookie( 
         config.AUTH.JSONWEBTOKEN.NAME,
-        '', 
+        '',  
         { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT }
     )
-    // jwt got reset here. if server redirect not presented, 
-    // jwt still there not being deleted
-    res.redirect('/') 
+    // FIX : console.log not working here
+    console.log("jwt logout status : ", true)
+    console.log("checking cookie : ",req.cookies)
+    res.status(200).json({ success :true, jwtCookie: null })// end client-server cycle
 }
 
 module.exports = { 

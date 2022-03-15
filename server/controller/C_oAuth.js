@@ -1,5 +1,4 @@
 const config = require('../config/config')
-const logger = require('../middlewares/logger')
 
 const googleOauthRedirect_get = (req, res, next) => {
     // set login cookie
@@ -12,19 +11,18 @@ const googleOauthRedirect_get = (req, res, next) => {
     })
 
     if (req.user !== null) { 
-        console.log("user created by passport : ",req.user) // passport save user info into request.user(Express.user)
-        console.log("checking passport session : ", req.session.passport.user)
+        console.log("google login status : ", true)
         config.AUTH.GOOGLE.USER = req.user // set google user from passport
     }
     res.status(200).redirect('http://localhost:3000/')
 } 
 
 const googleOauthUserLogout_get = (req, res) => {
-    // TO DO : add custom logger middleware
-    // logger('dev')
-    req.logOut() // delete req.user property and clear login session
     config.AUTH.GOOGLE.USER = null // reset google user info
-    res.redirect('http://localhost:3000/')
+    delete req.user // delete req.user property and clear login session
+    console.log("req.user deleted")
+    console.log("req.user should be null: ", req.user, "google user should be null: ", config.AUTH.GOOGLE.USER)
+    res.status(200).json( { success : true , user : req.user })
 }
 
 
