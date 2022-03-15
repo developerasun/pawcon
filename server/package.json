@@ -2,7 +2,7 @@
   "name": "pawcon-server",
   "author": "Jake Sung",
   "version": "0.1.1",
-  "description": "One click NFT generation service",
+  "description": "Building open source NFT market place",
   "main": "app.js",
   "directories": {
     "test": "test"
@@ -12,7 +12,7 @@
   },
   "type": "commonjs",
   "keywords": [],
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",
@@ -33,6 +33,7 @@
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.4",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0",
