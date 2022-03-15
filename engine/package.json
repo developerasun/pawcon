@@ -1,7 +1,7 @@
 {
-  "name": "pawoneer-engine",
+  "name": "pawclaw-engine",
   "version": "0.1",
-  "description": "develop art generator engine for pawcon",
+  "description": "Building open source NFT market place",
   "main": "index.js",
   "bin": "index.js",
   "pkg": {
@@ -21,8 +21,8 @@
     "preview_gif": "node utils/preview_gif.js",
     "generate_metadata": "node utils/generate_metadata.js"
   },
-  "author": "Jake Sung (DeveloperAsun)",
-  "contributor" : "Daniel Eugene Botha (HashLips)", 
+  "author": "Daniel Eugene Botha (HashLips)",
+  "contributor" : "Jake Sung (DeveloperAsun)",
   "license": "Apache 2.0",
   "dependencies": {
     "canvas": "^2.8.0",
