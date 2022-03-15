@@ -1,37 +1,13 @@
 version: '3.9'
 
+# GOAL : running docker compose and whole pawcon project gets running
+# TO DO : refactor each service later
 services:
-  client : 
-    build : /client
-    container_name: pawcon-client
-    ports:
-      - '3000:3000'
   server : 
+    # build specifies where the service's Dockerfile is. 
     build : /server
     container_name: pawcon-server
     ports:
       - '3001:3001'
     stdin_open: true 
     tty: true
-  blockchain : 
-    build : /blockchain
-    container_name: pawcon-blockchain
-    ports:
-      - '8545:8545'
-    stdin_open: true 
-    tty: true
-  engine : 
-    build : /engine
-    container_name: pawcon-engine
-    ports:
-      - '4000:4000'
-    stdin_open: true 
-    tty: true
-  world : 
-    build : /world
-    container_name: pawcon-world
-    ports:
-      - '4001:4001'
-    stdin_open: true 
-    tty: true
-
