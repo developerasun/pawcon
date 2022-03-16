@@ -20,13 +20,14 @@
 #counterContainer {
     @extend .flexRowSetting;
     justify-content: center;
-    background-color: $subBgColor;
+    background-color: $brandColor;
+    color: white;
     #counterCard {
         @extend .flexColumnSetting;
         align-items: center;
         margin: 0 0.5*$unit;
         gap: 0.5*$unit;
-        border: 1px solid white;
+        border: 3px solid white;
         img { 
             @extend .responsiveImg;
         }

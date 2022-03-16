@@ -42,29 +42,29 @@ export function Home () {
   }, [dispatch, ls]) 
   return (
     <div id='home'>
-      <div>
-        <h1>Best Start For Lazy NFT Creators</h1>
-        <ImgBanner 
-          shouldBeGrid={true}
-          img={'https://i.ibb.co/JmFhpYY/help-creators.webp'} 
-          title={"We help creators"}
-          description={"Spread your artistic talent and Make them NFTs"}/>
+      <ImgBanner 
+        hasButton={true}
+        buttonText='Sign Up'
+        buttonLink='/signup'
+        shouldBeGrid={false}
+        imgSrc={'https://i.ibb.co/ch50Sxf/home-be-curious.webp'} 
+        title={"Best Start For Lazy NFT Creators"}
+        description={"Spread your artistic talent and Make them NFTs"}/>
 
-          <section id='counterContainer'>
-            <CounterCard 
-              hasButton={false}
-              image='https://i.ibb.co/DfG593X/pawcon-user.png'
-              description={'Users'} />
-            <CounterCard 
-              hasButton={false}
-              image='https://i.ibb.co/JsRx70X/pawcon-contributor.png'
-              description={'Contributors'} />
-            <CounterCard 
-              hasButton={false}
-              image='https://i.ibb.co/6RCtZJG/pawcon-star.png'
-              description={'Github stars'} />
-          </section>
-      </div>
+      <section id='counterContainer'>
+        <CounterCard 
+          hasButton={false}
+          image='https://i.ibb.co/DfG593X/pawcon-user.png'
+          description={'Users'} />
+        <CounterCard 
+          hasButton={false}
+          image='https://i.ibb.co/JsRx70X/pawcon-contributor.png'
+          description={'Contributors'} />
+        <CounterCard 
+          hasButton={false}
+          image='https://i.ibb.co/6RCtZJG/pawcon-star.png'
+          description={'Github stars'} />
+      </section>
 
       <div id="instructionCards">
         <InstructionCards 
@@ -93,13 +93,11 @@ export function Home () {
 
       <VideoBanner 
         title='Meet PawCon' 
-        buttonText='Explore Gallery' 
-        linkTo='/gallery'/>
-
-      <ImgBanner 
-        shouldBeGrid={false}
-        img={'https://i.ibb.co/tbfyGZw/salute-devs.webp'}/>
-
+        videoSrc='https://www.youtube.com/embed/yAEyyedWCyk'
+        description='Creative, artsy, fastest way to generate NFT artworks'
+        hasButton={true}
+        buttonText='Explore Gallery'
+        buttonLink='/gallery'/>
     </div>
   );
 }
