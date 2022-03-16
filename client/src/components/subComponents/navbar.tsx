@@ -59,7 +59,7 @@ export function Navbar () {
                 onClick={handleClick}> &#8801; </li>
         </ul>
         <div id='menu' onClick={handleToggle}>
-            <ul 
+            <ul
                 id='lists'
                 className={toggle ? 'unfold' : 'fold'}>
                 <li><Link to={'/'}>Main</Link></li>
@@ -67,7 +67,7 @@ export function Navbar () {
                 <li><Link to={'/gallery'}>Gallery</Link></li>
                 <li><Link to={'/shop'}>Shop</Link></li>
                 <li><DropDown mainTitle="Community" subTitle={["Feedback", "Chatting"]} routing="/community"/></li>
-                <li><DropDown mainTitle="About" subTitle={["PawCon", "Creator"]} routing="/about"/></li>
+                <li><Link to={'/about'}>About</Link></li>
                 <li><Link to={'/login'}>Login/SignUp</Link></li>
             </ul>
         </div>
