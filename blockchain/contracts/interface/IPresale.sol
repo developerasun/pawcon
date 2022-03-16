@@ -7,12 +7,9 @@ pragma solidity ^0.8.10;
 /// @dev Explain to a developer any extra details
 
 interface IPresale {
-    // getting value : getter => getXXX
-    // setting value : setter => setYYY
-
-    // event here
-
     // call signature here
-    function setMintingLimit(uint256 _limit) external;
-    function addToWhiteList(address _address) external;
+    function isPresale() external; // check for presale d-day
+    function isWhitelist(address _address) external;
+    function setWhitelist(address _address) external;
+    function setDiscount(address _address) external;
 }
