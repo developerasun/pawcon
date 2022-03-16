@@ -83,7 +83,8 @@ export type ArtworkList = Artwork[]
 
 export interface FooterSectionProps { 
     sectionTitle : string  
-    contents : string[]
+    contents? : string[]
+    link? : string[]
 }
 
 export interface LoginValidationError { 
