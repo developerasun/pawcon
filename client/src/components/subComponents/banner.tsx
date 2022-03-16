@@ -3,61 +3,62 @@ import './sass/css/banner.css';
 import { Button } from './button';
 
 export type BasicBannerProps = {
-  title : string
-}
-
-export function EmailSubscribeBanner ( { title }: BasicBannerProps) {
-  const handleSubmit = () => { 
-
-  }
-  return (
-    <div className='emailBanner'>
-      <span>Join {title} Today!</span>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, animi?</p>
-
-      <form onSubmit={handleSubmit}>
-          <label htmlFor='email'>
-            <input type="email" name="email" id="email" placeholder="Email address" required/>
-          </label>
-          <button type='submit'>Submit</button>
-      </form>
-    </div>
-  );
+  title? : string
+  description? : string | string[]
+  hasButton? : boolean
+  buttonText? : string
+  buttonLink? : string
 }
 
 export type ImgBannerProps = {
-  img : string
-  title? : string
-  description? : string
+  imgSrc : string
   shouldBeGrid : boolean
-}
+} & BasicBannerProps
 
-export function ImgBanner ({ img, title, description, shouldBeGrid } : ImgBannerProps) { 
+export function ImgBanner ({ 
+  imgSrc, title, description, 
+  shouldBeGrid, 
+  hasButton, buttonLink, buttonText } : ImgBannerProps) { 
   return ( 
-    <section className={shouldBeGrid ? 'grid' : 'horizontal'}>
+    <section className={shouldBeGrid ? 'imgGrid' : 'imgHorizontal'}>
       <div className="texts">
-        <h3>{title}</h3>
+        <span>{title}</span>
         <p>{description}</p>
       </div>
       <div className="image">
-        <img src={img} alt="banner" loading='lazy' style={{'maxWidth' : '100%', 'height': 'auto'}}/>
+        <img src={imgSrc} alt="banner" loading='lazy' style={{'maxWidth' : '100%', 'height': 'auto'}}/>
+        { hasButton &&
+        <Button btnText={buttonText} url={buttonLink}/>}
       </div>
     </section>
   )
 }
 
 export type VideoBannerProps = { 
-  buttonText? : string
-  linkTo? : string
+  videoSrc : string
 } & BasicBannerProps
 
-export function VideoBanner( { buttonText, linkTo, title } :VideoBannerProps) {
+export function VideoBanner( { 
+  hasButton, buttonText, buttonLink, 
+  title, videoSrc, description } :VideoBannerProps) {
   return ( 
     <div className='videoBanner'>
-      <span>{title}</span><br/>
-      video here <br/>
-      {buttonText && linkTo && 
-        <Button btnText={buttonText} url={linkTo}/> }
+      <div className="texts">
+        <span>{title}</span>
+        <p>{description}</p>
+      </div>
+      <div className="video">
+        <iframe 
+          title={title} 
+          src={videoSrc} 
+          frameBorder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+      {hasButton && 
+        <Button btnText={buttonText} url={buttonLink}/> }
     </div>
   )
 }
