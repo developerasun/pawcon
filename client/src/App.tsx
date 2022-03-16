@@ -28,8 +28,7 @@ import { Shop } from './components/pages/_shop/shop'
 import { Login } from './components/pages/_login/login'
 import { SignUp } from './components/pages/_signup/signup'
 import { Page404 } from './components/subComponents/page404'
-import { Footer } from './components/subComponents/footer'
-import { Navbar } from './components/subComponents/navbar'
+import { LayoutProvider } from './components/subComponents/layoutProvider'
 
 function App() {
   return ( 
@@ -37,7 +36,8 @@ function App() {
     <Provider store={store}>
       {/* react-router */}
       <BrowserRouter>
-        <Navbar />
+        {/* navbar and footer */}
+        <LayoutProvider>
           <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/about' element={<About />}/>
@@ -56,7 +56,7 @@ function App() {
             <Route path='/signup' element={<SignUp />}/>
             <Route path='*' element={<Page404 />}/>
           </Routes>
-        <Footer />
+        </LayoutProvider>
       </BrowserRouter>
     </Provider>
   );
