@@ -58,36 +58,35 @@ export const MenuTabs = ( { components, names } : MenuTabsProps ) => {
   )
 }
 
-const Dummy = () => {
-  return <>hello I'm dummy component</>
-}
 const Dummy2 = () => {
   return <>cool dummy</>
 }
 
 export function Community () {
-  const [page, setPage] = React.useState(1)
-  
-  React.useEffect(() => {
-
-  }, [ ])
-
   return (
     <div>
       {/* TO DO : add style */}
-      <h1>We value user experience</h1>
       <ImgBanner 
-        img='' // TO DO : set banner 
-        shouldBeGrid={true}/>
+        title='We value user experience'
+        description={'Help us to improve this project'}
+        imgSrc='https://i.ibb.co/ZKmYyBH/community-feedback.png' // TO DO : set banner 
+        shouldBeGrid={false}/>
         
       <div className="menuTabs">
         {/* component args : 1) feedback 2) chat 3) blog  */}
         <MenuTabs 
-          components={[<Feedback />, <Dummy />, <Dummy2 />]}
+          components={[<Feedback />, <Chat />, <Dummy2 />]}
           names={["Feedback", "Chat", "Blog"]} />
       </div>
+      
+    </div>
+  );
+}
 
-      <div className="notice">
+const RenderFeedback = () => {
+  const [page, setPage] = React.useState(1)
+  return (
+    <div className="notice">
           <h2 className="title">See Reviews Here</h2>
           <div className="searchBox">Search bar here</div>
           <table className="table">
@@ -117,8 +116,5 @@ export function Community () {
               onClick={()=>setPage(page + 1)}>&#8250;</button>
           </div>
       </div>
-
-      <Chat />
-    </div>
-  );
+  )
 }

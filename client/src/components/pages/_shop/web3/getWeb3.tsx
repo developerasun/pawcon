@@ -1,5 +1,5 @@
 import Web3 from 'web3';
-import { PROVIDER } from '../../../containers/C_web3';
+import { PROVIDER } from '../../../containers/C_apiUrl';
 
 export async function getWeb3 () {
   const getWindow = window as any

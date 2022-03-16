@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './sass/css/gallery.css'
-import { v4 as uuidV4 } from 'uuid'
+import { v4 } from 'uuid'
 import { GalleryCards } from './galleryCards'
 import { ImgBanner } from '../../subComponents/banner'
 import { ArtworkList } from '../../containers/C_props'
@@ -47,10 +47,11 @@ export function Gallery () {
   return (
     <>
       <div className='galleryMain'>
-        <h1>PawCon Gallery</h1>
-        ======== slider here ========
-        <ImgBanner img={'https://i.ibb.co/tbfyGZw/salute-devs.webp'} shouldBeGrid={false}/>
-        ======== slider here ========
+        <ImgBanner 
+          title='PawCon Gallery'
+          description={'Meet awesome NFT artworks from PawCon.'}
+          imgSrc={'https://i.ibb.co/tbfyGZw/salute-devs.webp'} 
+          shouldBeGrid={false}/>
         
         <h2>Weekly Tops</h2>
         <span>Meet coolest paw-oneers</span>
@@ -64,13 +65,13 @@ export function Gallery () {
                 && Array.from(data).map((item)=>{
                 return <GalleryCards 
                         hasButton={false}
-                        key={uuidV4()}
+                        key={v4()}
                         title={item.title}
                         description={item.details.identity.description}
                         author={item.details.identity.author}
                         image={item.details.image.url}
                         date={item.details.identity.date}
-                        id={uuidV4()} /> })}
+                        id={v4()} /> })}
         </div>
         
         <div 

@@ -64,6 +64,7 @@ export function Chat () {
         <span id='title'>Hi there, {renderedUsername.length !== 0 ? renderedUsername : 'guest'}!</span>
         <p id='text'>Talk with other NFT lovers and interact!</p>
       </div>
+      
       <ul id="messages">
         {chat.length === 0 && <p id='chatCondition'>"Currently no chat"</p> }
         {chat.map((item) => {
