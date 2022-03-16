@@ -17,7 +17,22 @@ export function RenderDetails ( ) {
   
   return (
     <div>
-      will be added
+      {/* TO DO : .artworkDetail is grid in style */}
+      <div className="artworkDetail">
+        <div className="image">
+          <img src="" alt="artwork" />
+        </div>
+        <div className="info">
+          <span>artwork title</span>
+          <p>artwork detail paragraph</p>
+          <select name="" id="">
+            <option value="">blockchain 1</option>
+            <option value="">blockchain 2</option>
+          </select>
+          <span>artwork price</span>
+          <button>Add to cart</button>
+        </div>
+      </div>
     </div>
   );
 }
