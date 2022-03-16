@@ -1,5 +1,17 @@
 // Animations
 
+@keyframes pulse {
+    0% {
+        transform: translateY(-2px) rotate(-5deg) scale(1.1);
+    }
+    50% {
+        transform: translateY(-2px) rotate(5deg);
+    } 
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    } 
+}
+
 /* toggle.scss  */
 @keyframes rotate-reverse {
     0% {
@@ -39,7 +51,7 @@
     }
 }
 
-@keyframes hidden_ {
+@keyframes hidden {
     0% {
         opacity: 1;
     }
