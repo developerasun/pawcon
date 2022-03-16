@@ -21,4 +21,7 @@ interface ITicket {
     function setExpiration(uint256 _date) external ;
     // 4. extends certificate expiration date from _prev to _to. requires a fee
     function extendExpiration(uint256 _prev, uint256 _to) external ;
+    // 5. check if one is a ticket holder
+    function hasTicket(address _address) external;
+    function isExpired(uint256) external;
 }
