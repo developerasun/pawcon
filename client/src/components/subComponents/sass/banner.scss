@@ -1,8 +1,50 @@
-.grid {
+@import '../partials/variable';
+@import '../partials/animation';
+
+// common
+.texts {
+    padding: 2*$unit;
+    span {
+        font-weight: bold;
+        font-size: 2 * $unit;
+    }
+    p {
+        font-size: 1.2 * $unit;
+    }
+}
+
+
+// image banner
+.imgGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.horizontal { 
-    
+.imgHorizontal { 
+    text-align: center;
+    .buttonComponent {
+        margin: $unit;
+    }
+    .buttonComponent:hover {
+        animation: pulse 1s infinite ease-in-out;
+    }
 }
+
+// video banner
+.videoBanner {
+    background-color: white;
+    color: black;
+    text-align: center;
+
+    iframe { 
+        height: 400px;
+    }
+
+    .buttonComponent {
+        margin: $unit;
+    }
+    .buttonComponent:hover {
+        animation: pulse 1s infinite ease-in-out;
+    }
+}
+

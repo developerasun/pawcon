@@ -1,22 +1,17 @@
-#footer {
-  display: -ms-grid;
+#footerContainer #footer {
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 1rem;
   bottom: 0;
   background-color: white;
   color: black;
-  margin-top: 1rem;
 }
-
-#footer #section {
-  display: -webkit-box;
-  display: -ms-flexbox;
+#footerContainer #footer #section {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+#footerContainer #copyright {
+  text-align: center;
+  background-color: #575757;
 }

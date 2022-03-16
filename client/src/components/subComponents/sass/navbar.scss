@@ -1,4 +1,4 @@
-@import '../../partials/variable';
+@import '../partials/variable';
 
 #navigation {
     display: flex;
@@ -20,12 +20,17 @@
     }
     #menu { 
         font-weight: bold;
+        font-size: 1.5*$unit;
         top: 100%;
+        width: 100%;
         right: 0;
         position: absolute;
+        text-align: center;
+        z-index: 10000;
         #lists { 
             background-color: $brandColor;
             padding: $unit;
+            height: fit-content;
         }
     }
 }
@@ -33,20 +38,37 @@
 .buttons {
     #trigger, 
     #close { 
-        font-size: $unit * 1.5;
+        font-size: $unit * 3;
         margin-right: $unit*2;
         max-height: 100%;
         padding: $unit;
         color: black;
+        animation: rotate 0.25s 1 ease-in-out;
     }
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(180deg);
+        opacity: 1;
+    }
+}
+
+// .fold & .unfold : #lists of class name
 .fold { 
     display: none;
     cursor: none;
 }
 .unfold {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $unit;
     position: relative;
     top: 0;
     cursor: pointer;
