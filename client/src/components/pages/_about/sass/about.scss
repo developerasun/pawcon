@@ -1,15 +1,15 @@
-@import '../../../subComponents//partials/variable';
+@import '../../../subComponents/partials/variable';
 
 #creator { 
     #profile {
         img { 
             border-radius: 50%;
-            max-width: 50%;
+            max-width: 25%;
             height: auto;
+            padding: 3*$unit;
         }
     }
     #careers { 
-
         .career { 
             display: flex;
             flex-flow: column nowrap;

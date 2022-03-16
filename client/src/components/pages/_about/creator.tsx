@@ -2,9 +2,13 @@ import * as React from 'react';
 import { AboutCardsProps } from '../../containers/C_props';
 import { v4 } from 'uuid';
 import { Button } from '../../subComponents/button';
+import { ImgBanner } from '../../subComponents/banner';
 
 export const AboutCards = (
-    { date, title, description, image, hasButton, buttonText, buttonUrl }: AboutCardsProps ) => {
+    { 
+        title, date, description, 
+        image, hasButton, buttonText, buttonUrl 
+    }: AboutCardsProps ) => {
   return ( 
     <div className="career">
         <div className="title">
@@ -35,12 +39,17 @@ export function Creator () {
   return (
     <div id='creator'>
         <div id="profile">
-            <h1>About Jake Sung</h1>
-            <img
-                loading='lazy' 
-                src={"https://i.ibb.co/X4dN67P/jake.webp"} 
-                alt="Jake Sung profile" />
-            <span>Let's Create What People Love :) </span>
+            <ImgBanner 
+                shouldBeGrid={false}
+                title='About Jake Sung'
+                description={"Let's Create What People Love!"}
+                imgSrc='https://i.ibb.co/X4dN67P/jake.webp'
+            />
+            <p>
+                Jake Sung is a software engineer who is from South Korea. It is being said that 
+                the only reason he started this massive project is that he likes a cat and felt like
+                starting a 'small project', which obviously was not that small.
+            </p>
         </div>
 
         <div id="careers">

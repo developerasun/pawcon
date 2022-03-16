@@ -1,38 +1,29 @@
 #creator #profile img {
   border-radius: 50%;
-  max-width: 50%;
+  max-width: 25%;
   height: auto;
+  padding: 3rem;
 }
-
 #creator #careers .career {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  flex-flow: column nowrap;
   padding: 1rem;
   border: 1px solid #575757;
   text-align: center;
   line-height: 2.5rem;
 }
-
 #creator #careers .career .title {
   font-size: 1.5rem;
   border-bottom: 0.2rem solid #575757;
 }
-
 #creator #careers .career .title img {
   padding: 1rem;
   max-width: 50%;
   height: auto;
 }
-
 #creator #careers .career .title .date {
   font-size: 1rem;
 }
-
 #creator #careers .career .description {
   padding: 1rem;
   font-size: 1.3rem;
