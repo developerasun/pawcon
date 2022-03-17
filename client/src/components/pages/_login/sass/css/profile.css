@@ -1,12 +1,26 @@
-#profile #user {
+#profile #userSettings #greetings {
   display: flex;
   flex-direction: column;
-}
-#profile #user #setting {
-  display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+  border: 2px solid #16b1d4;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: white 1px 1px 10px;
 }
-#profile #user .logoutButton {
-  max-width: 10%;
+#profile #controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  row-gap: 1rem;
+}
+#profile #userMenuTabs #tabContainer #tabTable {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+#profile #userMenuTabs #tabContainer #tabTable th, #profile #userMenuTabs #tabContainer #tabTable td {
+  border: 0.1rem solid #16b1d4;
+  padding: 0.5rem;
 }

@@ -1,16 +1,41 @@
 @import '../../../subComponents//partials/variable';
 
 #profile { 
-    #user { 
-        display: flex;
-        flex-direction: column;
-        #setting {
+    #userSettings { 
+        #greetings {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: $unit;
+            border: 2px solid $brandColor;
+            margin: $unit*2;
+            padding: $unit*2;
+            box-shadow: rgb(255, 255, 255) 1px 1px 10px;
+            #avatar { 
+                // font-size: 300px;
+            }
         }
-        .logoutButton {
-            max-width: 10%;
+    }
+
+    #controls { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 2fr;
+        row-gap: $unit;
+    }
+
+    #userMenuTabs {
+        #tabContainer { 
+            #tabTable { 
+                width: 80%;
+                margin: 0 auto;
+                border-collapse: collapse;
+                th,td {
+                    border: 0.1 * $unit solid $brandColor;
+                    padding: 0.5*$unit;
+                }
+            }
         }
     }
 }

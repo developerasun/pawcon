@@ -6,15 +6,16 @@ import { MenuTabs } from '../_community/community';
 import Avatar, { genConfig,  } from 'react-nice-avatar'; 
 import { googleLogout, logout } from '../../containers/redux/actionCreators';
 import { API_DEV } from '../../containers/C_apiUrl';
+import { Button } from '../../subComponents/button';
 
 const Dummy = () => {
-  return <>hello I'm dummy component</>
+  return <>show what user liked among gallery items</>
 }
 const Dummy2 = () => {
-  return <>cool dummy</>
+  return <>show what user bought from gallery</>
 }
 const Dummy3 = () => {
-  return <>hot dummy</>
+  return <>show user feedbacks if left</>
 }
 
 export function Profile () {
@@ -23,24 +24,17 @@ export function Profile () {
   const config = genConfig() // react-nice-avatar package
   const avatar = React.useRef( // FIX : change hard-coded value later
   <Avatar  
+    id='avatar'
     sex='man'
-    style={{width : '3rem', height : '3rem'}} />)
+    style={{width : '8rem', height : '8rem'}} />)
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
+  
   // Get users from Redux store
-  const username = useAppSelector((state)=>state.login.email)
+  const jwtUsername = useAppSelector((state)=>state.login.email)
   const oauthUsername = useAppSelector((state)=> state.googleLogin.username)
 
-  const handleSumbit = () => {
-    setSubmit(true)
-  }
-
-  const handleGoogleSubmit = () => {
-    setSubmitGoogle(true)
-  }
- 
   const handleLogout = React.useCallback(
     () => {
       // JWT logout : '/logout', Delete JWT for logout
@@ -91,34 +85,44 @@ export function Profile () {
     <div id='profile'>
 
       {/* TO DO : add style to Profile */}
-      <div id="user">
-        {/* avatar should not change during logout */}
-        <span>{avatar.current}</span> 
-        <span>Hello, { username !== "guest" ? username : oauthUsername }! Welcome back!</span>
-        {/* FIX :user setting here */}
-        <div id='setting'>
-          <span>Personal detail</span>
-          <span>Change password</span>
+      <div id="userSettings">
+
+        <div id="greetings">
+          {/* avatar should not change during logout */}
+          {avatar.current} 
+          <span>Welcome back, { jwtUsername !== "guest" ? jwtUsername : oauthUsername }!</span>
+          <span>Plan here : e.g free, premium </span>
+          <div className="buttons">
+            <Button
+              // FIX : change url later
+              url='/'
+              btnText='Edit profile' />
+            <Button 
+              btnText='Logout'
+              callback={
+                jwtUsername !== "guest" 
+                ? () => setSubmit(true)
+                : () => setSubmitGoogle(true)} />
+          </div>
         </div>
-        { 
-          username !== "guest"
-          ? <button 
-              className='logoutButton' 
-              type='submit' 
-              onClick={handleSumbit}>Logout</button>
-          : <button 
-              className='logoutButton'
-              type='submit'
-              onClick={handleGoogleSubmit}>Logout</button>
-        }
+
+        <div id='controls'>
+          {/* add grid style here */}
+          <span className='gridItem'>Preferences</span>
+          <span className='gridItem'>Change password</span>
+          <span className='gridItem'>aaa</span>
+          <span className='gridItem'>bbb</span>
+          <span className='gridItem'>ccc</span>
+          <span className='gridItem'>dddd</span>
+        </div>
+
       </div>
 
-      <div id="menus">
-        {/* when each menu clicked, it renders corresponding content */}
+      <div id="userMenuTabs">
         <MenuTabs 
         // FIX : add each component later
           components={[<Dummy />, <Dummy2 />, <Dummy3 />]}
-          names={['My artworks', 'My Cart', 'My Feedback']} />
+          names={['Liked', 'Purchased', 'Contributed']} />
       </div>
       
     </div> 
