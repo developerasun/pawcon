@@ -6,9 +6,6 @@
   display: none;
 }
 
-.menuTabs {
-  background-color: #575757;
-}
 .menuTabs #tabContainer #tabTable {
   width: 80%;
   margin: 0 auto;
@@ -32,8 +29,6 @@
 }
 
 .webEditorForm {
-  width: 75%;
-  margin: 0 auto;
   padding: 0.5rem;
 }
 .webEditorForm .title {
@@ -46,6 +41,7 @@
 }
 .webEditorForm .title #fetchEditorJsButton {
   font-weight: bold;
+  min-width: 33px;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 50%;
@@ -64,9 +60,6 @@
   width: 100%;
   height: 50%;
   background-color: #999999;
-}
-.webEditorForm .editorContainer #editorjs .codex-editor .codex-editor__redactor {
-  padding-bottom: 100px;
 }
 
 .codex-editor:nth-child(2) {

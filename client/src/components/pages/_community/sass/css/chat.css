@@ -1,8 +1,6 @@
 #chatContainer {
   border: 1px solid #d1d1d1;
   background-color: white;
-  max-width: 70%;
-  margin: 0 15%;
 }
 #chatContainer .greetings {
   background-color: #167bff;
@@ -26,6 +24,7 @@
   color: #167bff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  padding: 1rem;
 }
 #chatContainer #messages .chatMessage {
   width: fit-content;

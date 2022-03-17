@@ -3,8 +3,6 @@
 #chatContainer {
     border: 1px solid rgb(209, 209, 209);
     background-color: white;
-    max-width: 70%;
-    margin: 0 15%;
     .greetings {
         background-color: rgb(22, 123, 255);
         display: flex;
@@ -26,6 +24,7 @@
             color: rgb(22, 123, 255);
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: bold;
+            padding: $unit;
         }
         .chatMessage {
             width: fit-content;

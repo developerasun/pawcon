@@ -89,7 +89,7 @@ export function LoginForm () {
       <div className="loginPromotionContainer">
         <h2>Welcome back!</h2>
         <p>Find your paw-sibility here.</p>
-        <img src={"https://i.ibb.co/pWj2RKw/login-new-user.webp"} loading='lazy' width={'200'} alt='pawcon logo'/>
+        <img src={"https://i.ibb.co/cyjB9pX/new-user.png"} loading='lazy' width={'200'} alt='welcome user'/>
       </div>
 
       <div className="loginContainer">

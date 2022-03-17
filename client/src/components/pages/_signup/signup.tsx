@@ -59,7 +59,7 @@ export function SignUp () {
   <div className="signupPromotionContainer">
     <h2>Join PawCon today!</h2>
     <p>Be NFT Paw-oneers in seconds.</p>
-    <img src={"https://i.ibb.co/bvCbscp/paw-login.webp"} width='200' alt='pawcon logo'/>
+    <img src={"https://i.ibb.co/cyjB9pX/new-user.png"} width='200' alt='pawcon logo'/>
   </div>
 
   <div className="signupContainer">

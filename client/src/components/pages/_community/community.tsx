@@ -65,6 +65,7 @@ const Dummy2 = () => {
 export function Community () {
   return (
     <div>
+
       {/* TO DO : add style */}
       <ImgBanner 
         title='We value user experience'
