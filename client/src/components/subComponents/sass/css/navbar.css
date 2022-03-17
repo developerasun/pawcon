@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: #e8faff;
+  background-color: white;
   width: 100%;
 }
 #navigation #title {
@@ -23,13 +23,17 @@
   width: 100%;
   right: 0;
   position: absolute;
-  text-align: center;
+  text-align: left;
   z-index: 10000;
 }
 #navigation #menu #lists {
   background-color: #16b1d4;
-  padding: 1rem;
+  padding: 3rem 0 3rem 3rem;
   height: fit-content;
+}
+#navigation #menu #lists .buttonComponent {
+  transform: translateX(-1.5rem);
+  width: 100%;
 }
 
 .buttons #trigger,
@@ -66,20 +70,22 @@
   top: 0;
   cursor: pointer;
   color: white;
+  animation: slide 0.25s 1 ease-in-out;
 }
 
-.dropdownSub {
-  color: #575757;
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
-.active {
-  display: block;
-}
-
-.deactive {
-  display: none;
-}
-
 @media screen and (min-width: 758px) {
   #navigation {
     background-color: pink;

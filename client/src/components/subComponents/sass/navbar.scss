@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;  
     position: relative;
-    background-color: rgb(232, 250, 255);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     #title { 
         color: black;
@@ -25,13 +25,18 @@
         width: 100%;
         right: 0;
         position: absolute;
-        text-align: center;
+        text-align: left;
         z-index: 10000;
         #lists { 
             background-color: $brandColor;
-            padding: $unit;
+            padding: $unit*3 0 $unit*3 $unit*3;
             height: fit-content;
+            .buttonComponent {
+                transform: translateX($unit*-1.5);
+                width: 100%;
+            }
         }
+        
     }
 }
 
@@ -73,15 +78,24 @@
     top: 0;
     cursor: pointer;
     color: white;
+    animation: slide 0.25s 1 ease-in-out;
 }
-.dropdownSub {
-    color: $subBgColor;
-}
-.active {
-    display: block;
-}
-.deactive { 
-    display: none;
+
+
+@keyframes slide {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width : $tablet) {
