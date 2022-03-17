@@ -3,7 +3,7 @@ export type BasicCardDetailsProps = {
     date? : string
     title? : string
     description : string | string[]
-    image : string
+    image? : string
     hasButton : boolean
     buttonText? : string
     buttonUrl? : string

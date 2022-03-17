@@ -28,9 +28,10 @@ export const imgContainer = () => {
       <img src="https://i.ibb.co/tbfyGZw/salute-devs.webp" alt="salute-devs" />
 
       <img src="https://i.ibb.co/ZKmYyBH/community-feedback.png" alt="community-feedback" />
-      <img src="https://i.ibb.co/ch50Sxf/home-be-curious.webp" alt="home-be-curious" />
-      <img src="https://i.ibb.co/pWj2RKw/login-new-user.webp" alt="login-new-user" />
       <img src="https://i.ibb.co/hRwLsFH/page404.webp" alt="page404" />
+
+      <img src="https://i.ibb.co/R9pX6Zz/home-be-curious.png" alt="home-be-curious" />
+      <img src="https://i.ibb.co/cyjB9pX/new-user.png" alt="new-user" />
 
       {/* logo */}
       <img src="https://i.ibb.co/2tfRH08/pawcon-logo.png" alt="pawcon-logo-pirate" />
