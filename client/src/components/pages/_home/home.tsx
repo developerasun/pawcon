@@ -7,6 +7,7 @@ import { API_DEV } from '../../containers/C_apiUrl'
 import { googleLogin } from '../../containers/redux/actionCreators'
 import { useAppDispatch } from '../../containers/redux/store.hooks'
 import useLocalStorage from '../../containers/hooks/useLocalStorage'
+import { Button } from '../../subComponents/button'
 
 export function Home () {  
   const dispatch = useAppDispatch()
@@ -43,48 +44,68 @@ export function Home () {
   return (
     <div id='home'>
       <ImgBanner 
-        hasButton={true}
-        buttonText='Sign Up'
-        buttonLink='/signup'
         shouldBeGrid={false}
-        imgSrc={'https://i.ibb.co/ch50Sxf/home-be-curious.webp'} 
+        hasButton={true}
+        buttonText='Get started'
+        buttonLink='/signup'
+        imgSrc={'https://i.ibb.co/R9pX6Zz/home-be-curious.png'} 
         title={"Best Start For Lazy NFT Creators"}
         description={"Spread your artistic talent and Make them NFTs"}/>
 
       <section id='counterContainer'>
+        <span id='counterTitle'>
+          Wide-open and transparent from the start. 
+          The NFT project which you can trust.
+        </span>
         <CounterCard 
           hasButton={false}
-          image='https://i.ibb.co/DfG593X/pawcon-user.png'
           description={'Users'} />
         <CounterCard 
           hasButton={false}
-          image='https://i.ibb.co/JsRx70X/pawcon-contributor.png'
           description={'Contributors'} />
         <CounterCard 
           hasButton={false}
-          image='https://i.ibb.co/6RCtZJG/pawcon-star.png'
           description={'Github stars'} />
-      </section>
+        <Button 
+          btnText='Check github'
+          url='https://github.com/developerasun/pawcon' />
+      </section> 
 
-      <div id="instructionCards">
+      <div id="instructionCardsContainer">
         <InstructionCards 
+          title='Create'
           hasButton={false}
-          description={`Create Your NFTs With Ease.`}
+          description={[
+            "Creating and minting NFT with PawCon is easy and fun. ",
+            "With HashLips NFT art engine, it only requires one click to create 10000 collections."
+          ]}
           image={'https://i.ibb.co/5RMVbRS/woman-drawing.webp'}
         />
         <InstructionCards 
+          title='Save'
           hasButton={false}
-          description={["Save It To Wallet.", "Protect the asset safely."]}
+          description={[
+            "PawCon supports Metamask transactions. ", 
+            "Save the NFT in your wallet and protect the asset safely."
+          ]}
           image={'https://i.ibb.co/TMtMV0S/phone-money.webp'}
         />
         <InstructionCards 
-          description={["List It In Marketplace.", "Do Marketing And Make Sales."]}
+          title='Sell'
+          description={[
+            "Make NFTs become a new passive income for you. List and sell them in NFT marketplace. ", 
+            "Start your own NFT business with PawCon."
+          ]}
           image={'https://i.ibb.co/FsRQLdR/paper-bag.webp'}
           hasButton={true}
           buttonText={'Explore'}
         />
         <InstructionCards 
-          description={["Donate And Support.", "Buy Me A Coffee."]}
+          title='Support'
+          description={[
+            "Maintaing a PawCon project is not easy task. Support developers by donating them a coffee. ", 
+            "Make PawCon dev ecosystem keep sparking!"
+          ]}
           image={'https://i.ibb.co/cTtgkpg/star-box.webp'}
           hasButton={true}
           buttonText={'Donate'}

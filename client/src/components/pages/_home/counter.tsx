@@ -14,7 +14,7 @@ interface setting {
 // stop if i reaches 100
 export const IncreaseToTarget = (param: setting):void => {
     if (param.count < param.target) { 
-        param.display.innerText = `${param.count}`
+        param.display.innerText = `${param.count}+`
         param.count++
         setTimeout(()=>{ Wrapper(param) }, param.speed)
     }
@@ -24,7 +24,9 @@ const Wrapper = (param : setting) => {
     IncreaseToTarget(param)
 }
 
-export const CounterCard = ({ description, image } : BasicCardDetailsProps) => {
+export const CounterCard = ({ 
+    description
+} : BasicCardDetailsProps) => {
     React.useEffect(()=> {
         const counters = document.getElementsByClassName("counter") as HTMLCollectionOf<HTMLSpanElement>
 
@@ -39,9 +41,8 @@ export const CounterCard = ({ description, image } : BasicCardDetailsProps) => {
     }, [])
     return (
         <div id="counterCard">
-            <img src={image} alt="counter icon" loading='lazy'/>
             <span className='counter'></span>
-            <p>{description}</p>
+            <span>{description}</span>
         </div>
     )
 }
