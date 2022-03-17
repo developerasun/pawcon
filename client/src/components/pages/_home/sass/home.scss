@@ -18,30 +18,46 @@
 }
 
 #counterContainer {
-    @extend .flexRowSetting;
+    @extend .flexColumnSetting;
     justify-content: center;
-    background-color: $brandColor;
-    color: white;
+    background-color: rgb(231, 250, 255);
+    color: black;
+    text-align: center;
+
     #counterCard {
         @extend .flexColumnSetting;
         align-items: center;
         margin: 0 0.5*$unit;
         gap: 0.5*$unit;
-        border: 3px solid white;
-        img { 
-            @extend .responsiveImg;
-        }
         .counter {
             font-weight: bold;
-            font-size: $unit * 1.5;
+            font-size: $unit * 3;
         }
     }
 }
 
-#instructionCardContainer {
+#counterTitle, 
+#instructionCardTitle {
+    padding: $unit;
+    font-size: $unit*2;
+    font-weight:500;
+}
+
+#instructionCardsContainer {
     @extend .flexColumnSetting;
-    align-items: center;
-    img {
-        @extend .responsiveImg;
+    gap: $unit;
+    padding: $unit;
+    #instructionCard {
+        @extend .flexColumnSetting;
+        align-items: center;
+        border: 2px solid $brandColor;
+        padding: $unit*2;
+        box-shadow: rgb(255, 255, 255) 1px 1px 10px;
+        img {
+            @extend .responsiveImg;
+        }
+        .buttonComponent { 
+            margin-top: $unit*1.5;
+        }
     }
 }

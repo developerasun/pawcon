@@ -1,36 +1,53 @@
-.flexRowSetting, #counterContainer {
+.flexRowSetting {
   display: flex;
   flex-flow: row nowrap;
   padding: 1rem;
 }
 
-.flexColumnSetting, #instructionCardContainer, #counterContainer #counterCard {
+.flexColumnSetting, #instructionCardsContainer #instructionCard, #instructionCardsContainer, #counterContainer #counterCard, #counterContainer {
   display: flex;
   flex-flow: column nowrap;
   padding: 1rem;
 }
 
-.responsiveImg, #instructionCardContainer img, #counterContainer #counterCard img {
+.responsiveImg, #instructionCardsContainer #instructionCard img {
   max-width: 50%;
   height: auto;
 }
 
 #counterContainer {
   justify-content: center;
-  background-color: #16b1d4;
-  color: white;
+  background-color: #e7faff;
+  color: black;
+  text-align: center;
 }
 #counterContainer #counterCard {
   align-items: center;
   margin: 0 0.5rem;
   gap: 0.5rem;
-  border: 3px solid white;
 }
 #counterContainer #counterCard .counter {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
-#instructionCardContainer {
+#counterTitle,
+#instructionCardTitle {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#instructionCardsContainer {
+  gap: 1rem;
+  padding: 1rem;
+}
+#instructionCardsContainer #instructionCard {
   align-items: center;
+  border: 2px solid #16b1d4;
+  padding: 2rem;
+  box-shadow: white 1px 1px 10px;
+}
+#instructionCardsContainer #instructionCard .buttonComponent {
+  margin-top: 1.5rem;
 }
