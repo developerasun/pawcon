@@ -45,3 +45,51 @@
         }
     }
 }
+
+.renderDetails {
+    border: 2px solid white;
+    .artwork {
+        text-align: center;
+        background-color: rgb(66, 66, 66);
+        border-top: 0;
+    }
+    .productInfo { 
+        display: flex;
+        flex-flow: column nowrap;
+        gap: $unit;
+        align-items: center;
+        background-color: rgb(31, 31, 31);
+        .texts {
+            display: flex;
+            flex-direction: column;
+            .price { font-size: $unit*1.5; margin-bottom: $unit;}
+        }
+        .blockchainForm {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-auto-rows: 1fr;
+            padding: 0 $unit*2 $unit*2 $unit*2;
+            fieldset {
+                text-align: center;
+                font-size: $unit*1.3;
+                padding: $unit*0.5;
+                label {
+                    font-size: $unit;
+                    padding: $unit;
+                }
+            }
+            .buttonComponent {
+                background-color: black;
+                a { color: white;  font-size: $unit*1.2;}
+            }
+        }
+    }
+}
+
+// media query tablet
+@media screen and (min-width:$tablet) {
+    .renderDetails {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

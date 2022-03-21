@@ -1,72 +1,94 @@
 .galleryMain {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
-
 .galleryMain .cardContainer {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 1rem;
 }
-
 .galleryMain .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
   border: 2px solid #16b1d4;
   gap: 1rem;
 }
-
 .galleryMain .card .cardImage {
   max-width: 100%;
   height: auto;
 }
-
 .galleryMain .card .cardDetails {
   width: 100%;
   background-color: #2b93bd;
   text-align: left;
   padding: 1rem;
 }
-
 .galleryMain .pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   gap: 1rem;
   padding: 1rem;
   font-size: 1.5rem;
 }
-
 .galleryMain .pagination button {
   font-size: 1.5rem;
   padding: 0 0.2rem;
+}
+
+.renderDetails {
+  border: 2px solid white;
+}
+.renderDetails .artwork {
+  text-align: center;
+  background-color: #424242;
+  border-top: 0;
+}
+.renderDetails .productInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  align-items: center;
+  background-color: #1f1f1f;
+}
+.renderDetails .productInfo .texts {
+  display: flex;
+  flex-direction: column;
+}
+.renderDetails .productInfo .texts .price {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.renderDetails .productInfo .blockchainForm {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-auto-rows: 1fr;
+  padding: 0 2rem 2rem 2rem;
+}
+.renderDetails .productInfo .blockchainForm fieldset {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+.renderDetails .productInfo .blockchainForm fieldset label {
+  font-size: 1rem;
+  padding: 1rem;
+}
+.renderDetails .productInfo .blockchainForm .buttonComponent {
+  background-color: black;
+}
+.renderDetails .productInfo .blockchainForm .buttonComponent a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .renderDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
