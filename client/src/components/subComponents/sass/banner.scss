@@ -1,5 +1,19 @@
 @import '../partials/variable';
 @import '../partials/animation';
+@import '../partials/mixin';
+
+@mixin imgGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: $unit;
+    .texts {
+        p {
+            margin-top: $unit*2;
+        }
+    }
+}
 
 // common
 .texts {
@@ -13,20 +27,26 @@
     }
 }
 
-
-// image banner
 .imgGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    @include imgGrid();
 }
 
-.imgHorizontal { 
+// mobile : image banner becomes flex
+.imgVertical { 
     text-align: center;
+    width: 100%;
+    margin: 0 auto;
     .buttonComponent {
-        margin: $unit;
+        margin-bottom: $unit;
+        margin-top: $unit;
     }
     .buttonComponent:hover {
         animation: pulse 1s infinite ease-in-out;
+    }
+    .image {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
     }
 }
 
@@ -48,3 +68,9 @@
     }
 }
 
+@media screen and (min-width: $tablet) {
+    // tablet : image banner is forced to be a grid
+    .imgVertical, .imgGrid { 
+        @include imgGrid();
+    }
+}
