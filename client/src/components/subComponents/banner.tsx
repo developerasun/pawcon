@@ -15,12 +15,34 @@ export type ImgBannerProps = {
   shouldBeGrid : boolean
 } & BasicBannerProps
 
+// $mobile : 576px;
+// $tablet : 768px; 
+// $desktop : 992px;
+type mobileBreakpoints = 576
+const mobileSize : mobileBreakpoints = 576
+
 export function ImgBanner ({ 
   imgSrc, title, description, 
   shouldBeGrid, 
   hasButton, buttonLink, buttonText } : ImgBannerProps) { 
+  const [gridStatus, setGridStatus] = React.useState(false)
+    // detect window size for CSS media query
+    React.useEffect(() => {
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > mobileSize) {
+          // set banner as grid when screen size > mobile
+          setGridStatus(true) 
+        } else {
+          setGridStatus(false)
+        } 
+      }) 
+    }, []) // execute once
+    
   return ( 
-    <section className={shouldBeGrid ? 'imgGrid' : 'imgHorizontal'}>
+    <section className={
+      // FIX : delete shouldBeGrid props, add left/right swap
+      gridStatus ? 'imgGrid' : 'imgHorizontal'
+    }>
       <div className="texts">
         <span>{title}</span>
         <p>{description}</p>
