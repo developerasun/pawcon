@@ -88,7 +88,25 @@
 }
 @media screen and (min-width: 758px) {
   #navigation {
-    background-color: pink;
+    background-color: red;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: auto;
+  }
+  #navigation .buttons, #navigation .logoContainer, #navigation .buttonComponent {
+    display: none;
+  }
+  #navigation #lists::before {
+    content: "Logo here";
+  }
+  #navigation #lists {
+    display: flex;
+    justify-content: space-around;
+    cursor: auto;
+  }
+  #navigation #lists .listsItem {
+    flex-basis: content;
   }
 }
 @media screen and (min-width: 1024px) {

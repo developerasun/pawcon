@@ -100,7 +100,25 @@
 
 @media screen and (min-width : $tablet) {
     #navigation {
-        background-color: pink;
+        background-color: red;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-bottom: auto;
+        .buttons, .logoContainer, .buttonComponent { 
+            display: none;
+        }
+        #lists::before {
+            content: 'Logo here';
+        }
+        #lists { 
+            display: flex;
+            justify-content: space-around;
+            cursor:auto;
+            .listsItem {
+                flex-basis: content;
+            }
+        }
     }
 }
 
