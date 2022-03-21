@@ -35,6 +35,9 @@
                 transform: translateX($unit*-1.5);
                 width: 100%;
             }
+            a:hover { 
+                color: black;
+            }
         }
         
     }
@@ -100,7 +103,6 @@
 
 @media screen and (min-width : $tablet) {
     #navigation {
-        background-color: red;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -108,15 +110,18 @@
         .buttons, .logoContainer, .buttonComponent { 
             display: none;
         }
-        #lists::before {
-            content: 'Logo here';
-        }
-        #lists { 
-            display: flex;
-            justify-content: space-around;
-            cursor:auto;
-            .listsItem {
-                flex-basis: content;
+        #menu {
+            position: relative;
+            #lists::before {
+                content: 'Logo here';
+            }
+            #lists { 
+                display: flex;
+                justify-content: space-around;
+                cursor:auto;
+                .listsItem {
+                    flex-basis: content;
+                }
             }
         }
     }
@@ -124,6 +129,5 @@
 
 @media screen and (min-width : $desktop) {
     #navigation { 
-        background-color: green;
     }
 }
