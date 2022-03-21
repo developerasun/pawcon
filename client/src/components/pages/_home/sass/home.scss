@@ -1,6 +1,6 @@
-@import '../../../subComponents//partials/variable';
+@import '../../../subComponents/partials/variable';
 
-.flexRowSetting { 
+@mixin flexRowSetting {
     display: flex;
     flex-flow: row nowrap;
     padding: $unit;
@@ -14,7 +14,7 @@
 
 .responsiveImg { 
     max-width: 50%; 
-    height: auto
+    height: auto;
 }
 
 #counterContainer {
@@ -38,7 +38,7 @@
 
 #counterTitle, 
 #instructionCardTitle {
-    padding: $unit;
+    padding: $unit $unit $unit 0;
     font-size: $unit*2;
     font-weight:500;
 }
@@ -49,15 +49,20 @@
     padding: $unit;
     #instructionCard {
         @extend .flexColumnSetting;
+        justify-content: center;
         align-items: center;
         border: 2px solid $brandColor;
         padding: $unit*2;
         box-shadow: rgb(255, 255, 255) 1px 1px 10px;
         img {
             @extend .responsiveImg;
+            box-shadow: 15px 15px 20px rgb(59, 196, 211);
         }
-        .buttonComponent { 
-            margin-top: $unit*1.5;
-        }
+    }
+}
+
+@media screen and (min-width : $tablet) {
+    #instructionCardsContainer {
+        @include flexRowSetting();
     }
 }

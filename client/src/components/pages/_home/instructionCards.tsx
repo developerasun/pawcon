@@ -10,12 +10,14 @@ export function InstructionCards ( {
 {
   return (
     <div id='instructionCard'>
-        <img src={image} 
-            alt='instruction card' 
-            loading='lazy'/>
+      <img src={image} 
+          alt='instruction card' 
+          loading='lazy'/>
+      <div className="texts">
         <span id='instructionCardTitle'>{title}</span>
         <p>{description}</p>
-        { hasButton && <Button btnText={buttonText} url={buttonUrl} /> }
+      </div>
+      { hasButton && <Button btnText={buttonText} url={buttonUrl} /> }
     </div>
   );
 }

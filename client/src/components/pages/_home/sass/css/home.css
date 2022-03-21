@@ -1,9 +1,3 @@
-.flexRowSetting {
-  display: flex;
-  flex-flow: row nowrap;
-  padding: 1rem;
-}
-
 .flexColumnSetting, #instructionCardsContainer #instructionCard, #instructionCardsContainer, #counterContainer #counterCard, #counterContainer {
   display: flex;
   flex-flow: column nowrap;
@@ -33,7 +27,7 @@
 
 #counterTitle,
 #instructionCardTitle {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   font-size: 2rem;
   font-weight: 500;
 }
@@ -43,11 +37,20 @@
   padding: 1rem;
 }
 #instructionCardsContainer #instructionCard {
+  justify-content: center;
   align-items: center;
   border: 2px solid #16b1d4;
   padding: 2rem;
   box-shadow: white 1px 1px 10px;
 }
-#instructionCardsContainer #instructionCard .buttonComponent {
-  margin-top: 1.5rem;
+#instructionCardsContainer #instructionCard img {
+  box-shadow: 15px 15px 20px #3bc4d3;
+}
+
+@media screen and (min-width: 768px) {
+  #instructionCardsContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1rem;
+  }
 }
