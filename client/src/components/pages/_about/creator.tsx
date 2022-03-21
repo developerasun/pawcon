@@ -45,10 +45,11 @@ export function Creator () {
                 description={"Let's Create What People Love!"}
                 imgSrc='https://i.ibb.co/X4dN67P/jake.webp'
             />
-            <p>
-                Jake Sung is a software engineer who is from South Korea. It is being said that 
-                the only reason he started this massive project is that he likes a cat and felt like
-                starting a 'small project', which obviously was not that small.
+            <p id='selfIntroduction'>
+                <b>Jake Sung</b> is a South Korean software engineer who started <b>Curious Pawoneer NFT project</b>. 
+                It is being said that the only reason he started this massive project is 
+                that he likes a cat and felt like starting a <b>'small project'</b> makes sense, 
+                which obviously was not that small &#x1F408;
             </p>
         </div>
 

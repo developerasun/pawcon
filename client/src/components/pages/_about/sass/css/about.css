@@ -4,17 +4,29 @@
   height: auto;
   padding: 3rem;
 }
+#creator #profile #selfIntroduction {
+  text-align: left;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  box-shadow: #16b1d4 1px 1px 10px;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  margin: 2rem;
+}
 #creator #careers .career {
   display: flex;
   flex-flow: column nowrap;
   padding: 1rem;
-  border: 1px solid #575757;
+  margin: 2rem;
+  border: 2px solid #16b1d4;
+  box-shadow: white 1px 1px 10px;
   text-align: center;
   line-height: 2.5rem;
 }
 #creator #careers .career .title {
   font-size: 1.5rem;
-  border-bottom: 0.2rem solid #575757;
+  border-bottom: 0.2rem solid #16b1d4;
 }
 #creator #careers .career .title img {
   padding: 1rem;

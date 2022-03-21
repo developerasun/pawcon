@@ -1,6 +1,7 @@
 @import '../../../subComponents/partials/variable';
 
 #creator { 
+
     #profile {
         img { 
             border-radius: 50%;
@@ -8,19 +9,31 @@
             height: auto;
             padding: 3*$unit;
         }
+        #selfIntroduction {
+            text-align: left;
+            font-size: $unit*1.5;
+            border: 2px solid white;
+            box-shadow: $brandColor 1px 1px 10px;
+            background-color: white;
+            color: black;
+            padding: $unit;
+            margin: $unit*2;
+        }
     }
     #careers { 
         .career { 
             display: flex;
             flex-flow: column nowrap;
             padding: $unit;
-            border: 1px solid $subBgColor;
+            margin: $unit*2;
+            border: 2px solid $brandColor;
+            box-shadow: rgb(255, 255, 255) 1px 1px 10px;
             text-align: center;
             line-height: $unit*2.5;;
             .title { 
                 font-size: $unit*1.5;
-                border-bottom: $unit*0.2 solid $subBgColor;
-                img { 
+                border-bottom: $unit*0.2 solid $brandColor;
+                img {
                     padding: $unit;
                     max-width: 50%;
                     height: auto;
