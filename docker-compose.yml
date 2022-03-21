@@ -5,9 +5,21 @@ version: '3.9'
 services:
   server : 
     # build specifies where the service's Dockerfile is. 
-    build : /server
-    container_name: pawcon-server
+    build : ./server
+    container_name: pawcon_server # it becomes volume/container name
     ports:
       - '3001:3001'
     stdin_open: true 
     tty: true
+
+    # FIX : volumes not working
+    volumes:
+      - server:/server
+    restart: always
+
+# FIX: for named volume
+volumes:
+  server :
+    driver: local
+
+# project name(default project directory) > image name > container name > volume name
