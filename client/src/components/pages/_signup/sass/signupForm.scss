@@ -1,6 +1,6 @@
 @import '../../../subComponents//partials/variable';
 
-@mixin flexRowNowrap {
+@mixin flexColumnNowrap {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -12,7 +12,7 @@
 .signupComponent, 
 .signupForm,
 .oAuthContainer { 
-    @include flexRowNowrap();
+    @include flexColumnNowrap();
     padding: $unit;
     text-align: center;
 }

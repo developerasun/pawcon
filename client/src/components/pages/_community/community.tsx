@@ -70,7 +70,7 @@ export function Community () {
       <ImgBanner 
         title='We value user experience'
         description={'Help us to improve this project'}
-        imgSrc='https://i.ibb.co/ZKmYyBH/community-feedback.png' // TO DO : set banner 
+        imgSrc='https://i.ibb.co/xhxjm8K/community.png' // TO DO : set banner 
         shouldBeGrid={false}/>
         
       <div className="menuTabs">
