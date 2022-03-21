@@ -76,16 +76,30 @@
 .imgGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.imgGrid .texts p {
+  margin-top: 2rem;
 }
 
-.imgHorizontal {
+.imgVertical {
   text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
-.imgHorizontal .buttonComponent {
-  margin: 1rem;
+.imgVertical .buttonComponent {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
-.imgHorizontal .buttonComponent:hover {
+.imgVertical .buttonComponent:hover {
   animation: pulse 1s infinite ease-in-out;
+}
+.imgVertical .image {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .videoBanner {
@@ -101,4 +115,17 @@
 }
 .videoBanner .buttonComponent:hover {
   animation: pulse 1s infinite ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .imgVertical, .imgGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .imgVertical .texts p, .imgGrid .texts p {
+    margin-top: 2rem;
+  }
 }

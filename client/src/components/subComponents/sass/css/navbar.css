@@ -35,6 +35,9 @@
   transform: translateX(-1.5rem);
   width: 100%;
 }
+#navigation #menu #lists a:hover {
+  color: black;
+}
 
 .buttons #trigger,
 .buttons #close {
@@ -86,9 +89,8 @@
     opacity: 1;
   }
 }
-@media screen and (min-width: 758px) {
+@media screen and (min-width: 768px) {
   #navigation {
-    background-color: red;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -97,20 +99,18 @@
   #navigation .buttons, #navigation .logoContainer, #navigation .buttonComponent {
     display: none;
   }
-  #navigation #lists::before {
+  #navigation #menu {
+    position: relative;
+  }
+  #navigation #menu #lists::before {
     content: "Logo here";
   }
-  #navigation #lists {
+  #navigation #menu #lists {
     display: flex;
     justify-content: space-around;
     cursor: auto;
   }
-  #navigation #lists .listsItem {
+  #navigation #menu #lists .listsItem {
     flex-basis: content;
-  }
-}
-@media screen and (min-width: 1024px) {
-  #navigation {
-    background-color: green;
   }
 }
