@@ -1,0 +1,7 @@
+// TO DO : extract common code blocks and 
+// converts to mixin for reuse
+@mixin flexRowSetting {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: $unit;
+}
