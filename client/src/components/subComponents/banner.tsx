@@ -25,23 +25,12 @@ export function ImgBanner ({
   imgSrc, title, description, 
   shouldBeGrid, 
   hasButton, buttonLink, buttonText } : ImgBannerProps) { 
-  const [gridStatus, setGridStatus] = React.useState(false)
-    // detect window size for CSS media query
-    React.useEffect(() => {
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > mobileSize) {
-          // set banner as grid when screen size > mobile
-          setGridStatus(true) 
-        } else {
-          setGridStatus(false)
-        } 
-      }) 
-    }, []) // execute once
-    
+
   return ( 
-    <section className={
-      // FIX : delete shouldBeGrid props, add left/right swap
-      gridStatus ? 'imgGrid' : 'imgHorizontal'
+    <section 
+      id='imgBanner'
+      className={
+      shouldBeGrid ? 'imgGrid' : 'imgVertical'
     }>
       <div className="texts">
         <span>{title}</span>
@@ -49,9 +38,9 @@ export function ImgBanner ({
       </div>
       <div className="image">
         <img src={imgSrc} alt="banner" loading='lazy' style={{'maxWidth' : '100%', 'height': 'auto'}}/>
-        { hasButton &&
-        <Button btnText={buttonText} url={buttonLink}/>}
       </div>
+      { hasButton &&
+      <Button btnText={buttonText} url={buttonLink}/>}
     </section>
   )
 }

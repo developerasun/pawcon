@@ -6,7 +6,7 @@ export function Button ({ btnText, url, callback }: IButtonProps) {
     return (
         <button 
             onClick={callback}
-            className='buttonComponent' 
+            className={'buttonComponent'} 
             type='submit'>
             <a href={url} target={"_blank"} rel="noreferrer">
             {btnText}

@@ -42,20 +42,20 @@ export function Navbar () {
                 onClick={handleClick}> &#8801; </li>
         </ul>
         <div id='menu' onClick={handleToggle}>
-            <ul
-                id='lists'
-                className={toggle ? 'unfold' : 'fold'}>
-                <li className='listsItem'><Link to={'/'}>Main</Link></li>
-                <li className='listsItem'><Link to={'/create'}>Create</Link></li>
-                <li className='listsItem'><Link to={'/gallery'}>Gallery</Link></li>
-                <li className='listsItem'><Link to={'/shop'}>Shop</Link></li>
-                <li className='listsItem'><Link to={'/community'}>Community</Link></li>
-                <li className='listsItem'><Link to={'/about'}>About</Link></li>
-                <li className='listsItem'><Link to={'/login'}>{!isLogin && !isGoogleLogin ? "Login" : "Profile"}</Link></li>
-                <li className='listsItem'><Button 
-                        btnText='Get Started'
-                        url='/signup' /></li>
-            </ul>
+          <ul
+              id='lists'
+              className={toggle ? 'unfold' : 'fold'}>
+              <li className='listsItem'><Link to={'/'}>Main</Link></li>
+              <li className='listsItem'><Link to={'/create'}>Create</Link></li>
+              <li className='listsItem'><Link to={'/gallery'}>Gallery</Link></li>
+              <li className='listsItem'><Link to={'/shop'}>Shop</Link></li>
+              <li className='listsItem'><Link to={'/community'}>Community</Link></li>
+              <li className='listsItem'><Link to={'/about'}>About</Link></li>
+              <li className='listsItem'><Link to={'/login'}>{!isLogin && !isGoogleLogin ? "Login" : "Profile"}</Link></li>
+              <li className='listsItem'><Button 
+                      btnText='Get Started'
+                      url='/signup' /></li>
+          </ul>
         </div>
     </div>
   );
