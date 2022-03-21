@@ -1,10 +1,18 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
+import { Button } from '../../subComponents/button';
 
 export function RenderDetails ( ) {
   // Returns an object of key/value pairs of the dynamic params 
   // from the current URL that were matched by the route path.
   const { title } = useParams()
+
+  // TO DO : add metamask here
+  const handleSubmit = (e :React.FormEvent) => {
+    e.preventDefault()
+  }
+
+  const handleClick = () => { }
 
   // =========== REPLACE : context => redux logic =========== // 
   React.useEffect(() => {
@@ -17,20 +25,37 @@ export function RenderDetails ( ) {
   
   return (
     <div>
-      {/* TO DO : .artworkDetail is grid in style */}
-      <div className="artworkDetail">
-        <div className="image">
-          <img src="" alt="artwork" />
+      <div className="renderDetails">
+        <div className="artwork">
+          <img src="https://i.ibb.co/R9pX6Zz/home-be-curious.png" alt="temporary image" />
         </div>
-        <div className="info">
-          <span>artwork title</span>
-          <p>artwork detail paragraph</p>
-          <select name="" id="">
-            <option value="">blockchain 1</option>
-            <option value="">blockchain 2</option>
-          </select>
-          <span>artwork price</span>
-          <button>Add to cart</button>
+
+        <div className="productInfo" >
+          <div className="texts">
+            <span>{title}</span>
+            <span className='price'>&#36; 100(temp)</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Fugiat officiis facere magni expedita, voluptas et!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quia, sed.
+            </p>
+          </div>
+          
+
+          <form className='blockchainForm' onSubmit={handleSubmit}>
+            <fieldset className='blockchainSelection'>
+              <legend>Choose blockchain</legend>
+
+              <label htmlFor="Ethereum">Ethereum</label>
+                <input type="radio" name="blockchain" id="Ethereum" />
+              <label htmlFor="Solana">Solana</label>
+                <input type="radio" name="blockchain" id="Solana" />
+            </fieldset>
+            <Button 
+              btnText='Mint'
+              callback={handleClick} />
+          </form>
         </div>
       </div>
     </div>
