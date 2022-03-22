@@ -1,34 +1,18 @@
 # PawCon World
-Teck requirements for PawCon world is as follows : 
+Metaverse world for PawCon project is not updated yet. Figma and project UI overviews will be uploaded later.
 
-- Unity
-- C#
-- Web3.cs 
-- Chainsafe SDK(ver 1.2.2) 
+## Upcoming updates
 
-<details>
-<summary>Depedency</summary>
-
-- content here 
-- content here 
-- content here 
-</details>
+These will be updated in near future. 
 
 <details>
-<summary>Characteristics</summary>
+<summary>list</summary>
 
-- content here 
-- content here 
-- content here 
-- content here 
+### Terrain map
+### 3D UI
+### Web3 and NFT
 </details>
 
+## Characteristics
 
-<details>
-<summary>Conventions</summary>
-
-- content here 
-- content here 
-- content here 
-- content here 
-</details>
+- content will be added
