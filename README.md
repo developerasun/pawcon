@@ -1,11 +1,17 @@
+<div align="center">
+  <img src="https://i.ibb.co/8mc6BQJ/image.png" alt="curiousPawoneer" width="100%"/>
+</div>
+
 # :paw_prints: Introducton 
 
-PawCon is an open source blockchain/metaverse project with below target features. Anyone interested in contributing is welcome.
+PawCon(Paw + Icon) is an open source blockchain/metaverse project with below target features. Anyone interested in contributing is welcome. Readmes in each section should lead the contributors to place where they can find the section details. 
+
+Until the primitive version release(maybe version 0.5), this project will be developed in my personal account repository. However, as project gets bigger and complicated, the more helper hands needed definitely. Once the primitive version is released all sections will be moved to [here](https://github.com/pawcon) and be open-sourced.
 
 <details>
 <summary> :dart: Target feature</summary>
 
-- Mint your Churu(ERC20) token and Curious Pawoneer(ERC721) NFT.
+- Mint your Churu(ERC20) token and Curious Pawoneer(Paw + Pioneer, ERC721) NFT.
 - Communicate real-time with other NFT lovers.
 - Displaying your NFT in gallery.
 - Enjoy and get inspired by NFT creators' artwork.
