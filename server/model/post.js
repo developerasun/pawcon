@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+// TO DO : create a new schema for feedback, change file name
+// post id, description(body), date, title, 
 // Create a schema for web editor posting
 const postSchema = mongoose.Schema({
     // editor js paragraphs

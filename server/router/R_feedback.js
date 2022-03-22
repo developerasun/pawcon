@@ -5,8 +5,9 @@ const feedbackPath = path.join(__dirname, '..', 'controller', 'C_feedback'.conca
 const feedbackController = require(feedbackPath)
 const feedbackRouter = require('express').Router()
 
-// feedback requests coming from '/community' route
-feedbackRouter.post('/', feedbackController.feedback_post)
+// TO DO : add api route for feedback
+// feedback requests coming from '/community/feedback' route
+feedbackRouter.post('/feedback:page', feedbackController.feedback_post)
 // feedbackRouter.delete('/community', feedbackController.feedback_delete)
 
 module.exports = feedbackRouter
