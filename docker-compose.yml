@@ -6,20 +6,28 @@ services:
   server : 
     # build specifies where the service's Dockerfile is. 
     build : ./server
-    container_name: pawcon_server # it becomes volume/container name
+    container_name: server # it becomes volume/container name
+    image: nellow1102/pawcon:server # set a tag for image
     ports:
-      - '3001:3001'
+      - '3001:3001' # host:container
     stdin_open: true 
     tty: true
-
-    # FIX : volumes not working
+    restart: always
     volumes:
       - server:/server
+  client : 
+    build : ./client
+    container_name: client
+    image: nellow1102/pawcon:client # set a tag for image
+    ports:
+      - '3000:3000' 
     restart: always
+    volumes:
+      - client:/client
 
-# FIX: for named volume
+# top-level volume
 volumes:
   server :
     driver: local
-
-# project name(default project directory) > image name > container name > volume name
+  client : 
+    driver: local
