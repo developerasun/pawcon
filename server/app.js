@@ -17,6 +17,7 @@ const express = require('express')
 const app = express()
 const config = require('./config/config')
 const path = require('path') // don't use slash since it is platform-dependent.
+const helmet = require('helmet') // security
 // ===================== Express app setting ===================== // 
 
 
@@ -54,7 +55,7 @@ const setCache = require('./middlewares/cache')
 // ===================== CORS setting ===================== // 
 const cors = require('cors')
 const corsOptions = {
-        origin: 'http://localhost:3000', // set Access-Control-Allow-Origin header
+        origin: 'http://localhost:3000', // set Access-Control-Allow-Origin header, can't be '*' when client credentials set true.
         methods: 'GET, POST, DELETE', // set Access-Control-Allow-Method header
         preflightContinue: false, // disable initial options for complex cors request(e.g DELETE)
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -81,6 +82,7 @@ app.use(cors(corsOptions)) // cross origin resource sharing
 app.use(setCache) // server side cache
 app.use(rootRouter) // combine multiple routers
 app.use(cookieParser()) // setting cookie with JWT
+app.use(helmet())
 
 // set session for passport oauth login
 app.use(session({
@@ -91,7 +93,6 @@ app.use(session({
 app.use(passport.initialize()) // passport initalization
 app.use(passport.session())
 // ===================== middleware execution ===================== //  
-
 
 
 // ===================== change zone ===================== //  
