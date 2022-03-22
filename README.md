@@ -35,9 +35,27 @@ The project consists of the following sections : client, server, blockchain, wor
 |World  |3D world with terrains on the way|
 </details>
 
+## :palm_tree: Branch stategy
+
+<details>
+<summary>:herb: github flow </summary>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/83855174/159117452-1d7f0935-83a4-4f8b-873d-d8b17e314b2f.jpg" width="800" height="600" alt="branch strategy" />
+</div>
+</details>
+
 ## :electric_plug: Installation
 
-Each section will be available as docker image [here](https://hub.docker.com/repository/docker/nellow1102/pawcon).
+Each section will be available at [PawCon Docker hub repository](https://hub.docker.com/repository/docker/nellow1102/pawcon). As of March 2022, server and client is available as docker images. Note that images might change or get deprecated over time. I highly recommend to use server docker image first since client image changes very often.
+
+```shell
+# get pawcon server image
+$docker pull nellow1102/pawcon:server
+
+# get pawcon client imag
+$docker pull nellow1102/pawcon:server
+```
 
 Or, you can simply clone the repo.
 
@@ -48,7 +66,6 @@ $git clone https://github.com/developerasun/pawcon.git
 Also, source file by version is available in release.
 
 - release : https://github.com/developerasun/pawcon/releases
-
 
 ## :keyboard:	Implementation
 
@@ -121,6 +138,7 @@ Also, source file by version is available in release.
 [![Instagram: Jake Sung](https://img.shields.io/badge/-Jake_Sung-lightblue?style=flat-square&logo=Instagram&logoColor=black&link=https://www.instagram.com/designerasun/)](https://www.instagram.com/designerasun/)
 
 ## :clipboard: License 
+
 - This project is Apache-licensed.
 - Copyright © 2021 All right reserved [Jake Sung](https://github.com/developerasun) 
 
