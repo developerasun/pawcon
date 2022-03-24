@@ -1,6 +1,40 @@
 import * as React from 'react';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
+import { API_DEV } from '../../containers/C_apiUrl';
+
+interface RefetchFeedbacksProps { 
+    shouldRefetch : boolean
+}
+
+interface FeedbackPostProps {
+    description : string
+}
+
+// TO DO : add infinite scroll logic for feedbacks
+const RefetchFeedbacks = ({shouldRefetch}: RefetchFeedbacksProps) => {
+    const [data, setData] = React.useState<FeedbackPostProps[]>([])
+
+    React.useEffect(()=>{
+        window.addEventListener("scroll", () => {
+            if ( shouldRefetch ) {
+                console.log("should refetch")
+                fetch(API_DEV.editorJs.GET)
+                    .then((res) => res.json())
+                    .then((data)=> {
+                        console.log(data)
+                        setData([...data])
+                    })
+                    .catch(err =>console.log(err))
+            } 
+        })
+    }, [ ])
+    return (
+        <div >
+            success!
+        </div>
+    )
+}
 
 export function Feedback () {
     const [submit, setSubmit] = React.useState(false)
@@ -53,10 +87,11 @@ export function Feedback () {
                     console.log(onePost) // combined paragraphs
     
                     // save feedbacks to database
-                    fetch('/community', {
+                    fetch(API_DEV.editorJs.POST, {
                         method: 'POST', 
                         body: JSON.stringify({onePost}), 
-                        headers: { 'Content-Type' : 'application/json' }
+                        headers: { 'Content-Type' : 'application/json' },
+                        credentials:'include'
                     })
                     .then((res) => { return res.json })
                     .then((data) => {
@@ -66,10 +101,11 @@ export function Feedback () {
 
             }
         }
-    }, [ submit ])
+    }, [ submit, editor ])
 
   return (
-    // form submission should be done in form tag, not button
+    <>
+    {/* // form submission should be done in form tag, not button */}
     <form className="webEditorForm" onSubmit={(event) => handleSubmit(event)}>
         <div className="title">
             <p>Tell Us What You Felt</p>
@@ -90,5 +126,11 @@ export function Feedback () {
                 type='submit'>Submit</button>
         </div>
     </form>
+
+    {/* add infinite scroll 
+    document.body.offsetHeight : For the document body object, the measurement includes total linear content height
+    */}
+    <RefetchFeedbacks shouldRefetch={false } />
+    </>
   );
 }
