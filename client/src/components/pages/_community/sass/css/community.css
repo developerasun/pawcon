@@ -39,24 +39,12 @@
 .webEditorForm .title p {
   font-size: 1.5rem;
 }
-.webEditorForm .title #fetchEditorJsButton {
-  font-weight: bold;
-  min-width: 33px;
-  cursor: pointer;
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 0.25rem 0.5rem;
-}
-.webEditorForm .title #fetchEditorJsButton:active {
-  color: black;
-  border-color: black;
-}
 .webEditorForm .editorContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.webEditorForm .editorContainer #editorjs {
+.webEditorForm .editorContainer #pawconEditor {
   width: 100%;
   height: 50%;
   background-color: #999999;

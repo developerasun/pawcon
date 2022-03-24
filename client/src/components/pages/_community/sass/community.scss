@@ -43,25 +43,13 @@
         p {
             font-size: 1.5*$unit;
         }
-        #fetchEditorJsButton {
-            font-weight: bold;
-            min-width: 33px;
-            cursor: pointer;
-            border: 2px solid white;
-            border-radius: 50%;
-            padding: 0.25*$unit 0.5*$unit;
-        }
-        #fetchEditorJsButton:active { 
-            color: black;
-            border-color: black;
-        }
     }
 
     .editorContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        #editorjs { 
+        #pawconEditor { 
             width:  100%;
             height:50%;
             background-color:rgb(153, 153, 153);

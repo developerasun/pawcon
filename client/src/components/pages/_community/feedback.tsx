@@ -1,25 +1,29 @@
 import * as React from 'react';
 import EditorJS from '@editorjs/editorjs';
-import Header from '@editorjs/header'
-
-const editor = new EditorJS({
-    holder : 'editorjs',
-    tools: {
-        header: {
-            class: Header,
-            inlineToolbar : true
-        },
-    },
-})  
+import Header from '@editorjs/header';
 
 export function Feedback () {
     const [submit, setSubmit] = React.useState(false)
     const [save, setSave] = React.useState(false)
-    const [fetchEditor, setFetchEditor] = React.useState(false)
 
-    const fetchEditorJs = () => {
-        setFetchEditor(true)
-    }
+    // 1) editor js should be inside component so that id missing error won't happen
+    // 2) it should be stored in useMemo hook so that it would not render multiple times
+    const editor = React.useMemo(() => {
+        return new EditorJS({
+            holder : 'pawconEditor',
+            autofocus: true,
+            placeholder: 'Use tab key for toolbox', 
+            readOnly: false, // set active as fetched
+            onReady: () => console.log("editor js is good to go"), 
+            tools: {
+                header: {
+                    class: Header,
+                    inlineToolbar : true
+                },
+            }, 
+        })  
+    }, [ ]) // render once
+    
     const handleClick = (event : React.FormEvent) => { 
         event.preventDefault()
         setSave(true)
@@ -31,16 +35,9 @@ export function Feedback () {
 
     // Render editor js once. 
     React.useEffect(() => {    
-        const fetchEditorJsButton = document.getElementById('fetchEditorJsButton') as HTMLButtonElement
-
-        // render editor js when reloaded
-        if (fetchEditor) {
-            document.location.reload()
-        } 
-        
         if (submit) {
-            fetchEditorJsButton.disabled = true
             setSubmit(false) // make it resubmittable
+            setSave(false) // reset button disable
 
             if(window.confirm("Save and submit this feedback?")) {
                 // save all entry data from Editor.js
@@ -69,22 +66,17 @@ export function Feedback () {
 
             }
         }
-    }, [ submit, fetchEditor ])
+    }, [ submit ])
 
   return (
     // form submission should be done in form tag, not button
     <form className="webEditorForm" onSubmit={(event) => handleSubmit(event)}>
         <div className="title">
             <p>Tell Us What You Felt</p>
-            <span
-                id='fetchEditorJsButton'
-                onClick={fetchEditorJs}>&#9660;
-            </span>
         </div>
 
         <div className="editorContainer">
-            <p id='toolboxGuide'>Use tab key for Toolbox</p>
-            <div id='editorjs'></div>
+            <div id='pawconEditor'></div>
         </div>
 
         <div className="buttons">
