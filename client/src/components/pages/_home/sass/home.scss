@@ -47,6 +47,7 @@
     @extend .flexColumnSetting;
     gap: $unit;
     padding: $unit;
+    overflow-x: scroll; // hide overflowed contents into scroll
     #instructionCard {
         @extend .flexColumnSetting;
         justify-content: center;

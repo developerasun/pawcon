@@ -3,6 +3,7 @@ import { CartForm } from './cart/cartForm';
 import { Payment } from './payment/payment';
 
 export function Shop () {
+  // FIX : delete file upload for shop
   const handleSubmit = (e:React.FormEvent) => {
     e.preventDefault()
     // FIX : change server route later

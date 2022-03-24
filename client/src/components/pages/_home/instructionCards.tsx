@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { v4 } from 'uuid';
 import { BasicCardDetailsProps } from '../../containers/C_props';
 import { Button } from '../../subComponents/button';
 

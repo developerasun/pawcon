@@ -58,7 +58,7 @@ export function Gallery () {
         <span>search bar here</span>
 
         <div className="cardContainer">
-          {/* FIX : change conditional render based on fetchingStatusCode */}
+          {/* TO DO : change to infinite scroll */}
           { fetchStatus === fetchingStatusCode.notFetching && <p>No gallery items for now..</p> }
           { fetchStatus === fetchingStatusCode.loading && "data fetching ..." }
           { fetchStatus === fetchingStatusCode.fetched 

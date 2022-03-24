@@ -27,7 +27,7 @@ export function RenderDetails ( ) {
     <div>
       <div className="renderDetails">
         <div className="artwork">
-          <img src="https://i.ibb.co/R9pX6Zz/home-be-curious.png" alt="temporary image" />
+          <img src="https://i.ibb.co/R9pX6Zz/home-be-curious.png" alt="temp" />
         </div>
 
         <div className="productInfo" >

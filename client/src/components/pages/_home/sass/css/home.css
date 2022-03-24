@@ -35,6 +35,7 @@
 #instructionCardsContainer {
   gap: 1rem;
   padding: 1rem;
+  overflow-x: scroll;
 }
 #instructionCardsContainer #instructionCard {
   justify-content: center;

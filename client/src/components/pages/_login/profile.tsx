@@ -18,6 +18,7 @@ const Dummy3 = () => {
   return <>show user feedbacks if left</>
 }
 
+// TO DO : add file upload for user profile changes
 export function Profile () {
   const [submit, setSubmit] = React.useState(false)
   const [submitGoogle, setSubmitGoogle] = React.useState(false)
@@ -83,8 +84,6 @@ export function Profile () {
   
   return (
     <div id='profile'>
-
-      {/* TO DO : add style to Profile */}
       <div id="userSettings">
 
         <div id="greetings">
