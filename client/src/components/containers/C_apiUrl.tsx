@@ -28,7 +28,11 @@ export const API_DEV = {
         }, 
         github : ""
     },
-    signup : "http://localhost:3001/signup"
+    signup : "http://localhost:3001/signup", 
+    editorJs : { 
+        POST : "http://localhost:3001/community/feedback",
+        GET : "http://localhost:3001/apis/feedbacks"
+    }
 }
 
 export const PROVIDER = { 

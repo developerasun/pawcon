@@ -10,9 +10,9 @@ export const imgContainer = () => {
       <img src="https://i.ibb.co/cTtgkpg/star-box.webp" alt="star-box" />
 
       {/* home component counter card */}
-      <a href="https://ibb.co/ZzHWBys"><img src="https://i.ibb.co/DfG593X/pawcon-user.png" alt="pawcon-user" /></a>
-      <a href="https://ibb.co/mcCvq1Q"><img src="https://i.ibb.co/JsRx70X/pawcon-contributor.png" alt="pawcon-contributor" /></a>
-      <a href="https://ibb.co/gMKW7FQ"><img src="https://i.ibb.co/6RCtZJG/pawcon-star.png" alt="pawcon-star" /></a>
+      <img src="https://i.ibb.co/DfG593X/pawcon-user.png" alt="pawcon-user" />
+      <img src="https://i.ibb.co/JsRx70X/pawcon-contributor.png" alt="pawcon-contributor" />
+      <img src="https://i.ibb.co/6RCtZJG/pawcon-star.png" alt="pawcon-star" />
       <img src="https://i.ibb.co/0KZhFjp/camera.webp" alt="camera" />
       <img src="https://i.ibb.co/h8vffjZ/cat-running.webp" alt="cat-running" />
       <img src="https://i.ibb.co/GnKjWKK/draw-cat.webp" alt="draw-cat" />
@@ -26,6 +26,7 @@ export const imgContainer = () => {
       <img src="https://i.ibb.co/JmFhpYY/help-creators.webp" alt="help-creators" />
       <img src="https://i.ibb.co/X4dN67P/jake.webp" alt="jake" />
       <img src="https://i.ibb.co/tbfyGZw/salute-devs.webp" alt="salute-devs" />
+      <img src="https://i.ibb.co/8mc6BQJ/image.png" alt="curious pawoneer" />
 
       <img src="https://i.ibb.co/R9pX6Zz/home-be-curious.png" alt="home-be-curious" />
       <img src="https://i.ibb.co/cyjB9pX/new-user.png" alt="new-user" />
