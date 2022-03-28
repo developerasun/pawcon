@@ -1,9 +1,9 @@
 {
   "name": "pawcon-client",
-  "version": "0.1.1",
+  "version": "0.1",
   "author": "Jake Sung",
   "license": "Apache-2.0",
-  "description": "Building open source NFT market place",
+  "description": "Curious Pawonner NFT project-client",
   "private": true,
   "dependencies": {
     "@editorjs/editorjs": "^2.23.2",
@@ -19,7 +19,6 @@
     "@types/redux-logger": "^3.0.9",
     "@types/uuid": "^8.3.4",
     "react": "^17.0.2",
-    "react-cookie": "^4.1.1",
     "react-dom": "^17.0.2",
     "react-nice-avatar": "^1.2.4",
     "react-redux": "^7.2.6",
