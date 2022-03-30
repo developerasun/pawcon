@@ -24,7 +24,7 @@ import { Create } from './components/pages/_create/create'
 import { Gallery } from './components/pages/_gallery/gallery'
 import { Details } from './components/pages/_gallery/details'
 import { RenderDetails } from './components/pages/_gallery/renderDetails'
-import { Shop } from './components/pages/_shop/shop'
+import { Upload } from './components/pages/_upload/upload'
 import { Login } from './components/pages/_login/login'
 import { SignUp } from './components/pages/_signup/signup'
 import { Page404 } from './components/subComponents/page404'
@@ -51,7 +51,7 @@ function App() {
                 <Route path=':title' element={<RenderDetails />} />
             </Route>
 
-            <Route path='/shop' element={<Shop />}/>
+            <Route path='/upload' element={<Upload />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/signup' element={<SignUp />}/>
             <Route path='*' element={<Page404 />}/>
