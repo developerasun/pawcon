@@ -49,10 +49,12 @@ export function Gallery () {
       <div className='galleryMain'>
         <ImgBanner 
           title='PawCon Gallery'
-          description={'Meet awesome NFT artworks from PawCon.'}
+          description={[
+            'Meet awesome NFT artworks from PawCon.',
+            ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quaerat quae placeat nisi beatae ex!'
+          ]}
           imgSrc={'https://i.ibb.co/tbfyGZw/salute-devs.webp'} 
           shouldBeGrid={false}/>
-        
         <h2>Weekly Tops</h2>
         <span>Meet coolest paw-oneers</span>
         <span>search bar here</span>
