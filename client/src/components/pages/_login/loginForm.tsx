@@ -75,6 +75,7 @@ export function LoginForm () {
           alert("login success")  
           // Get server response, set login Redux state
           dispatch(login(data._doc.email)) // server response object when success
+          ls.setLocalItem("jwtLogin", "true")
           navigate('/')
         }
       }).catch((err) => {
