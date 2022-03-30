@@ -8,6 +8,8 @@ const googleOauthRedirect_get = (req, res, next) => {
     {
         maxAge : config.AUTH.GOOGLE.COOKIE.EXPIRATION,
         httpOnly : true, // prevent client-JS approach to cookie
+        sameSite: 'none', 
+        secure:true 
     })
 
     if (req.user !== null) { 

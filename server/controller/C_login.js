@@ -64,7 +64,9 @@ const signup_post = async (req, res) => {
                     const token = createJWT(user._id)
                     res.cookie(config.AUTH.JSONWEBTOKEN.NAME, token, {
                         httpOnly : true, 
-                        maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION
+                        maxAge : config.AUTH.JSONWEBTOKEN.EXPIRATION,
+                        sameSite: 'none', 
+                        secure: true
                     })
                     res.status(201).json({
                         ...user,
@@ -87,7 +89,12 @@ const logout_get = (req, res) => {
     res.cookie( 
         config.AUTH.JSONWEBTOKEN.NAME,
         '',  
-        { maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT }
+        { 
+            maxAge : config.AUTH.JSONWEBTOKEN.LOGOUT, 
+            httpOnly: true, 
+            sameSite: 'none', 
+            secure: true
+        }
     )
     // FIX : console.log not working here
     console.log("jwt logout status : ", true)

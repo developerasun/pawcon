@@ -1,3 +1,4 @@
+const config = require('../config/config')
 const path = require('path')
 const pawconFeedback = require('../model/post')
 
@@ -14,15 +15,20 @@ const feedback_post = async (req, res) => {
         const instance = await pawconFeedback.create( { description } )
     
         // send response to client 
-        res.status(201).json(instance)
+        res.status(config.STATUSCODE.CREATED).json(instance)
     } catch(err) {
         console.log(err)
     }
 }
 
-// come back here after client feedback ui
-const feedback_delete = (req, res) => {
-
+// NOT TESTED : come back here after client feedback ui
+const feedback_delete = async (req, res) => {
+    const { description } = req.body
+    const result = await pawconFeedback.findOneAndDelete({description})
+    if (result) {
+        console.log('successfully deleted')
+        res.status(config.STATUSCODE.DELETED)
+    }
 }
 
 module.exports = { 
