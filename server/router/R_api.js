@@ -9,5 +9,6 @@ const apiRouter = require('express').Router()
 apiRouter.get('/users/google', apiController.getGoogleOauthUser)
 apiRouter.get('/artworks/:page', apiController.getArtworks) // set req.params.page
 apiRouter.get('/feedbacks', apiController.getFeedbacks)
+apiRouter.get('/nfts/:page', apiController.getNFTmedia) // set req.params.page
 
 module.exports = apiRouter
