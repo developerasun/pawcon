@@ -91,3 +91,11 @@ export interface LoginValidationError {
     errorMessage : string
     success : boolean
 }
+
+export interface oneArtwork {
+    title : string | undefined
+    description : string | string[]
+    author : string
+    date : string | undefined
+    image : string | undefined
+}
