@@ -1,9 +1,9 @@
 import { 
     LOGIN, LOGOUT, 
     ADD_TO_CART, REMOVE_FROM_CART,
-    INCREASE_QTY, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT
+    INCREASE_QTY, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT, FETCH_ARTWORK
 } from "./actionTypes"
-import { Product } from "../C_props"
+import { Artwork, oneArtwork, Product } from "../C_props"
 
 // action type setting for login reducer
 // LoginActionPayload will only show duplicated properties
@@ -78,5 +78,14 @@ export const googleLogout = () => {
     return { 
         type : GOOGLE_LOGOUT, 
         payload : ""
+    }
+}
+
+// action type setting for artwork reducer
+export type FetchArtworkActionPayload = ReturnType<typeof fetchArtwork>
+export const fetchArtwork = (artwork : oneArtwork) => {
+    return { 
+        type: FETCH_ARTWORK, 
+        payload: artwork
     }
 }

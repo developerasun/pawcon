@@ -1,6 +1,6 @@
-import { initialLoginState, initialCartItemState, initialGoogleLoginState } from "./initialStates"
-import { ADD_TO_CART, DECREASE_QTY, GOOGLE_LOGIN, GOOGLE_LOGOUT, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
-import { LoginActionPayload, CartActionPayload, GoogleLoginActionPayload } from "./actionCreators"
+import { initialLoginState, initialCartItemState, initialGoogleLoginState, initialArtworkItemState } from "./initialStates"
+import { ADD_TO_CART, DECREASE_QTY, FETCH_ARTWORK, GOOGLE_LOGIN, GOOGLE_LOGOUT, INCREASE_QTY, LOGIN, LOGOUT, REMOVE_FROM_CART } from "./actionTypes"
+import { LoginActionPayload, CartActionPayload, GoogleLoginActionPayload, FetchArtworkActionPayload } from "./actionCreators"
 
 export const loginReducer = ( state = initialLoginState, action : LoginActionPayload ) => { 
     switch (action.type) { 
@@ -72,3 +72,12 @@ export const googleLoginReducer = ( state = initialGoogleLoginState, action : Go
             return state
     }
 } 
+
+export const fetchArtworkReducer = (state = initialArtworkItemState, action:FetchArtworkActionPayload) => {
+    switch(action.type) {
+        case FETCH_ARTWORK :
+            return action.payload
+        default :
+            return state
+    }
+}

@@ -1,4 +1,4 @@
-import { ArtworkList, Product } from "../C_props"
+import { oneArtwork, Product } from "../C_props"
 
 // Set login state
 export interface initialLoginStateProps { 
@@ -25,5 +25,12 @@ export const initialGoogleLoginState : googleLoginStateProps = {
 // Set cart item state
 export const initialCartItemState : Product[] = [ ]
 
+
 // set artwork item state 
-export const initialArtworkItemState : ArtworkList = []
+export const initialArtworkItemState: oneArtwork= { 
+    title: '',
+    date: '', 
+    description: '',  
+    author:'',
+    image:''
+}

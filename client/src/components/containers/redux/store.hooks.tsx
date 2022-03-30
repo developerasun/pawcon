@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { googleLoginStateProps, initialLoginStateProps } from './initialStates';
-import { Product } from '../C_props';
+import { oneArtwork, Product } from '../C_props';
 import { store } from './store';
 
 // Define RootState : 1) Login 2) User 3) Product
@@ -10,6 +10,7 @@ export interface RootState  {
     login : initialLoginStateProps
     cart : Product[]
     googleLogin : googleLoginStateProps
+    artwork : oneArtwork
 }
 
 // method 2
