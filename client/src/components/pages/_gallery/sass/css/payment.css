@@ -1,0 +1,52 @@
+.flexNowrap, #payment #methods .labels, #payment #methods, #payment {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#payment {
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+#payment #texts span {
+  font-size: 1.5rem;
+}
+#payment #methods {
+  flex-direction: row;
+}
+#payment #methods .labels {
+  flex-direction: column;
+  align-items: center;
+}
+#payment #methods #metamaskLogo {
+  max-width: 50%;
+  height: auto;
+}
+#payment #methods #metamaskLogo:hover {
+  animation: backlight_M 1s ease-in-out infinite;
+}
+#payment #methods #paypalLogo {
+  max-width: 50%;
+  height: auto;
+}
+#payment #methods #paypalLogo:hover {
+  animation: backlight_P 1s ease-in-out infinite;
+}
+
+@keyframes backlight_M {
+  0% {
+    background-color: lightyellow;
+  }
+  100% {
+    background-color: whitesmoke;
+  }
+}
+@keyframes backlight_P {
+  0% {
+    background-color: lightskyblue;
+  }
+  100% {
+    background-color: whitesmoke;
+  }
+}
