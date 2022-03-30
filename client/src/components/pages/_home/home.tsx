@@ -50,7 +50,13 @@ export function Home () {
         buttonLink='/signup'
         imgSrc={'https://i.ibb.co/R9pX6Zz/home-be-curious.png'} 
         title={"Best Start For Lazy NFT Creators"}
-        description={"Spread your artistic talent and Make them NFTs"}/>
+        description={
+          [
+            "Spread your artistic talent and Make them NFTs.",
+            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad excepturi ab quisquam voluptatum velit, dignissimos",
+            " Anyone interested in contributing is welcome."
+          ]
+        }/>
 
       <section id='counterContainer'>
         <span id='counterTitle'>
