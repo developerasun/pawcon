@@ -2,7 +2,7 @@ import * as Redux from 'redux'
 import { createStore } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger';
-import { cartReducer, googleLoginReducer, loginReducer } from './reducers';
+import { cartReducer, fetchArtworkReducer, googleLoginReducer, loginReducer } from './reducers';
 
 const middlewares = [thunk, logger]
 
@@ -10,8 +10,15 @@ const middlewares = [thunk, logger]
 const rootReducer = Redux.combineReducers({
     login : loginReducer, 
     cart : cartReducer, 
-    googleLogin : googleLoginReducer
+    googleLogin : googleLoginReducer, 
+    artwork : fetchArtworkReducer
 }) 
 
 export const store = createStore(rootReducer, Redux.applyMiddleware(...middlewares))
 
+// TO DO : store subscription for persistant login
+const persistJwtLogin = () => localStorage.setItem("jwt", JSON.stringify(store.getState().login))
+const persistGoogleLogin = () => localStorage.setItem("google", JSON.stringify(store.getState().googleLogin))
+
+store.subscribe(persistGoogleLogin)
+store.subscribe(persistJwtLogin)
