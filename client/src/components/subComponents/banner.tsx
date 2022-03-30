@@ -15,12 +15,6 @@ export type ImgBannerProps = {
   shouldBeGrid : boolean
 } & BasicBannerProps
 
-// $mobile : 576px;
-// $tablet : 768px; 
-// $desktop : 992px;
-type mobileBreakpoints = 576
-const mobileSize : mobileBreakpoints = 576
-
 export function ImgBanner ({ 
   imgSrc, title, description, 
   shouldBeGrid, 
