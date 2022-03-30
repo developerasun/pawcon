@@ -19,14 +19,14 @@ export const API_DEV = {
         baseUrl : `http://localhost:3001/apis/users/` 
     }, 
     login : "http://localhost:3001/login",
-    logout : "http://localhost:3001/logout",
+    logout : "http://localhost:3001/login",
     oauth : { 
         google : { 
             url : "http://localhost:3001/oauth/google", 
             user : "http://localhost:3001/apis/users/google", 
             logout : "http://localhost:3001/oauth/google/logout"
         }, 
-        github : ""
+        github : "" 
     },
     signup : "http://localhost:3001/signup", 
     editorJs : { 

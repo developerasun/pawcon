@@ -35,6 +35,7 @@ export const imgContainer = () => {
       
       {/* logo */}
       <img src="https://i.ibb.co/2tfRH08/pawcon-logo.png" alt="pawcon-logo-pirate" />
+      <img src="https://i.ibb.co/YNb4f1s/logo.png" alt="new logo"></img>
       <img src="https://i.ibb.co/bvCbscp/paw-login.webp" alt="paw-login"></img>
       <img src="https://i.ibb.co/jzGQ70Z/github-logo.webp" alt="github-logo" />
       <img src="https://i.ibb.co/m997sdM/google-logo.webp" alt="google-logo" />
