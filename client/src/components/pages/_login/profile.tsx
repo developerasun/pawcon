@@ -7,6 +7,7 @@ import Avatar, { genConfig,  } from 'react-nice-avatar';
 import { googleLogout, logout } from '../../containers/redux/actionCreators';
 import { API_DEV } from '../../containers/C_apiUrl';
 import { Button } from '../../subComponents/button';
+import useLocalStorage from '../../containers/hooks/useLocalStorage';
 
 const Dummy = () => {
   return <>show what user liked among gallery items</>
@@ -31,6 +32,7 @@ export function Profile () {
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const ls = useLocalStorage()
   
   // Get users from Redux store
   const jwtUsername = useAppSelector((state)=>state.login.email)
@@ -39,17 +41,19 @@ export function Profile () {
   const handleLogout = React.useCallback(
     () => {
       // JWT logout : '/logout', Delete JWT for logout
-      // CHECK : server logging
       console.log("jwt logout clicked")
-      fetch(API_DEV.logout)
+      fetch(API_DEV.logout, {
+        method: 'DELETE'
+      })
         .then((res) => res.json())
         .then((data)=> {
           if (data.success) { 
             console.log("jwt logout success : ",data)
             dispatch(logout()) // set login status to false
+            ls.removeOneLocal("jwt")
             alert('jwt logout success')
             navigate('/')
-          } 
+          }  
         })
         .catch((err)=>console.log(err))
     },
@@ -58,13 +62,15 @@ export function Profile () {
   
   const handleGoogleLogout = React.useCallback( () => {
     // google logout : '/oauth/logout'
-    // CHECK : server logging
-    fetch(API_DEV.oauth.google.logout)
+    fetch(API_DEV.oauth.google.logout, {
+      method: 'DELETE'
+    })
       .then((res) => res.json())
       .then((data)=> {
         if (data.success) { 
           console.log("google logout success : ",data.success)
           dispatch(googleLogout())
+          ls.removeOneLocal("google")
           alert('google logout success')
           navigate('/')
         }
@@ -80,7 +86,7 @@ export function Profile () {
     if (submitGoogle) {
       handleGoogleLogout()
     }  // make sure to include all dependencies, otherwise client request won't work
-  }, [submit, submitGoogle, handleLogout, handleGoogleLogout, dispatch, navigate])
+  }, [submit, submitGoogle, handleLogout, handleGoogleLogout])
   
   return (
     <div id='profile'>
@@ -96,6 +102,10 @@ export function Profile () {
               // FIX : change url later
               url='/'
               btnText='Edit profile' />
+              <Button
+              // TO DO : add sign out logic later
+              url='/'
+              btnText='Close account' />
             <Button 
               btnText='Logout'
               callback={
