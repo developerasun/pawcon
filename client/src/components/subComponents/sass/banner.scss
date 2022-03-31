@@ -7,11 +7,19 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    margin-top: $unit;
+    .image {
+        order: 0;
+    }
     .texts {
+        order: 1;
         p {
             margin-top: $unit*2;
         }
+    }
+    .buttonComponent { 
+        order: 2;
+        grid-column-start: 2; // move button to right
+        transform: translateY(-200%);
     }
 }
 

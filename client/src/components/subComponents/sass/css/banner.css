@@ -78,10 +78,20 @@
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+}
+.imgGrid .image {
+  order: 0;
+}
+.imgGrid .texts {
+  order: 1;
 }
 .imgGrid .texts p {
   margin-top: 2rem;
+}
+.imgGrid .buttonComponent {
+  order: 2;
+  grid-column-start: 2;
+  transform: translateY(-200%);
 }
 
 .imgVertical {
@@ -123,9 +133,19 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+  }
+  .imgVertical .image, .imgGrid .image {
+    order: 0;
+  }
+  .imgVertical .texts, .imgGrid .texts {
+    order: 1;
   }
   .imgVertical .texts p, .imgGrid .texts p {
     margin-top: 2rem;
+  }
+  .imgVertical .buttonComponent, .imgGrid .buttonComponent {
+    order: 2;
+    grid-column-start: 2;
+    transform: translateY(-200%);
   }
 }
