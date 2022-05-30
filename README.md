@@ -1,27 +1,25 @@
 <div align="center">
-  <img src="https://i.ibb.co/8mc6BQJ/image.png" alt="curiousPawoneer" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/83855174/170878476-fb6069e6-9463-444f-b8f6-5bf05e77b0cf.png" alt="curiousPawoneer" width="100%"/>
 </div>
 
-## :paw_prints: Introducton 
+# :paw_prints: Introduction
 
-<img src="https://img.shields.io/badge/version-v0.5-red" alt="version0.5" /> &nbsp;
+<img src="https://img.shields.io/badge/version-v0.4-blue" alt="version0.4 /> &nbsp; [![wakatime](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49.svg)](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49)
 
-PawCon(Paw + Icon) is an open source blockchain/metaverse project with below target features. Anyone interested in contributing is welcome. Readmes in each section should lead the contributors to place where they can find the section details. 
+**[Visit website](https://pawcon.netlify.app/)** Currently API server not deployed. Recommend to clone the repo or use Docker image as described below to see full interaction.
 
-- Mint your Churu(ERC20) token and Curious Pawoneer(Paw + Pioneer, ERC721) NFT.
-- Communicate real-time with other NFT lovers.
-- Displaying your NFT in gallery.
-- Enjoy and get inspired by NFT creators' artwork.
-- Play around in 3D metaverse world.
+**[Join PawCon telegram](https://t.me/pawcon_dev)** Communicate with maintainers directly and be a part of a community. Anyone interested in contributing is welcome!
 
+PawCon(Paw + Icon) is an open source blockchain project by @developerasun. The goal of this project is to collect and code various mini-blockchain projects as a portfolio example. See [this discussion](https://github.com/developerasun/pawcon/discussions/194) to check project details. 
 
+Note that PawCon is a long-term project and maintained by @developerasun only as of June 2022. The project is being changed over time, as I learned and tried new things over time.
 
-## :bookmark_tabs:	Details
+## Project details
 
 <details>
-  <summary>:electric_plug: Installation</summary>
+<summary>:electric_plug: Installation</summary>
 
-  Each section will be available at [PawCon Docker hub repository](https://hub.docker.com/repository/docker/nellow1102/pawcon). As of March 2022, server and client is available as docker images. Note that images might change or get deprecated over time. I highly recommend to use server docker image first since client image changes very often.
+Each section will be available at [PawCon Docker hub repository](https://hub.docker.com/repository/docker/nellow1102/pawcon). As of March 2022, server and client is available as docker images. Note that images might change or get deprecated over time. I highly recommend to use server docker image first since client image changes very often.
 
 ```shell
 # get pawcon server image
@@ -37,26 +35,37 @@ $docker pull nellow1102/pawcon:client
 $git clone https://github.com/developerasun/pawcon.git
 ```
 
-  Also, source file by version is available at [release](https://github.com/developerasun/pawcon/releases)
-  
+Also, source file by version is available in release.
+
+- release : https://github.com/developerasun/pawcon/releases
 </details>
 
-
 <details>
-  <summary>:hammer: diagrams</summary> 
-  
-  ### architecture
-  
-  <img src="https://user-images.githubusercontent.com/83855174/157869877-0d84394d-c900-47e1-997c-8d5b22c1042f.png" width="800" height="600" alt="project architecture" />
-  
-  ### branch strategy
-  
+<summary>:hammer: Tech stack</summary>
+
+### Architecture 
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/83855174/157869877-0d84394d-c900-47e1-997c-8d5b22c1042f.png" width="600" height="400" alt="project architecture" />
+</div>
+
+### Branch strategy
+
+<div align="center">
   <img src="https://user-images.githubusercontent.com/83855174/159117452-1d7f0935-83a4-4f8b-873d-d8b17e314b2f.jpg" width="600" height="400" alt="branch strategy" />
-  
+</div>
+
 </details>
- 
- 
+
 <details>
+<summary>📜 Documents</summary>
+
+- [Project blueprint](https://github.com/developerasun/pawcon/discussions/194)
+- [Troubleshooting](https://github.com/developerasun/pawcon/issues)
+</details>
+
+<details>
+
 <summary>:keyboard:	Implementation</summary>
 
 <div align="center">
@@ -104,17 +113,16 @@ $git clone https://github.com/developerasun/pawcon.git
 
 </details>
 
-## :raising_hand_man:	Contributors
+<details>
+<summary>:family_man_woman_girl_boy: Contributors</summary>
 
-<img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/> <img src="https://avatars.githubusercontent.com/u/76773190?size=75" alt="Vaibhav Sharma"/>
+<img src="https://github.com/developerasun.png?size=75" alt="Jake Sung"/>
 
-## :mailbox: Contact
+<img src="https://avatars.githubusercontent.com/u/76773190?size=75" alt="Vaibhav Sharma"/>
+</details>
 
-[![Gmail](https://img.shields.io/badge/-nellow1102@gmail.com-black?style=flat-square&logo=GMail&logoColor=White&link=nellow1102@gmail.com)](nellow1102@gmail.com)
+<details>
+<summary>:mailbox: Contact</summary>
 
-## :clipboard: License 
-
-- This project is Apache-licensed.
-- Copyright © 2021 All right reserved [Jake Sung](https://github.com/developerasun) 
-
-
+[![GMail: Jake Sung](https://img.shields.io/badge/-nellow1102@gmail.com-black?style=flat-square&logo=GMail&logoColor=White&link=nellow1102@gmail.com)](nellow1102@gmail.com)
+</details>
