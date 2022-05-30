@@ -25,11 +25,11 @@ Each section will be available at [PawCon Docker hub repository](https://hub.doc
 # get pawcon server image
 $docker pull nellow1102/pawcon:server
 
-# get pawcon client imag
-$docker pull nellow1102/pawcon:server
+# get pawcon client image
+$docker pull nellow1102/pawcon:client
 ```
-
-Or, you can simply clone the repo.
+  
+  Or, you can simply clone the repo.
 
 ```shell
 $git clone https://github.com/developerasun/pawcon.git
@@ -65,6 +65,7 @@ Also, source file by version is available in release.
 </details>
 
 <details>
+
 <summary>:keyboard:	Implementation</summary>
 
 <div align="center">
