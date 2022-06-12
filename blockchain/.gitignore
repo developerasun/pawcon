@@ -6,8 +6,6 @@ node_modules
 coverage
 coverage.json
 typechain
-.vscode
-nft
 #Hardhat files
 cache
 artifacts
