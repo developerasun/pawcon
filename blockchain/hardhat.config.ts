@@ -40,7 +40,16 @@ const chainIds = {
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat", // dev network is hardhat
   solidity: {
-    version: "0.8.0",
+    // version: "0.8.0",
+    // set multiple compiler version
+    compilers: [
+      { version: "0.8.0" },
+      { version: "0.8.1" },
+      {
+        version: "0.8.10",
+        settings: {},
+      },
+    ],
     settings: {
       optimizer: {
         enabled: true,
