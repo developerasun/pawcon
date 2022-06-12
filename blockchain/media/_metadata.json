@@ -1,0 +1,232 @@
+[
+  {
+    "name": "PawCon #1",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/1.png",
+    "dna": "f6b992445c8e0a0897b482de95ae9b09fa850a6d",
+    "edition": 1,
+    "date": 1643899504117,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "SkyPinkRect@5"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Low@20"
+      },
+      {
+        "trait_type": "paw",
+        "value": "BabyPaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #2",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/2.png",
+    "dna": "405d7de53a9d7b4f16951dce1a6aad947e57cc3b",
+    "edition": 2,
+    "date": 1643899504195,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlackRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Top@30"
+      },
+      {
+        "trait_type": "paw",
+        "value": "SharpClawPaw@20"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #3",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/3.png",
+    "dna": "b7cf8367e8461a790c19e7da8b1bd18622da604d",
+    "edition": 3,
+    "date": 1643899504309,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlueRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Middle@50"
+      },
+      {
+        "trait_type": "paw",
+        "value": "AggressivePaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #4",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/4.png",
+    "dna": "026bcd4bacdb67267265cb8f0bc0aab68e4b145f",
+    "edition": 4,
+    "date": 1643899504392,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlueRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Low@20"
+      },
+      {
+        "trait_type": "paw",
+        "value": "StubbornPaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #5",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/5.png",
+    "dna": "395f3db51f03f9c258e1eb14cf9a5282323be706",
+    "edition": 5,
+    "date": 1643899504481,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "YellowRect@20"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Low@20"
+      },
+      {
+        "trait_type": "paw",
+        "value": "DoublePaw@20"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #6",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/6.png",
+    "dna": "58d0bc24d0028bc0c9609d500dd23333d344c1c8",
+    "edition": 6,
+    "date": 1643899504550,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "SkyPinkRect@5"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Top@30"
+      },
+      {
+        "trait_type": "paw",
+        "value": "StubbornPaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #7",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/7.png",
+    "dna": "72e3017f7a1fe134159e20f7f8ba9b69e2fa328b",
+    "edition": 7,
+    "date": 1643899504608,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlueRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Middle@50"
+      },
+      {
+        "trait_type": "paw",
+        "value": "ChildPaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #8",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/8.png",
+    "dna": "56ba32e4227d64aad96a0044cff658b1866e2fb6",
+    "edition": 8,
+    "date": 1643899504678,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "DoubleBlackRect@10"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Top@30"
+      },
+      {
+        "trait_type": "paw",
+        "value": "AggressivePaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #9",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/9.png",
+    "dna": "9d7c390a669f54b38b5a2cf2181f3049f2ed1957",
+    "edition": 9,
+    "date": 1643899504751,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlueRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Low@20"
+      },
+      {
+        "trait_type": "paw",
+        "value": "ChildPaw@10"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "PawCon #10",
+    "description": "PawCon engine test",
+    "image": "ipfs://NewUriToReplace/10.png",
+    "dna": "0f0acdd71b952dd70a66674d01b3725dfdc0a992",
+    "edition": 10,
+    "date": 1643899504834,
+    "attributes": [
+      {
+        "trait_type": "background",
+        "value": "BlueRect@30"
+      },
+      {
+        "trait_type": "edge",
+        "value": "Top@30"
+      },
+      {
+        "trait_type": "paw",
+        "value": "SharpClawPaw@20"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  }
+]

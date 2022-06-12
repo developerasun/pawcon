@@ -1,0 +1,10 @@
+{
+    "solidity.formatter": "prettier",
+    "solidity.validationDelay": 500,
+    "solidity.linter": "solhint",
+    "editor.formatOnSave": true,
+    "[solidity]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "solidity.solhintRules": {}
+}

@@ -1,3 +1,18 @@
 {
-    "endOfLine":"auto"
+  "endOfLine": "auto",
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "compiler": "latest",
+        "printWidth": 150,
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "explicitTypes": "always"
+      }
+    }
+  ]
 }

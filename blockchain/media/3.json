@@ -1,0 +1,23 @@
+{
+  "name": "PawCon #3",
+  "description": "PawCon engine test",
+  "image": "ipfs://NewUriToReplace/3.png",
+  "dna": "b7cf8367e8461a790c19e7da8b1bd18622da604d",
+  "edition": 3,
+  "date": 1643899504309,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "BlueRect@30"
+    },
+    {
+      "trait_type": "edge",
+      "value": "Middle@50"
+    },
+    {
+      "trait_type": "paw",
+      "value": "AggressivePaw@10"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
