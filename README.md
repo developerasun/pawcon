@@ -4,9 +4,9 @@
 
 # :paw_prints: Introduction
 
-<img src="https://img.shields.io/badge/version-v0.4-blue" alt="version0.4 /> &nbsp; [![wakatime](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49.svg)](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49)
+<img src="https://img.shields.io/badge/version-v0.2.0-red" alt="version0.2.0" /> &nbsp; [![Netlify Status](https://api.netlify.com/api/v1/badges/bd81d367-6c26-4c58-a953-f851466d6662/deploy-status)](https://app.netlify.com/sites/pawcon/deploys) &nbsp; ![Heroku](https://img.shields.io/badge/heroku-APIsontheway-darkgreen?style=square&logo=heroku&logoColor=white) &nbsp; [![wakatime](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49.svg)](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49)
 
-**[Visit website](https://pawcon.netlify.app/)** Currently API server not deployed. Recommend to clone the repo or use Docker image as described below to see full interaction.
+**[Visit website](https://pawcon.netlify.app/)** Currently API server not deployed yet and front end UI not fully organized. It is recommended to clone the repo or use Docker image as described below to see full interaction in local environment. Project progress might be slow since I'm working on this side project in weekend. Any type of contribution to project is warmly welcome.
 
 **[Join PawCon telegram](https://t.me/pawcon_dev)** Communicate with maintainers directly and be a part of a community. Anyone interested in contributing is welcome!
 
