@@ -1,11 +1,13 @@
-reference
-config
-reminder.md
 node_modules
 .env
 coverage
 coverage.json
 typechain
+src/
+
+# OpenZeppelin: Network file
+.openzeppelin/unknown-*.json
+
 #Hardhat files
 cache
 artifacts
