@@ -2,6 +2,18 @@
   <img src="https://user-images.githubusercontent.com/83855174/170878476-fb6069e6-9463-444f-b8f6-5bf05e77b0cf.png" alt="curiousPawoneer" width="100%"/>
 </div>
 
+**NOTICE**
+
+Breaking changes on the way.
+
+- Adopting Turborepo/monorepo with pnpm package manager
+- Apps devided into 1) client 2) server 3) blockchain 4) unity
+- Prettier formatting adopted
+- Client stack adopts Redux toolkit
+- Backend stack changed to Nest.js/TS, 
+- Blockchain stack adopts upgradeable contract, chainlink oracle, and Pinata SDK and dedicated gateway
+
+
 # :paw_prints: Introduction
 
 <img src="https://img.shields.io/badge/version-v0.2.0-red" alt="version0.2.0" /> &nbsp; [![Netlify Status](https://api.netlify.com/api/v1/badges/bd81d367-6c26-4c58-a953-f851466d6662/deploy-status)](https://app.netlify.com/sites/pawcon/deploys) &nbsp; ![Heroku](https://img.shields.io/badge/heroku-APIsontheway-darkgreen?style=square&logo=heroku&logoColor=white) &nbsp; [![wakatime](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49.svg)](https://wakatime.com/badge/user/e56daee8-7aae-4b0e-814c-b6bb7f5f841c/project/b1b2013f-a6ca-41d1-a14f-101a6d202f49)
