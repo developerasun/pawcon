@@ -2,7 +2,12 @@
   <img src="https://user-images.githubusercontent.com/83855174/170878476-fb6069e6-9463-444f-b8f6-5bf05e77b0cf.png" alt="curiousPawoneer" width="100%"/>
 </div>
 
-**NOTICE**
+# **NOTICE**
+
+This repo is being migrated to [pawcon-monorepo](https://github.com/asunlabs/pawcon-monorepo)
+
+<details>
+<summary>Readme</summary>
 
 Breaking changes on the way.
 
@@ -138,3 +143,6 @@ Also, source file by version is available in release.
 
 [![GMail: Jake Sung](https://img.shields.io/badge/-nellow1102@gmail.com-black?style=flat-square&logo=GMail&logoColor=White&link=nellow1102@gmail.com)](nellow1102@gmail.com)
 </details>
+</details>
+
+
